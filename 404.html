@@ -33,7 +33,7 @@
         -->
 
   <meta charset="UTF-8">
-  <title>2022 - Hexo</title>
+  <title> - Hexo</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/images/favicon.png">
@@ -63,7 +63,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="https://example.com">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="2022 - Hexo | Hexo">
+  <meta property="og:title" content=" - Hexo | Hexo">
   <meta property="og:image" content="/images/favicon.png" />
   
 
@@ -293,7 +293,7 @@
     <ul class="mdui-list mdui-collapse" mdui-collapse="{accordion: true}" mdui-collapse>
       
       
-      <div class="mdui-collapse-item mdui-collapse-item-open">
+      <div class="mdui-collapse-item ">
         <div class="mdui-collapse-item-header mdui-list-item mdui-ripple mdui-ripple-white">
           <i class="mdui-list-item-icon mdui-icon material-icons">&#xe916;</i>
           <div class="mdui-list-item-content">Years</div>
@@ -427,226 +427,20 @@
 
 
     <div id="barba-wrapper">
-      <div class="barba-container"  data-namespace="archives">
-        
-  <div class="theme-archive">
-    
-<div id="side-content" class="mdui-color-teal theme-archive__side-content">
-  <div class="mdui-grid-tile" style="overflow: visible;margin-bottom: 0;">
-    <div class="theme-archive__side-content__bg">
-      <img src="/images/random/9.png" />
-    </div>
-  </div>
-  <div class="theme-archive__side-content__content">
-    <img class="mdui-img-circle theme-archive__side-content__avatar" src="/images/avatar.png"/>
-    <div class="theme-archive__side-content__author mdui-text-center">
-      John Doe
-    </div>
-    <div class="theme-archive__side-content__name">
-      2022
-    </div>
-    <div class="theme-archive__side-content__length">
-      
-      2Posts
+      <div class="barba-container"  data-namespace="post">
+        <div class="theme-404 mdui-valign">
+  <div class="mdui-center">
+    <i class="mdui-icon material-icons mdui-center theme-404__error">&#xe001;</i>
+    <div class="theme-404__button">
+      <a href="/" class="mdui-btn mdui-btn-dense mdui-color-theme-accent mdui-ripple mdui-center">
+        404 - Return to homepage
+      </a>
     </div>
   </div>
 </div>
-<div id="contentLocation"></div>
-
-    <div class="theme-posts">
-      
-        
-            
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/21.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2022/09/27/test/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
-              
-                test
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        我是...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            Sep 27, 2022
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-        
-            
-
-
-  <div class="theme-posts__post">
-    <article class="mdui-card mdui-hoverable">
-        <section class="mdui-card-media theme-posts__post__media" style="background-image: url(/images/random/36.png)">
-        
-        <div class="mdui-card-media-covered theme-posts__post__media-covered">
-          <div class="mdui-card-primary mdui-typo">
-            
-              <a href="/2022/09/27/hello-world/" target="_self" class="mdui-card-primary-title mdui-text-truncate">
-            
-              
-                Hello World
-            </a>
-          </div>
-        </div>
-        
-      </section>
-      <section class="mdui-card-content">
-        Welcome to Hexo! This is your very first po...
-      </section>
-      <div class="mdui-divider" style="margin: 0 16px;"></div>
-      <section class="theme-posts__post__footer">
-        
-        
-        <div class="theme-spacer"></div>
-        <div class="mdui-valign">
-          <div>
-            Sep 27, 2022
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
-
-
-        
-        
-          <div class="theme-end-footer">
-            <div class="mdui-text-center mdui-text-color-theme-text">
-              It looks like you&#39;ve reached the end.
-            </div>
-          </div>
-        
-    </div>
-    <button id="index-fab" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent mdui-fab-hide" onclick="smoothScroll.animateScroll( 0 );">
-  <i class="mdui-icon material-icons">&#xe5d8;</i>
-</button>
-
-  </div>
-  <script type="text/javascript">
-  themeRuntime.scriptsMap.archives = [];
-  (function() {
-    var fabTopFlag = false;
-    var fabEl = document.getElementById('index-fab');
-    function fabShowHide() {
-      var bodyScrolled = document.documentElement.scrollTop || document.body.scrollTop;
-      if (bodyScrolled > 0 && !fabTopFlag) {
-        fabEl.classList.remove('mdui-fab-hide');
-        fabTopFlag = true;
-      } else if (bodyScrolled === 0 && fabTopFlag) {
-        fabEl.classList.add('mdui-fab-hide');
-        fabTopFlag = false;
-      }
-    }
-    fabShowHide()
-    window.addEventListener('scroll', fabShowHide);
-    var listener = {
-      function: fabShowHide,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
-
-  (function() {
-    var pageTotal = 1
-    var pageNext = 2
-    themeRuntime.temp = {
-      index: 1
-    }
-    function morePosts() {
-      var screenHeight = window.innerHeight;
-      var compareHeight = document.body.clientHeight -  (document.documentElement.scrollTop || document.body.scrollTop);
-      var loadStatus = pageNext - themeRuntime.temp.index
-      if (screenHeight >= compareHeight && loadStatus === 1) {
-        if (pageNext <= pageTotal) {
-          loadProgress(false)
-          var url = window.location.href + "page/" + pageNext
-          themeRuntime.temp.index = pageNext;
-          //console.log(pageTotal, url)
-          fetch(url, {
-              method:'GET',
-              mode:'cors',
-              credentials: 'include'
-          })
-          .then(function(response) {
-            return response.text()
-          }).then(function(HTML) {
-            var fakeDom = document.createElement('html');
-            fakeDom.innerHTML = HTML
-            var morePostsHTML = fakeDom.querySelector('.theme-posts').innerHTML
-            var postsArea = document.querySelector(".theme-posts")
-            loadProgress(true)
-            postsArea.insertAdjacentHTML('beforeend', morePostsHTML)
-            pageNext++;
-          }).catch(function(error) {
-            mdui.alert(error, "ERROR!");
-          })
-        }
-      }
-    }
-    window.addEventListener('scroll', morePosts);
-    var listener = {
-      function: morePosts,
-      event: 'scroll',
-      el: window,
-      removed: false
-    }
-    themeRuntime.scriptsMap.archives.push(listener)
-  })();
+<script type="text/javascript">
+  document.title = '404 - Hexo'
 </script>
-<script>
-  var content_flag = false;
-  const appbar = document.querySelector('.theme-appbar')
-  const body = document.querySelector('body')
-  const title = document.querySelector('.theme-toolbar-bottom__title')
-  window.addEventListener('scroll', styleScrolled)
-  var listener = {
-    function: styleScrolled,
-    event: 'scroll',
-    el: window,
-    removed: false
-  }
-  themeRuntime.scriptsMap.archives.push(listener)
-
-  function styleScrolled() {
-    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    var divTop = document.querySelector('div#contentLocation').offsetTop
-    var contentLocation = divTop - scrollTop - 128;
-    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
-      body.classList.remove('theme-archive--style-change');
-      content_flag = true;
-    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
-      body.classList.add('theme-archive--style-change');
-      content_flag = false;
-    };
-  }
-</script>
-
-
 
       </div>
     </div>
