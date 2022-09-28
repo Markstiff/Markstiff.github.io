@@ -1,335 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>MarkStiff Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="博客学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MarkStiff Blog">
-<meta property="og:url" content="https://markstiff.github.io/index.html">
-<meta property="og:site_name" content="MarkStiff Blog">
-<meta property="og:description" content="博客学习">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="MarkStiff">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="MarkStiff Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+extends base
 
-  
-<link rel="stylesheet" href="/plugin/bganimation/bg.css">
+block title
+    title= config.title
 
-  
+block content
+    include _partial/common.pug
+    .l-postlist
+        each post in page.posts.toArray()
+            .l-post
+                .p-desc.box
+                    .p-pic
+                    //- title
+                    h1.p-title
+                        a(href=url_for(post.path))
+                            +title(post)
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
-<meta name="generator" content="Hexo 6.3.0"></head>
+                    //- description
+                    if post.description
+                        .p-content
+                            != post.description
+                    else if post.excerpt
+                        .p-content
+                            != post.excerpt
+                    else if post.content
+                        - var br = 0
+                        - for (var i = 0; i < 5; ++i) {
+                            - br = post.content.indexOf('\n',br+1)
+                            if br < 0
+                                - break
+                            if br > 150
+                                - break
+                        - }
+                        if br < 0
+                            .p-content
+                                != post.content
+                        else
+                            .p-content
+                                != post.content.substring(0, br)
+                    //- readmore
+                    p(class='p-readmore')
+                        a(href=url_for(post.path))= __('阅读更多 >>')
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <div class="outer">
-        <div class="widget-wrap mobile-header">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">MarkStiff</h2>
-    <h3 class="description">博客学习</h3>
-    <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>0</strong><br>标签</div></a>
-    </div>
-    <ul class="blog-link">
-     
-          <a href="/" title="Home">
-            <li>主页</li>
-          </a>
-        
-          <a href="/archives" title="Archives">
-            <li>归档</li>
-          </a>
-        
-          <a href="/categories" title="Categories">
-            <li>分类</li>
-          </a>
-        
-          <a href="/tags" title="Tags">
-            <li>标签</li>
-          </a>
-        
-    </ul>
-  </div>
-</div>
-
-        <section id="main">
-  
-    <article id="post-串" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/09/28/%E4%B8%B2/" class="article-date">
-  <time class="post-time" datetime="2022-09-28T05:18:55.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">28</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/28/%E4%B8%B2/">串</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://markstiff.github.io/2022/09/28/%E4%B8%B2/" data-id="cl8l8u5k000037wux0ywdf6m6" class="article-share-link">分享</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-    <article id="post-test" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/09/27/test/" class="article-date">
-  <time class="post-time" datetime="2022-09-27T07:54:29.000Z" itemprop="datePublished">
-    <span class="post-month">9月</span><br/>
-    <span class="post-day">27</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/27/test/">test</a>
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="我是用来测试的"><a class="markdownIt-Anchor" href="#我是用来测试的"></a> 我是用来测试的</h2>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://markstiff.github.io/2022/09/27/test/" data-id="cl8l8u5jx00017wux91gm18eb" class="article-share-link">分享</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-  
-
-</section>
-        
-          <aside id="sidebar">
-  
-    <div class="widget-wrap">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <h1 class="blog-title">MarkStiff Blog</h1>
-    <h2 class="blog-subtitle">边缘跑手</h2>
-    <ul class="blog-link">
-     
-          <a href="/" title="Home">
-            <li>主页</li>
-          </a>
-        
-          <a href="/archives" title="Archives">
-            <li>归档</li>
-          </a>
-        
-          <a href="/categories" title="Categories">
-            <li>分类</li>
-          </a>
-        
-          <a href="/tags" title="Tags">
-            <li>标签</li>
-          </a>
-        
-    </ul>
-  </div>
-</div>
-
-  
-    <div class="widget-wrap">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">MarkStiff</h2>
-    <h3 class="description">博客学习</h3>
-    <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>0</strong><br>标签</div></a>
-    </div>
-
-
-
-    <div class="social-link">
-      
-        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
-          Github
-        </a>
-      
-    </div>
-
-    <div class="friend-link">
-      <h2>友情链接</h2>
-      
-        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
-          ShanaMaid
-        </a>
-      
-    </div>
-  </div>
-</div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy;2021 - 2022 MarkStiff<br>
-      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
-      主题-<a target="_blank" rel="noopener" href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
-      
-    </div>
-    
-  </div>
-</footer>
-    </div>
-    
-
-<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
-<script>
-new WOW().init();
-</script>   
-
-
-  
-<link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
-
-  
-<script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-  
-<link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
-
-  
-<script src="/plugin/galmenu/GalMenu.js"></script>
-
-  <div class="GalMenu GalDropDown">
-      <div class="circle" id="gal">
-        <div class="ring">
-          
-            <a href="/" title="" class="menuItem">首页</a>
-          
-            <a href="/tags" title="" class="menuItem">标签</a>
-          
-            <a href="/categories" title="" class="menuItem">分类</a>
-          
-            <a href="/archives" title="" class="menuItem">归档</a>
-          
-            <a href="/xxxxxxxxx" title="" class="menuItem">xxx</a>
-          
-            <a href="/xxxxxxx" title="" class="menuItem">xxxx</a>
-          
-        </div>
-        
-          <audio id="audio" src="#"></audio>
-        
-      </div> 
-</div>
-<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
-  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
-    for (var i = 0,
-    l = items.length; i < l; i++) {
-      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
-    }</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('body').GalMenu({
-      'menu': 'GalDropDown'
-    })
-  });
-</script>
-
-  <section class="hidden-xs"> 
-  <ul class="cb-slideshow"> 
-    <li><span>苟利</span></li> 
-    <li><span>国家</span></li> 
-    <li><span>生死以</span></li> 
-    <li><span>岂能</span></li> 
-    <li><span>祸福</span></li> 
-    <li><span>趋避之</span></li> 
-  </ul>
-</section>
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+                +post-meta(post)
+    include _partial/paginator.pug
