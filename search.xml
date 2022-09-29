@@ -2,13 +2,18 @@
 <search>
   <entry>
     <title>test</title>
-    <url>/2022/09/27/test/</url>
+    <url>/2022/03/27/test/</url>
     <content><![CDATA[<h2 id="我是用来测试的"><a class="markdownIt-Anchor" href="#我是用来测试的"></a> 我是用来测试的</h2>
+<p>###———<em>当前时间 北京时间2022年3月27日 15:54:29</em></p>
 ]]></content>
   </entry>
   <entry>
     <title>串</title>
     <url>/2022/09/28/%E4%B8%B2/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="数据结构串"><a class="markdownIt-Anchor" href="#数据结构串"></a> 数据结构——串</h2>
+<p>(字符串实现与操作）</p>
+<pre><code>pass
+</code></pre>
+]]></content>
   </entry>
 </search>
