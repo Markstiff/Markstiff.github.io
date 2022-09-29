@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test</title>
+    <url>/2022/03/27/test/</url>
+    <content><![CDATA[<h2 id="我是用来测试的"><a class="markdownIt-Anchor" href="#我是用来测试的"></a> 我是用来测试的</h2>
+<p>###———<em>当前时间 北京时间2022年3月27日 15:54:29</em></p>
+]]></content>
+  </entry>
+  <entry>
     <title>串</title>
     <url>/2022/09/28/%E4%B8%B2/</url>
     <content><![CDATA[<h2 id="数据结构串"><a class="markdownIt-Anchor" href="#数据结构串"></a> 数据结构——串</h2>
 <p>(字符串实现与操作）</p>
 <pre><code>pass
 </code></pre>
-]]></content>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2022/03/27/test/</url>
-    <content><![CDATA[<h2 id="我是用来测试的"><a class="markdownIt-Anchor" href="#我是用来测试的"></a> 我是用来测试的</h2>
-<p>###———<em>当前时间 北京时间2022年3月27日 15:54:29</em></p>
 ]]></content>
   </entry>
   <entry>
@@ -106,6 +106,124 @@ I 反对盲目蛮干
 Ø 常数太大
 I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
 预防和排查：
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>分治与倍增</title>
+    <url>/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/</url>
+    <content><![CDATA[<hr />
+<h4 id="double-powdouble-x-double-y"><a class="markdownIt-Anchor" href="#double-powdouble-x-double-y"></a> <code>Double pow(double x, double y)</code></h4>
+<h4 id="倍增算法"><a class="markdownIt-Anchor" href="#倍增算法"></a> 倍增算法：</h4>
+<p>倍增 从字面的上意思看就是成倍的增长 ,这是指我们在进行递推时,如果状态空间很大,通常的线性递推无法满足时间和空间复杂度的要求 ,那么我们就可以通过成倍的增长,只递推状态空间中在 2 的整数次幂位置上的值作为代表 。当需要其他位置上的值时,我们只需要通过&quot; 任意整数可以表示成若干个2的次幂项的和 &quot; 这一性质<code>(13 = 2^3 + 2^2 +2^0)</code>, 使用之前求出的代表值拼成所需的值。<br />
+核心思想：不断以2的次幂的跨度向前试探，行进跨度，不行就降幂，迭代可以表示任意整数</p>
+<h4 id="倍增主要应用"><a class="markdownIt-Anchor" href="#倍增主要应用"></a> 倍增主要应用：</h4>
+<p><code>LCA(least common ancestors)</code>:最近公共祖先<br />
+在有根树中，找出某两个结点u和v最近的公共祖先。<br />
+<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929170840386-1257726897.png" alt="" /><br />
+在寻找两个节点的公共祖先时，按2的指数来跳，并且从大到小，……32, 16, 8 , 4 , 2, 1 【从大到小试探】</p>
+<h4 id="数据预处理"><a class="markdownIt-Anchor" href="#数据预处理"></a> 数据预处理：</h4>
+<p>处理结点的深度、父节点、以及2i级的祖先<br />
+<strong>开辟数组：</strong></p>
+<pre><code>	&lt;1&gt;  depth数组是记录每个节点的深度
+	&lt;2&gt;  fa[i][j]是指节点 i 的 2j 级的祖先的编号
+	&lt;3&gt; lg数组是常数优化的数组，存的是log2N+1的值，注意用的时候要-1，开始之前先初始化一下，这样直接调用可以优化节约时间其中初始化的方法：l g [ i ] = l g [ i − 1 ] + ( 1 &lt; &lt; l g [ i − 1 ] = = i ) lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i)lg[i]=lg[i−1]+(1&lt;&lt;lg[i−1]==i)，自己手算一下很清楚的（lg[1~10]为1 2 2 3 3 3 3 4 4 4，应该很好懂吧）
+</code></pre>
+<p><strong>手写对数运算lg2[i]:</strong></p>
+<pre><code>	over(i,1,n)//预处理一下 
+	lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;
+
+	#include&lt;iostream&gt;
+	#include&lt;stdio.h&gt;
+	#include&lt;string.h&gt;
+	#include&lt;algorithm&gt;
+	#include&lt;queue&gt;
+	#include&lt;math.h&gt;
+	//可以学习宏定义简便写法
+	#define ls (p&lt;&lt;1)  //取半
+	#define rs (p&lt;&lt;1|1)   //取半加一
+	#define mid (l+r)/2
+	#define over(i,s,t) for(register long long i=s;i&lt;=t;++i)   //循环的简写 
+	#define lver(i,t,s) for(register long long i=t;i&gt;=s;--i)
+	
+	using namespace std;
+	typedef long long ll;//全用ll可能会MLE或者直接WA,试着改成int看会不会A
+	const ll N=500007;
+	const ll INF=1e9+9;
+	const ll mod=2147483647;
+	const double EPS=1e-10;//-10次方约等于趋近为0
+	const double Pi=3.1415926535897;
+	ll n,m;
+	//前向星写法的数据结构实现：
+	struct node
+	&#123;
+	    ll u,v,nex;
+	&#125;e[N&lt;&lt;1];
+	ll head[N],cnt;
+	
+	void add(ll u,ll v)
+	&#123;
+	    e[++cnt].v=v;    //记录边的终点
+	    e[cnt].u=u;//没什么用，还白占空间
+	    e[cnt].nex=head[u];     //以u为起点的上一条边，往往更喜欢写做pre
+	    head[u]=cnt;    //更新以u为起点的上一条边
+	&#125;
+	ll depth[N],fa[N][30],lg[N],s,x,y;
+	
+	/*dfs函数的作用就是更新该点的所有祖先的fa数组，并通过递归把
+	该节点的所有的子节点和该节点一样去更新*/
+	void dfs(ll now,ll fath)//子节点和父节点
+	&#123;
+	    fa[now][0]=fath;//更新一下fa数组，2^0=1就是父节点
+	    depth[now]=depth[fath]+1;//更新深度，递归的思想
+	    over(i,1,lg[depth[now]]-1)
+	        fa[now][i]=fa[fa[now][i-1]][i-1];
+	        /*更新now的所有 2^i 级的祖先。先找到now的2^(i-1)级祖先，再往上找
+	        该祖先的2^(i-1)级祖先，就是now的2^i祖先，必须一节一节地往上搜*/
+	    for(ll i=head[now];i;i=e[i].nex)//链式前向星遍历
+	        //如果now有子节点的话，就递归往子节点的子节点走（禁止套娃）
+	        ll v = e[i].v;
+	        if(v == fath) continue;
+		dfs(e[i].v,now);
+	&#125;
+
+	inline ll LCA(ll x,ll y)
+	&#123;
+	    if(depth[x]&lt;depth[y])//用数学语言就是说不妨设x的深度比y的深度大
+	        swap(x,y);//这样下面只需要写一种代码就好了
+	    while(depth[x]&gt;depth[y])
+	        //让x跳到y的高度（同一高度）
+	        x=fa[x][lg[depth[x]-depth[y]]-1];
+	    //如果跳到一块了那LCA肯定就是y了
+	    if(x==y)
+	        return x;
+	    for(ll k=lg[depth[x]]-1;k&gt;=0;--k)//倒着从大到小地跳
+	        /*因为我们要求跳到x和y的LCA的下一层，所以没有跳到的时候就
+	        让x和y利用dfs里早就用倍增算法处理过的祖先路径快速地一块往上跳*/
+	        if(fa[x][k]!=fa[y][k])
+	            x=fa[x][k],y=fa[y][k];//往上跳
+	    return fa[x][0];//返回x，y的父节点（肯定是相同的嘛）
+	&#125;
+	int main()
+	&#123;
+	    scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;s);
+	    over(i,1,n-1)
+	    &#123;
+	        scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);
+	        add(x,y),add(y,x);//无向图一定要记得建双向边
+	    &#125;
+	    over(i,1,n)//预处理一下
+	    lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;
+	    dfs(s,0);//从树根开始，因为用的是链式前向星所以给一个假想根0（其实就是到这儿停）
+	    //dfs一下，预处理各点的深度和祖先
+	    over(i,1,m)
+	    &#123;
+
+	        scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);
+	        printf(&quot;%lld\n&quot;,LCA(x,y));
+	    &#125;
+	    return 0;
+	&#125;
 </code></pre>
 ]]></content>
   </entry>
