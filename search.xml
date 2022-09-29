@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/2022/03/27/test/</url>
-    <content><![CDATA[<h2 id="我是用来测试的"><a class="markdownIt-Anchor" href="#我是用来测试的"></a> 我是用来测试的</h2>
-<p>###———<em>当前时间 北京时间2022年3月27日 15:54:29</em></p>
-]]></content>
-  </entry>
-  <entry>
     <title>串</title>
     <url>/2022/09/28/%E4%B8%B2/</url>
     <content><![CDATA[<h2 id="数据结构串"><a class="markdownIt-Anchor" href="#数据结构串"></a> 数据结构——串</h2>
@@ -17,95 +10,37 @@
 ]]></content>
   </entry>
   <entry>
-    <title>算法竞赛——概述</title>
-    <url>/2022/04/28/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E2%80%94%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h2 id="算法竞赛"><a class="markdownIt-Anchor" href="#算法竞赛"></a> 算法竞赛</h2>
-<hr />
-<h3 id="卡常技巧"><a class="markdownIt-Anchor" href="#卡常技巧"></a> 卡常技巧</h3>
-<p><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929165652647-2103037728.png" alt="" /></p>
-<p>注：最终的取模操作或者是在中间过程取模，使得不出现负数的余数</p>
-<h3 id="rand函数生成随机数时一定要考虑rand_max的值"><a class="markdownIt-Anchor" href="#rand函数生成随机数时一定要考虑rand_max的值"></a> rand（）函数生成随机数时一定要考虑RAND_MAX的值</h3>
-<h3 id="函数调用时对其参数求值的顺序就是未指定的"><a class="markdownIt-Anchor" href="#函数调用时对其参数求值的顺序就是未指定的"></a> 函数调用时，对其参数求值的顺序就是未指定的。</h3>
-<h3 id="评测系统返回的错误信息"><a class="markdownIt-Anchor" href="#评测系统返回的错误信息"></a> 评测系统返回的错误信息：</h3>
-<pre><code>* CE(compiler error): 无法编译成可执行文件（不算罚时)
-* TL(TIMELIMIT):时间超限
-* RE(RUN-ERROR):
-	○ return返回值非0，未正常退出
-	○ 也可能是内存超限
-	○ 内存开得过大也可能报错
-* OL(OUTPUT-LIMIT):输出超限
-	○ 可能陷入了带输出的死循环
-	○ 忘记删除调试输出
-	○ 有时只是WA的一种表现形式
-* WA(WRONG-ANSWER):
-	○ 空白字符(行末空格和文末回车），因此每行应以&quot;\n&quot;结束
+    <title>test</title>
+    <url>/2022/03/27/test/</url>
+    <content><![CDATA[<h2 id="我是用来测试的"><a class="markdownIt-Anchor" href="#我是用来测试的"></a> 我是用来测试的</h2>
+<p>###———<em>当前时间 北京时间2022年3月27日 15:54:29</em></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数模C题</title>
+    <url>/2022/05/13/%E6%95%B0%E6%A8%A1C%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="数模c题总结"><a class="markdownIt-Anchor" href="#数模c题总结"></a> 数模C题总结</h2>
+<h4 id="第一部分问题分析"><a class="markdownIt-Anchor" href="#第一部分问题分析"></a> 第一部分——问题分析</h4>
+<p>拆分问题，将各个问题进行拆分，尤其是效果分析类的</p>
+<h4 id="第一部分数据预处理"><a class="markdownIt-Anchor" href="#第一部分数据预处理"></a> 第一部分——数据预处理</h4>
+<p><strong>数据探索性分析</strong></p>
+<pre><code>箱型图======&gt;探究是否有偏好情况=======&gt;决定了之后问题解决是否要考虑材料种类差异
+对数直方图、洛伦兹图======&gt;探究数据是否存在数量级差异以及数据的均衡程度
+散点图======&gt;探究数据的分布情况
 </code></pre>
-<h3 id="栈"><a class="markdownIt-Anchor" href="#栈"></a> 栈</h3>
-<pre><code>Ø 栈溢出主要表现：
-	○ RUN-ERROR
-	○ 段错误
-	○ segmentation fault (core dumped)
-Ø 预防排查
-	○    避免死递归
-	○ 热身赛可以测试评测系统是否调整了栈空间
-	○ 全局变量：
-	不要将巨大的数组或结构体声明为自动局部变量或按值传递的参数，可以开全局或者静态变量，通过指针/引用传递
+<h4 id="第二部分评价类"><a class="markdownIt-Anchor" href="#第二部分评价类"></a> 第二部分——评价类</h4>
+<p><strong>熵权法-TOPSIS</strong></p>
+<pre><code>叙述:
+熵权法通过计算指标的信息熵，根据其相对变化程度对系统的整体影响来决定权重，避免了
+层次分析法等主观赋权法的弊端，获取权重的客观性较强。在得到权重后， 利用 TOPSIS
+方法将它们综合， TOPSIS 法通过构建评价问题的正理想解和负理想解，计算每个方案到理
+想方案的相对贴近度来对方案进行排序，最终求解出最优方案。
 </code></pre>
-<h3 id="整数溢出"><a class="markdownIt-Anchor" href="#整数溢出"></a> 整数溢出</h3>
-<p>未定义行为：<br />
-§ 带符号整数算术运算溢出<br />
-§ 移位位数超过整数位数<br />
-§ 使用 scanf 读取数字时，输入超过格式化字符串指定的表示范围<br />
-§ 浮点数转化为整数时，其值超过了整数类型能表示的范围<br />
-以下行为可能导致出人意料的结果：<br />
-§ 无符号整数算术运算溢出 (丢弃高位)<br />
-§ 使用 cin 读取数字时，输入超过变量的表示范围 (读入错误的值，并设定 failbit)<br />
-§ 整数类型互相转化时高位被丢弃<br />
-§ 浮点数转化为整数时小数部分被截断<br />
-§ 浮点数精度问题导致负0的出现</p>
-<h3 id="常见错误的预防和排查"><a class="markdownIt-Anchor" href="#常见错误的预防和排查"></a> 常见错误的预防和排查</h3>
-<pre><code>I 开始编码前预先考虑好输入、中间结果、最终结果的可能范围 
-I 该取模的模（指中间过程就开始取模运算，因为结果直接取模一般没必要） 
-I 该开 64 位和 128 位整数的开 
-I 该转型的转：1ll * a * b（转换成long long型的避免运算时结果溢出）
-I 该换语言的换（指python方便处理时用）
-I 该写高精度的写（不能用python时，必要就写） 
-I 打开编译器相关警告选项（辅助） 
-I 编造数据测试是否有溢出 
-I 如果测试过程中发现溢出，打开运行时检查工具 
-I 如果确实需要溢出，使用无符号整数 
-I 反对盲目蛮干
-</code></pre>
-<h3 id="无效指针"><a class="markdownIt-Anchor" href="#无效指针"></a> 无效指针</h3>
-<pre><code>Ø 未初始化的指针使用就是未定义行为 
-Ø 越出数组界限的指针 
-	○ 对不指向数组中元素的指针进行偏移运算是未定义的 
-	○ 对指向数组中元素的指针进行偏移运算，越出数组范围 (结果不指向同一数组中的元素，或该数组最后一个元素“之后的一个元素”)，行为是未定义的
-Ø 预防和排查
-	○ 数组开得尽量大
-	○ 对指针和数组下标进行必要检查
-	○ 打开运行时检查进行检查
-</code></pre>
-<h3 id="无效迭代器"><a class="markdownIt-Anchor" href="#无效迭代器"></a> 无效迭代器</h3>
-<p>在一些 (可能意想不到的) 情况下，迭代器会失效变成非法的<br />
-Ø 迭代器不能越界<br />
-Ø 例1：<br />
-预防与排查：<br />
-○ 不要滥用迭代器<br />
-○ 在range-based for循环中，不要对迭代的容器进行插入或删除操作<br />
-○ 在 set、map、multiset、multimap、list 等中进行删除操作时，可以使用 c.erase(it++) 的写法<br />
-对于 C<ins>11 以上，还支持 it = c.erase(it) 的写法<br />
-○ 如果怀疑使用了无效迭代器，可以打开 C</ins> 标准库的运行时检查</p>
-<h3 id="超时的分析"><a class="markdownIt-Anchor" href="#超时的分析"></a> 超时的分析</h3>
-<pre><code>Ø 算法的选择不合适
-Ø 算法合适，但某个细节未考虑，导致高次时间复杂度
-举例：
-	
-&lt;1&gt;循环多次调用strlen(s)，时间复杂度 O(n2)
-&lt;2&gt;对大的数组，如果每组数据用的数组内存较少而数据组数较多时，多次memset会做很多无用功，导致时间复杂度较高 O(mn)
-Ø 常数太大
-I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
-预防和排查：
+<h4 id="第三部分横纵向分析"><a class="markdownIt-Anchor" href="#第三部分横纵向分析"></a> 第三部分——横纵向分析</h4>
+<pre><code>模型构建分析时，直接显著点出横向角度和纵向角度（一般有时间）来分析
+核密度曲线
+季节性分解
+机会约束叙述：
 </code></pre>
 ]]></content>
   </entry>
@@ -224,6 +159,99 @@ I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
 	    &#125;
 	    return 0;
 	&#125;
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>算法竞赛——概述</title>
+    <url>/2022/04/28/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E2%80%94%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h2 id="算法竞赛"><a class="markdownIt-Anchor" href="#算法竞赛"></a> 算法竞赛</h2>
+<hr />
+<h3 id="卡常技巧"><a class="markdownIt-Anchor" href="#卡常技巧"></a> 卡常技巧</h3>
+<p><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929165652647-2103037728.png" alt="" /></p>
+<p>注：最终的取模操作或者是在中间过程取模，使得不出现负数的余数</p>
+<h3 id="rand函数生成随机数时一定要考虑rand_max的值"><a class="markdownIt-Anchor" href="#rand函数生成随机数时一定要考虑rand_max的值"></a> rand（）函数生成随机数时一定要考虑RAND_MAX的值</h3>
+<h3 id="函数调用时对其参数求值的顺序就是未指定的"><a class="markdownIt-Anchor" href="#函数调用时对其参数求值的顺序就是未指定的"></a> 函数调用时，对其参数求值的顺序就是未指定的。</h3>
+<h3 id="评测系统返回的错误信息"><a class="markdownIt-Anchor" href="#评测系统返回的错误信息"></a> 评测系统返回的错误信息：</h3>
+<pre><code>* CE(compiler error): 无法编译成可执行文件（不算罚时)
+* TL(TIMELIMIT):时间超限
+* RE(RUN-ERROR):
+	○ return返回值非0，未正常退出
+	○ 也可能是内存超限
+	○ 内存开得过大也可能报错
+* OL(OUTPUT-LIMIT):输出超限
+	○ 可能陷入了带输出的死循环
+	○ 忘记删除调试输出
+	○ 有时只是WA的一种表现形式
+* WA(WRONG-ANSWER):
+	○ 空白字符(行末空格和文末回车），因此每行应以&quot;\n&quot;结束
+</code></pre>
+<h3 id="栈"><a class="markdownIt-Anchor" href="#栈"></a> 栈</h3>
+<pre><code>Ø 栈溢出主要表现：
+	○ RUN-ERROR
+	○ 段错误
+	○ segmentation fault (core dumped)
+Ø 预防排查
+	○    避免死递归
+	○ 热身赛可以测试评测系统是否调整了栈空间
+	○ 全局变量：
+	不要将巨大的数组或结构体声明为自动局部变量或按值传递的参数，可以开全局或者静态变量，通过指针/引用传递
+</code></pre>
+<h3 id="整数溢出"><a class="markdownIt-Anchor" href="#整数溢出"></a> 整数溢出</h3>
+<p>未定义行为：<br />
+§ 带符号整数算术运算溢出<br />
+§ 移位位数超过整数位数<br />
+§ 使用 scanf 读取数字时，输入超过格式化字符串指定的表示范围<br />
+§ 浮点数转化为整数时，其值超过了整数类型能表示的范围<br />
+以下行为可能导致出人意料的结果：<br />
+§ 无符号整数算术运算溢出 (丢弃高位)<br />
+§ 使用 cin 读取数字时，输入超过变量的表示范围 (读入错误的值，并设定 failbit)<br />
+§ 整数类型互相转化时高位被丢弃<br />
+§ 浮点数转化为整数时小数部分被截断<br />
+§ 浮点数精度问题导致负0的出现</p>
+<h3 id="常见错误的预防和排查"><a class="markdownIt-Anchor" href="#常见错误的预防和排查"></a> 常见错误的预防和排查</h3>
+<pre><code>I 开始编码前预先考虑好输入、中间结果、最终结果的可能范围 
+I 该取模的模（指中间过程就开始取模运算，因为结果直接取模一般没必要） 
+I 该开 64 位和 128 位整数的开 
+I 该转型的转：1ll * a * b（转换成long long型的避免运算时结果溢出）
+I 该换语言的换（指python方便处理时用）
+I 该写高精度的写（不能用python时，必要就写） 
+I 打开编译器相关警告选项（辅助） 
+I 编造数据测试是否有溢出 
+I 如果测试过程中发现溢出，打开运行时检查工具 
+I 如果确实需要溢出，使用无符号整数 
+I 反对盲目蛮干
+</code></pre>
+<h3 id="无效指针"><a class="markdownIt-Anchor" href="#无效指针"></a> 无效指针</h3>
+<pre><code>Ø 未初始化的指针使用就是未定义行为 
+Ø 越出数组界限的指针 
+	○ 对不指向数组中元素的指针进行偏移运算是未定义的 
+	○ 对指向数组中元素的指针进行偏移运算，越出数组范围 (结果不指向同一数组中的元素，或该数组最后一个元素“之后的一个元素”)，行为是未定义的
+Ø 预防和排查
+	○ 数组开得尽量大
+	○ 对指针和数组下标进行必要检查
+	○ 打开运行时检查进行检查
+</code></pre>
+<h3 id="无效迭代器"><a class="markdownIt-Anchor" href="#无效迭代器"></a> 无效迭代器</h3>
+<p>在一些 (可能意想不到的) 情况下，迭代器会失效变成非法的<br />
+Ø 迭代器不能越界<br />
+Ø 例1：<br />
+预防与排查：<br />
+○ 不要滥用迭代器<br />
+○ 在range-based for循环中，不要对迭代的容器进行插入或删除操作<br />
+○ 在 set、map、multiset、multimap、list 等中进行删除操作时，可以使用 c.erase(it++) 的写法<br />
+对于 C<ins>11 以上，还支持 it = c.erase(it) 的写法<br />
+○ 如果怀疑使用了无效迭代器，可以打开 C</ins> 标准库的运行时检查</p>
+<h3 id="超时的分析"><a class="markdownIt-Anchor" href="#超时的分析"></a> 超时的分析</h3>
+<pre><code>Ø 算法的选择不合适
+Ø 算法合适，但某个细节未考虑，导致高次时间复杂度
+举例：
+	
+&lt;1&gt;循环多次调用strlen(s)，时间复杂度 O(n2)
+&lt;2&gt;对大的数组，如果每组数据用的数组内存较少而数据组数较多时，多次memset会做很多无用功，导致时间复杂度较高 O(mn)
+Ø 常数太大
+I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
+预防和排查：
 </code></pre>
 ]]></content>
   </entry>
