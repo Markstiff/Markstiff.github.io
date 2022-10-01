@@ -1,110 +1,621 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>串</title>
-      <link href="/2022/09/28/%E4%B8%B2/"/>
-      <url>/2022/09/28/%E4%B8%B2/</url>
-      
-        <content type="html"><![CDATA[<h2 id="数据结构——串"><a href="#数据结构——串" class="headerlink" title="数据结构——串"></a>数据结构——串</h2><p>(字符串实现与操作）</p><pre><code>pass</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>C++ Programming</title>
-      <link href="/2022/05/16/C++%20Programming/"/>
-      <url>/2022/05/16/C++%20Programming/</url>
-      
-        <content type="html"><![CDATA[<h2 id="BFS算法"><a href="#BFS算法" class="headerlink" title="BFS算法"></a>BFS算法</h2><p>1、可以考虑压缩状态空间，用bool数组进行存储时将其转换为bool8个位，用一个整数存储即可<br>2、A*算法    </p><pre><code>Astr 、估价函数    BFS 层次分析，状态压缩，进行整理总结能够简化运算  DFS 不能进行状态压缩   数据结构（增删改查）——树（决策树、搜索树）    数据结构都是描述数据的关联性的，    </code></pre><h2 id="二叉树存储："><a href="#二叉树存储：" class="headerlink" title="二叉树存储："></a>二叉树存储：</h2><p>1、数组：关系用位置存储，存储结点<br>2、链表存储：类似双向链表，<code>Lchild data Rchild</code><br>3、三叉链表存储：作用是双向搜索<br>  先序遍历，循环递推结构<br><strong>程序设计：</strong><br>1、不确定行为<code>bug：</code>未初始化值、数组越界、带符号整数溢出<br>2、命名空间：   </p><pre><code>Namespace fluke&#123;       const int m = 999999;       poly poly_mul(poly a,poly b);&#125;</code></pre><p>3、竞赛头文件：<code>#include&lt;bits/stdc++.h&gt;</code><br>4、寻找指定数据所在范围   </p><pre><code>#include&lt;iostream&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123;    int a[] = &#123; 1,1,4,5,1,4 &#125;;    sort(a, a + 6);    int l = lower_bound(a, a + 6, 4) - a;    int r = upper_bound(a, a + 6, 4) - a;    cout &lt;&lt; l &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;    return 0;&#125;</code></pre><p>5、二分查找函数   </p><pre><code>int recursive(vector&lt;int&gt;  arg)&#123;    if (arg == final_state)        return 114;    vector&lt;int&gt; new_state1 = get(arg);    vector&lt;int&gt; new_state2 = get(arg);    return recuresive(new_state1) + recuresive(new_state2) + 514;&#125;</code></pre><p>6、重载运算符： </p><pre><code>Struct vec&#123;        int x, y;        long long len() &#123;…&#125;        bool operator &lt; &#123;const vec &amp;rhs&#125; const        &#123;                return len() &lt;= rhs.len();        &#125;        long long operator *(const vec &amp;rhs)  const        &#123;                 return 111 * x * rhs.x + 111 * y * rhs.y;         &#125;        long long operator ^(const vec &amp;rhs) const        &#123;                 return 111 * x * rhs.y - 111 * y * rhs.x;        &#125;&#125;;</code></pre><p>7、<code>std::set</code>数据结构(基于有序的数据结构具体是二叉搜索树）</p><pre><code>Int main()&#123;     set&lt;int&gt; s = &#123;1,1,4,5,1,4&#125;;     for(int a: s)                        #简便写法类似python中的可迭代对象            cout &lt;&lt; a &lt;&lt; &quot;\n&quot;;&#125;</code></pre><p><code>multiset</code>数据结构和<code>set</code>类似，只不过允许数据重复，插入时即是有序的<br>8、映射数据结构   </p><pre><code>map&lt;string, int&gt; mp = &#123;        &#123;&quot;Monday&quot;,1&#125;,&#123;&quot;Tuesday&quot;,2&#125;,&#123;&quot;Wenesday&quot;,3&#125;    &#125;;    cout &lt;&lt; mp[&quot;Tuesday&quot;] &lt;&lt; &quot;\n&quot;;    cout &lt;&lt; mp.lower_bound(&quot;Tue&quot;)-&gt;first &lt;&lt; &#39;\n&#39;;    cout &lt;&lt; mp.upper_bound(&quot;Tue&quot;)-&gt;second &lt;&lt; &#39;\n&#39;;&gt;&gt;2&gt;&gt;Tuesday&gt;&gt;2</code></pre><p>9、加快输入输出流的速度：   </p><pre><code>ios::sync_with_stdio(false);    cin.tie(0);用来加快cin、cout的速率</code></pre><p>10、<code>cout &lt;&lt; x+y &lt;&lt; &#39;\n&#39; &lt;&lt; flush;</code>强行刷新缓冲区，使数据立即输出<br>11、移位运算</p><pre><code>a &lt;&lt;= 10  //a * 1024;a &lt;&lt;= k   //a * 2^k;b &gt;&gt;= k   //a / 2^k;a |= (1 &lt;&lt; 10);  //将a的二进制第十一位换成1，进行调节a &amp; 1 // a % 2</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>数模C题</title>
-      <link href="/2022/05/13/%E6%95%B0%E6%A8%A1C%E9%A2%98/"/>
-      <url>/2022/05/13/%E6%95%B0%E6%A8%A1C%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<h2 id="数模C题总结"><a href="#数模C题总结" class="headerlink" title="数模C题总结"></a>数模C题总结</h2><h4 id="第一部分——问题分析"><a href="#第一部分——问题分析" class="headerlink" title="第一部分——问题分析"></a>第一部分——问题分析</h4><p>拆分问题，将各个问题进行拆分，尤其是效果分析类的</p><h4 id="第一部分——数据预处理"><a href="#第一部分——数据预处理" class="headerlink" title="第一部分——数据预处理"></a>第一部分——数据预处理</h4><p><strong>数据探索性分析</strong>      </p><pre><code>箱型图======&gt;探究是否有偏好情况=======&gt;决定了之后问题解决是否要考虑材料种类差异对数直方图、洛伦兹图======&gt;探究数据是否存在数量级差异以及数据的均衡程度散点图======&gt;探究数据的分布情况</code></pre><h4 id="第二部分——评价类"><a href="#第二部分——评价类" class="headerlink" title="第二部分——评价类"></a>第二部分——评价类</h4><p><strong>熵权法-TOPSIS</strong>    </p><pre><code>叙述:熵权法通过计算指标的信息熵，根据其相对变化程度对系统的整体影响来决定权重，避免了层次分析法等主观赋权法的弊端，获取权重的客观性较强。在得到权重后， 利用 TOPSIS方法将它们综合， TOPSIS 法通过构建评价问题的正理想解和负理想解，计算每个方案到理想方案的相对贴近度来对方案进行排序，最终求解出最优方案。</code></pre><h4 id="第三部分——横纵向分析"><a href="#第三部分——横纵向分析" class="headerlink" title="第三部分——横纵向分析"></a>第三部分——横纵向分析</h4><pre><code>模型构建分析时，直接显著点出横向角度和纵向角度（一般有时间）来分析核密度曲线季节性分解</code></pre><p><em>机会约束叙述：</em><br><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172332648-38102188.png" alt="">     </p><pre><code>蒙特卡洛法针状图====&gt;检验有效数据的完整性      </code></pre><h4 id="第四部分——方案实施效果分析"><a href="#第四部分——方案实施效果分析" class="headerlink" title="第四部分——方案实施效果分析"></a>第四部分——方案实施效果分析</h4><pre><code>绘制数据结果图=====&gt;结合图像说明或解释变化面积图置信因子α灵敏度分析:分别取置信因子α=0.85， 0.9， 0.95对约束进行松弛，可以得到丌同的决策集合。随着置信度𝛼的上升，随机变量𝜉的少数极端抖动造成约束条件难以满足， 迫使企业需要增大订单量来对冲风险，亍是表现为总订单额的升高。类似的，对亍转运损失率，随着置信度𝛼的上升，转运损失率也在违约率高的周内相应明显升高，这也进一步印证了前文关亍损失率和违约率的机理猜测。    </code></pre><h4 id="第五部分——惩罚因子"><a href="#第五部分——惩罚因子" class="headerlink" title="第五部分——惩罚因子"></a>第五部分——惩罚因子</h4><pre><code>问题三只在问题二的基础上改变了一点要求，即尽量多地采购A 类和尽量少地采购C类原材料，可以考虑为每立方米 A、 B、 C 三种材料分别赋予惩罚因子为 1、 5、10，以惩罚函数最小为目标，约束同问题二，建立右图所示的觃划模型。转运方案制定不方案实施效果分析同问题二。</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分治与倍增</title>
-      <link href="/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/"/>
-      <url>/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/</url>
-      
-        <content type="html"><![CDATA[<hr><h4 id="Double-pow-double-x-double-y"><a href="#Double-pow-double-x-double-y" class="headerlink" title="Double pow(double x, double y)"></a><code>Double pow(double x, double y)</code></h4><h4 id="倍增算法："><a href="#倍增算法：" class="headerlink" title="倍增算法："></a>倍增算法：</h4><p>倍增 从字面的上意思看就是成倍的增长 ,这是指我们在进行递推时,如果状态空间很大,通常的线性递推无法满足时间和空间复杂度的要求 ,那么我们就可以通过成倍的增长,只递推状态空间中在 2 的整数次幂位置上的值作为代表 。当需要其他位置上的值时,我们只需要通过” 任意整数可以表示成若干个2的次幂项的和 “ 这一性质<code>(13 = 2^3 + 2^2 +2^0)</code>, 使用之前求出的代表值拼成所需的值。<br>核心思想：不断以2的次幂的跨度向前试探，行进跨度，不行就降幂，迭代可以表示任意整数</p><h4 id="倍增主要应用："><a href="#倍增主要应用：" class="headerlink" title="倍增主要应用："></a>倍增主要应用：</h4><p><code>LCA(least common ancestors)</code>:最近公共祖先<br>在有根树中，找出某两个结点u和v最近的公共祖先。<br><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929170840386-1257726897.png" alt=""><br>在寻找两个节点的公共祖先时，按2的指数来跳，并且从大到小，…..32, 16, 8 , 4 , 2, 1 【从大到小试探】     </p><h4 id="数据预处理："><a href="#数据预处理：" class="headerlink" title="数据预处理："></a>数据预处理：</h4><p>处理结点的深度、父节点、以及2i级的祖先<br><strong>开辟数组：</strong>   </p><pre><code>    &lt;1&gt;  depth数组是记录每个节点的深度    &lt;2&gt;  fa[i][j]是指节点 i 的 2j 级的祖先的编号    &lt;3&gt; lg数组是常数优化的数组，存的是log2N+1的值，注意用的时候要-1，开始之前先初始化一下，这样直接调用可以优化节约时间其中初始化的方法：l g [ i ] = l g [ i − 1 ] + ( 1 &lt; &lt; l g [ i − 1 ] = = i ) lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i)lg[i]=lg[i−1]+(1&lt;&lt;lg[i−1]==i)，自己手算一下很清楚的（lg[1~10]为1 2 2 3 3 3 3 4 4 4，应该很好懂吧）</code></pre><p><strong>手写对数运算lg2[i]:</strong>      </p><pre><code>    over(i,1,n)//预处理一下     lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;    #include&lt;iostream&gt;    #include&lt;stdio.h&gt;    #include&lt;string.h&gt;    #include&lt;algorithm&gt;    #include&lt;queue&gt;    #include&lt;math.h&gt;    //可以学习宏定义简便写法    #define ls (p&lt;&lt;1)  //取半    #define rs (p&lt;&lt;1|1)   //取半加一    #define mid (l+r)/2    #define over(i,s,t) for(register long long i=s;i&lt;=t;++i)   //循环的简写     #define lver(i,t,s) for(register long long i=t;i&gt;=s;--i)    using namespace std;    typedef long long ll;//全用ll可能会MLE或者直接WA,试着改成int看会不会A    const ll N=500007;    const ll INF=1e9+9;    const ll mod=2147483647;    const double EPS=1e-10;//-10次方约等于趋近为0    const double Pi=3.1415926535897;    ll n,m;    //前向星写法的数据结构实现：    struct node    &#123;        ll u,v,nex;    &#125;e[N&lt;&lt;1];    ll head[N],cnt;    void add(ll u,ll v)    &#123;        e[++cnt].v=v;    //记录边的终点        e[cnt].u=u;//没什么用，还白占空间        e[cnt].nex=head[u];     //以u为起点的上一条边，往往更喜欢写做pre        head[u]=cnt;    //更新以u为起点的上一条边    &#125;    ll depth[N],fa[N][30],lg[N],s,x,y;    /*dfs函数的作用就是更新该点的所有祖先的fa数组，并通过递归把    该节点的所有的子节点和该节点一样去更新*/    void dfs(ll now,ll fath)//子节点和父节点    &#123;        fa[now][0]=fath;//更新一下fa数组，2^0=1就是父节点        depth[now]=depth[fath]+1;//更新深度，递归的思想        over(i,1,lg[depth[now]]-1)            fa[now][i]=fa[fa[now][i-1]][i-1];            /*更新now的所有 2^i 级的祖先。先找到now的2^(i-1)级祖先，再往上找            该祖先的2^(i-1)级祖先，就是now的2^i祖先，必须一节一节地往上搜*/        for(ll i=head[now];i;i=e[i].nex)//链式前向星遍历            //如果now有子节点的话，就递归往子节点的子节点走（禁止套娃）            ll v = e[i].v;            if(v == fath) continue;        dfs(e[i].v,now);    &#125;    inline ll LCA(ll x,ll y)    &#123;        if(depth[x]&lt;depth[y])//用数学语言就是说不妨设x的深度比y的深度大            swap(x,y);//这样下面只需要写一种代码就好了        while(depth[x]&gt;depth[y])            //让x跳到y的高度（同一高度）            x=fa[x][lg[depth[x]-depth[y]]-1];        //如果跳到一块了那LCA肯定就是y了        if(x==y)            return x;        for(ll k=lg[depth[x]]-1;k&gt;=0;--k)//倒着从大到小地跳            /*因为我们要求跳到x和y的LCA的下一层，所以没有跳到的时候就            让x和y利用dfs里早就用倍增算法处理过的祖先路径快速地一块往上跳*/            if(fa[x][k]!=fa[y][k])                x=fa[x][k],y=fa[y][k];//往上跳        return fa[x][0];//返回x，y的父节点（肯定是相同的嘛）    &#125;    int main()    &#123;        scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;s);        over(i,1,n-1)        &#123;            scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);            add(x,y),add(y,x);//无向图一定要记得建双向边        &#125;        over(i,1,n)//预处理一下        lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;        dfs(s,0);//从树根开始，因为用的是链式前向星所以给一个假想根0（其实就是到这儿停）        //dfs一下，预处理各点的深度和祖先        over(i,1,m)        &#123;            scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);            printf(&quot;%lld\n&quot;,LCA(x,y));        &#125;        return 0;    &#125;</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>算法竞赛——概述</title>
-      <link href="/2022/04/28/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E2%80%94%E6%A6%82%E8%BF%B0/"/>
-      <url>/2022/04/28/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E2%80%94%E6%A6%82%E8%BF%B0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="算法竞赛"><a href="#算法竞赛" class="headerlink" title="算法竞赛"></a>算法竞赛</h2><hr><h3 id="卡常技巧"><a href="#卡常技巧" class="headerlink" title="卡常技巧"></a>卡常技巧</h3><p><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929165652647-2103037728.png" alt="">            </p><p>注：最终的取模操作或者是在中间过程取模，使得不出现负数的余数</p><h3 id="rand（）函数生成随机数时一定要考虑RAND-MAX的值"><a href="#rand（）函数生成随机数时一定要考虑RAND-MAX的值" class="headerlink" title="rand（）函数生成随机数时一定要考虑RAND_MAX的值"></a>rand（）函数生成随机数时一定要考虑RAND_MAX的值</h3><h3 id="函数调用时，对其参数求值的顺序就是未指定的。"><a href="#函数调用时，对其参数求值的顺序就是未指定的。" class="headerlink" title="函数调用时，对其参数求值的顺序就是未指定的。"></a>函数调用时，对其参数求值的顺序就是未指定的。</h3><h3 id="评测系统返回的错误信息："><a href="#评测系统返回的错误信息：" class="headerlink" title="评测系统返回的错误信息："></a>评测系统返回的错误信息：</h3><pre><code>* CE(compiler error): 无法编译成可执行文件（不算罚时)* TL(TIMELIMIT):时间超限* RE(RUN-ERROR):    ○ return返回值非0，未正常退出    ○ 也可能是内存超限    ○ 内存开得过大也可能报错* OL(OUTPUT-LIMIT):输出超限    ○ 可能陷入了带输出的死循环    ○ 忘记删除调试输出    ○ 有时只是WA的一种表现形式* WA(WRONG-ANSWER):    ○ 空白字符(行末空格和文末回车），因此每行应以&quot;\n&quot;结束</code></pre><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><pre><code>Ø 栈溢出主要表现：    ○ RUN-ERROR    ○ 段错误    ○ segmentation fault (core dumped)Ø 预防排查    ○    避免死递归    ○ 热身赛可以测试评测系统是否调整了栈空间    ○ 全局变量：    不要将巨大的数组或结构体声明为自动局部变量或按值传递的参数，可以开全局或者静态变量，通过指针/引用传递</code></pre><h3 id="整数溢出"><a href="#整数溢出" class="headerlink" title="整数溢出"></a>整数溢出</h3><p>   未定义行为：<br>    § 带符号整数算术运算溢出<br>    § 移位位数超过整数位数<br>    § 使用 scanf 读取数字时，输入超过格式化字符串指定的表示范围<br>    § 浮点数转化为整数时，其值超过了整数类型能表示的范围<br>  以下行为可能导致出人意料的结果：<br>    § 无符号整数算术运算溢出 (丢弃高位)<br>    § 使用 cin 读取数字时，输入超过变量的表示范围 (读入错误的值，并设定 failbit)<br>    § 整数类型互相转化时高位被丢弃<br>    § 浮点数转化为整数时小数部分被截断<br>    § 浮点数精度问题导致负0的出现</p><h3 id="常见错误的预防和排查"><a href="#常见错误的预防和排查" class="headerlink" title="常见错误的预防和排查"></a>常见错误的预防和排查</h3><pre><code>I 开始编码前预先考虑好输入、中间结果、最终结果的可能范围 I 该取模的模（指中间过程就开始取模运算，因为结果直接取模一般没必要） I 该开 64 位和 128 位整数的开 I 该转型的转：1ll * a * b（转换成long long型的避免运算时结果溢出）I 该换语言的换（指python方便处理时用）I 该写高精度的写（不能用python时，必要就写） I 打开编译器相关警告选项（辅助） I 编造数据测试是否有溢出 I 如果测试过程中发现溢出，打开运行时检查工具 I 如果确实需要溢出，使用无符号整数 I 反对盲目蛮干</code></pre><h3 id="无效指针"><a href="#无效指针" class="headerlink" title="无效指针"></a>无效指针</h3><pre><code>Ø 未初始化的指针使用就是未定义行为 Ø 越出数组界限的指针     ○ 对不指向数组中元素的指针进行偏移运算是未定义的     ○ 对指向数组中元素的指针进行偏移运算，越出数组范围 (结果不指向同一数组中的元素，或该数组最后一个元素“之后的一个元素”)，行为是未定义的Ø 预防和排查    ○ 数组开得尽量大    ○ 对指针和数组下标进行必要检查    ○ 打开运行时检查进行检查</code></pre><h3 id="无效迭代器"><a href="#无效迭代器" class="headerlink" title="无效迭代器"></a>无效迭代器</h3><p>在一些 (可能意想不到的) 情况下，迭代器会失效变成非法的<br>    Ø 迭代器不能越界<br>    Ø 例1：<br>    预防与排查：<br>        ○ 不要滥用迭代器<br>        ○ 在range-based for循环中，不要对迭代的容器进行插入或删除操作<br>        ○ 在 set、map、multiset、multimap、list 等中进行删除操作时，可以使用 c.erase(it++) 的写法<br>        对于 C++11 以上，还支持 it = c.erase(it) 的写法<br>        ○ 如果怀疑使用了无效迭代器，可以打开 C++ 标准库的运行时检查</p><h3 id="超时的分析"><a href="#超时的分析" class="headerlink" title="超时的分析"></a>超时的分析</h3><pre><code>Ø 算法的选择不合适Ø 算法合适，但某个细节未考虑，导致高次时间复杂度举例：&lt;1&gt;循环多次调用strlen(s)，时间复杂度 O(n2)&lt;2&gt;对大的数组，如果每组数据用的数组内存较少而数据组数较多时，多次memset会做很多无用功，导致时间复杂度较高 O(mn)Ø 常数太大I 典型代表：endl 或者忘了用 cin.tie(0)、valarray预防和排查：</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>MATLAB基本操作学习</title>
-      <link href="/2022/03/27/MATLAB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2022/03/27/MATLAB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="MATLAB基本操作学习"><a href="#MATLAB基本操作学习" class="headerlink" title="MATLAB基本操作学习"></a>MATLAB基本操作学习</h2><pre><code>• 清除变量：clear pi /clearvars pi inf   /恢复默认变量• 判别是否是关键字    iskeyword(&#39;for&#39;)• 数据输出格式Format rat 分子格式Format compact 压缩格式，不显示空白行• 常用函数指数函数：exp      以2对数：log2     自然对数：log取整: 四舍五入 round  正无穷方向取整  ceil 负无穷方向取整  floor  向零方向取整 fix 求余函数：rem     取模函数：mod反正弦：asin求复数实部：real       求复数虚部：imag        求共轭复数：conj求平均值：mean    标准差：std     方差：var     协方差：cov相关系数：corrcoef                极差：range      符号函数：sign    例sign(x)求 x 中元素的符号• 规模化定义向量X = 初值：步长：终值/初值：终值X = linspace(初值，终值，向量长度）  用来生成等间隔向量    • 向量与矩阵的转换X = A(:)            % 矩阵A转为列向量xA = reshape(x, [m, n])    % 将长度为m*n的向量x转换为m行n列矩阵• 按指定阵列复制矩阵B = repmat(A,[2, 3])      % 复制矩阵A按行方向复制两次，列方向复制3次• 复数矩阵C = complex(a, b)            % 以a为实部，b为虚部生成复数矩阵   a, b 均为矩阵• 符号矩阵Y = sym(y)  % 将数值矩阵y转换为符号矩阵YZ = sym(&#39;a%d%d&#39;,[2,3])     % 其中%d、%d按照下标进行赋值特殊矩阵    zeros(size(A)）生成与A相同大小的零矩阵对角阵  diag      X  = diag(v,k)    以向量v为第k个对角线生成对角矩阵X  = diag(v)  以v为主对角线生成对角阵v  = diag(X, k)   返回矩阵X的第k条对角线上元素   省略k时默认为主对角线• 元胞数组&lt;1&gt; 直接用花括号赋值创建；&lt;2&gt; cell(m, n, p···)创建空元胞数组访问元胞：C(i,j)           访问元胞中的元素：C&#123;I,j&#125;          celldisp显示元胞数组里面所有内容• 结构体数组&lt;1&gt; 直接赋值定义  struct1(n).attris           指定第n个结构体数组单元的各属性&lt;2&gt; struct函数构造    s  =struct(&#39;field1&#39;, values1, &#39;field2&#39;, values2····)Example: s  = struct(&#39;name&#39;, &#123;&#39;Mark&#39;, &#39;Lucy&#39;&#125;, &#39;age&#39;, &#123;31,22&#125;)• 数组转换str2func - 根据字符向量构造函数句柄  • 表格型数组（Table Class)工作区的变量定义为表格型T = table(Age, Height, Weight, Blood, &#39;RowNames&#39;, Name)      (其中各变量均为向量)访问 T.Height• 逻辑运算或运算：A|B   对应元素非零为1否则为0得到一个布尔矩阵与运算：A&amp;B 均非零非运算：~A 非零为零，零为1异或运算：xor(A,B)    均为零或均非零为零否则为1判断逻辑运算：A||B   判断A或B是否为零矩阵    A&amp;&amp;B• 逆矩阵   Ai = inv(A)    % 求A的逆矩阵[V, D] = eig(A)      % 求数值矩阵A的特征值D和特征向量矩阵V  （D为对角阵）矩阵的迹  t  =trace(A)矩阵的秩  r  = rank(A)</code></pre><p><strong>附录——常用数组转换函数</strong><br><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172805394-926335148.png" alt=""></p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>MATLAB基本操作学习</title>
+    <url>/2022/03/27/MATLAB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="matlab基本操作学习"><a class="markdownIt-Anchor" href="#matlab基本操作学习"></a> MATLAB基本操作学习</h2>
+<pre><code>• 清除变量：clear pi /clearvars pi inf   /恢复默认变量
+• 判别是否是关键字    iskeyword('for')
+• 数据输出格式
+Format rat 分子格式
+Format compact 压缩格式，不显示空白行
+• 常用函数
+指数函数：exp      以2对数：log2     自然对数：log
+取整: 四舍五入 round  正无穷方向取整  ceil 负无穷方向取整  floor  向零方向取整 fix 
+求余函数：rem     取模函数：mod
+反正弦：asin
+求复数实部：real       求复数虚部：imag        求共轭复数：conj
+求平均值：mean    标准差：std     方差：var     协方差：cov
+相关系数：corrcoef                极差：range      
+符号函数：sign    例sign(x)求 x 中元素的符号
+• 规模化定义向量
+X = 初值：步长：终值/初值：终值
+X = linspace(初值，终值，向量长度）  用来生成等间隔向量    
+• 向量与矩阵的转换
+X = A(:)            % 矩阵A转为列向量x
+A = reshape(x, [m, n])    % 将长度为m*n的向量x转换为m行n列矩阵
+• 按指定阵列复制矩阵
+B = repmat(A,[2, 3])      % 复制矩阵A按行方向复制两次，列方向复制3次
+• 复数矩阵
+C = complex(a, b)            % 以a为实部，b为虚部生成复数矩阵   a, b 均为矩阵
+• 符号矩阵
+Y = sym(y)  % 将数值矩阵y转换为符号矩阵Y
+Z = sym('a%d%d',[2,3])     % 其中%d、%d按照下标进行赋值
+特殊矩阵    zeros(size(A)）生成与A相同大小的零矩阵
+对角阵  diag      X  = diag(v,k)    以向量v为第k个对角线生成对角矩阵
+X  = diag(v)  以v为主对角线生成对角阵
+v  = diag(X, k)   返回矩阵X的第k条对角线上元素   省略k时默认为主对角线
+• 元胞数组
+&lt;1&gt; 直接用花括号赋值创建；&lt;2&gt; cell(m, n, p···)创建空元胞数组
+访问元胞：C(i,j)           访问元胞中的元素：C&#123;I,j&#125;          celldisp显示元胞数组里面所有内容
+• 结构体数组
+&lt;1&gt; 直接赋值定义  struct1(n).attris           指定第n个结构体数组单元的各属性
+&lt;2&gt; struct函数构造    s  =struct('field1', values1, 'field2', values2····)
+Example: s  = struct('name', &#123;'Mark', 'Lucy'&#125;, 'age', &#123;31,22&#125;)
+• 数组转换
+str2func - 根据字符向量构造函数句柄  
+• 表格型数组（Table Class)
+工作区的变量定义为表格型
+T = table(Age, Height, Weight, Blood, 'RowNames', Name)      (其中各变量均为向量)
+访问 T.Height
+• 逻辑运算
+或运算：A|B   对应元素非零为1否则为0得到一个布尔矩阵
+与运算：A&amp;B 均非零
+非运算：~A 非零为零，零为1
+异或运算：xor(A,B)    均为零或均非零为零否则为1
+判断逻辑运算：A||B   判断A或B是否为零矩阵    A&amp;&amp;B
+• 逆矩阵   Ai = inv(A)    % 求A的逆矩阵
+[V, D] = eig(A)      % 求数值矩阵A的特征值D和特征向量矩阵V  （D为对角阵）
+矩阵的迹  t  =trace(A)
+矩阵的秩  r  = rank(A)
+</code></pre>
+<p><strong>附录——常用数组转换函数</strong><br />
+<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172805394-926335148.png" alt="" /></p>
+]]></content>
       <categories>
-          
-          <category> cat1 </category>
-          
+        <category>cat1</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> tag1 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Markdown学习</title>
-      <link href="/2022/02/12/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2022/02/12/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h2 id="一、基本操作语法"><a href="#一、基本操作语法" class="headerlink" title="一、基本操作语法"></a>一、基本操作语法</h2><h3 id="1-1-基本格式"><a href="#1-1-基本格式" class="headerlink" title="1.1 基本格式"></a>1.1 基本格式</h3><p><1> 设置标题前后均留有空格</p><p><2> 加粗:</p><p><strong>加粗示例1（较推荐）</strong></p><p><strong>加粗示例2</strong></p><p><3> 斜体：</p><p><em>斜体示例1(较推荐）</em></p><p><em>斜体示例2</em></p><h3 id="1-2-段落和换行"><a href="#1-2-段落和换行" class="headerlink" title="1.2 段落和换行"></a>1.2 段落和换行</h3><h4 id="没有空行示例"><a href="#没有空行示例" class="headerlink" title="没有空行示例"></a>没有空行示例</h4><p>第一行<br>第二行</p><h4 id="有空行示例"><a href="#有空行示例" class="headerlink" title="有空行示例"></a>有空行示例</h4><p>第一行</p><p>第二行</p><h4 id="段内换行"><a href="#段内换行" class="headerlink" title="段内换行"></a>段内换行</h4><p>第一行，如果在段内换行需要在结尾插入两个及以上的空格<br>第二行</p><h3 id="1-3-有序列表"><a href="#1-3-有序列表" class="headerlink" title="1.3 有序列表"></a>1.3 有序列表</h3><h4 id="有序列表示例"><a href="#有序列表示例" class="headerlink" title="有序列表示例"></a>有序列表示例</h4><p>(数字序号+英文句号+空格+列表内容)  </p><ol><li>我有一个梦想  </li><li>我有两个梦想  </li><li>我有三个梦想  </li></ol><h3 id="1-4-无序列表"><a href="#1-4-无序列表" class="headerlink" title="1.4 无序列表"></a>1.4 无序列表</h3><h4 id="无序列表示例"><a href="#无序列表示例" class="headerlink" title="无序列表示例"></a>无序列表示例</h4><p>(*/+/- + 空格 + 列表内容)</p><h5 id="使用星号"><a href="#使用星号" class="headerlink" title="使用星号"></a>使用星号</h5><ul><li>我有一个梦想</li><li>我有两个梦想</li><li>我有三个梦想<br>（其他标记效果相同）  </li></ul><h3 id="1-5-嵌套列表"><a href="#1-5-嵌套列表" class="headerlink" title="1.5 嵌套列表"></a>1.5 嵌套列表</h3><h4 id="语法示例"><a href="#语法示例" class="headerlink" title="语法示例"></a>语法示例</h4><p>在第一层列表上，每一层多一个TAB键    </p><ul><li>我有一个梦想<ul><li>你有一个梦想<ul><li>她有一个梦想<ul><li>他有一个梦想<br>(有序列表类似可以互相嵌套）    </li></ul></li></ul></li></ul></li></ul><p><strong><em>(建议使用-标记无序列表避免与粗体和斜体混淆)</em></strong>  </p><h3 id="1-6-分割线"><a href="#1-6-分割线" class="headerlink" title="1.6 分割线"></a>1.6 分割线</h3><h4 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h4><p>分割线由3个及以上的<em>/-/_来标记，对应效果不同。<br><em>*分割线示例</em></em>  </p><ul><li>星号</li></ul><hr><hr><hr><ul><li>减号</li></ul><hr><h2 id=""><a href="#" class="headerlink" title="- - -"></a>- - -</h2><ul><li>下画线  </li></ul><hr><hr><hr><h2 id="二、图片文件操作"><a href="#二、图片文件操作" class="headerlink" title="二、图片文件操作"></a>二、图片文件操作</h2><h3 id="2-1-插入图片"><a href="#2-1-插入图片" class="headerlink" title="2.1 插入图片"></a>2.1 插入图片</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><ul><li><p>本地图片<br>（支持相对路径和绝对路径）<br><img src="D:/VisualStudioIDE/background/1.png" alt="本地图片">  </p></li><li><p>网络图片<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fd5f14e00482699c1c3b3509142b16f88126deff7.jpg&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1666447219&amp;t=b8c922e69db81319d3dc686fb66a0e53" alt="网络图片"> </p></li></ul><h3 id="2-2-链接"><a href="#2-2-链接" class="headerlink" title="2.2 链接"></a>2.2 链接</h3><h4 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h4><h5 id="文字链接"><a href="#文字链接" class="headerlink" title="文字链接"></a>文字链接</h5><p><strong><a href="链接地址">链接文字</a></strong><br>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a>   </p><h5 id="引用链接"><a href="#引用链接" class="headerlink" title="引用链接"></a>引用链接</h5><p>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a>  </p><p>语法说明如下：</p><ul><li>链接标记可以有字母、数字、空格和标点符号；</li><li>链接标记不区分大小写；</li><li>定义的链接内容可以放在当前文件的任意位置，建议放在页尾；</li><li>当链接地址为网络地址时要以http/https开头，否则会被识别为本地地址。  <h4 id="网址链接"><a href="#网址链接" class="headerlink" title="网址链接"></a>网址链接</h4>在Markdown中，将网络地址或邮箱地址使用＜＞包裹起来会被自动转换为超链接。<br><strong>邮箱链接示例</strong><br>获取更多信息，请访问MarkStiff的邮箱<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#76;&#x5a;&#x48;&#x31;&#51;&#x31;&#52;&#53;&#50;&#49;&#x6c;&#x69;&#x67;&#x61;&#x6f;&#x40;&#49;&#54;&#51;&#46;&#x63;&#x6f;&#109;">&#76;&#x5a;&#x48;&#x31;&#51;&#x31;&#52;&#53;&#50;&#49;&#x6c;&#x69;&#x67;&#x61;&#x6f;&#x40;&#49;&#54;&#51;&#46;&#x63;&#x6f;&#109;</a>   <h4 id="链接标题"><a href="#链接标题" class="headerlink" title="链接标题"></a>链接标题</h4>如果想了解关于Markdown的更多信息，请查看<a href="基本操作学习.md">Markdown指南</a>   </li></ul><h3 id="2-3-行内代码与代码块"><a href="#2-3-行内代码与代码块" class="headerlink" title="2.3 行内代码与代码块"></a>2.3 行内代码与代码块</h3><h4 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h4><p><strong>语法格式<code>Insert_Codes</code></strong>  </p><ul><li>使用<code>mkdir 文件夹</code>命令创建文件夹  </li></ul><h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p><strong>语法格式：Tab键或4个空格开头</strong> //注意代码块需要隔行</p><pre><code>//创建链表typedef struct Node&#123;    int data;    struct Node* next;&#125;node;  </code></pre><h3 id="2-4-引用"><a href="#2-4-引用" class="headerlink" title="2.4 引用"></a>2.4 引用</h3><p><strong>语法格式：&gt; + 引用内容</strong><br>语法说明如下：</p><ol><li>多行引用也可以在每一行的开头都插入＞；</li><li>在引用中可以嵌套引用；</li><li>在引用中可以使用其他的Markdown语法；</li><li>段落与换行的格式在引用中也是适用的。  </li></ol><h4 id="单行引用"><a href="#单行引用" class="headerlink" title="单行引用"></a>单行引用</h4><blockquote><p>基于改进的自约束差分进化算法的多目标优化模型  </p><h4 id="多行引用"><a href="#多行引用" class="headerlink" title="多行引用"></a>多行引用</h4><p>引用MarkStiff的博客文章<a href="https://www.cnblogs.com/MarkStiff/p/16716797.html">MarkStiff</a><br>算法介绍</p><h4 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h4><p>多目标优化模型</p><blockquote><p>差分进化算法</p><blockquote><p>改进的自约束处理  </p></blockquote></blockquote></blockquote><h3 id="2-5-转义"><a href="#2-5-转义" class="headerlink" title="2.5 转义"></a>2.5 转义</h3><p><strong>介绍</strong><br>当我们想在Markdown文件中插入一些标记符号，但又不想让这些符号被渲染时，可以使用 <code>\</code> 进行转义<br><strong>语法格式：\特殊字符</strong>  </p><pre><code>// 常见转义字符</code></pre><p>\   反斜线<br>`   反引号<br>*   星号<br>_   底线<br>{}  花括号<br>[]  方括号<br>()  括弧<br>#   井字号<br>+   加号<br>-   减号<br>.   英文句点<br>!   惊叹号  </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>tag1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++ Programming</title>
+    <url>/2022/05/16/C++%20Programming/</url>
+    <content><![CDATA[<h2 id="bfs算法"><a class="markdownIt-Anchor" href="#bfs算法"></a> BFS算法</h2>
+<p>1、可以考虑压缩状态空间，用bool数组进行存储时将其转换为bool8个位，用一个整数存储即可<br />
+2、A*算法</p>
+<pre><code>Astr 、估价函数    
+BFS 层次分析，状态压缩，进行整理总结能够简化运算  
+DFS 不能进行状态压缩   
+数据结构（增删改查）——树（决策树、搜索树）    
+数据结构都是描述数据的关联性的，    
+</code></pre>
+<h2 id="二叉树存储"><a class="markdownIt-Anchor" href="#二叉树存储"></a> 二叉树存储：</h2>
+<p>1、数组：关系用位置存储，存储结点<br />
+2、链表存储：类似双向链表，<code>Lchild data Rchild</code><br />
+3、三叉链表存储：作用是双向搜索<br />
+先序遍历，循环递推结构<br />
+<strong>程序设计：</strong><br />
+1、不确定行为<code>bug：</code>未初始化值、数组越界、带符号整数溢出<br />
+2、命名空间：</p>
+<pre><code>Namespace fluke
+&#123;
+       const int m = 999999;
+       poly poly_mul(poly a,poly b);
+&#125;
+</code></pre>
+<p>3、竞赛头文件：<code>#include&lt;bits/stdc++.h&gt;</code><br />
+4、寻找指定数据所在范围</p>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int main()
+&#123;
+	int a[] = &#123; 1,1,4,5,1,4 &#125;;
+	sort(a, a + 6);
+	int l = lower_bound(a, a + 6, 4) - a;
+	int r = upper_bound(a, a + 6, 4) - a;
+	cout &lt;&lt; l &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;
+	return 0;
+&#125;
+</code></pre>
+<p>5、二分查找函数</p>
+<pre><code>int recursive(vector&lt;int&gt;  arg)
+&#123;
+	if (arg == final_state)
+		return 114;
+	vector&lt;int&gt; new_state1 = get(arg);
+	vector&lt;int&gt; new_state2 = get(arg);
+	return recuresive(new_state1) + recuresive(new_state2) + 514;
+&#125;
+</code></pre>
+<p>6、重载运算符：</p>
+<pre><code>Struct vec
+&#123;
+        int x, y;
+        long long len() &#123;…&#125;
+        bool operator &lt; &#123;const vec &amp;rhs&#125; const
+        &#123;
+                return len() &lt;= rhs.len();
+        &#125;
+        long long operator *(const vec &amp;rhs)  const
+        &#123;
+                 return 111 * x * rhs.x + 111 * y * rhs.y;
+         &#125;
+        long long operator ^(const vec &amp;rhs) const
+        &#123;
+                 return 111 * x * rhs.y - 111 * y * rhs.x;
+        &#125;
+&#125;;
+</code></pre>
+<p>7、<code>std::set</code>数据结构(基于有序的数据结构具体是二叉搜索树）</p>
+<pre><code>Int main()
+&#123;
+     set&lt;int&gt; s = &#123;1,1,4,5,1,4&#125;;
+     for(int a: s)                        #简便写法类似python中的可迭代对象
+            cout &lt;&lt; a &lt;&lt; &quot;\n&quot;;
+&#125;
+</code></pre>
+<p><code>multiset</code>数据结构和<code>set</code>类似，只不过允许数据重复，插入时即是有序的<br />
+8、映射数据结构</p>
+<pre><code>map&lt;string, int&gt; mp = &#123;
+		&#123;&quot;Monday&quot;,1&#125;,&#123;&quot;Tuesday&quot;,2&#125;,&#123;&quot;Wenesday&quot;,3&#125;
+	&#125;;
+	cout &lt;&lt; mp[&quot;Tuesday&quot;] &lt;&lt; &quot;\n&quot;;
+	cout &lt;&lt; mp.lower_bound(&quot;Tue&quot;)-&gt;first &lt;&lt; '\n';
+	cout &lt;&lt; mp.upper_bound(&quot;Tue&quot;)-&gt;second &lt;&lt; '\n';
+&gt;&gt;2
+&gt;&gt;Tuesday
+&gt;&gt;2
+</code></pre>
+<p>9、加快输入输出流的速度：</p>
+<pre><code>ios::sync_with_stdio(false);
+	cin.tie(0);
+用来加快cin、cout的速率
+</code></pre>
+<p>10、<code>cout &lt;&lt; x+y &lt;&lt; '\n' &lt;&lt; flush;</code>强行刷新缓冲区，使数据立即输出<br />
+11、移位运算</p>
+<pre><code>a &lt;&lt;= 10  //a * 1024;
+a &lt;&lt;= k   //a * 2^k;
+b &gt;&gt;= k   //a / 2^k;
+a |= (1 &lt;&lt; 10);  //将a的二进制第十一位换成1，进行调节
+a &amp; 1 // a % 2
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>串</title>
+    <url>/2022/09/28/%E4%B8%B2/</url>
+    <content><![CDATA[<h2 id="数据结构串"><a class="markdownIt-Anchor" href="#数据结构串"></a> 数据结构——串</h2>
+<p>(字符串实现与操作）</p>
+<pre><code>pass
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>分治与倍增</title>
+    <url>/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/</url>
+    <content><![CDATA[<hr />
+<h4 id="double-powdouble-x-double-y"><a class="markdownIt-Anchor" href="#double-powdouble-x-double-y"></a> <code>Double pow(double x, double y)</code></h4>
+<h4 id="倍增算法"><a class="markdownIt-Anchor" href="#倍增算法"></a> 倍增算法：</h4>
+<p>倍增 从字面的上意思看就是成倍的增长 ,这是指我们在进行递推时,如果状态空间很大,通常的线性递推无法满足时间和空间复杂度的要求 ,那么我们就可以通过成倍的增长,只递推状态空间中在 2 的整数次幂位置上的值作为代表 。当需要其他位置上的值时,我们只需要通过&quot; 任意整数可以表示成若干个2的次幂项的和 &quot; 这一性质<code>(13 = 2^3 + 2^2 +2^0)</code>, 使用之前求出的代表值拼成所需的值。<br />
+核心思想：不断以2的次幂的跨度向前试探，行进跨度，不行就降幂，迭代可以表示任意整数</p>
+<h4 id="倍增主要应用"><a class="markdownIt-Anchor" href="#倍增主要应用"></a> 倍增主要应用：</h4>
+<p><code>LCA(least common ancestors)</code>:最近公共祖先<br />
+在有根树中，找出某两个结点u和v最近的公共祖先。<br />
+<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929170840386-1257726897.png" alt="" /><br />
+在寻找两个节点的公共祖先时，按2的指数来跳，并且从大到小，……32, 16, 8 , 4 , 2, 1 【从大到小试探】</p>
+<h4 id="数据预处理"><a class="markdownIt-Anchor" href="#数据预处理"></a> 数据预处理：</h4>
+<p>处理结点的深度、父节点、以及2i级的祖先<br />
+<strong>开辟数组：</strong></p>
+<pre><code>	&lt;1&gt;  depth数组是记录每个节点的深度
+	&lt;2&gt;  fa[i][j]是指节点 i 的 2j 级的祖先的编号
+	&lt;3&gt; lg数组是常数优化的数组，存的是log2N+1的值，注意用的时候要-1，开始之前先初始化一下，这样直接调用可以优化节约时间其中初始化的方法：l g [ i ] = l g [ i − 1 ] + ( 1 &lt; &lt; l g [ i − 1 ] = = i ) lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i)lg[i]=lg[i−1]+(1&lt;&lt;lg[i−1]==i)，自己手算一下很清楚的（lg[1~10]为1 2 2 3 3 3 3 4 4 4，应该很好懂吧）
+</code></pre>
+<p><strong>手写对数运算lg2[i]:</strong></p>
+<pre><code>	over(i,1,n)//预处理一下 
+	lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;
+
+	#include&lt;iostream&gt;
+	#include&lt;stdio.h&gt;
+	#include&lt;string.h&gt;
+	#include&lt;algorithm&gt;
+	#include&lt;queue&gt;
+	#include&lt;math.h&gt;
+	//可以学习宏定义简便写法
+	#define ls (p&lt;&lt;1)  //取半
+	#define rs (p&lt;&lt;1|1)   //取半加一
+	#define mid (l+r)/2
+	#define over(i,s,t) for(register long long i=s;i&lt;=t;++i)   //循环的简写 
+	#define lver(i,t,s) for(register long long i=t;i&gt;=s;--i)
+	
+	using namespace std;
+	typedef long long ll;//全用ll可能会MLE或者直接WA,试着改成int看会不会A
+	const ll N=500007;
+	const ll INF=1e9+9;
+	const ll mod=2147483647;
+	const double EPS=1e-10;//-10次方约等于趋近为0
+	const double Pi=3.1415926535897;
+	ll n,m;
+	//前向星写法的数据结构实现：
+	struct node
+	&#123;
+	    ll u,v,nex;
+	&#125;e[N&lt;&lt;1];
+	ll head[N],cnt;
+	
+	void add(ll u,ll v)
+	&#123;
+	    e[++cnt].v=v;    //记录边的终点
+	    e[cnt].u=u;//没什么用，还白占空间
+	    e[cnt].nex=head[u];     //以u为起点的上一条边，往往更喜欢写做pre
+	    head[u]=cnt;    //更新以u为起点的上一条边
+	&#125;
+	ll depth[N],fa[N][30],lg[N],s,x,y;
+	
+	/*dfs函数的作用就是更新该点的所有祖先的fa数组，并通过递归把
+	该节点的所有的子节点和该节点一样去更新*/
+	void dfs(ll now,ll fath)//子节点和父节点
+	&#123;
+	    fa[now][0]=fath;//更新一下fa数组，2^0=1就是父节点
+	    depth[now]=depth[fath]+1;//更新深度，递归的思想
+	    over(i,1,lg[depth[now]]-1)
+	        fa[now][i]=fa[fa[now][i-1]][i-1];
+	        /*更新now的所有 2^i 级的祖先。先找到now的2^(i-1)级祖先，再往上找
+	        该祖先的2^(i-1)级祖先，就是now的2^i祖先，必须一节一节地往上搜*/
+	    for(ll i=head[now];i;i=e[i].nex)//链式前向星遍历
+	        //如果now有子节点的话，就递归往子节点的子节点走（禁止套娃）
+	        ll v = e[i].v;
+	        if(v == fath) continue;
+		dfs(e[i].v,now);
+	&#125;
+
+	inline ll LCA(ll x,ll y)
+	&#123;
+	    if(depth[x]&lt;depth[y])//用数学语言就是说不妨设x的深度比y的深度大
+	        swap(x,y);//这样下面只需要写一种代码就好了
+	    while(depth[x]&gt;depth[y])
+	        //让x跳到y的高度（同一高度）
+	        x=fa[x][lg[depth[x]-depth[y]]-1];
+	    //如果跳到一块了那LCA肯定就是y了
+	    if(x==y)
+	        return x;
+	    for(ll k=lg[depth[x]]-1;k&gt;=0;--k)//倒着从大到小地跳
+	        /*因为我们要求跳到x和y的LCA的下一层，所以没有跳到的时候就
+	        让x和y利用dfs里早就用倍增算法处理过的祖先路径快速地一块往上跳*/
+	        if(fa[x][k]!=fa[y][k])
+	            x=fa[x][k],y=fa[y][k];//往上跳
+	    return fa[x][0];//返回x，y的父节点（肯定是相同的嘛）
+	&#125;
+	int main()
+	&#123;
+	    scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;s);
+	    over(i,1,n-1)
+	    &#123;
+	        scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);
+	        add(x,y),add(y,x);//无向图一定要记得建双向边
+	    &#125;
+	    over(i,1,n)//预处理一下
+	    lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;
+	    dfs(s,0);//从树根开始，因为用的是链式前向星所以给一个假想根0（其实就是到这儿停）
+	    //dfs一下，预处理各点的深度和祖先
+	    over(i,1,m)
+	    &#123;
+
+	        scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);
+	        printf(&quot;%lld\n&quot;,LCA(x,y));
+	    &#125;
+	    return 0;
+	&#125;
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>Markdown学习</title>
+    <url>/2022/02/12/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="一-基本操作语法"><a class="markdownIt-Anchor" href="#一-基本操作语法"></a> 一、基本操作语法</h2>
+<h3 id="11-基本格式"><a class="markdownIt-Anchor" href="#11-基本格式"></a> 1.1 基本格式</h3>
+<p>&lt;1&gt; 设置标题前后均留有空格</p>
+<p>&lt;2&gt; 加粗:</p>
+<p><strong>加粗示例1（较推荐）</strong></p>
+<p><strong>加粗示例2</strong></p>
+<p>&lt;3&gt; 斜体：</p>
+<p><em>斜体示例1(较推荐）</em></p>
+<p><em>斜体示例2</em></p>
+<h3 id="12-段落和换行"><a class="markdownIt-Anchor" href="#12-段落和换行"></a> 1.2 段落和换行</h3>
+<h4 id="没有空行示例"><a class="markdownIt-Anchor" href="#没有空行示例"></a> 没有空行示例</h4>
+<p>第一行<br />
+第二行</p>
+<h4 id="有空行示例"><a class="markdownIt-Anchor" href="#有空行示例"></a> 有空行示例</h4>
+<p>第一行</p>
+<p>第二行</p>
+<h4 id="段内换行"><a class="markdownIt-Anchor" href="#段内换行"></a> 段内换行</h4>
+<p>第一行，如果在段内换行需要在结尾插入两个及以上的空格<br />
+第二行</p>
+<h3 id="13-有序列表"><a class="markdownIt-Anchor" href="#13-有序列表"></a> 1.3 有序列表</h3>
+<h4 id="有序列表示例"><a class="markdownIt-Anchor" href="#有序列表示例"></a> 有序列表示例</h4>
+<p>(数字序号+英文句号+空格+列表内容)</p>
+<ol>
+<li>我有一个梦想</li>
+<li>我有两个梦想</li>
+<li>我有三个梦想</li>
+</ol>
+<h3 id="14-无序列表"><a class="markdownIt-Anchor" href="#14-无序列表"></a> 1.4 无序列表</h3>
+<h4 id="无序列表示例"><a class="markdownIt-Anchor" href="#无序列表示例"></a> 无序列表示例</h4>
+<p>(*/+/- + 空格 + 列表内容)</p>
+<h5 id="使用星号"><a class="markdownIt-Anchor" href="#使用星号"></a> 使用星号</h5>
+<ul>
+<li>我有一个梦想</li>
+<li>我有两个梦想</li>
+<li>我有三个梦想<br />
+（其他标记效果相同）</li>
+</ul>
+<h3 id="15-嵌套列表"><a class="markdownIt-Anchor" href="#15-嵌套列表"></a> 1.5 嵌套列表</h3>
+<h4 id="语法示例"><a class="markdownIt-Anchor" href="#语法示例"></a> 语法示例</h4>
+<p>在第一层列表上，每一层多一个TAB键</p>
+<ul>
+<li>我有一个梦想
+<ul>
+<li>你有一个梦想
+<ul>
+<li>她有一个梦想
+<ul>
+<li>他有一个梦想<br />
+(有序列表类似可以互相嵌套）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>(建议使用-标记无序列表避免与粗体和斜体混淆)</em></strong></p>
+<h3 id="16-分割线"><a class="markdownIt-Anchor" href="#16-分割线"></a> 1.6 分割线</h3>
+<h4 id="基本格式"><a class="markdownIt-Anchor" href="#基本格式"></a> 基本格式</h4>
+<p>分割线由3个及以上的*/-/_来标记，对应效果不同。<br />
+<strong>分割线示例</strong></p>
+<ul>
+<li>星号</li>
+</ul>
+<hr />
+<hr />
+<hr />
+<ul>
+<li>减号</li>
+</ul>
+<hr />
+<hr />
+<hr />
+<ul>
+<li>下画线</li>
+</ul>
+<hr />
+<hr />
+<hr />
+<h2 id="二-图片文件操作"><a class="markdownIt-Anchor" href="#二-图片文件操作"></a> 二、图片文件操作</h2>
+<h3 id="21-插入图片"><a class="markdownIt-Anchor" href="#21-插入图片"></a> 2.1 插入图片</h3>
+<h4 id="基本语法"><a class="markdownIt-Anchor" href="#基本语法"></a> 基本语法</h4>
+<ul>
+<li>
+<p>本地图片<br />
+（支持相对路径和绝对路径）<br />
+<img src="D:/VisualStudioIDE/background/1.png" alt="本地图片" /></p>
+</li>
+<li>
+<p>网络图片<br />
+<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fd5f14e00482699c1c3b3509142b16f88126deff7.jpg&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1666447219&amp;t=b8c922e69db81319d3dc686fb66a0e53" alt="网络图片" /></p>
+</li>
+</ul>
+<h3 id="22-链接"><a class="markdownIt-Anchor" href="#22-链接"></a> 2.2 链接</h3>
+<h4 id="基本语法-2"><a class="markdownIt-Anchor" href="#基本语法-2"></a> 基本语法</h4>
+<h5 id="文字链接"><a class="markdownIt-Anchor" href="#文字链接"></a> 文字链接</h5>
+<p><strong><a href="%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80">链接文字</a></strong><br />
+经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a></p>
+<h5 id="引用链接"><a class="markdownIt-Anchor" href="#引用链接"></a> 引用链接</h5>
+<p>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a></p>
+<p>语法说明如下：</p>
+<ul>
+<li>链接标记可以有字母、数字、空格和标点符号；</li>
+<li>链接标记不区分大小写；</li>
+<li>定义的链接内容可以放在当前文件的任意位置，建议放在页尾；</li>
+<li>当链接地址为网络地址时要以http/https开头，否则会被识别为本地地址。</li>
+</ul>
+<h4 id="网址链接"><a class="markdownIt-Anchor" href="#网址链接"></a> 网址链接</h4>
+<p>在Markdown中，将网络地址或邮箱地址使用＜＞包裹起来会被自动转换为超链接。<br />
+<strong>邮箱链接示例</strong><br />
+获取更多信息，请访问MarkStiff的邮箱<a href="mailto:LZH1314521ligao@163.com">LZH1314521ligao@163.com</a></p>
+<h4 id="链接标题"><a class="markdownIt-Anchor" href="#链接标题"></a> 链接标题</h4>
+<p>如果想了解关于Markdown的更多信息，请查看<a href="%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0.md">Markdown指南</a></p>
+<h3 id="23-行内代码与代码块"><a class="markdownIt-Anchor" href="#23-行内代码与代码块"></a> 2.3 行内代码与代码块</h3>
+<h4 id="行内代码"><a class="markdownIt-Anchor" href="#行内代码"></a> 行内代码</h4>
+<p><strong>语法格式<code>Insert_Codes</code></strong></p>
+<ul>
+<li>使用<code>mkdir 文件夹</code>命令创建文件夹</li>
+</ul>
+<h4 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h4>
+<p><strong>语法格式：Tab键或4个空格开头</strong> //注意代码块需要隔行</p>
+<pre><code>//创建链表
+typedef struct Node&#123;
+    int data;
+    struct Node* next;
+&#125;node;  
+</code></pre>
+<h3 id="24-引用"><a class="markdownIt-Anchor" href="#24-引用"></a> 2.4 引用</h3>
+<p><strong>语法格式：&gt; + 引用内容</strong><br />
+语法说明如下：</p>
+<ol>
+<li>多行引用也可以在每一行的开头都插入＞；</li>
+<li>在引用中可以嵌套引用；</li>
+<li>在引用中可以使用其他的Markdown语法；</li>
+<li>段落与换行的格式在引用中也是适用的。</li>
+</ol>
+<h4 id="单行引用"><a class="markdownIt-Anchor" href="#单行引用"></a> 单行引用</h4>
+<blockquote>
+<p>基于改进的自约束差分进化算法的多目标优化模型</p>
+</blockquote>
+<h4 id="多行引用"><a class="markdownIt-Anchor" href="#多行引用"></a> 多行引用</h4>
+<blockquote>
+<p>引用MarkStiff的博客文章<a href="https://www.cnblogs.com/MarkStiff/p/16716797.html">MarkStiff</a><br />
+算法介绍</p>
+</blockquote>
+<h4 id="嵌套引用"><a class="markdownIt-Anchor" href="#嵌套引用"></a> 嵌套引用</h4>
+<blockquote>
+<p>多目标优化模型</p>
+<blockquote>
+<p>差分进化算法</p>
+<blockquote>
+<p>改进的自约束处理</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="25-转义"><a class="markdownIt-Anchor" href="#25-转义"></a> 2.5 转义</h3>
+<p><strong>介绍</strong><br />
+当我们想在Markdown文件中插入一些标记符号，但又不想让这些符号被渲染时，可以使用 <code>\</code> 进行转义<br />
+<strong>语法格式：\特殊字符</strong></p>
+<pre><code>// 常见转义字符
+</code></pre>
+<p>\   反斜线<br />
+`   反引号<br />
+*   星号<br />
+_   底线<br />
+{}  花括号<br />
+[]  方括号<br />
+()  括弧<br />
+#   井字号<br />
++   加号<br />
+-   减号<br />
+.   英文句点<br />
+!   惊叹号</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>数模C题</title>
+    <url>/2022/05/13/%E6%95%B0%E6%A8%A1C%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="数模c题总结"><a class="markdownIt-Anchor" href="#数模c题总结"></a> 数模C题总结</h2>
+<h4 id="第一部分问题分析"><a class="markdownIt-Anchor" href="#第一部分问题分析"></a> 第一部分——问题分析</h4>
+<p>拆分问题，将各个问题进行拆分，尤其是效果分析类的</p>
+<h4 id="第一部分数据预处理"><a class="markdownIt-Anchor" href="#第一部分数据预处理"></a> 第一部分——数据预处理</h4>
+<p><strong>数据探索性分析</strong></p>
+<pre><code>箱型图======&gt;探究是否有偏好情况=======&gt;决定了之后问题解决是否要考虑材料种类差异
+对数直方图、洛伦兹图======&gt;探究数据是否存在数量级差异以及数据的均衡程度
+散点图======&gt;探究数据的分布情况
+</code></pre>
+<h4 id="第二部分评价类"><a class="markdownIt-Anchor" href="#第二部分评价类"></a> 第二部分——评价类</h4>
+<p><strong>熵权法-TOPSIS</strong></p>
+<pre><code>叙述:
+熵权法通过计算指标的信息熵，根据其相对变化程度对系统的整体影响来决定权重，避免了
+层次分析法等主观赋权法的弊端，获取权重的客观性较强。在得到权重后， 利用 TOPSIS
+方法将它们综合， TOPSIS 法通过构建评价问题的正理想解和负理想解，计算每个方案到理
+想方案的相对贴近度来对方案进行排序，最终求解出最优方案。
+</code></pre>
+<h4 id="第三部分横纵向分析"><a class="markdownIt-Anchor" href="#第三部分横纵向分析"></a> 第三部分——横纵向分析</h4>
+<pre><code>模型构建分析时，直接显著点出横向角度和纵向角度（一般有时间）来分析
+核密度曲线
+季节性分解
+</code></pre>
+<p><em>机会约束叙述：</em><br />
+<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172332648-38102188.png" alt="" /></p>
+<pre><code>蒙特卡洛法
+针状图====&gt;检验有效数据的完整性      
+</code></pre>
+<h4 id="第四部分方案实施效果分析"><a class="markdownIt-Anchor" href="#第四部分方案实施效果分析"></a> 第四部分——方案实施效果分析</h4>
+<pre><code>绘制数据结果图=====&gt;结合图像说明或解释
+变化面积图
+置信因子α灵敏度分析:
+分别取置信因子α=0.85， 0.9， 0.95对约束进行松弛，可以得到丌同的决策集合。
+随着置信度𝛼的上升，随机变量𝜉的少数极端抖动造成约束条件难以满足， 迫使企
+业需要增大订单量来对冲风险，亍是表现为总订单额的升高。
+类似的，对亍转运损失率，随着置信度𝛼的上升，转运损失率也在违约率高的周
+内相应明显升高，这也进一步印证了前文关亍损失率和违约率的机理猜测。    
+</code></pre>
+<h4 id="第五部分惩罚因子"><a class="markdownIt-Anchor" href="#第五部分惩罚因子"></a> 第五部分——惩罚因子</h4>
+<pre><code>问题三只在问题二的基础上改变了一点要求，即尽量多地采购A 类和尽量少地采购C类原材料，
+可以考虑为每立方米 A、 B、 C 三种材料分别赋予惩罚因子为 1、 5、10，以惩罚函数最小为目标，约束同问题二，建立右图所示的觃划模型。转运方案制定不方案实施效果分析同问题二。
+</code></pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>算法竞赛——概述</title>
+    <url>/2022/04/28/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E2%80%94%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h2 id="算法竞赛"><a class="markdownIt-Anchor" href="#算法竞赛"></a> 算法竞赛</h2>
+<hr />
+<h3 id="卡常技巧"><a class="markdownIt-Anchor" href="#卡常技巧"></a> 卡常技巧</h3>
+<p><img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929165652647-2103037728.png" alt="" /></p>
+<p>注：最终的取模操作或者是在中间过程取模，使得不出现负数的余数</p>
+<h3 id="rand函数生成随机数时一定要考虑rand_max的值"><a class="markdownIt-Anchor" href="#rand函数生成随机数时一定要考虑rand_max的值"></a> rand（）函数生成随机数时一定要考虑RAND_MAX的值</h3>
+<h3 id="函数调用时对其参数求值的顺序就是未指定的"><a class="markdownIt-Anchor" href="#函数调用时对其参数求值的顺序就是未指定的"></a> 函数调用时，对其参数求值的顺序就是未指定的。</h3>
+<h3 id="评测系统返回的错误信息"><a class="markdownIt-Anchor" href="#评测系统返回的错误信息"></a> 评测系统返回的错误信息：</h3>
+<pre><code>* CE(compiler error): 无法编译成可执行文件（不算罚时)
+* TL(TIMELIMIT):时间超限
+* RE(RUN-ERROR):
+	○ return返回值非0，未正常退出
+	○ 也可能是内存超限
+	○ 内存开得过大也可能报错
+* OL(OUTPUT-LIMIT):输出超限
+	○ 可能陷入了带输出的死循环
+	○ 忘记删除调试输出
+	○ 有时只是WA的一种表现形式
+* WA(WRONG-ANSWER):
+	○ 空白字符(行末空格和文末回车），因此每行应以&quot;\n&quot;结束
+</code></pre>
+<h3 id="栈"><a class="markdownIt-Anchor" href="#栈"></a> 栈</h3>
+<pre><code>Ø 栈溢出主要表现：
+	○ RUN-ERROR
+	○ 段错误
+	○ segmentation fault (core dumped)
+Ø 预防排查
+	○    避免死递归
+	○ 热身赛可以测试评测系统是否调整了栈空间
+	○ 全局变量：
+	不要将巨大的数组或结构体声明为自动局部变量或按值传递的参数，可以开全局或者静态变量，通过指针/引用传递
+</code></pre>
+<h3 id="整数溢出"><a class="markdownIt-Anchor" href="#整数溢出"></a> 整数溢出</h3>
+<p>未定义行为：<br />
+§ 带符号整数算术运算溢出<br />
+§ 移位位数超过整数位数<br />
+§ 使用 scanf 读取数字时，输入超过格式化字符串指定的表示范围<br />
+§ 浮点数转化为整数时，其值超过了整数类型能表示的范围<br />
+以下行为可能导致出人意料的结果：<br />
+§ 无符号整数算术运算溢出 (丢弃高位)<br />
+§ 使用 cin 读取数字时，输入超过变量的表示范围 (读入错误的值，并设定 failbit)<br />
+§ 整数类型互相转化时高位被丢弃<br />
+§ 浮点数转化为整数时小数部分被截断<br />
+§ 浮点数精度问题导致负0的出现</p>
+<h3 id="常见错误的预防和排查"><a class="markdownIt-Anchor" href="#常见错误的预防和排查"></a> 常见错误的预防和排查</h3>
+<pre><code>I 开始编码前预先考虑好输入、中间结果、最终结果的可能范围 
+I 该取模的模（指中间过程就开始取模运算，因为结果直接取模一般没必要） 
+I 该开 64 位和 128 位整数的开 
+I 该转型的转：1ll * a * b（转换成long long型的避免运算时结果溢出）
+I 该换语言的换（指python方便处理时用）
+I 该写高精度的写（不能用python时，必要就写） 
+I 打开编译器相关警告选项（辅助） 
+I 编造数据测试是否有溢出 
+I 如果测试过程中发现溢出，打开运行时检查工具 
+I 如果确实需要溢出，使用无符号整数 
+I 反对盲目蛮干
+</code></pre>
+<h3 id="无效指针"><a class="markdownIt-Anchor" href="#无效指针"></a> 无效指针</h3>
+<pre><code>Ø 未初始化的指针使用就是未定义行为 
+Ø 越出数组界限的指针 
+	○ 对不指向数组中元素的指针进行偏移运算是未定义的 
+	○ 对指向数组中元素的指针进行偏移运算，越出数组范围 (结果不指向同一数组中的元素，或该数组最后一个元素“之后的一个元素”)，行为是未定义的
+Ø 预防和排查
+	○ 数组开得尽量大
+	○ 对指针和数组下标进行必要检查
+	○ 打开运行时检查进行检查
+</code></pre>
+<h3 id="无效迭代器"><a class="markdownIt-Anchor" href="#无效迭代器"></a> 无效迭代器</h3>
+<p>在一些 (可能意想不到的) 情况下，迭代器会失效变成非法的<br />
+Ø 迭代器不能越界<br />
+Ø 例1：<br />
+预防与排查：<br />
+○ 不要滥用迭代器<br />
+○ 在range-based for循环中，不要对迭代的容器进行插入或删除操作<br />
+○ 在 set、map、multiset、multimap、list 等中进行删除操作时，可以使用 c.erase(it++) 的写法<br />
+对于 C<ins>11 以上，还支持 it = c.erase(it) 的写法<br />
+○ 如果怀疑使用了无效迭代器，可以打开 C</ins> 标准库的运行时检查</p>
+<h3 id="超时的分析"><a class="markdownIt-Anchor" href="#超时的分析"></a> 超时的分析</h3>
+<pre><code>Ø 算法的选择不合适
+Ø 算法合适，但某个细节未考虑，导致高次时间复杂度
+举例：
+	
+&lt;1&gt;循环多次调用strlen(s)，时间复杂度 O(n2)
+&lt;2&gt;对大的数组，如果每组数据用的数组内存较少而数据组数较多时，多次memset会做很多无用功，导致时间复杂度较高 O(mn)
+Ø 常数太大
+I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
+预防和排查：
+</code></pre>
+]]></content>
+  </entry>
 </search>
