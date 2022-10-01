@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MATLAB基本操作学习</title>
+    <url>/2022/03/27/MATLAB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="matlab基本操作学习"><a class="markdownIt-Anchor" href="#matlab基本操作学习"></a> MATLAB基本操作学习</h2>
+<pre><code>• 清除变量：clear pi /clearvars pi inf   /恢复默认变量
+• 判别是否是关键字    iskeyword('for')
+• 数据输出格式
+Format rat 分子格式
+Format compact 压缩格式，不显示空白行
+• 常用函数
+指数函数：exp      以2对数：log2     自然对数：log
+取整: 四舍五入 round  正无穷方向取整  ceil 负无穷方向取整  floor  向零方向取整 fix 
+求余函数：rem     取模函数：mod
+反正弦：asin
+求复数实部：real       求复数虚部：imag        求共轭复数：conj
+求平均值：mean    标准差：std     方差：var     协方差：cov
+相关系数：corrcoef                极差：range      
+符号函数：sign    例sign(x)求 x 中元素的符号
+• 规模化定义向量
+X = 初值：步长：终值/初值：终值
+X = linspace(初值，终值，向量长度）  用来生成等间隔向量    
+• 向量与矩阵的转换
+X = A(:)            % 矩阵A转为列向量x
+A = reshape(x, [m, n])    % 将长度为m*n的向量x转换为m行n列矩阵
+• 按指定阵列复制矩阵
+B = repmat(A,[2, 3])      % 复制矩阵A按行方向复制两次，列方向复制3次
+• 复数矩阵
+C = complex(a, b)            % 以a为实部，b为虚部生成复数矩阵   a, b 均为矩阵
+• 符号矩阵
+Y = sym(y)  % 将数值矩阵y转换为符号矩阵Y
+Z = sym('a%d%d',[2,3])     % 其中%d、%d按照下标进行赋值
+特殊矩阵    zeros(size(A)）生成与A相同大小的零矩阵
+对角阵  diag      X  = diag(v,k)    以向量v为第k个对角线生成对角矩阵
+X  = diag(v)  以v为主对角线生成对角阵
+v  = diag(X, k)   返回矩阵X的第k条对角线上元素   省略k时默认为主对角线
+• 元胞数组
+&lt;1&gt; 直接用花括号赋值创建；&lt;2&gt; cell(m, n, p···)创建空元胞数组
+访问元胞：C(i,j)           访问元胞中的元素：C&#123;I,j&#125;          celldisp显示元胞数组里面所有内容
+• 结构体数组
+&lt;1&gt; 直接赋值定义  struct1(n).attris           指定第n个结构体数组单元的各属性
+&lt;2&gt; struct函数构造    s  =struct('field1', values1, 'field2', values2····)
+Example: s  = struct('name', &#123;'Mark', 'Lucy'&#125;, 'age', &#123;31,22&#125;)
+• 数组转换
+str2func - 根据字符向量构造函数句柄  
+• 表格型数组（Table Class)
+工作区的变量定义为表格型
+T = table(Age, Height, Weight, Blood, 'RowNames', Name)      (其中各变量均为向量)
+访问 T.Height
+• 逻辑运算
+或运算：A|B   对应元素非零为1否则为0得到一个布尔矩阵
+与运算：A&amp;B 均非零
+非运算：~A 非零为零，零为1
+异或运算：xor(A,B)    均为零或均非零为零否则为1
+判断逻辑运算：A||B   判断A或B是否为零矩阵    A&amp;&amp;B
+• 逆矩阵   Ai = inv(A)    % 求A的逆矩阵
+[V, D] = eig(A)      % 求数值矩阵A的特征值D和特征向量矩阵V  （D为对角阵）
+矩阵的迹  t  =trace(A)
+矩阵的秩  r  = rank(A)
+</code></pre>
+<p><strong>附录——常用数组转换函数</strong><br />
+<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172805394-926335148.png" alt="" /></p>
+]]></content>
+      <categories>
+        <category>cat1</category>
+      </categories>
+      <tags>
+        <tag>tag1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++ Programming</title>
     <url>/2022/05/16/C++%20Programming/</url>
     <content><![CDATA[<h2 id="bfs算法"><a class="markdownIt-Anchor" href="#bfs算法"></a> BFS算法</h2>
@@ -113,75 +182,6 @@ a &amp; 1 // a % 2
 <pre><code>pass
 </code></pre>
 ]]></content>
-  </entry>
-  <entry>
-    <title>MATLAB基本操作学习</title>
-    <url>/2022/03/27/MATLAB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="matlab基本操作学习"><a class="markdownIt-Anchor" href="#matlab基本操作学习"></a> MATLAB基本操作学习</h2>
-<pre><code>• 清除变量：clear pi /clearvars pi inf   /恢复默认变量
-• 判别是否是关键字    iskeyword('for')
-• 数据输出格式
-Format rat 分子格式
-Format compact 压缩格式，不显示空白行
-• 常用函数
-指数函数：exp      以2对数：log2     自然对数：log
-取整: 四舍五入 round  正无穷方向取整  ceil 负无穷方向取整  floor  向零方向取整 fix 
-求余函数：rem     取模函数：mod
-反正弦：asin
-求复数实部：real       求复数虚部：imag        求共轭复数：conj
-求平均值：mean    标准差：std     方差：var     协方差：cov
-相关系数：corrcoef                极差：range      
-符号函数：sign    例sign(x)求 x 中元素的符号
-• 规模化定义向量
-X = 初值：步长：终值/初值：终值
-X = linspace(初值，终值，向量长度）  用来生成等间隔向量    
-• 向量与矩阵的转换
-X = A(:)            % 矩阵A转为列向量x
-A = reshape(x, [m, n])    % 将长度为m*n的向量x转换为m行n列矩阵
-• 按指定阵列复制矩阵
-B = repmat(A,[2, 3])      % 复制矩阵A按行方向复制两次，列方向复制3次
-• 复数矩阵
-C = complex(a, b)            % 以a为实部，b为虚部生成复数矩阵   a, b 均为矩阵
-• 符号矩阵
-Y = sym(y)  % 将数值矩阵y转换为符号矩阵Y
-Z = sym('a%d%d',[2,3])     % 其中%d、%d按照下标进行赋值
-特殊矩阵    zeros(size(A)）生成与A相同大小的零矩阵
-对角阵  diag      X  = diag(v,k)    以向量v为第k个对角线生成对角矩阵
-X  = diag(v)  以v为主对角线生成对角阵
-v  = diag(X, k)   返回矩阵X的第k条对角线上元素   省略k时默认为主对角线
-• 元胞数组
-&lt;1&gt; 直接用花括号赋值创建；&lt;2&gt; cell(m, n, p···)创建空元胞数组
-访问元胞：C(i,j)           访问元胞中的元素：C&#123;I,j&#125;          celldisp显示元胞数组里面所有内容
-• 结构体数组
-&lt;1&gt; 直接赋值定义  struct1(n).attris           指定第n个结构体数组单元的各属性
-&lt;2&gt; struct函数构造    s  =struct('field1', values1, 'field2', values2····)
-Example: s  = struct('name', &#123;'Mark', 'Lucy'&#125;, 'age', &#123;31,22&#125;)
-• 数组转换
-str2func - 根据字符向量构造函数句柄  
-• 表格型数组（Table Class)
-工作区的变量定义为表格型
-T = table(Age, Height, Weight, Blood, 'RowNames', Name)      (其中各变量均为向量)
-访问 T.Height
-• 逻辑运算
-或运算：A|B   对应元素非零为1否则为0得到一个布尔矩阵
-与运算：A&amp;B 均非零
-非运算：~A 非零为零，零为1
-异或运算：xor(A,B)    均为零或均非零为零否则为1
-判断逻辑运算：A||B   判断A或B是否为零矩阵    A&amp;&amp;B
-• 逆矩阵   Ai = inv(A)    % 求A的逆矩阵
-[V, D] = eig(A)      % 求数值矩阵A的特征值D和特征向量矩阵V  （D为对角阵）
-矩阵的迹  t  =trace(A)
-矩阵的秩  r  = rank(A)
-</code></pre>
-<p><strong>附录——常用数组转换函数</strong><br />
-<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172805394-926335148.png" alt="" /></p>
-]]></content>
-      <categories>
-        <category>cat1</category>
-      </categories>
-      <tags>
-        <tag>tag1</tag>
-      </tags>
   </entry>
   <entry>
     <title>分治与倍增</title>
