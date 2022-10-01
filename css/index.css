@@ -4624,7 +4624,7 @@ h1.page-title + .tag-cloud-list {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5000;
+  z-index: 1000;
   pointer-events: none;
 }
 .medium-zoom-image--opened {
