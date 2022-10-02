@@ -54,3 +54,11 @@ i:hover {
 #nav .site-page:hover {
   cursor: url('../coursor/Comix_White_Link.cur'), auto;
 }
+
+svg.icon {
+   width: 1em; height: 1em;
+   /* width和height定义图标的默认宽度和高度*/
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}

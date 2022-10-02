@@ -1397,11 +1397,21 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: #efefef;
+  background: -webkit-linear-gradient(left bottom, #009fff, #ec2f4b);
+  background: -moz-linear-gradient(left bottom, #009fff, #ec2f4b);
+  background: -o-linear-gradient(left bottom, #009fff, #ec2f4b);
+  background: -ms-linear-gradient(left bottom, #009fff, #ec2f4b);
+  background: linear-gradient(to right top, #009fff, #ec2f4b);
   background-attachment: local;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-animation: bganimation 10s infinite;
+  -moz-animation: bganimation 10s infinite;
+  -o-animation: bganimation 10s infinite;
+  -ms-animation: bganimation 10s infinite;
+  animation: bganimation 10s infinite;
+  background-size: 800%;
 }
 h1,
 h2,
@@ -6124,6 +6134,63 @@ blockquote.pullquote.right {
 .read-mode #article-container .note:before,
 .read-mode #article-container .note .note-icon {
   color: var(--font-color);
+}
+.canvas-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.read-mode .canvas-container {
+  display: none;
+}
+@-moz-keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes bganimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .search-dialog {
   position: fixed;
