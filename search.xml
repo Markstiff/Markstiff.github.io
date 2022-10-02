@@ -20,97 +20,169 @@ DFS 不能进行状态压缩
 <strong>程序设计：</strong><br />
 1、不确定行为<code>bug：</code>未初始化值、数组越界、带符号整数溢出<br />
 2、命名空间：</p>
-<pre><code>Namespace fluke
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Namespace fluke
 &#123;
-       const int m = 999999;
-       poly poly_mul(poly a,poly b);
-&#125;
-</code></pre>
+		const int m &#x3D; 999999;
+		poly poly_mul(poly a,poly b);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>3、竞赛头文件：<code>#include&lt;bits/stdc++.h&gt;</code><br />
 4、寻找指定数据所在范围</p>
-<pre><code>#include&lt;iostream&gt;
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
 #include&lt;algorithm&gt;
 using namespace std;
 int main()
 &#123;
-	int a[] = &#123; 1,1,4,5,1,4 &#125;;
+	int a[] &#x3D; &#123; 1,1,4,5,1,4 &#125;;
 	sort(a, a + 6);
-	int l = lower_bound(a, a + 6, 4) - a;
-	int r = upper_bound(a, a + 6, 4) - a;
+	int l &#x3D; lower_bound(a, a + 6, 4) - a;
+	int r &#x3D; upper_bound(a, a + 6, 4) - a;
 	cout &lt;&lt; l &lt;&lt; &quot; &quot; &lt;&lt; r &lt;&lt; endl;
 	return 0;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>5、二分查找函数</p>
-<pre><code>int recursive(vector&lt;int&gt;  arg)
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int recursive(vector&lt;int&gt;  arg)
 &#123;
-	if (arg == final_state)
+	if (arg &#x3D;&#x3D; final_state)
 		return 114;
-	vector&lt;int&gt; new_state1 = get(arg);
-	vector&lt;int&gt; new_state2 = get(arg);
+	vector&lt;int&gt; new_state1 &#x3D; get(arg);
+	vector&lt;int&gt; new_state2 &#x3D; get(arg);
 	return recuresive(new_state1) + recuresive(new_state2) + 514;
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>6、重载运算符：</p>
-<pre><code>Struct vec
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Struct vec
 &#123;
-        int x, y;
-        long long len() &#123;…&#125;
-        bool operator &lt; &#123;const vec &amp;rhs&#125; const
-        &#123;
-                return len() &lt;= rhs.len();
-        &#125;
-        long long operator *(const vec &amp;rhs)  const
-        &#123;
-                 return 111 * x * rhs.x + 111 * y * rhs.y;
-         &#125;
-        long long operator ^(const vec &amp;rhs) const
-        &#123;
-                 return 111 * x * rhs.y - 111 * y * rhs.x;
-        &#125;
-&#125;;
-</code></pre>
+		int x, y;
+		long long len() &#123;…&#125;
+		bool operator &lt; &#123;const vec &amp;rhs&#125; const
+		&#123;
+				return len() &lt;&#x3D; rhs.len();
+		&#125;
+		long long operator *(const vec &amp;rhs)  const
+		&#123;
+					return 111 * x * rhs.x + 111 * y * rhs.y;
+			&#125;
+		long long operator ^(const vec &amp;rhs) const
+		&#123;
+					return 111 * x * rhs.y - 111 * y * rhs.x;
+		&#125;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>7、<code>std::set</code>数据结构(基于有序的数据结构具体是二叉搜索树）</p>
-<pre><code>Int main()
-&#123;
-     set&lt;int&gt; s = &#123;1,1,4,5,1,4&#125;;
-     for(int a: s)                        #简便写法类似python中的可迭代对象
-            cout &lt;&lt; a &lt;&lt; &quot;\n&quot;;
+<pre class="highlight"><code class="C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>&#123;
+		set&lt;<span class="hljs-type">int</span>&gt; s = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>&#125;;
+		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a: s)                        #简便写法类似python中的可迭代对象
+			cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
 &#125;
 </code></pre>
 <p><code>multiset</code>数据结构和<code>set</code>类似，只不过允许数据重复，插入时即是有序的<br />
 8、映射数据结构</p>
-<pre><code>map&lt;string, int&gt; mp = &#123;
-		&#123;&quot;Monday&quot;,1&#125;,&#123;&quot;Tuesday&quot;,2&#125;,&#123;&quot;Wenesday&quot;,3&#125;
+<pre class="highlight"><code class="C++">map&lt;string, <span class="hljs-type">int</span>&gt; mp = &#123;
+		&#123;<span class="hljs-string">&quot;Monday&quot;</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-string">&quot;Tuesday&quot;</span>,<span class="hljs-number">2</span>&#125;,&#123;<span class="hljs-string">&quot;Wenesday&quot;</span>,<span class="hljs-number">3</span>&#125;
 	&#125;;
-	cout &lt;&lt; mp[&quot;Tuesday&quot;] &lt;&lt; &quot;\n&quot;;
-	cout &lt;&lt; mp.lower_bound(&quot;Tue&quot;)-&gt;first &lt;&lt; '\n';
-	cout &lt;&lt; mp.upper_bound(&quot;Tue&quot;)-&gt;second &lt;&lt; '\n';
-&gt;&gt;2
+	cout &lt;&lt; mp[<span class="hljs-string">&quot;Tuesday&quot;</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+	cout &lt;&lt; mp.<span class="hljs-built_in">lower_bound</span>(<span class="hljs-string">&quot;Tue&quot;</span>)-&gt;first &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;
+	cout &lt;&lt; mp.<span class="hljs-built_in">upper_bound</span>(<span class="hljs-string">&quot;Tue&quot;</span>)-&gt;second &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;
+&gt;&gt;<span class="hljs-number">2</span>
 &gt;&gt;Tuesday
-&gt;&gt;2
+&gt;&gt;<span class="hljs-number">2</span>
 </code></pre>
 <p>9、加快输入输出流的速度：</p>
-<pre><code>ios::sync_with_stdio(false);
-	cin.tie(0);
+<pre class="highlight"><code class="C++">ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);
+	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);
 用来加快cin、cout的速率
 </code></pre>
 <p>10、<code>cout &lt;&lt; x+y &lt;&lt; '\n' &lt;&lt; flush;</code>强行刷新缓冲区，使数据立即输出<br />
 11、移位运算</p>
-<pre><code>a &lt;&lt;= 10  //a * 1024;
-a &lt;&lt;= k   //a * 2^k;
-b &gt;&gt;= k   //a / 2^k;
-a |= (1 &lt;&lt; 10);  //将a的二进制第十一位换成1，进行调节
-a &amp; 1 // a % 2
+<pre class="highlight"><code class="C++">a &lt;&lt;= <span class="hljs-number">10</span>  <span class="hljs-comment">//a * 1024;</span>
+a &lt;&lt;= k   <span class="hljs-comment">//a * 2^k;</span>
+b &gt;&gt;= k   <span class="hljs-comment">//a / 2^k;</span>
+a |= (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">10</span>);  <span class="hljs-comment">//将a的二进制第十一位换成1，进行调节</span>
+a &amp; <span class="hljs-number">1</span> <span class="hljs-comment">// a % 2</span>
 </code></pre>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Codetest</title>
+    <url>/2022/10/02/code/</url>
+    <content><![CDATA[<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;cstdlib&gt;
+
+using namespace std;
+typedef struct student &#123;
+    int num;
+    char name[12];
+    char axs;
+    struct student* next;
+&#125;Stu;
+Stu* head;
+bool Stu_read(Stu* &amp;p)
+&#123;
+    Stu* temp &#x3D; (Stu*)malloc(sizeof(Stu));
+    if (!temp) return false;
+    cin &gt;&gt; temp-&gt;name;
+    if (temp-&gt;name[0] &#x3D;&#x3D; &#39;#&#39;) &#123;
+        free(temp);
+        return false;
+    &#125;
+    cin &gt;&gt; temp-&gt;num &gt;&gt; temp-&gt;axs;
+    p-&gt;next &#x3D; temp;
+    temp-&gt;next &#x3D; NULL;
+    p &#x3D; p-&gt;next;
+    head-&gt;num++;
+    return true;
+&#125;
+bool Search_stu(int m)
+&#123;
+    Stu* p &#x3D; head;
+    while (p-&gt;next) &#123;
+        if (p-&gt;next-&gt;num &#x3D;&#x3D; m) &#123;
+            Stu* q &#x3D; p-&gt;next;
+            p-&gt;next &#x3D; p-&gt;next-&gt;next;
+            free(q);
+            return true;
+        &#125;
+        p &#x3D; p-&gt;next;
+    &#125;
+    return false;
+&#125;
+void Stu_print()
+&#123;
+    Stu* p &#x3D; head-&gt;next;
+    while (p) &#123;
+        cout &lt;&lt; p-&gt;name &lt;&lt; &quot; &quot; &lt;&lt; p-&gt;num &lt;&lt; &quot; &quot; &lt;&lt; p-&gt;axs &lt;&lt; endl;
+        p &#x3D; p-&gt;next;
+    &#125;
+    return;
+&#125;
+int main()
+&#123;
+    head &#x3D; (Stu*)malloc(sizeof(Stu));
+    head-&gt;next &#x3D; NULL;
+    head-&gt;num &#x3D; 0;
+    Stu* temp &#x3D; head;
+    while (Stu_read(temp) &#x3D;&#x3D; true);
+    int Out_stu &#x3D; 0;
+    cin &gt;&gt; Out_stu;
+    if (Search_stu(Out_stu)) Stu_print();
+    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>Code</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+        <tag>code</tag>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>MATLAB基本操作学习</title>
     <url>/2022/03/27/MATLAB%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h2 id="matlab基本操作学习"><a class="markdownIt-Anchor" href="#matlab基本操作学习"></a> MATLAB基本操作学习</h2>
-<pre><code>• 清除变量：clear pi /clearvars pi inf   /恢复默认变量
-• 判别是否是关键字    iskeyword('for')
+<pre class="line-numbers language-MATLAB" data-language="MATLAB"><code class="language-MATLAB">• 清除变量：clear pi &#x2F;clearvars pi inf   &#x2F;恢复默认变量
+• 判别是否是关键字    iskeyword(&#39;for&#39;)
 • 数据输出格式
 Format rat 分子格式
 Format compact 压缩格式，不显示空白行
@@ -124,34 +196,34 @@ Format compact 压缩格式，不显示空白行
 相关系数：corrcoef                极差：range      
 符号函数：sign    例sign(x)求 x 中元素的符号
 • 规模化定义向量
-X = 初值：步长：终值/初值：终值
-X = linspace(初值，终值，向量长度）  用来生成等间隔向量    
+X &#x3D; 初值：步长：终值&#x2F;初值：终值
+X &#x3D; linspace(初值，终值，向量长度）  用来生成等间隔向量    
 • 向量与矩阵的转换
-X = A(:)            % 矩阵A转为列向量x
-A = reshape(x, [m, n])    % 将长度为m*n的向量x转换为m行n列矩阵
+X &#x3D; A(:)            % 矩阵A转为列向量x
+A &#x3D; reshape(x, [m, n])    % 将长度为m*n的向量x转换为m行n列矩阵
 • 按指定阵列复制矩阵
-B = repmat(A,[2, 3])      % 复制矩阵A按行方向复制两次，列方向复制3次
+B &#x3D; repmat(A,[2, 3])      % 复制矩阵A按行方向复制两次，列方向复制3次
 • 复数矩阵
-C = complex(a, b)            % 以a为实部，b为虚部生成复数矩阵   a, b 均为矩阵
+C &#x3D; complex(a, b)            % 以a为实部，b为虚部生成复数矩阵   a, b 均为矩阵
 • 符号矩阵
-Y = sym(y)  % 将数值矩阵y转换为符号矩阵Y
-Z = sym('a%d%d',[2,3])     % 其中%d、%d按照下标进行赋值
+Y &#x3D; sym(y)  % 将数值矩阵y转换为符号矩阵Y
+Z &#x3D; sym(&#39;a%d%d&#39;,[2,3])     % 其中%d、%d按照下标进行赋值
 特殊矩阵    zeros(size(A)）生成与A相同大小的零矩阵
-对角阵  diag      X  = diag(v,k)    以向量v为第k个对角线生成对角矩阵
-X  = diag(v)  以v为主对角线生成对角阵
-v  = diag(X, k)   返回矩阵X的第k条对角线上元素   省略k时默认为主对角线
+对角阵  diag      X  &#x3D; diag(v,k)    以向量v为第k个对角线生成对角矩阵
+X  &#x3D; diag(v)  以v为主对角线生成对角阵
+v  &#x3D; diag(X, k)   返回矩阵X的第k条对角线上元素   省略k时默认为主对角线
 • 元胞数组
 &lt;1&gt; 直接用花括号赋值创建；&lt;2&gt; cell(m, n, p···)创建空元胞数组
 访问元胞：C(i,j)           访问元胞中的元素：C&#123;I,j&#125;          celldisp显示元胞数组里面所有内容
 • 结构体数组
 &lt;1&gt; 直接赋值定义  struct1(n).attris           指定第n个结构体数组单元的各属性
-&lt;2&gt; struct函数构造    s  =struct('field1', values1, 'field2', values2····)
-Example: s  = struct('name', &#123;'Mark', 'Lucy'&#125;, 'age', &#123;31,22&#125;)
+&lt;2&gt; struct函数构造    s  &#x3D;struct(&#39;field1&#39;, values1, &#39;field2&#39;, values2····)
+Example: s  &#x3D; struct(&#39;name&#39;, &#123;&#39;Mark&#39;, &#39;Lucy&#39;&#125;, &#39;age&#39;, &#123;31,22&#125;)
 • 数组转换
 str2func - 根据字符向量构造函数句柄  
 • 表格型数组（Table Class)
 工作区的变量定义为表格型
-T = table(Age, Height, Weight, Blood, 'RowNames', Name)      (其中各变量均为向量)
+T &#x3D; table(Age, Height, Weight, Blood, &#39;RowNames&#39;, Name)      (其中各变量均为向量)
 访问 T.Height
 • 逻辑运算
 或运算：A|B   对应元素非零为1否则为0得到一个布尔矩阵
@@ -159,28 +231,144 @@ T = table(Age, Height, Weight, Blood, 'RowNames', Name)      (其中各变量均
 非运算：~A 非零为零，零为1
 异或运算：xor(A,B)    均为零或均非零为零否则为1
 判断逻辑运算：A||B   判断A或B是否为零矩阵    A&amp;&amp;B
-• 逆矩阵   Ai = inv(A)    % 求A的逆矩阵
-[V, D] = eig(A)      % 求数值矩阵A的特征值D和特征向量矩阵V  （D为对角阵）
-矩阵的迹  t  =trace(A)
-矩阵的秩  r  = rank(A)
-</code></pre>
+• 逆矩阵   Ai &#x3D; inv(A)    % 求A的逆矩阵
+[V, D] &#x3D; eig(A)      % 求数值矩阵A的特征值D和特征向量矩阵V  （D为对角阵）
+矩阵的迹  t  &#x3D;trace(A)
+矩阵的秩  r  &#x3D; rank(A)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>附录——常用数组转换函数</strong><br />
 <img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929172805394-926335148.png" alt="" /></p>
 ]]></content>
       <categories>
-        <category>cat1</category>
+        <category>MATLAB</category>
       </categories>
       <tags>
-        <tag>tag1</tag>
+        <tag>MATLAB</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>分治与倍增</title>
+    <url>/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/</url>
+    <content><![CDATA[<hr />
+<h4 id="double-powdouble-x-double-y"><a class="markdownIt-Anchor" href="#double-powdouble-x-double-y"></a> <code>Double pow(double x, double y)</code></h4>
+<h4 id="倍增算法"><a class="markdownIt-Anchor" href="#倍增算法"></a> 倍增算法：</h4>
+<p>倍增 从字面的上意思看就是成倍的增长 ,这是指我们在进行递推时,如果状态空间很大,通常的线性递推无法满足时间和空间复杂度的要求 ,那么我们就可以通过成倍的增长,只递推状态空间中在 2 的整数次幂位置上的值作为代表 。当需要其他位置上的值时,我们只需要通过&quot; 任意整数可以表示成若干个2的次幂项的和 &quot; 这一性质<code>(13 = 2^3 + 2^2 +2^0)</code>, 使用之前求出的代表值拼成所需的值。<br />
+核心思想：不断以2的次幂的跨度向前试探，行进跨度，不行就降幂，迭代可以表示任意整数</p>
+<h4 id="倍增主要应用"><a class="markdownIt-Anchor" href="#倍增主要应用"></a> 倍增主要应用：</h4>
+<p><code>LCA(least common ancestors)</code>:最近公共祖先<br />
+在有根树中，找出某两个结点u和v最近的公共祖先。<br />
+<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929170840386-1257726897.png" alt="" /><br />
+在寻找两个节点的公共祖先时，按2的指数来跳，并且从大到小，……32, 16, 8 , 4 , 2, 1 【从大到小试探】</p>
+<h4 id="数据预处理"><a class="markdownIt-Anchor" href="#数据预处理"></a> 数据预处理：</h4>
+<p>处理结点的深度、父节点、以及2i级的祖先<br />
+<strong>开辟数组：</strong></p>
+<pre class="highlight"><code class="C++">&lt;<span class="hljs-number">1</span>&gt;  depth数组是记录每个节点的深度        
+&lt;<span class="hljs-number">2</span>&gt;  fa[i][j]是指节点 i 的 <span class="hljs-number">2</span>j 级的祖先的编号      
+&lt;<span class="hljs-number">3</span>&gt; lg数组是常数优化的数组，存的是log2N+<span class="hljs-number">1</span>的值，注意用的时候要<span class="hljs-number">-1</span>，开始之前先初始化一下，这样直接调用可以优化节约时间其中初始化的方法：l g [ i ] = l g [ i − <span class="hljs-number">1</span> ] + ( <span class="hljs-number">1</span> &lt; &lt; l g [ i − <span class="hljs-number">1</span> ] = = i ) lg[i]=lg[i<span class="hljs-number">-1</span>]+(<span class="hljs-number">1</span>&lt;&lt;lg[i<span class="hljs-number">-1</span>]==i)lg[i]=lg[i−<span class="hljs-number">1</span>]+(<span class="hljs-number">1</span>&lt;&lt;lg[i−<span class="hljs-number">1</span>]==i)，自己手算一下很清楚的（lg[<span class="hljs-number">1</span>~<span class="hljs-number">10</span>]为<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span>，应该很好懂吧）   
+</code></pre>
+<p><strong>手写对数运算lg2[i]:</strong></p>
+<pre class="highlight"><code class="C++"><span class="hljs-built_in">over</span>(i,<span class="hljs-number">1</span>,n)<span class="hljs-comment">//预处理一下 </span>
+lg[i]=lg[i<span class="hljs-number">-1</span>]+(<span class="hljs-number">1</span>&lt;&lt;lg[i<span class="hljs-number">-1</span>]==i);<span class="hljs-comment">//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;</span>
+
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;queue&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;math.h&gt;</span></span>
+<span class="hljs-comment">//可以学习宏定义简便写法</span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> ls (p&lt;&lt;1)  <span class="hljs-comment">//取半</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> rs (p&lt;&lt;1|1)   <span class="hljs-comment">//取半加一</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> mid (l+r)/2</span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> over(i,s,t) for(register long long i=s;i&lt;=t;++i)   <span class="hljs-comment">//循环的简写 </span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> lver(i,t,s) for(register long long i=t;i&gt;=s;--i)</span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<span class="hljs-comment">//全用ll可能会MLE或者直接WA,试着改成int看会不会A</span>
+<span class="hljs-type">const</span> ll N=<span class="hljs-number">500007</span>;
+<span class="hljs-type">const</span> ll INF=<span class="hljs-number">1e9</span>+<span class="hljs-number">9</span>;
+<span class="hljs-type">const</span> ll mod=<span class="hljs-number">2147483647</span>;
+<span class="hljs-type">const</span> <span class="hljs-type">double</span> EPS=<span class="hljs-number">1e-10</span>;<span class="hljs-comment">//-10次方约等于趋近为0</span>
+<span class="hljs-type">const</span> <span class="hljs-type">double</span> Pi=<span class="hljs-number">3.1415926535897</span>;
+ll n,m;
+<span class="hljs-comment">//前向星写法的数据结构实现：</span>
+<span class="hljs-keyword">struct</span> <span class="hljs-title class_">node</span>
+&#123;
+	ll u,v,nex;
+&#125;e[N&lt;&lt;<span class="hljs-number">1</span>];
+ll head[N],cnt;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(ll u,ll v)</span>
+</span>&#123;
+	e[++cnt].v=v;    <span class="hljs-comment">//记录边的终点</span>
+	e[cnt].u=u;<span class="hljs-comment">//没什么用，还白占空间</span>
+	e[cnt].nex=head[u];     <span class="hljs-comment">//以u为起点的上一条边，往往更喜欢写做pre</span>
+	head[u]=cnt;    <span class="hljs-comment">//更新以u为起点的上一条边</span>
+&#125;
+ll depth[N],fa[N][<span class="hljs-number">30</span>],lg[N],s,x,y;
+
+<span class="hljs-comment">/*dfs函数的作用就是更新该点的所有祖先的fa数组，并通过递归把
+该节点的所有的子节点和该节点一样去更新*/</span>
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(ll now,ll fath)</span><span class="hljs-comment">//子节点和父节点</span>
+</span>&#123;
+	fa[now][<span class="hljs-number">0</span>]=fath;<span class="hljs-comment">//更新一下fa数组，2^0=1就是父节点</span>
+	depth[now]=depth[fath]+<span class="hljs-number">1</span>;<span class="hljs-comment">//更新深度，递归的思想</span>
+	<span class="hljs-built_in">over</span>(i,<span class="hljs-number">1</span>,lg[depth[now]]<span class="hljs-number">-1</span>)
+		fa[now][i]=fa[fa[now][i<span class="hljs-number">-1</span>]][i<span class="hljs-number">-1</span>];
+		<span class="hljs-comment">/*更新now的所有 2^i 级的祖先。先找到now的2^(i-1)级祖先，再往上找
+		该祖先的2^(i-1)级祖先，就是now的2^i祖先，必须一节一节地往上搜*/</span>
+	<span class="hljs-keyword">for</span>(ll i=head[now];i;i=e[i].nex)<span class="hljs-comment">//链式前向星遍历</span>
+		<span class="hljs-comment">//如果now有子节点的话，就递归往子节点的子节点走（禁止套娃）</span>
+		ll v = e[i].v;
+		<span class="hljs-keyword">if</span>(v == fath) <span class="hljs-keyword">continue</span>;
+	<span class="hljs-built_in">dfs</span>(e[i].v,now);
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">LCA</span><span class="hljs-params">(ll x,ll y)</span>
+</span>&#123;
+	<span class="hljs-keyword">if</span>(depth[x]&lt;depth[y])<span class="hljs-comment">//用数学语言就是说不妨设x的深度比y的深度大</span>
+		<span class="hljs-built_in">swap</span>(x,y);<span class="hljs-comment">//这样下面只需要写一种代码就好了</span>
+	<span class="hljs-keyword">while</span>(depth[x]&gt;depth[y])
+		<span class="hljs-comment">//让x跳到y的高度（同一高度）</span>
+		x=fa[x][lg[depth[x]-depth[y]]<span class="hljs-number">-1</span>];
+	<span class="hljs-comment">//如果跳到一块了那LCA肯定就是y了</span>
+	<span class="hljs-keyword">if</span>(x==y)
+		<span class="hljs-keyword">return</span> x;
+	<span class="hljs-keyword">for</span>(ll k=lg[depth[x]]<span class="hljs-number">-1</span>;k&gt;=<span class="hljs-number">0</span>;--k)<span class="hljs-comment">//倒着从大到小地跳</span>
+		<span class="hljs-comment">/*因为我们要求跳到x和y的LCA的下一层，所以没有跳到的时候就
+		让x和y利用dfs里早就用倍增算法处理过的祖先路径快速地一块往上跳*/</span>
+		<span class="hljs-keyword">if</span>(fa[x][k]!=fa[y][k])
+			x=fa[x][k],y=fa[y][k];<span class="hljs-comment">//往上跳</span>
+	<span class="hljs-keyword">return</span> fa[x][<span class="hljs-number">0</span>];<span class="hljs-comment">//返回x，y的父节点（肯定是相同的嘛）</span>
+&#125;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>&#123;
+	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld%lld%lld&quot;</span>,&amp;n,&amp;m,&amp;s);
+	<span class="hljs-built_in">over</span>(i,<span class="hljs-number">1</span>,n<span class="hljs-number">-1</span>)
+	&#123;
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);
+		<span class="hljs-built_in">add</span>(x,y),<span class="hljs-built_in">add</span>(y,x);<span class="hljs-comment">//无向图一定要记得建双向边</span>
+	&#125;
+	<span class="hljs-built_in">over</span>(i,<span class="hljs-number">1</span>,n)<span class="hljs-comment">//预处理一下</span>
+	lg[i]=lg[i<span class="hljs-number">-1</span>]+(<span class="hljs-number">1</span>&lt;&lt;lg[i<span class="hljs-number">-1</span>]==i);<span class="hljs-comment">//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;</span>
+	<span class="hljs-built_in">dfs</span>(s,<span class="hljs-number">0</span>);<span class="hljs-comment">//从树根开始，因为用的是链式前向星所以给一个假想根0（其实就是到这儿停）</span>
+	<span class="hljs-comment">//dfs一下，预处理各点的深度和祖先</span>
+	<span class="hljs-built_in">over</span>(i,<span class="hljs-number">1</span>,m)
+	&#123;
+
+		<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%lld%lld&quot;</span>,&amp;x,&amp;y);
+		<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%lld\n&quot;</span>,<span class="hljs-built_in">LCA</span>(x,y));
+	&#125;
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
+]]></content>
   </entry>
   <entry>
     <title>串</title>
     <url>/2022/09/28/%E4%B8%B2/</url>
     <content><![CDATA[<h2 id="数据结构串"><a class="markdownIt-Anchor" href="#数据结构串"></a> 数据结构——串</h2>
 <p>(字符串实现与操作）</p>
-<pre><code>pass
-</code></pre>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">pass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
   </entry>
   <entry>
@@ -307,12 +495,11 @@ T = table(Age, Height, Weight, Blood, 'RowNames', Name)      (其中各变量均
 </ul>
 <h4 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h4>
 <p><strong>语法格式：Tab键或4个空格开头</strong> //注意代码块需要隔行</p>
-<pre><code>//创建链表
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F;创建链表
 typedef struct Node&#123;
     int data;
     struct Node* next;
-&#125;node;  
-</code></pre>
+&#125;node;  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="24-引用"><a class="markdownIt-Anchor" href="#24-引用"></a> 2.4 引用</h3>
 <p><strong>语法格式：&gt; + 引用内容</strong><br />
 语法说明如下：</p>
@@ -345,7 +532,7 @@ typedef struct Node&#123;
 <p><strong>介绍</strong><br />
 当我们想在Markdown文件中插入一些标记符号，但又不想让这些符号被渲染时，可以使用 <code>\</code> 进行转义<br />
 <strong>语法格式：\特殊字符</strong></p>
-<pre><code>// 常见转义字符
+<pre><code>`// 常见转义字符`
 </code></pre>
 <p>\   反斜线<br />
 `   反引号<br />
@@ -359,124 +546,6 @@ _   底线<br />
 -   减号<br />
 .   英文句点<br />
 !   惊叹号</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>分治与倍增</title>
-    <url>/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/</url>
-    <content><![CDATA[<hr />
-<h4 id="double-powdouble-x-double-y"><a class="markdownIt-Anchor" href="#double-powdouble-x-double-y"></a> <code>Double pow(double x, double y)</code></h4>
-<h4 id="倍增算法"><a class="markdownIt-Anchor" href="#倍增算法"></a> 倍增算法：</h4>
-<p>倍增 从字面的上意思看就是成倍的增长 ,这是指我们在进行递推时,如果状态空间很大,通常的线性递推无法满足时间和空间复杂度的要求 ,那么我们就可以通过成倍的增长,只递推状态空间中在 2 的整数次幂位置上的值作为代表 。当需要其他位置上的值时,我们只需要通过&quot; 任意整数可以表示成若干个2的次幂项的和 &quot; 这一性质<code>(13 = 2^3 + 2^2 +2^0)</code>, 使用之前求出的代表值拼成所需的值。<br />
-核心思想：不断以2的次幂的跨度向前试探，行进跨度，不行就降幂，迭代可以表示任意整数</p>
-<h4 id="倍增主要应用"><a class="markdownIt-Anchor" href="#倍增主要应用"></a> 倍增主要应用：</h4>
-<p><code>LCA(least common ancestors)</code>:最近公共祖先<br />
-在有根树中，找出某两个结点u和v最近的公共祖先。<br />
-<img src="https://img2022.cnblogs.com/blog/2979937/202209/2979937-20220929170840386-1257726897.png" alt="" /><br />
-在寻找两个节点的公共祖先时，按2的指数来跳，并且从大到小，……32, 16, 8 , 4 , 2, 1 【从大到小试探】</p>
-<h4 id="数据预处理"><a class="markdownIt-Anchor" href="#数据预处理"></a> 数据预处理：</h4>
-<p>处理结点的深度、父节点、以及2i级的祖先<br />
-<strong>开辟数组：</strong></p>
-<pre class="highlight"><code class="C++">&lt;<span class="hljs-number">1</span>&gt;  depth数组是记录每个节点的深度        
-&lt;<span class="hljs-number">2</span>&gt;  fa[i][j]是指节点 i 的 <span class="hljs-number">2</span>j 级的祖先的编号      
-&lt;<span class="hljs-number">3</span>&gt; lg数组是常数优化的数组，存的是log2N+<span class="hljs-number">1</span>的值，注意用的时候要<span class="hljs-number">-1</span>，开始之前先初始化一下，这样直接调用可以优化节约时间其中初始化的方法：l g [ i ] = l g [ i − <span class="hljs-number">1</span> ] + ( <span class="hljs-number">1</span> &lt; &lt; l g [ i − <span class="hljs-number">1</span> ] = = i ) lg[i]=lg[i<span class="hljs-number">-1</span>]+(<span class="hljs-number">1</span>&lt;&lt;lg[i<span class="hljs-number">-1</span>]==i)lg[i]=lg[i−<span class="hljs-number">1</span>]+(<span class="hljs-number">1</span>&lt;&lt;lg[i−<span class="hljs-number">1</span>]==i)，自己手算一下很清楚的（lg[<span class="hljs-number">1</span>~<span class="hljs-number">10</span>]为<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span>，应该很好懂吧）   
-</code></pre>
-<p><strong>手写对数运算lg2[i]:</strong></p>
-<pre><code>	over(i,1,n)//预处理一下 
-	lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;
-
-	#include&lt;iostream&gt;
-	#include&lt;stdio.h&gt;
-	#include&lt;string.h&gt;
-	#include&lt;algorithm&gt;
-	#include&lt;queue&gt;
-	#include&lt;math.h&gt;
-	//可以学习宏定义简便写法
-	#define ls (p&lt;&lt;1)  //取半
-	#define rs (p&lt;&lt;1|1)   //取半加一
-	#define mid (l+r)/2
-	#define over(i,s,t) for(register long long i=s;i&lt;=t;++i)   //循环的简写 
-	#define lver(i,t,s) for(register long long i=t;i&gt;=s;--i)
-	
-	using namespace std;
-	typedef long long ll;//全用ll可能会MLE或者直接WA,试着改成int看会不会A
-	const ll N=500007;
-	const ll INF=1e9+9;
-	const ll mod=2147483647;
-	const double EPS=1e-10;//-10次方约等于趋近为0
-	const double Pi=3.1415926535897;
-	ll n,m;
-	//前向星写法的数据结构实现：
-	struct node
-	&#123;
-	    ll u,v,nex;
-	&#125;e[N&lt;&lt;1];
-	ll head[N],cnt;
-	
-	void add(ll u,ll v)
-	&#123;
-	    e[++cnt].v=v;    //记录边的终点
-	    e[cnt].u=u;//没什么用，还白占空间
-	    e[cnt].nex=head[u];     //以u为起点的上一条边，往往更喜欢写做pre
-	    head[u]=cnt;    //更新以u为起点的上一条边
-	&#125;
-	ll depth[N],fa[N][30],lg[N],s,x,y;
-	
-	/*dfs函数的作用就是更新该点的所有祖先的fa数组，并通过递归把
-	该节点的所有的子节点和该节点一样去更新*/
-	void dfs(ll now,ll fath)//子节点和父节点
-	&#123;
-	    fa[now][0]=fath;//更新一下fa数组，2^0=1就是父节点
-	    depth[now]=depth[fath]+1;//更新深度，递归的思想
-	    over(i,1,lg[depth[now]]-1)
-	        fa[now][i]=fa[fa[now][i-1]][i-1];
-	        /*更新now的所有 2^i 级的祖先。先找到now的2^(i-1)级祖先，再往上找
-	        该祖先的2^(i-1)级祖先，就是now的2^i祖先，必须一节一节地往上搜*/
-	    for(ll i=head[now];i;i=e[i].nex)//链式前向星遍历
-	        //如果now有子节点的话，就递归往子节点的子节点走（禁止套娃）
-	        ll v = e[i].v;
-	        if(v == fath) continue;
-		dfs(e[i].v,now);
-	&#125;
-
-	inline ll LCA(ll x,ll y)
-	&#123;
-	    if(depth[x]&lt;depth[y])//用数学语言就是说不妨设x的深度比y的深度大
-	        swap(x,y);//这样下面只需要写一种代码就好了
-	    while(depth[x]&gt;depth[y])
-	        //让x跳到y的高度（同一高度）
-	        x=fa[x][lg[depth[x]-depth[y]]-1];
-	    //如果跳到一块了那LCA肯定就是y了
-	    if(x==y)
-	        return x;
-	    for(ll k=lg[depth[x]]-1;k&gt;=0;--k)//倒着从大到小地跳
-	        /*因为我们要求跳到x和y的LCA的下一层，所以没有跳到的时候就
-	        让x和y利用dfs里早就用倍增算法处理过的祖先路径快速地一块往上跳*/
-	        if(fa[x][k]!=fa[y][k])
-	            x=fa[x][k],y=fa[y][k];//往上跳
-	    return fa[x][0];//返回x，y的父节点（肯定是相同的嘛）
-	&#125;
-	int main()
-	&#123;
-	    scanf(&quot;%lld%lld%lld&quot;,&amp;n,&amp;m,&amp;s);
-	    over(i,1,n-1)
-	    &#123;
-	        scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);
-	        add(x,y),add(y,x);//无向图一定要记得建双向边
-	    &#125;
-	    over(i,1,n)//预处理一下
-	    lg[i]=lg[i-1]+(1&lt;&lt;lg[i-1]==i);//log2(8)=3//这个手写的lg[]要-1才能用lg[8]=4;
-	    dfs(s,0);//从树根开始，因为用的是链式前向星所以给一个假想根0（其实就是到这儿停）
-	    //dfs一下，预处理各点的深度和祖先
-	    over(i,1,m)
-	    &#123;
-
-	        scanf(&quot;%lld%lld&quot;,&amp;x,&amp;y);
-	        printf(&quot;%lld\n&quot;,LCA(x,y));
-	    &#125;
-	    return 0;
-	&#125;
-</code></pre>
 ]]></content>
   </entry>
   <entry>
