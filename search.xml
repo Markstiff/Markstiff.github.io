@@ -549,6 +549,590 @@ _   底线<br />
 ]]></content>
   </entry>
   <entry>
+    <title>顺序栈</title>
+    <url>/2022/10/03/%E9%A1%BA%E5%BA%8F%E6%A0%88/</url>
+    <content><![CDATA[<h2 id="栈的顺序存储表示"><a class="markdownIt-Anchor" href="#栈的顺序存储表示"></a> 栈的顺序存储表示</h2>
+<hr />
+<h3 id="1-顺序存储结构"><a class="markdownIt-Anchor" href="#1-顺序存储结构"></a> 1、顺序存储结构</h3>
+<p>利用一组地址连续的存储单元<br />
+<strong>顺序栈定义</strong>：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct&#123;
+    SElemType *base;   &#x2F;&#x2F; 栈底指针
+    SElemType *top;    &#x2F;&#x2F; 栈顶指针
+    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
+&#125;Sqstack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>注：当用数组作为存储结构时，可以用下标代替指针</em></p>
+<h3 id="2-基本操作算法描述"><a class="markdownIt-Anchor" href="#2-基本操作算法描述"></a> 2、基本操作算法描述</h3>
+<p>对栈的常用操作做简要描述：</p>
+<ul>
+<li>栈的初始化</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status InitStack(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 构造空栈S
+    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
+    if(!S.base) exit(OVERFLOW);
+    S.top &#x3D; S.base;
+    S.stacksize &#x3D; STACK_INIT_SIZE;
+    return OK;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以初始化容量申请一块连续的内存，<code>S.top=S.base</code>保证<code>top=base</code>时栈空。</p>
+<ul>
+<li>返回栈顶元素</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status GetTop(SqStack S, SElemType &amp;e)
+&#123;
+    if(S.top &#x3D;&#x3D; S.base)  return ERROR;
+    e &#x3D; *(S.base-1);
+    return OK;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>压栈操作</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status Push(SqStack &amp;S, SElemType e)
+&#123;
+    &#x2F;&#x2F;首先判断是否栈满
+    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
+        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
+        if(!S.base) exit(OVERFLOW);
+        &#x2F;&#x2F; 更新回原来位置
+        S.top &#x3D; S.base + S.stacksize;
+        S.stacksize +&#x3D; STACKINCREMENT;
+    &#125;
+    *S.top++ &#x3D; e;
+    return OK;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>出栈操作</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status Pop(SqStack &amp;S, SElemType &amp;e)
+&#123;
+    &#x2F;&#x2F; 栈空标志
+    if(S.top &#x3D;&#x3D; S.base) return ERROR;
+    e &#x3D; *--S.top;
+    return OK;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>判断栈空</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status StackEmpty(SqStack S)
+&#123;
+    if(S.base &#x3D;&#x3D; S.top) return true;
+    return false;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>清空栈</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status ClearStack(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 利用栈空标志进行清空
+    S.top &#x3D; S.base;
+    return OK;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>释放栈空间</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status DestroyStack(SqStack &amp;S)
+&#123;
+    if(S.base !&#x3D; NULL) free(S.base);
+    return OK;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-栈的应用举例"><a class="markdownIt-Anchor" href="#3-栈的应用举例"></a> 3、栈的应用举例</h3>
+<h4 id="31-数制转换"><a class="markdownIt-Anchor" href="#31-数制转换"></a> 3.1 数制转换</h4>
+<p>十进制数与其他d进制数转换时，一个简单算法原理：<br />
+<code>N = (N div d) X d + N mod d</code>,其中<code>div</code>表示整除操作，<code>mod</code>表示求余操作</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+using namespace std;
+
+typedef int SElemType;
+typedef bool Status;
+
+const bool OK &#x3D; true;
+const bool ERROR &#x3D; false;
+const SElemType STACK_INIT_SIZE &#x3D; 100;
+const SElemType STACKINCREMENT &#x3D; 10;
+typedef struct&#123;
+    SElemType *base;   &#x2F;&#x2F; 栈底指针
+    SElemType *top;    &#x2F;&#x2F; 栈顶指针
+    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
+&#125;SqStack;
+Status InitStack(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 构造空栈S
+    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
+    if(!S.base) exit(EOVERFLOW);
+    S.top &#x3D; S.base;
+    S.stacksize &#x3D; STACK_INIT_SIZE;
+    return OK;
+&#125;
+Status Push(SqStack &amp;S, SElemType e)
+&#123;
+    &#x2F;&#x2F;首先判断是否栈满
+    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
+        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
+        if(!S.base) exit(EOVERFLOW);
+        &#x2F;&#x2F; 更新回原来位置
+        S.top &#x3D; S.base + S.stacksize;
+        S.stacksize +&#x3D; STACKINCREMENT;
+    &#125;
+    *S.top++ &#x3D; e;
+    return OK;
+&#125;
+Status Pop(SqStack &amp;S, SElemType &amp;e)
+&#123;
+    &#x2F;&#x2F; 栈空标志
+    if(S.top &#x3D;&#x3D; S.base) return ERROR;
+    e &#x3D; *--S.top;
+    return OK;
+&#125;
+Status StackEmpty(SqStack S)
+&#123;
+    if(S.base &#x3D;&#x3D; S.top) return true;
+    return false;
+&#125;
+Status Conversion()
+&#123;
+    SqStack S;
+    InitStack(S);
+    SElemType data;
+    int Obj &#x3D; 0;
+    cin &gt;&gt; data &gt;&gt; Obj;
+    while(data)&#123;
+        Push(S,data % Obj);
+        data &#x3D; data&#x2F;Obj;
+    &#125;
+    while(!StackEmpty(S))
+    &#123;
+        SElemType e;
+        if(!Pop(S,e)) break;
+        cout &lt;&lt; e;
+    &#125;
+    cout &lt;&lt; endl;
+    return OK;
+&#125;
+int main()
+&#123;
+    &#x2F;&#x2F; 对于输入的十进制数和目标进制，打印输出目标进制数
+    Conversion();
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="32-行编辑程序"><a class="markdownIt-Anchor" href="#32-行编辑程序"></a> 3.2 行编辑程序</h4>
+<p>将用户从键盘输入的符号存入一个输入缓冲区，然后逐行存入用户数据区；这个过程允许用户删除字符，删除整行字符<br />
+基本操作规则：</p>
+<pre class="line-numbers language-none"><code class="language-none"># 退格符
+@ 退行符
+^ 结束符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>程序实现：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+
+typedef char SElemType;
+typedef bool Status;
+
+const bool OK &#x3D; true;
+const bool ERROR &#x3D; false;
+const SElemType STACK_INIT_SIZE &#x3D; 100;
+const SElemType STACKINCREMENT &#x3D; 10;
+typedef struct&#123;
+    SElemType *base;   &#x2F;&#x2F; 栈底指针
+    SElemType *top;    &#x2F;&#x2F; 栈顶指针
+    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
+&#125;SqStack;
+Status InitStack(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 构造空栈S
+    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
+    if(!S.base) exit(EOVERFLOW);
+    S.top &#x3D; S.base;
+    S.stacksize &#x3D; STACK_INIT_SIZE;
+    return OK;
+&#125;
+Status Push(SqStack &amp;S, SElemType e)
+&#123;
+    &#x2F;&#x2F;首先判断是否栈满
+    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
+        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
+        if(!S.base) exit(EOVERFLOW);
+        &#x2F;&#x2F; 更新回原来位置
+        S.top &#x3D; S.base + S.stacksize;
+        S.stacksize +&#x3D; STACKINCREMENT;
+    &#125;
+    *S.top++ &#x3D; e;
+    return OK;
+&#125;
+Status Pop(SqStack &amp;S, SElemType &amp;e)
+&#123;
+    &#x2F;&#x2F; 栈空标志
+    if(S.top &#x3D;&#x3D; S.base) return ERROR;
+    e &#x3D; *--S.top;
+    return OK;
+&#125;
+Status StackEmpty(SqStack S)
+&#123;
+    if(S.base &#x3D;&#x3D; S.top) return true;
+    return false;
+&#125;
+Status StackPrint(SqStack S)
+&#123;
+    SElemType *mp &#x3D; S.base;
+    while(mp !&#x3D; S.top)&#123;
+        putchar(*mp);
+        mp++;
+    &#125;
+    putchar(&#39;\n&#39;);
+    return OK;
+&#125;
+Status ClearStack(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 利用栈空标志进行清空
+    S.top &#x3D; S.base;
+    return OK;
+&#125;
+Status DestroyStack(SqStack &amp;S)
+&#123;
+    if(S.base !&#x3D; NULL) free(S.base);
+    return OK;
+&#125; 
+Status LineEdit()
+&#123;
+    &#x2F;&#x2F;构造字符栈
+    SqStack S;
+    InitStack(S);
+    SElemType ch;
+    ch &#x3D; getchar();  &#x2F;&#x2F;从终端接受一个字符
+    while(ch !&#x3D; &#39;^&#39;)&#123;
+        while(ch !&#x3D; &#39;^&#39; &amp;&amp; ch !&#x3D; &#39;\n&#39;)&#123;
+            switch(ch)&#123;
+                case &#39;#&#39;:Pop(S,ch);  &#x2F;&#x2F;退字符
+                         break;
+                case &#39;@&#39;:ClearStack(S); &#x2F;&#x2F;退行
+                         break;
+                default:Push(S,ch); &#x2F;&#x2F;字符入栈
+            &#125;
+            ch &#x3D; getchar(); &#x2F;&#x2F;从终端接受下一个字符
+        &#125;
+        &#x2F;&#x2F;对缓冲区的一行字符存入数据区，这里只是打印输出
+        StackPrint(S);
+        ClearStack(S);
+        if(ch !&#x3D; &#39;^&#39;) ch &#x3D; getchar();
+    &#125;
+    DestroyStack(S);
+    return OK;
+&#125;
+int main()
+&#123;
+    LineEdit();
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="33-括号匹配问题"><a class="markdownIt-Anchor" href="#33-括号匹配问题"></a> 3.3 括号匹配问题</h4>
+<p>给定一个包含各种括号的表达式，判断是否满足括号匹配<br />
+利用栈操作，可在线性时间内检查出是否匹配，具体实现如下：</p>
+<ul>
+<li>利用<code>stl</code>模板库</li>
+</ul>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool paren(const char exp[]) &#123; &#x2F;&#x2F;表达式括号匹配检查，可兼顾三种括号
+    Stack&lt;char&gt; S; &#x2F;&#x2F;使用栈记录已出现但尚未匹配的左括号
+    for (int i &#x3D; 0; exp[i]; i++) &#x2F;* 逐一检查当前字符 *&#x2F;
+        switch (exp[i]) &#123; &#x2F;&#x2F;左括号直接进栈；右括号若不栈顶失配，则表达式必不匹配
+            case &#39;(&#39;: case &#39;[&#39;: case &#39;&#123;&#39;: S.push(exp[i]); break;
+            case &#39;)&#39;: if ((S.empty()) || (&#39;(&#39; !&#x3D; S.pop())) return false; break;
+            case &#39;]&#39;: if ((S.empty()) || (&#39;[&#39; !&#x3D; S.pop())) return false; break;
+            case &#39;&#125;&#39;: if ((S.empty()) || (&#39;&#123;&#39; !&#x3D; S.pop())) return false; break;
+            default: break; &#x2F;&#x2F;非括号字符一律忽略
+        &#125;
+    return S.empty(); &#x2F;&#x2F;整个表达式扫描过后，栈中若仍残留（左）括号，则不匹配；否则（栈空）匹配
+&#125;
+&#96;&#96;&#96;     
+
++ 自定义栈操作
+&#96;&#96;&#96; C++
+#include&lt;iostream&gt;
+#include&lt;cstdlib&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+
+typedef char SElemType;    &#x2F;&#x2F;栈元素类型
+typedef bool Status;
+
+const bool OK &#x3D; true;
+const bool ERROR &#x3D; false;
+const SElemType STACK_INIT_SIZE &#x3D; 100;
+const SElemType STACKINCREMENT &#x3D; 10;
+typedef struct&#123;
+    SElemType *base;   &#x2F;&#x2F; 栈底指针
+    SElemType *top;    &#x2F;&#x2F; 栈顶指针
+    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
+&#125;SqStack;
+Status InitStack(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 构造空栈S
+    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
+    if(!S.base) exit(EOVERFLOW);
+    S.top &#x3D; S.base;
+    S.stacksize &#x3D; STACK_INIT_SIZE;
+    return OK;
+&#125;
+Status Push(SqStack &amp;S, SElemType e)
+&#123;
+    &#x2F;&#x2F;首先判断是否栈满
+    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
+        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
+        if(!S.base) exit(EOVERFLOW);
+        &#x2F;&#x2F; 更新回原来位置
+        S.top &#x3D; S.base + S.stacksize;
+        S.stacksize +&#x3D; STACKINCREMENT;
+    &#125;
+    *S.top++ &#x3D; e;
+    return OK;
+&#125;
+SElemType Pop(SqStack &amp;S)
+&#123;
+    &#x2F;&#x2F; 栈空标志
+    if(S.top &#x3D;&#x3D; S.base) return ERROR;
+    return *--S.top;
+&#125;
+Status StackEmpty(SqStack S)
+&#123;
+    if(S.base &#x3D;&#x3D; S.top) return true;
+    return false;
+&#125;
+Status paren()
+&#123;
+
+    &#x2F;&#x2F;构造字符栈
+    SqStack S;
+    InitStack(S);
+    SElemType ch;
+    ch &#x3D; getchar();
+    while(ch !&#x3D; &#39;\n&#39;)&#123;
+        switch (ch) &#123; &#x2F;&#x2F;左括号直接进栈；右括号若不栈顶失配，则表达式必不匹配
+            case &#39;(&#39;: case &#39;[&#39;: case &#39;&#123;&#39;: Push(S, ch); break;
+            case &#39;)&#39;: if ((StackEmpty(S)) || (&#39;(&#39; !&#x3D; Pop(S))) return false; break;
+            case &#39;]&#39;: if ((StackEmpty(S)) || (&#39;[&#39; !&#x3D; Pop(S))) return false; break;
+            case &#39;&#125;&#39;: if ((StackEmpty(S)) || (&#39;&#123;&#39; !&#x3D; Pop(S))) return false; break;
+            default: break; &#x2F;&#x2F;非括号字符一律忽略
+        &#125;
+        ch &#x3D; getchar();
+    &#125;
+    return StackEmpty(S);
+&#125;
+int main()
+&#123;
+    if(paren()) cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
+    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="34-表达式求值"><a class="markdownIt-Anchor" href="#34-表达式求值"></a> 3.4 表达式求值</h4>
+<hr />
+<p><strong><em>延迟缓冲</em></strong><br />
+在一些应用问题中，输入可分解为多个单元并通过迭代依次扫描处理，但过程中的各步计算<br />
+往往滞后于扫描的进度，需要待到必要的信息已完整到一定程度之后,才能作出判断并实施计算。<br />
+在这类场合，栈结构则可以扮演数据缓冲区的角色。</p>
+<hr />
+<p>表达式求值<br />
+关于运算符执行次序的规则(即运算优先级)，一部分决定于事先约定的惯例(比如乘除优先于加减)，<br />
+另一部分则决定于括号。也就是说，仅根据表达式的某一前缀，并不能完全确定其中各运算符可否执行以<br />
+及执行的次序；只有在已获得足够多后续信息之后，才能确定其中哪些运算符可以执行。</p>
+<p>由于栈基本结构较为简单，常用操作内容上文已经介绍，因此本代码在此处调用<code>STL</code>中<code>stack</code>模板直接进行相关操作。</p>
+<ul>
+<li>定义优先级表</li>
+</ul>
+<pre class="highlight"><code class="C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstdlib&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cstring&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;cmath&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;stack&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> N_OPTR 9 <span class="hljs-comment">//运算符总数</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> Opr 100  <span class="hljs-comment">//表达式最大长度</span></span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123;ADD, SUB, MUL, DIV, POW, FAC, L_P, R_P, EOE&#125; Operator; <span class="hljs-comment">//运算符集合</span>
+ <span class="hljs-comment">//加、减、乘、除、乘斱、阶乘、左括号、右括号、起始符不终止符</span>
+
+<span class="hljs-type">const</span> <span class="hljs-type">char</span> pri[N_OPTR][N_OPTR] = &#123; <span class="hljs-comment">//运算符优先等级 [栈顶] [弼前]</span>
+<span class="hljs-comment">/* |-------------- 当前运算符 --------------| */</span>
+<span class="hljs-comment">/* + - * / ^ ! ( ) \0 */</span>
+<span class="hljs-comment">/* -- + */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
+<span class="hljs-comment">/* | - */</span>  <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
+<span class="hljs-comment">/* 栈 * */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
+<span class="hljs-comment">/* 顶 / */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
+<span class="hljs-comment">/* 运 ^ */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
+<span class="hljs-comment">/* 算 ! */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
+<span class="hljs-comment">/* 符 ( */</span> <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;=&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>,
+<span class="hljs-comment">/* | ) */</span>  <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>,
+<span class="hljs-comment">/* -- \0*/</span> <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;=&#x27;</span>
+&#125;;
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">readNumber</span><span class="hljs-params">(<span class="hljs-type">char</span>*&amp; p, stack&lt;<span class="hljs-type">float</span>&gt;&amp; stk)</span> </span>&#123; <span class="hljs-comment">//将起始于p癿子串解析为数值，并存入操作数栈</span>
+    stk.<span class="hljs-built_in">push</span>((<span class="hljs-type">float</span>)(*p - <span class="hljs-string">&#x27;0&#x27;</span>)); <span class="hljs-comment">//当前数位对应的数值进栈</span>
+    <span class="hljs-comment">// 处理多位整数情况</span>
+    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">isdigit</span>(*(++p)))&#123;
+        <span class="hljs-type">float</span> temp = stk.<span class="hljs-built_in">top</span>();
+        stk.<span class="hljs-built_in">pop</span>();
+        stk.<span class="hljs-built_in">push</span>(temp * <span class="hljs-number">10</span> + (*p - <span class="hljs-string">&#x27;0&#x27;</span>));   <span class="hljs-comment">//弹出原操作数，转换新数值重新入栈</span>
+    &#125;
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;.&#x27;</span> != *p) <span class="hljs-keyword">return</span> ; <span class="hljs-comment">//此后非小数点，则意味着当前操作数解析完成</span>
+
+    <span class="hljs-comment">//处理小数部分  fraction设置挺关键</span>
+    <span class="hljs-type">float</span> fraction = <span class="hljs-number">1</span>; <span class="hljs-comment">//否则，意味着还有小数部分 </span>
+    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">isdigit</span>(*(++p)))&#123; <span class="hljs-comment">//逐位加入</span>
+        <span class="hljs-type">float</span> temp = stk.<span class="hljs-built_in">top</span>();
+        stk.<span class="hljs-built_in">pop</span>();
+        stk.<span class="hljs-built_in">push</span>(temp + (*p - <span class="hljs-string">&#x27;0&#x27;</span>)*(fraction /= <span class="hljs-number">10</span>)); <span class="hljs-comment">//小数部分</span>
+    &#125;
+    <span class="hljs-keyword">return</span> ;
+&#125;
+<span class="hljs-function">Operator <span class="hljs-title">optr2rank</span><span class="hljs-params">(<span class="hljs-type">char</span> op)</span> </span>&#123; <span class="hljs-comment">//由运算符转译出编号</span>
+    <span class="hljs-keyword">switch</span> (op) &#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span> : <span class="hljs-keyword">return</span> ADD; <span class="hljs-comment">//加</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span> : <span class="hljs-keyword">return</span> SUB; <span class="hljs-comment">//减</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span> : <span class="hljs-keyword">return</span> MUL; <span class="hljs-comment">//乘</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;/&#x27;</span> : <span class="hljs-keyword">return</span> DIV; <span class="hljs-comment">//除</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;^&#x27;</span> : <span class="hljs-keyword">return</span> POW; <span class="hljs-comment">//乘斱</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;!&#x27;</span> : <span class="hljs-keyword">return</span> FAC; <span class="hljs-comment">//阶乘</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;(&#x27;</span> : <span class="hljs-keyword">return</span> L_P; <span class="hljs-comment">//左括号</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;)&#x27;</span> : <span class="hljs-keyword">return</span> R_P; <span class="hljs-comment">//右括号</span>
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;\0&#x27;</span>: <span class="hljs-keyword">return</span> EOE; <span class="hljs-comment">//起始符与终止符</span>
+        <span class="hljs-keyword">default</span> : <span class="hljs-built_in">exit</span>(<span class="hljs-number">-1</span>); <span class="hljs-comment">//未知运算符</span>
+    &#125;
+&#125;
+<span class="hljs-function"><span class="hljs-type">char</span> <span class="hljs-title">orderBetween</span><span class="hljs-params">(<span class="hljs-type">char</span> op1, <span class="hljs-type">char</span> op2)</span> <span class="hljs-comment">//比较两个运算符之间的优先级</span>
+</span>&#123; 
+    <span class="hljs-keyword">return</span> pri[<span class="hljs-built_in">optr2rank</span>(op1)][<span class="hljs-built_in">optr2rank</span>(op2)]; 
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">append</span><span class="hljs-params">(<span class="hljs-type">char</span>*&amp; rpn, <span class="hljs-type">float</span> opnd)</span> </span>&#123; <span class="hljs-comment">//将操作数接至RPN末尾</span>
+    <span class="hljs-type">char</span> buf[<span class="hljs-number">64</span>] = &#123;<span class="hljs-number">0</span>&#125;;
+    <span class="hljs-comment">//分数值类型进行压栈</span>
+    <span class="hljs-keyword">if</span> (opnd != (<span class="hljs-type">float</span>)(<span class="hljs-type">int</span>)opnd) <span class="hljs-built_in">sprintf</span>(buf, <span class="hljs-string">&quot;%.2f \0&quot;</span>, opnd); <span class="hljs-comment">//浮点格式，或</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-built_in">sprintf</span>(buf, <span class="hljs-string">&quot;%d \0&quot;</span>, (<span class="hljs-type">int</span>)opnd); <span class="hljs-comment">//整数格式</span>
+
+    <span class="hljs-keyword">if</span>(rpn==<span class="hljs-literal">NULL</span>)&#123;
+        rpn = (<span class="hljs-type">char</span>*) <span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(<span class="hljs-type">char</span>) * (<span class="hljs-built_in">strlen</span>(buf) + <span class="hljs-number">1</span>));
+        <span class="hljs-built_in">strcpy</span>(rpn,buf);
+    &#125;
+    <span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-type">int</span> n = <span class="hljs-built_in">strlen</span>(rpn); <span class="hljs-comment">//RPN当前长度（以&#x27;\0&#x27;结尾，长度n + 1）</span>
+        rpn = (<span class="hljs-type">char</span>*) <span class="hljs-built_in">realloc</span>(rpn, <span class="hljs-built_in">sizeof</span>(<span class="hljs-type">char</span>) * (n + <span class="hljs-built_in">strlen</span>(buf) + <span class="hljs-number">1</span>)); <span class="hljs-comment">//扩展空间</span>
+        <span class="hljs-built_in">strcat</span>(rpn, buf); <span class="hljs-comment">//RPN加长</span>
+    &#125;
+    <span class="hljs-keyword">return</span> ;
+&#125;
+
+<span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">append</span><span class="hljs-params">(<span class="hljs-type">char</span>*&amp; rpn, <span class="hljs-type">char</span> optr)</span> </span>&#123; <span class="hljs-comment">//将运算符接至RPN末尾</span>
+    <span class="hljs-keyword">if</span>(rpn == <span class="hljs-literal">NULL</span>)&#123;
+        rpn = (<span class="hljs-type">char</span>*) <span class="hljs-built_in">malloc</span>(<span class="hljs-built_in">sizeof</span>(<span class="hljs-type">char</span>) * (<span class="hljs-number">3</span>));
+        <span class="hljs-built_in">sprintf</span>(rpn, <span class="hljs-string">&quot;%c &quot;</span>, optr); rpn[<span class="hljs-number">2</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>; <span class="hljs-comment">//接入指定癿运算符</span>
+    &#125;
+    <span class="hljs-keyword">else</span>&#123;
+        <span class="hljs-type">int</span> n = <span class="hljs-built_in">strlen</span>(rpn); <span class="hljs-comment">//RPN当前长度（以&#x27;\0&#x27;结尾，长度n + 1）</span>
+        rpn = (<span class="hljs-type">char</span>*) <span class="hljs-built_in">realloc</span>(rpn, <span class="hljs-built_in">sizeof</span>(<span class="hljs-type">char</span>) * (n + <span class="hljs-number">3</span>)); <span class="hljs-comment">//扩展空间</span>
+        <span class="hljs-built_in">sprintf</span>(rpn + n, <span class="hljs-string">&quot;%c &quot;</span>, optr); rpn[n + <span class="hljs-number">2</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>; <span class="hljs-comment">//接入指定癿运算符</span>
+    &#125;
+    <span class="hljs-keyword">return</span> ;
+&#125;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">calcu</span><span class="hljs-params">(<span class="hljs-type">char</span> op, <span class="hljs-type">float</span> data)</span>
+</span>&#123;
+    <span class="hljs-comment">// 一元计算</span>
+    <span class="hljs-keyword">if</span>((<span class="hljs-type">int</span>)data == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-type">int</span> sum_data = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=(<span class="hljs-type">int</span>)data;i++) sum_data *= i;
+    <span class="hljs-keyword">return</span> sum_data;
+&#125;
+<span class="hljs-function"><span class="hljs-type">float</span> <span class="hljs-title">calcu</span><span class="hljs-params">(<span class="hljs-type">float</span> opd1,<span class="hljs-type">char</span> op, <span class="hljs-type">float</span> opd2)</span>
+</span>&#123;
+    <span class="hljs-comment">//前后操作数</span>
+    <span class="hljs-keyword">switch</span>(op)&#123;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;+&#x27;</span>: <span class="hljs-keyword">return</span> opd1+opd2;
+                  <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;-&#x27;</span>: <span class="hljs-keyword">return</span> opd1-opd2;
+                  <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;*&#x27;</span>: <span class="hljs-keyword">return</span> opd1*opd2;
+                  <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;/&#x27;</span>: <span class="hljs-keyword">return</span> opd1/opd2;
+                  <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;^&#x27;</span>: <span class="hljs-keyword">return</span> <span class="hljs-built_in">pow</span>(opd1,opd2);
+                  <span class="hljs-keyword">break</span>;
+        <span class="hljs-keyword">default</span>:  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+                  <span class="hljs-keyword">break</span>;
+    &#125;
+&#125;
+<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">evaluate</span><span class="hljs-params">(<span class="hljs-type">char</span>* S, <span class="hljs-type">char</span>*&amp; RPN, <span class="hljs-type">float</span> &amp;result)</span> </span>&#123; <span class="hljs-comment">//对（已剔除白空格的）表达式S求值，并转换为逆波兰式RPN</span>
+    stack&lt;<span class="hljs-type">float</span>&gt; opnd; stack&lt;<span class="hljs-type">char</span>&gt; optr; <span class="hljs-comment">//运算数栈、运算符栈</span>
+    optr.<span class="hljs-built_in">push</span>(<span class="hljs-string">&#x27;\0&#x27;</span>); <span class="hljs-comment">//尾哨兵&#x27;\0&#x27;也作为头哨兵首先入栈，主要为了判断计算结束退出</span>
+    <span class="hljs-keyword">while</span> (!optr.<span class="hljs-built_in">empty</span>()) &#123; <span class="hljs-comment">//在运算符栈非空之前，逐个处理表达式中各字符</span>
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(*S)) &#123; <span class="hljs-comment">//若当前字符为操作数，则</span>
+            <span class="hljs-built_in">readNumber</span>(S, opnd);   <span class="hljs-comment">// 读入操作数</span>
+            <span class="hljs-built_in">append</span>(RPN, opnd.<span class="hljs-built_in">top</span>()); <span class="hljs-comment">//并将其接至RPN末尾</span>
+        &#125; <span class="hljs-keyword">else</span> <span class="hljs-comment">//若当前字符为运算符，则</span>
+            <span class="hljs-keyword">switch</span>(<span class="hljs-built_in">orderBetween</span>(optr.<span class="hljs-built_in">top</span>(), *S)) &#123; <span class="hljs-comment">//视其与栈顶运算符之间优先级高低分别处理</span>
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;&lt;&#x27;</span>: <span class="hljs-comment">//栈顶运算符优先级更低时</span>
+                    optr.<span class="hljs-built_in">push</span>(*S); S++; <span class="hljs-comment">//计算推迟，当前运算符入栈</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;=&#x27;</span>: <span class="hljs-comment">//优先级相等（当前运算符为右括号或者尾部哨兵&#x27;\0&#x27;）时</span>
+                    optr.<span class="hljs-built_in">pop</span>(); S++; <span class="hljs-comment">//脱括号并接收下一个字符</span>
+                    <span class="hljs-keyword">break</span>;
+                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>: &#123; <span class="hljs-comment">//栈顶运算符优先级更高时，可实施相应的计算，并将结果重新入栈</span>
+                    <span class="hljs-type">char</span> op = optr.<span class="hljs-built_in">top</span>();
+                    optr.<span class="hljs-built_in">pop</span>(); 
+                    <span class="hljs-built_in">append</span>(RPN, op); <span class="hljs-comment">//栈顶运算符出栈并续接至RPN末尾</span>
+                    <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;!&#x27;</span> == op) &#123; <span class="hljs-comment">//若属于一元运算符</span>
+                        <span class="hljs-type">float</span> pOpnd = opnd.<span class="hljs-built_in">top</span>(); <span class="hljs-comment">//叧需取出一个操作数，并</span>
+                        opnd.<span class="hljs-built_in">pop</span>();
+                        opnd.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">calcu</span>(op, pOpnd)); <span class="hljs-comment">//实施一元计算，结果入栈</span>
+                    &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">//对于其它（二元）运算符</span>
+                        <span class="hljs-type">float</span> pOpnd2 = opnd.<span class="hljs-built_in">top</span>();
+                        opnd.<span class="hljs-built_in">pop</span>();
+                        <span class="hljs-type">float</span> pOpnd1 = opnd.<span class="hljs-built_in">top</span>(); <span class="hljs-comment">//取出后、前操作数</span>
+                        opnd.<span class="hljs-built_in">pop</span>();
+                        opnd.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">calcu</span>(pOpnd1, op, pOpnd2)); <span class="hljs-comment">//实施二元计算，结果入栈</span>
+                    &#125;
+                    <span class="hljs-keyword">break</span>;
+                    &#125;
+                <span class="hljs-keyword">default</span>:
+                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">//逢语法错误，并做处理直接退出</span>
+            &#125;<span class="hljs-comment">//switch</span>
+    &#125;<span class="hljs-comment">//while</span>
+    result = opnd.<span class="hljs-built_in">top</span>();
+    opnd.<span class="hljs-built_in">pop</span>();
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">//弹出并返回最后的计算结果</span>
+&#125;
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>&#123;
+    <span class="hljs-type">float</span> ans = <span class="hljs-number">0</span>;
+    <span class="hljs-type">char</span>* RPN = <span class="hljs-literal">NULL</span>;
+    <span class="hljs-type">char</span> S[Opr] = &#123;<span class="hljs-number">0</span>&#125;;
+    cin &gt;&gt; S;
+    
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">evaluate</span>(S,RPN,ans))
+        cout &lt;&lt; <span class="hljs-string">&quot;Ans = &quot;</span> &lt;&lt; ans &lt;&lt; endl;
+    <span class="hljs-keyword">else</span>
+        cout &lt;&lt; <span class="hljs-string">&quot;Error!&quot;</span> &lt;&lt; endl;
+    cout &lt;&lt; <span class="hljs-string">&quot;Reverse Polish Notation:\n&quot;</span>;
+    cout &lt;&lt; RPN;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
+<ul>
+<li>算法计算示例:<br />
+计算给定表达式<code>(0!+1)*2^(3!+4)-(5!-67-(8+9))</code>的值<br />
+运行结果</li>
+</ul>
+<pre class="highlight"><code class="Result">    Ans = 988
+    Reverse Polish Notation:
+    0 ! 1 + 2 3 ! 4 + ^ * 5 ! 67 - 8 9 + - -
+</code></pre>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>顺序栈</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法竞赛——概述</title>
     <url>/2022/04/28/%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E2%80%94%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h2 id="算法竞赛"><a class="markdownIt-Anchor" href="#算法竞赛"></a> 算法竞赛</h2>
@@ -686,423 +1270,5 @@ I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
 可以考虑为每立方米 A、 B、 C 三种材料分别赋予惩罚因子为 1、 5、10，以惩罚函数最小为目标，约束同问题二，建立右图所示的觃划模型。转运方案制定不方案实施效果分析同问题二。
 </code></pre>
 ]]></content>
-  </entry>
-  <entry>
-    <title>顺序栈</title>
-    <url>/2022/10/03/%E9%A1%BA%E5%BA%8F%E6%A0%88/</url>
-    <content><![CDATA[<h3 id="栈的顺序存储表示"><a class="markdownIt-Anchor" href="#栈的顺序存储表示"></a> 栈的顺序存储表示</h3>
-<hr />
-<h4 id="1-顺序存储结构"><a class="markdownIt-Anchor" href="#1-顺序存储结构"></a> 1、顺序存储结构</h4>
-<p>利用一组地址连续的存储单元<br />
-<strong>顺序栈定义</strong>：</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">typedef struct&#123;
-    SElemType *base;   &#x2F;&#x2F; 栈底指针
-    SElemType *top;    &#x2F;&#x2F; 栈顶指针
-    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
-&#125;Sqstack;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><em>注：当用数组作为存储结构时，可以用下标代替指针</em></p>
-<h4 id="2-基本操作算法描述"><a class="markdownIt-Anchor" href="#2-基本操作算法描述"></a> 2、基本操作算法描述</h4>
-<p>对栈的常用操作做简要描述：</p>
-<ul>
-<li>栈的初始化</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status InitStack(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 构造空栈S
-    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-    if(!S.base) exit(OVERFLOW);
-    S.top &#x3D; S.base;
-    S.stacksize &#x3D; STACK_INIT_SIZE;
-    return OK;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>以初始化容量申请一块连续的内存，<code>S.top=S.base</code>保证<code>top=base</code>时栈空。</p>
-<ul>
-<li>返回栈顶元素</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status GetTop(SqStack S, SElemType &amp;e)
-&#123;
-    if(S.top &#x3D;&#x3D; S.base)  return ERROR;
-    e &#x3D; *(S.base-1);
-    return OK;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>压栈操作</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status Push(SqStack &amp;S, SElemType e)
-&#123;
-    &#x2F;&#x2F;首先判断是否栈满
-    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
-        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
-        if(!S.base) exit(OVERFLOW);
-        &#x2F;&#x2F; 更新回原来位置
-        S.top &#x3D; S.base + S.stacksize;
-        S.stacksize +&#x3D; STACKINCREMENT;
-    &#125;
-    *S.top++ &#x3D; e;
-    return OK;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>出栈操作</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status Pop(SqStack &amp;S, SElemType &amp;e)
-&#123;
-    &#x2F;&#x2F; 栈空标志
-    if(S.top &#x3D;&#x3D; S.base) return ERROR;
-    e &#x3D; *--S.top;
-    return OK;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>判断栈空</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status StackEmpty(SqStack S)
-&#123;
-    if(S.base &#x3D;&#x3D; S.top) return true;
-    return false;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>清空栈</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status ClearStack(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 利用栈空标志进行清空
-    S.top &#x3D; S.base;
-    return OK;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>释放栈空间</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">Status DestroyStack(SqStack &amp;S)
-&#123;
-    if(S.base !&#x3D; NULL) free(S.base);
-    return OK;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-栈的应用举例"><a class="markdownIt-Anchor" href="#3-栈的应用举例"></a> 3、栈的应用举例</h4>
-<h5 id="31-数制转换"><a class="markdownIt-Anchor" href="#31-数制转换"></a> 3.1 数制转换</h5>
-<p>十进制数与其他d进制数转换时，一个简单算法原理：<br />
-<code>N = (N div d) X d + N mod d</code>,其中<code>div</code>表示整除操作，<code>mod</code>表示求余操作</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;cstdlib&gt;
-using namespace std;
-
-typedef int SElemType;
-typedef bool Status;
-
-const bool OK &#x3D; true;
-const bool ERROR &#x3D; false;
-const SElemType STACK_INIT_SIZE &#x3D; 100;
-const SElemType STACKINCREMENT &#x3D; 10;
-typedef struct&#123;
-    SElemType *base;   &#x2F;&#x2F; 栈底指针
-    SElemType *top;    &#x2F;&#x2F; 栈顶指针
-    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
-&#125;SqStack;
-Status InitStack(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 构造空栈S
-    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-    if(!S.base) exit(EOVERFLOW);
-    S.top &#x3D; S.base;
-    S.stacksize &#x3D; STACK_INIT_SIZE;
-    return OK;
-&#125;
-Status Push(SqStack &amp;S, SElemType e)
-&#123;
-    &#x2F;&#x2F;首先判断是否栈满
-    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
-        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
-        if(!S.base) exit(EOVERFLOW);
-        &#x2F;&#x2F; 更新回原来位置
-        S.top &#x3D; S.base + S.stacksize;
-        S.stacksize +&#x3D; STACKINCREMENT;
-    &#125;
-    *S.top++ &#x3D; e;
-    return OK;
-&#125;
-Status Pop(SqStack &amp;S, SElemType &amp;e)
-&#123;
-    &#x2F;&#x2F; 栈空标志
-    if(S.top &#x3D;&#x3D; S.base) return ERROR;
-    e &#x3D; *--S.top;
-    return OK;
-&#125;
-Status StackEmpty(SqStack S)
-&#123;
-    if(S.base &#x3D;&#x3D; S.top) return true;
-    return false;
-&#125;
-Status Conversion()
-&#123;
-    SqStack S;
-    InitStack(S);
-    SElemType data;
-    int Obj &#x3D; 0;
-    cin &gt;&gt; data &gt;&gt; Obj;
-    while(data)&#123;
-        Push(S,data % Obj);
-        data &#x3D; data&#x2F;Obj;
-    &#125;
-    while(!StackEmpty(S))
-    &#123;
-        SElemType e;
-        if(!Pop(S,e)) break;
-        cout &lt;&lt; e;
-    &#125;
-    cout &lt;&lt; endl;
-    return OK;
-&#125;
-int main()
-&#123;
-    &#x2F;&#x2F; 对于输入的十进制数和目标进制，打印输出目标进制数
-    Conversion();
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="32-行编辑程序"><a class="markdownIt-Anchor" href="#32-行编辑程序"></a> 3.2 行编辑程序</h5>
-<p>将用户从键盘输入的符号存入一个输入缓冲区，然后逐行存入用户数据区；这个过程允许用户删除字符，删除整行字符<br />
-基本操作规则：</p>
-<pre class="line-numbers language-none"><code class="language-none"># 退格符
-@ 退行符
-^ 结束符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>程序实现：</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;cstdlib&gt;
-#include&lt;cstdio&gt;
-using namespace std;
-
-typedef char SElemType;
-typedef bool Status;
-
-const bool OK &#x3D; true;
-const bool ERROR &#x3D; false;
-const SElemType STACK_INIT_SIZE &#x3D; 100;
-const SElemType STACKINCREMENT &#x3D; 10;
-typedef struct&#123;
-    SElemType *base;   &#x2F;&#x2F; 栈底指针
-    SElemType *top;    &#x2F;&#x2F; 栈顶指针
-    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
-&#125;SqStack;
-Status InitStack(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 构造空栈S
-    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-    if(!S.base) exit(EOVERFLOW);
-    S.top &#x3D; S.base;
-    S.stacksize &#x3D; STACK_INIT_SIZE;
-    return OK;
-&#125;
-Status Push(SqStack &amp;S, SElemType e)
-&#123;
-    &#x2F;&#x2F;首先判断是否栈满
-    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
-        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
-        if(!S.base) exit(EOVERFLOW);
-        &#x2F;&#x2F; 更新回原来位置
-        S.top &#x3D; S.base + S.stacksize;
-        S.stacksize +&#x3D; STACKINCREMENT;
-    &#125;
-    *S.top++ &#x3D; e;
-    return OK;
-&#125;
-Status Pop(SqStack &amp;S, SElemType &amp;e)
-&#123;
-    &#x2F;&#x2F; 栈空标志
-    if(S.top &#x3D;&#x3D; S.base) return ERROR;
-    e &#x3D; *--S.top;
-    return OK;
-&#125;
-Status StackEmpty(SqStack S)
-&#123;
-    if(S.base &#x3D;&#x3D; S.top) return true;
-    return false;
-&#125;
-Status StackPrint(SqStack S)
-&#123;
-    SElemType *mp &#x3D; S.base;
-    while(mp !&#x3D; S.top)&#123;
-        putchar(*mp);
-        mp++;
-    &#125;
-    putchar(&#39;\n&#39;);
-    return OK;
-&#125;
-Status ClearStack(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 利用栈空标志进行清空
-    S.top &#x3D; S.base;
-    return OK;
-&#125;
-Status DestroyStack(SqStack &amp;S)
-&#123;
-    if(S.base !&#x3D; NULL) free(S.base);
-    return OK;
-&#125; 
-Status LineEdit()
-&#123;
-    &#x2F;&#x2F;构造字符栈
-    SqStack S;
-    InitStack(S);
-    SElemType ch;
-    ch &#x3D; getchar();  &#x2F;&#x2F;从终端接受一个字符
-    while(ch !&#x3D; &#39;^&#39;)&#123;
-        while(ch !&#x3D; &#39;^&#39; &amp;&amp; ch !&#x3D; &#39;\n&#39;)&#123;
-            switch(ch)&#123;
-                case &#39;#&#39;:Pop(S,ch);  &#x2F;&#x2F;退字符
-                         break;
-                case &#39;@&#39;:ClearStack(S); &#x2F;&#x2F;退行
-                         break;
-                default:Push(S,ch); &#x2F;&#x2F;字符入栈
-            &#125;
-            ch &#x3D; getchar(); &#x2F;&#x2F;从终端接受下一个字符
-        &#125;
-        &#x2F;&#x2F;对缓冲区的一行字符存入数据区，这里只是打印输出
-        StackPrint(S);
-        ClearStack(S);
-        if(ch !&#x3D; &#39;^&#39;) ch &#x3D; getchar();
-    &#125;
-    DestroyStack(S);
-    return OK;
-&#125;
-int main()
-&#123;
-    LineEdit();
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="33-括号匹配问题"><a class="markdownIt-Anchor" href="#33-括号匹配问题"></a> 3.3 括号匹配问题</h5>
-<p>给定一个包含各种括号的表达式，判断是否满足括号匹配<br />
-利用栈操作，可在线性时间内检查出是否匹配，具体实现如下：</p>
-<ul>
-<li>利用<code>stl</code>模板库</li>
-</ul>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">bool paren(const char exp[]) &#123; &#x2F;&#x2F;表达式括号匹配检查，可兼顾三种括号
-    Stack&lt;char&gt; S; &#x2F;&#x2F;使用栈记录已出现但尚未匹配的左括号
-    for (int i &#x3D; 0; exp[i]; i++) &#x2F;* 逐一检查当前字符 *&#x2F;
-        switch (exp[i]) &#123; &#x2F;&#x2F;左括号直接进栈；右括号若不栈顶失配，则表达式必不匹配
-            case &#39;(&#39;: case &#39;[&#39;: case &#39;&#123;&#39;: S.push(exp[i]); break;
-            case &#39;)&#39;: if ((S.empty()) || (&#39;(&#39; !&#x3D; S.pop())) return false; break;
-            case &#39;]&#39;: if ((S.empty()) || (&#39;[&#39; !&#x3D; S.pop())) return false; break;
-            case &#39;&#125;&#39;: if ((S.empty()) || (&#39;&#123;&#39; !&#x3D; S.pop())) return false; break;
-            default: break; &#x2F;&#x2F;非括号字符一律忽略
-        &#125;
-    return S.empty(); &#x2F;&#x2F;整个表达式扫描过后，栈中若仍残留（左）括号，则不匹配；否则（栈空）匹配
-&#125;
-&#96;&#96;&#96;     
-
-+ 自定义栈操作
-&#96;&#96;&#96; C++
-#include&lt;iostream&gt;
-#include&lt;cstdlib&gt;
-#include&lt;cstdio&gt;
-using namespace std;
-
-typedef char SElemType;    &#x2F;&#x2F;栈元素类型
-typedef bool Status;
-
-const bool OK &#x3D; true;
-const bool ERROR &#x3D; false;
-const SElemType STACK_INIT_SIZE &#x3D; 100;
-const SElemType STACKINCREMENT &#x3D; 10;
-typedef struct&#123;
-    SElemType *base;   &#x2F;&#x2F; 栈底指针
-    SElemType *top;    &#x2F;&#x2F; 栈顶指针
-    int stacksize;   &#x2F;&#x2F; 当前栈的最大容量 
-&#125;SqStack;
-Status InitStack(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 构造空栈S
-    S.base &#x3D; (SElemType*)malloc(STACK_INIT_SIZE * sizeof(SElemType));
-    if(!S.base) exit(EOVERFLOW);
-    S.top &#x3D; S.base;
-    S.stacksize &#x3D; STACK_INIT_SIZE;
-    return OK;
-&#125;
-Status Push(SqStack &amp;S, SElemType e)
-&#123;
-    &#x2F;&#x2F;首先判断是否栈满
-    if(S.top-S.base &gt;&#x3D; S.stacksize)&#123;
-        S.base &#x3D; (SElemType *)realloc(S.base, (S.stacksize+STACKINCREMENT) * sizeof(SElemType));   &#x2F;&#x2F;申请增量空间
-        if(!S.base) exit(EOVERFLOW);
-        &#x2F;&#x2F; 更新回原来位置
-        S.top &#x3D; S.base + S.stacksize;
-        S.stacksize +&#x3D; STACKINCREMENT;
-    &#125;
-    *S.top++ &#x3D; e;
-    return OK;
-&#125;
-SElemType Pop(SqStack &amp;S)
-&#123;
-    &#x2F;&#x2F; 栈空标志
-    if(S.top &#x3D;&#x3D; S.base) return ERROR;
-    return *--S.top;
-&#125;
-Status StackEmpty(SqStack S)
-&#123;
-    if(S.base &#x3D;&#x3D; S.top) return true;
-    return false;
-&#125;
-Status paren()
-&#123;
-
-    &#x2F;&#x2F;构造字符栈
-    SqStack S;
-    InitStack(S);
-    SElemType ch;
-    ch &#x3D; getchar();
-    while(ch !&#x3D; &#39;\n&#39;)&#123;
-        switch (ch) &#123; &#x2F;&#x2F;左括号直接进栈；右括号若不栈顶失配，则表达式必不匹配
-            case &#39;(&#39;: case &#39;[&#39;: case &#39;&#123;&#39;: Push(S, ch); break;
-            case &#39;)&#39;: if ((StackEmpty(S)) || (&#39;(&#39; !&#x3D; Pop(S))) return false; break;
-            case &#39;]&#39;: if ((StackEmpty(S)) || (&#39;[&#39; !&#x3D; Pop(S))) return false; break;
-            case &#39;&#125;&#39;: if ((StackEmpty(S)) || (&#39;&#123;&#39; !&#x3D; Pop(S))) return false; break;
-            default: break; &#x2F;&#x2F;非括号字符一律忽略
-        &#125;
-        ch &#x3D; getchar();
-    &#125;
-    return StackEmpty(S);
-&#125;
-int main()
-&#123;
-    if(paren()) cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;
-    else cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="34-表达式求值"><a class="markdownIt-Anchor" href="#34-表达式求值"></a> 3.4 表达式求值</h5>
-<hr />
-<p><strong><em>延迟缓冲</em></strong><br />
-在一些应用问题中，输入可分解为多个单元并通过迭代依次扫描处理，但过程中的各步计算<br />
-往往滞后于扫描的进度，需要待到必要的信息已完整到一定程度之后,才能作出判断并实施计算。<br />
-在这类场合，栈结构则可以扮演数据缓冲区的角色。</p>
-<hr />
-<p>表达式求值<br />
-关于运算符执行次序的规则(即运算优先级)，一部分决定于事先约定的惯例(比如乘除优先于加减)，<br />
-另一部分则决定于括号。也就是说，仅根据表达式的某一前缀，并不能完全确定其中各运算符可否执行以<br />
-及执行的次序；只有在已获得足够多后续信息之后，才能确定其中哪些运算符可以执行。</p>
-<ul>
-<li>定义优先级表</li>
-</ul>
-<pre class="highlight"><code class="C++"><span class="hljs-meta">#<span class="hljs-keyword">define</span> N_OPTR 9 <span class="hljs-comment">//运算符总数</span></span>
-<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> &#123;ADD, SUB, MUL, DIV, POW, FAC, L_P, R_P, EOE&#125; Operator; <span class="hljs-comment">//运算符集合</span>
- <span class="hljs-comment">//加、减、乘、除、乘斱、阶乘、左括号、右括号、起始符不终止符</span>
-
-<span class="hljs-type">const</span> <span class="hljs-type">char</span> pri[N_OPTR][N_OPTR] = &#123; <span class="hljs-comment">//运算符优先等级 [栈顶] [弼前]</span>
-<span class="hljs-comment">/* |-------------- 当前运算符 --------------| */</span>
-<span class="hljs-comment">/* + - * / ^ ! ( ) \0 */</span>
-<span class="hljs-comment">/* -- + */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
-<span class="hljs-comment">/* | - */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
-<span class="hljs-comment">/* 栈 * */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
-<span class="hljs-comment">/* 顶 / */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
-<span class="hljs-comment">/* 运 ^ */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
-<span class="hljs-comment">/* 算 ! */</span> <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>,
-<span class="hljs-comment">/* 符 ( */</span> <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;=&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>,
-<span class="hljs-comment">/* | ) */</span> <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>,
-<span class="hljs-comment">/* -- \0 */</span> <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;=&#x27;</span>
-&#125;;
-</code></pre>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>顺序栈</tag>
-        <tag>算法</tag>
-      </tags>
   </entry>
 </search>
