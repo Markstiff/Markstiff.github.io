@@ -637,7 +637,8 @@ I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
   <entry>
     <title>栈进阶数据结构</title>
     <url>/2022/10/08/%E6%A0%88%E8%BF%9B%E9%98%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<h3 id="一-栈维护最值"><a class="markdownIt-Anchor" href="#一-栈维护最值"></a> 一、栈维护最值</h3>
+    <content><![CDATA[<hr />
+<h3 id="一-栈维护最值"><a class="markdownIt-Anchor" href="#一-栈维护最值"></a> 一、栈维护最值</h3>
 <p>时间复杂度<code>O(1)</code>；设置三个栈<code>A、B、C</code>，其中<code>A</code>栈存储原始数据，<code>B、C</code>栈分别维护栈中最小值和最大值:</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 进栈操作</span><br>A.<span class="hljs-built_in">push</span>(x);<br>B.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">min</span>(B.<span class="hljs-built_in">top</span>(),x));<br>C.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">max</span>(C.<span class="hljs-built_in">top</span>(),x));<br><span class="hljs-comment">// 出栈操作</span><br>A.<span class="hljs-built_in">pop</span>();<br>B.<span class="hljs-built_in">pop</span>();<br>C.<span class="hljs-built_in">pop</span>();<br></code></pre></td></tr></table></figure>
 <h3 id="二-对顶栈"><a class="markdownIt-Anchor" href="#二-对顶栈"></a> 二、对顶栈</h3>
