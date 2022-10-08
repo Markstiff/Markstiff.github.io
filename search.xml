@@ -608,24 +608,67 @@ I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
   <entry>
     <title>Latex组织文本</title>
     <url>/2022/10/07/Latex%E5%AD%A6%E4%B9%A0%E2%80%94%E7%BB%84%E7%BB%87%E6%96%87%E6%9C%AC/</url>
-    <content><![CDATA[<h3 id="一、标点符号"><a href="#一、标点符号" class="headerlink" title="一、标点符号"></a>一、标点符号</h3><h4 id="1-1-引号"><a href="#1-1-引号" class="headerlink" title="1.1 引号"></a>1.1 引号</h4><p><code>Latex</code>使用<code>‘’</code>来表示引号，如果遇到连续使用单引号和双引号的情形，则需要使用<code>\,</code>命令隔开，会产生很小的间距</p>
-<h4 id="1-2-符号"><a href="#1-2-符号" class="headerlink" title="1.2 符号-"></a>1.2 符号<code>-</code></h4><ul>
+    <content><![CDATA[<h3 id="一-标点符号"><a class="markdownIt-Anchor" href="#一-标点符号"></a> 一、标点符号</h3>
+<h4 id="11-引号"><a class="markdownIt-Anchor" href="#11-引号"></a> 1.1 引号</h4>
+<p><code>Latex</code>使用<code>‘’</code>来表示引号，如果遇到连续使用单引号和双引号的情形，则需要使用<code>\,</code>命令隔开，会产生很小的间距</p>
+<h4 id="12-符号-"><a class="markdownIt-Anchor" href="#12-符号-"></a> 1.2 符号<code>-</code></h4>
+<ul>
 <li>数学减号</li>
 <li>单独使用时表示连字符</li>
 <li>两个连用时，是<code>en dash</code>，表示数字范围</li>
 <li>三个连用时，是<code>em dash</code>，即破折号</li>
 </ul>
-<p><code>~</code>符号命令：数学模式<script type="math/tex">\sim</script>    </p>
-<h4 id="1-3-省略号"><a href="#1-3-省略号" class="headerlink" title="1.3 省略号"></a>1.3 省略号</h4><p>西文省略号: <code>\ldots</code>或者<code>\dots</code>，在句中使用时直接命令，而在句末使用时要把省略号放进数学模式中。<br>中文写作使用全角标点，一般由<code>xsCJK</code>宏包控制，可以使用<code>\punctstyle&#123;&#125;</code>命令修改，<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071546897.png" alt=""></p>
-<h4 id="1-4-空格"><a href="#1-4-空格" class="headerlink" title="1.4 空格"></a>1.4 空格</h4><p>以字母命名的宏后面空格会被自动忽略掉，此时可以使用<code>\</code>命令添加<br>或者添加一个空分组<code>&#123;&#125;</code>分隔，或者<code>&#123;\TeX&#125;</code>包裹进来<br><strong>不可打断的空格(带子)</strong><br>用<code>~</code>表示，<code>function ~$f(x)$</code><br>西方文体中，句末标点和缩写标点问题<br><code>Latex</code>默认在大写字母的点看作缩写标记，小写字母后面的点看作句子结束而设置不同的点间隔；但当特殊情况时需要明确指定具体用法，示例:<br><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">Tinker et al.<span class="hljs-keyword">\ </span>made the double play.  <span class="hljs-comment">% &#x27;\空格&#x27;命令放在&#x27;.&#x27;后直接分隔单词</span><br><br>Tinker et al,made the double play. <span class="hljs-comment">% 一般情况下标点后需加空格</span><br><br><span class="hljs-keyword">\frenchspacing</span>  <span class="hljs-comment">% 禁止标点后的额外间距</span><br>Roman number XII<span class="hljs-keyword">\@</span>. Yes.  <span class="hljs-comment">% &#x27;\@&#x27;命令放在&#x27;.&#x27;前面只处理&#x27;.&#x27;是句子结束点，之后再添加空格表示正常的句号标点</span><br></code></pre></td></tr></table></figure></p>
-<h4 id="1-5-幻影空格"><a href="#1-5-幻影空格" class="headerlink" title="1.5 幻影空格"></a>1.5 幻影空格</h4><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex"><span class="hljs-comment">% 幻影空格实际上起到占位作用，接受一个参数，生成与参数内容大小一样的空盒子</span><br><span class="hljs-comment">% 类似的还有\hphantom和\vphantom表示水平竖直方向上的幻影</span><br>MarkStiff<span class="hljs-keyword">\phantom</span>&#123;神奇&#125;速速隐形<br><br>MarkStiff神奇速速显形<br></code></pre></td></tr></table></figure>
-<h4 id="1-6-换行"><a href="#1-6-换行" class="headerlink" title="1.6 换行"></a>1.6 换行</h4><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex"><span class="hljs-keyword">\\</span>[2cm]  <span class="hljs-comment">% 命令直接另起一行，上一行保持原样,可选参数设置换行后增加的额外垂直距离</span><br><span class="hljs-keyword">\linebreak</span> <span class="hljs-comment">% 命令指定一行的断点，上一行仍按完整一行散开对齐</span><br></code></pre></td></tr></table></figure>
-<h3 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h3><h4 id="2-1-字体族格式命令"><a href="#2-1-字体族格式命令" class="headerlink" title="2.1 字体族格式命令"></a>2.1 字体族格式命令</h4><p>带参数命令主要用于少量字体的更换，三种字体族对应的带参数命令，而声明命令主要用偶遇分组或环境中字体的整体更换.<br><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textrm</span>&#123;Roman font family&#125;<br>	<span class="hljs-keyword">\textsf</span>&#123;Sans serif font family&#125;<br>	<span class="hljs-keyword">\texttt</span>&#123;Typewriter font family&#125;<br>	<br>声明命令<br>	&#123;<span class="hljs-keyword">\rmfamily</span> Roman font family&#125;<br>	&#123;<span class="hljs-keyword">\sffamily</span> Sans serif font family&#125;<br>	&#123;<span class="hljs-keyword">\ttfamily</span> Typewriter font family&#125;<br></code></pre></td></tr></table></figure><br>效果图:<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071651052.png" alt=""></p>
-<h4 id="2-2-字体形状命令"><a href="#2-2-字体形状命令" class="headerlink" title="2.2 字体形状命令"></a>2.2 字体形状命令</h4><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textup</span>&#123;Upright shape&#125;  <span class="hljs-comment">% 直立形状</span><br>	<span class="hljs-keyword">\textit</span>&#123;Italic shape&#125; <span class="hljs-comment">% 意大利形状</span><br>	<span class="hljs-keyword">\textsl</span>&#123;Slanted shape&#125; <span class="hljs-comment">% 倾斜形状</span><br>	<span class="hljs-keyword">\textsc</span>&#123;SMALL CAPITALS SHAPE&#125; <span class="hljs-comment">% 小型大写形状</span><br><br>声明命令<br>	&#123;<span class="hljs-keyword">\upshape</span> Upright shape&#125;<br>	&#123;<span class="hljs-keyword">\itshape</span> Italic shape&#125;<br>	&#123;<span class="hljs-keyword">\slshape</span> Slanted shape&#125;<br>	&#123;<span class="hljs-keyword">\scshape</span> SMALL CAPITALS SHAPE&#125;<br></code></pre></td></tr></table></figure>
-<p>效果图：<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071650619.png" alt=""><br>倾斜形状一般是对符号直接倾斜产生的，而通常的“斜体”往往指意大利形状，数学公式的字体一般就使用意大利形状</p>
-<h4 id="2-3-字体系列命令"><a href="#2-3-字体系列命令" class="headerlink" title="2.3 字体系列命令"></a>2.3 字体系列命令</h4><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textmd</span>&#123;Medium series&#125; <span class="hljs-comment">% 中等字体，正文默认使用此系列</span><br>	<span class="hljs-keyword">\textbf</span>&#123;Bold extended series&#125; <span class="hljs-comment">% 加宽加粗</span><br>	<br>声明命令<br>	&#123;<span class="hljs-keyword">\mdseries</span> Medium series&#125; 	<br>	&#123;<span class="hljs-keyword">\bfseries</span> Bold extended series&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="2-4-字体坐标"><a href="#2-4-字体坐标" class="headerlink" title="2.4 字体坐标"></a>2.4 字体坐标</h4><p>经上文介绍了字体的三个特征，综合起来构成了确定一种字体的三维坐标：族、形状、系列，不同组合会产生不同的字体效果。<br>具体组合效果图:<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071702667.png" alt=""><br><strong><em>恢复普通字体</em></strong><br>在复杂的字体环境中，恢复普通字体就显得十分重要了。<br><code>\textnormal&#123;文字&#125; % 带参数命令</code><br><code>&#123;\normalfont 文字&#125; % 声明命令</code><br><strong><em>斜体校正</em></strong><br>在使用斜体声明<code>\itshape、\slshape</code>时，最后一个倾斜的字体会超过右边界，使得间距过近；<br>而用带参数命令<code>\textit、\textsl</code>时，可以自动修正这个距离，也可以手工使用<code>\/</code>命令进行校正。<br><strong><em>禁止校正</em></strong><br>有时对于倾斜校正是不必要的，则应关闭带参数倾斜命令的自动校正功能:<br><code>\textit&#123;M\nocorr&#125;M</code> 通过添加命令<code>\nocorr</code>命令来关闭自动校正    </p>
-<h4 id="2-5-中文字体族"><a href="#2-5-中文字体族" class="headerlink" title="2.5 中文字体族"></a>2.5 中文字体族</h4><p>对于中文字体，一般只使用不同的字体族进行区分，选择中文字体族使用<code>\CJKfamily</code>命令<br>在<code>ctex</code>宏包及文档下有一些预定义，默认情况下配置了四种字体族：<br><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">&#123;<span class="hljs-keyword">\heiti</span> 这是黑体&#125;<br>&#123;<span class="hljs-keyword">\songti</span> 这是宋体&#125;<br>&#123;<span class="hljs-keyword">\kaishu</span> 这是楷书&#125;<br>&#123;<span class="hljs-keyword">\fangsong</span> 这是仿宋&#125;<br></code></pre></td></tr></table></figure><br><strong><em>组合字体</em></strong><br><code>ctex</code>宏包及文档类也定义了一些组合字体，可以让中文也具备使用粗体和意大利体功能，并且重定义<code>\rmfamily</code>使它同时对中文起作用<br>默认的中文字体是<code>rm</code>，正常字体是宋体，粗体是黑体，意大利体是楷体 </p>
+<p><code>~</code>符号命令：数学模式<code>$\sim$</code></p>
+<h4 id="13-省略号"><a class="markdownIt-Anchor" href="#13-省略号"></a> 1.3 省略号</h4>
+<p>西文省略号: <code>\ldots</code>或者<code>\dots</code>，在句中使用时直接命令，而在句末使用时要把省略号放进数学模式中。<br />
+中文写作使用全角标点，一般由<code>xsCJK</code>宏包控制，可以使用<code>\punctstyle&#123;&#125;</code>命令修改，<br />
+<img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071546897.png" alt="" /></p>
+<h4 id="14-空格"><a class="markdownIt-Anchor" href="#14-空格"></a> 1.4 空格</h4>
+<p>以字母命名的宏后面空格会被自动忽略掉，此时可以使用<code>\ </code>命令添加<br />
+或者添加一个空分组<code>&#123;&#125;</code>分隔，或者<code>&#123;\TeX&#125;</code>包裹进来<br />
+<strong>不可打断的空格(带子)</strong><br />
+用<code>~</code>表示，<code>function ~$f(x)$</code><br />
+西方文体中，句末标点和缩写标点问题<br />
+<code>Latex</code>默认在大写字母的点看作缩写标记，小写字母后面的点看作句子结束而设置不同的点间隔；但当特殊情况时需要明确指定具体用法，示例:</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">Tinker et al.<span class="hljs-keyword">\ </span>made the double play.  <span class="hljs-comment">% &#x27;\空格&#x27;命令放在&#x27;.&#x27;后直接分隔单词</span><br><br>Tinker et al,made the double play. <span class="hljs-comment">% 一般情况下标点后需加空格</span><br><br><span class="hljs-keyword">\frenchspacing</span>  <span class="hljs-comment">% 禁止标点后的额外间距</span><br>Roman number XII<span class="hljs-keyword">\@</span>. Yes.  <span class="hljs-comment">% &#x27;\@&#x27;命令放在&#x27;.&#x27;前面只处理&#x27;.&#x27;是句子结束点，之后再添加空格表示正常的句号标点</span><br></code></pre></td></tr></table></figure>
+<h4 id="15-幻影空格"><a class="markdownIt-Anchor" href="#15-幻影空格"></a> 1.5 幻影空格</h4>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex"><span class="hljs-comment">% 幻影空格实际上起到占位作用，接受一个参数，生成与参数内容大小一样的空盒子</span><br><span class="hljs-comment">% 类似的还有\hphantom和\vphantom表示水平竖直方向上的幻影</span><br>MarkStiff<span class="hljs-keyword">\phantom</span>&#123;神奇&#125;速速隐形<br><br>MarkStiff神奇速速显形<br></code></pre></td></tr></table></figure>
+<h4 id="16-换行"><a class="markdownIt-Anchor" href="#16-换行"></a> 1.6 换行</h4>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex"><span class="hljs-keyword">\\</span>[2cm]  <span class="hljs-comment">% 命令直接另起一行，上一行保持原样,可选参数设置换行后增加的额外垂直距离</span><br><span class="hljs-keyword">\linebreak</span> <span class="hljs-comment">% 命令指定一行的断点，上一行仍按完整一行散开对齐</span><br></code></pre></td></tr></table></figure>
+<h3 id="二-字体"><a class="markdownIt-Anchor" href="#二-字体"></a> 二、字体</h3>
+<h4 id="21-字体族格式命令"><a class="markdownIt-Anchor" href="#21-字体族格式命令"></a> 2.1 字体族格式命令</h4>
+<p>带参数命令主要用于少量字体的更换，三种字体族对应的带参数命令，而声明命令主要用偶遇分组或环境中字体的整体更换.</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textrm</span>&#123;Roman font family&#125;<br>	<span class="hljs-keyword">\textsf</span>&#123;Sans serif font family&#125;<br>	<span class="hljs-keyword">\texttt</span>&#123;Typewriter font family&#125;<br>	<br>声明命令<br>	&#123;<span class="hljs-keyword">\rmfamily</span> Roman font family&#125;<br>	&#123;<span class="hljs-keyword">\sffamily</span> Sans serif font family&#125;<br>	&#123;<span class="hljs-keyword">\ttfamily</span> Typewriter font family&#125;<br></code></pre></td></tr></table></figure>
+<p>效果图:<br />
+<img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071651052.png" alt="" /></p>
+<h4 id="22-字体形状命令"><a class="markdownIt-Anchor" href="#22-字体形状命令"></a> 2.2 字体形状命令</h4>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textup</span>&#123;Upright shape&#125;  <span class="hljs-comment">% 直立形状</span><br>	<span class="hljs-keyword">\textit</span>&#123;Italic shape&#125; <span class="hljs-comment">% 意大利形状</span><br>	<span class="hljs-keyword">\textsl</span>&#123;Slanted shape&#125; <span class="hljs-comment">% 倾斜形状</span><br>	<span class="hljs-keyword">\textsc</span>&#123;SMALL CAPITALS SHAPE&#125; <span class="hljs-comment">% 小型大写形状</span><br><br>声明命令<br>	&#123;<span class="hljs-keyword">\upshape</span> Upright shape&#125;<br>	&#123;<span class="hljs-keyword">\itshape</span> Italic shape&#125;<br>	&#123;<span class="hljs-keyword">\slshape</span> Slanted shape&#125;<br>	&#123;<span class="hljs-keyword">\scshape</span> SMALL CAPITALS SHAPE&#125;<br></code></pre></td></tr></table></figure>
+<p>效果图：<br />
+<img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071650619.png" alt="" /><br />
+倾斜形状一般是对符号直接倾斜产生的，而通常的“斜体”往往指意大利形状，数学公式的字体一般就使用意大利形状</p>
+<h4 id="23-字体系列命令"><a class="markdownIt-Anchor" href="#23-字体系列命令"></a> 2.3 字体系列命令</h4>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textmd</span>&#123;Medium series&#125; <span class="hljs-comment">% 中等字体，正文默认使用此系列</span><br>	<span class="hljs-keyword">\textbf</span>&#123;Bold extended series&#125; <span class="hljs-comment">% 加宽加粗</span><br>	<br>声明命令<br>	&#123;<span class="hljs-keyword">\mdseries</span> Medium series&#125; 	<br>	&#123;<span class="hljs-keyword">\bfseries</span> Bold extended series&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="24-字体坐标"><a class="markdownIt-Anchor" href="#24-字体坐标"></a> 2.4 字体坐标</h4>
+<p>经上文介绍了字体的三个特征，综合起来构成了确定一种字体的三维坐标：族、形状、系列，不同组合会产生不同的字体效果。<br />
+具体组合效果图:<br />
+<img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071702667.png" alt="" /><br />
+<strong><em>恢复普通字体</em></strong><br />
+在复杂的字体环境中，恢复普通字体就显得十分重要了。<br />
+<code>\textnormal&#123;文字&#125; % 带参数命令</code><br />
+<code>&#123;\normalfont 文字&#125; % 声明命令</code><br />
+<strong><em>斜体校正</em></strong><br />
+在使用斜体声明<code>\itshape、\slshape</code>时，最后一个倾斜的字体会超过右边界，使得间距过近；<br />
+而用带参数命令<code>\textit、\textsl</code>时，可以自动修正这个距离，也可以手工使用<code>\/</code>命令进行校正。<br />
+<strong><em>禁止校正</em></strong><br />
+有时对于倾斜校正是不必要的，则应关闭带参数倾斜命令的自动校正功能:<br />
+<code>\textit&#123;M\nocorr&#125;M</code> 通过添加命令<code>\nocorr</code>命令来关闭自动校正</p>
+<h4 id="25-中文字体族"><a class="markdownIt-Anchor" href="#25-中文字体族"></a> 2.5 中文字体族</h4>
+<p>对于中文字体，一般只使用不同的字体族进行区分，选择中文字体族使用<code>\CJKfamily</code>命令<br />
+在<code>ctex</code>宏包及文档下有一些预定义，默认情况下配置了四种字体族：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">&#123;<span class="hljs-keyword">\heiti</span> 这是黑体&#125;<br>&#123;<span class="hljs-keyword">\songti</span> 这是宋体&#125;<br>&#123;<span class="hljs-keyword">\kaishu</span> 这是楷书&#125;<br>&#123;<span class="hljs-keyword">\fangsong</span> 这是仿宋&#125;<br></code></pre></td></tr></table></figure>
+<p><strong><em>组合字体</em></strong><br />
+<code>ctex</code>宏包及文档类也定义了一些组合字体，可以让中文也具备使用粗体和意大利体功能，并且重定义<code>\rmfamily</code>使它同时对中文起作用<br />
+默认的中文字体是<code>rm</code>，正常字体是宋体，粗体是黑体，意大利体是楷体</p>
 ]]></content>
       <categories>
         <category>Latex学习</category>
