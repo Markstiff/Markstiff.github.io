@@ -634,4 +634,32 @@ I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
         <tag>Latex</tag>
       </tags>
   </entry>
+  <entry>
+    <title>栈进阶数据结构</title>
+    <url>/2022/10/08/%E6%A0%88%E8%BF%9B%E9%98%B6%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h3 id="一-栈维护最值"><a class="markdownIt-Anchor" href="#一-栈维护最值"></a> 一、栈维护最值</h3>
+<p>时间复杂度<code>O(1)</code>；设置三个栈<code>A、B、C</code>，其中<code>A</code>栈存储原始数据，<code>B、C</code>栈分别维护栈中最小值和最大值:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 进栈操作</span><br>A.<span class="hljs-built_in">push</span>(x);<br>B.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">min</span>(B.<span class="hljs-built_in">top</span>(),x));<br>C.<span class="hljs-built_in">push</span>(<span class="hljs-built_in">max</span>(C.<span class="hljs-built_in">top</span>(),x));<br><span class="hljs-comment">// 出栈操作</span><br>A.<span class="hljs-built_in">pop</span>();<br>B.<span class="hljs-built_in">pop</span>();<br>C.<span class="hljs-built_in">pop</span>();<br></code></pre></td></tr></table></figure>
+<h3 id="二-对顶栈"><a class="markdownIt-Anchor" href="#二-对顶栈"></a> 二、对顶栈</h3>
+<p>应用思想：始终在序列中间某个指定位置进行修改；<br />
+建立两个栈，<code>A</code>栈存储从序列开头到当前位置的这一段子序列，栈<code>B</code>存储当前位置到序列结尾处的这一段子序列，二者都以当前位置那一端作为栈顶。<br />
+栈求**_最大前缀和**_时，用一个数组<code>f</code>维护栈<code>A</code>的最大前缀和；</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// A的栈顶位置下标pA，使用数组模拟栈</span><br><span class="hljs-comment">// sum是A的前缀和数组</span><br>A.<span class="hljs-built_in">push</span>(x);<br>sum[pA]=sum[pA<span class="hljs-number">-1</span>]+A[pA];<br>f[pA] = <span class="hljs-built_in">max</span>(f[pA<span class="hljs-number">-1</span>],sum[pA]);<br></code></pre></td></tr></table></figure>
+<h3 id="三-单调栈"><a class="markdownIt-Anchor" href="#三-单调栈"></a> 三、单调栈</h3>
+<p>单调栈算法：时间复杂度<code>O(N)</code>，处理问题思想在于**<em>及时排除不可能的选项，保持策略集合的高度有效性和秩序性</em>**<br />
+应用：需要维护一个单调的序列并且可以不断从一端插入或删除<br />
+典例：<br />
+<img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210081928282.png" alt="" /><br />
+思路分析:<br />
+<img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210081937079.png" alt="" /></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// 数组模拟栈：往往更快一些</span><br>a[n+<span class="hljs-number">1</span>] = p = <span class="hljs-number">0</span>;  <span class="hljs-comment">// p为栈顶位置，初始为0</span><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n+<span class="hljs-number">1</span>;i++)<br>&#123;<br>	<span class="hljs-keyword">if</span>(a[i] &gt; s[p])&#123; <span class="hljs-comment">// 矩形高度大于栈顶高度时直接进栈</span><br>		s[++p] = a[i];<br>		w[p] = <span class="hljs-number">1</span>;<br>	&#125;<span class="hljs-keyword">else</span>&#123;  <span class="hljs-comment">// 否则依次比较、寻找不高于当前矩形的位置</span><br>		<span class="hljs-type">int</span> width = <span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">while</span>(s[p] &gt; a[i])&#123;<br>			width += w[p];<span class="hljs-comment">// 宽度叠加</span><br>			<span class="hljs-comment">// 这里s[p]是当前栈顶的高度值，ans记录最终的最大值</span><br>			ans = <span class="hljs-built_in">max</span>(ans, (<span class="hljs-type">long</span> <span class="hljs-type">long</span>)width*s[p]); <br>			p--;<br>		&#125;<br>		<span class="hljs-comment">// 更新栈，基于当前栈顶位置</span><br>		s[++p] = a[i],w[p] = width + <span class="hljs-number">1</span>;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>算法竞赛</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
 </search>
