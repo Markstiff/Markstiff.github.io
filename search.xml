@@ -706,10 +706,10 @@ I 典型代表：endl 或者忘了用 cin.tie(0)、valarray
 <h3 id="二-对顶栈"><a class="markdownIt-Anchor" href="#二-对顶栈"></a> 二、对顶栈</h3>
 <p>应用思想：始终在序列中间某个指定位置进行修改；<br />
 建立两个栈，<code>A</code>栈存储从序列开头到当前位置的这一段子序列，栈<code>B</code>存储当前位置到序列结尾处的这一段子序列，二者都以当前位置那一端作为栈顶。<br />
-栈求**<em>最大前缀和</em>**时，用一个数组<code>f</code>维护栈<code>A</code>的最大前缀和；</p>
+栈求  <strong><em>最大前缀和</em></strong>  时，用一个数组<code>f</code>维护栈<code>A</code>的最大前缀和；</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">// A的栈顶位置下标pA，使用数组模拟栈</span><br><span class="hljs-comment">// sum是A的前缀和数组</span><br>A.<span class="hljs-built_in">push</span>(x);<br>sum[pA]=sum[pA<span class="hljs-number">-1</span>]+A[pA];<br>f[pA] = <span class="hljs-built_in">max</span>(f[pA<span class="hljs-number">-1</span>],sum[pA]);<br></code></pre></td></tr></table></figure>
 <h3 id="三-单调栈"><a class="markdownIt-Anchor" href="#三-单调栈"></a> 三、单调栈</h3>
-<p>单调栈算法：时间复杂度<code>O(N)</code>，处理问题思想在于**<em>及时排除不可能的选项，保持策略集合的高度有效性和秩序性</em>**<br />
+<p>单调栈算法：时间复杂度<code>O(N)</code>，处理问题思想在于 <strong><em>及时排除不可能的选项，保持策略集合的高度有效性和秩序性</em></strong><br />
 应用：需要维护一个单调的序列并且可以不断从一端插入或删除<br />
 典例：<br />
 <img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210081928282.png" alt="" /><br />
