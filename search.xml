@@ -198,14 +198,6 @@ a &amp; <span class="hljs-number">1</span> <span class="hljs-comment">// a % 2</
       </tags>
   </entry>
   <entry>
-    <title>串</title>
-    <url>/2022/09/28/%E4%B8%B2/</url>
-    <content><![CDATA[<h2 id="数据结构串"><a class="markdownIt-Anchor" href="#数据结构串"></a> 数据结构——串</h2>
-<p>(字符串实现与操作）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>分治与倍增</title>
     <url>/2022/05/03/%E5%88%86%E6%B2%BB%E4%B8%8E%E5%80%8D%E5%A2%9E/</url>
     <content><![CDATA[<hr />
