@@ -1371,7 +1371,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: -apple-system, IBM Plex Mono ,"楷体", sans-serif;
+  font-family: IBM Plex Mono Italic,"楷体";
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1680,7 +1680,7 @@ figure.highlight pre .javascript .function {
 #article-container pre,
 #article-container code {
   font-size: 16px;
-  font-family: JetBrains Mono , Times New Roman !important;
+  font-family: JetBrains Mono, Times New Roman, "楷体" !important;
 }
 #article-container code {
   padding: 2px 4px;
