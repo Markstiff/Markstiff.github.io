@@ -1,0 +1,608 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>大物期中总结 | MarkStiff Blog</title><meta name="keywords" content="大物"><meta name="author" content="MarkStiff"><meta name="copyright" content="MarkStiff"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="第一讲 库仑定律库仑定理——（真空静止点电荷） F &amp;#x3D; \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}\boldsymbol{r}^0\tag 1其中真空介电常数 $\varepsilon_0 \approx 8.85\times10^{-12}  C^2"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://markstiff.github.io/2022/10/20/%E5%A4%A7%E7%89%A9%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: MarkStiff","link":"链接: ","source":"来源: MarkStiff Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '大物期中总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-20 17:37:58'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="https://cyan-blog.oss-cn-shenzhen.aliyuncs.com/cdn/js/three.min.js"></script><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="canvas-container" id="canvas"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162140024.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MarkStiff Blog</a></span><div id="weather"><div id="tp-weather-widget"></div></div><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">大物期中总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-20T09:35:42.000Z" title="发表于 2022-10-20 17:35:42">2022-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-20T09:37:58.408Z" title="更新于 2022-10-20 17:37:58">2022-10-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/">大学物理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">835</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="大物期中总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/10/20/%E5%A4%A7%E7%89%A9%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="第一讲-库仑定律"><a href="#第一讲-库仑定律" class="headerlink" title="第一讲 库仑定律"></a>第一讲 库仑定律</h3><h4 id="库仑定理——（真空静止点电荷）"><a href="#库仑定理——（真空静止点电荷）" class="headerlink" title="库仑定理——（真空静止点电荷）"></a>库仑定理——（真空静止点电荷）</h4><script type="math/tex; mode=display">
+F = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}\boldsymbol{r}^0\tag 1</script><p>其中真空介电常数 $\varepsilon_0 \approx 8.85\times10^{-12}  C^2N^{-1}m^{-2}$，令 $k=\frac{1}{4\pi\varepsilon_0}$ 则 $k\approx 9\times 10^9Nm^2/C^2$，矢量 $\boldsymbol{r}^0$ 由施力电荷指向受力电荷</p>
+<h3 id="第二讲-电场强度-E"><a href="#第二讲-电场强度-E" class="headerlink" title="第二讲 电场强度$E$"></a>第二讲 电场强度$E$</h3><h4 id="2-1-电场强度"><a href="#2-1-电场强度" class="headerlink" title="2.1 电场强度"></a>2.1 电场强度</h4><script type="math/tex; mode=display">
+E = \frac{F}{q_0}=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\boldsymbol{r}^0\tag 2</script><h4 id="2-2-均匀带电细圆环"><a href="#2-2-均匀带电细圆环" class="headerlink" title="2.2 均匀带电细圆环"></a>2.2 均匀带电细圆环</h4><p>圆环轴线上一点$P$的电场强度：</p>
+<script type="math/tex; mode=display">
+E = \frac{1}{4\pi\varepsilon_0}\frac{qx}{(R^2+x^2)^\frac{3}{2}}\tag 3</script><p>其中，$x$表示$P$点到圆环中心$O$的距离，$R$表示圆环半径，$q$表示圆环带电量；    </p>
+<h4 id="2-3-有限长直线段"><a href="#2-3-有限长直线段" class="headerlink" title="2.3 有限长直线段"></a>2.3 有限长直线段</h4><p>直线外一点$P$电场强度：</p>
+<script type="math/tex; mode=display">
+E_x=\frac{\lambda}{4\pi\varepsilon_0 a}(cos\theta_1-cos\theta_2)\\
+E_y=\frac{\lambda}{4\pi\varepsilon_0 a}(sin\theta_2-sin\theta_1)\tag 4</script><p>注：在建立坐标系的情况下，上式均带有方向，其中沿 $y$ 轴正向：$\theta_1\rightarrow \theta_2$，$\theta$ 为与 $y$ 轴正向夹角；<br>其中，$a$表示$P$点到直线的垂直距离；    </p>
+<h4 id="2-4-均匀带电无限长直线"><a href="#2-4-均匀带电无限长直线" class="headerlink" title="2.4 均匀带电无限长直线"></a>2.4 均匀带电无限长直线</h4><p>由 $2.4$ 推得：令$\theta_1=0,\theta_2=\pi$     </p>
+<script type="math/tex; mode=display">
+E_x = \frac{\lambda}{2\pi\varepsilon_0 a}, E_y = 0\tag 5</script><h4 id="2-5-均匀带电无限大平面"><a href="#2-5-均匀带电无限大平面" class="headerlink" title="2.5 均匀带电无限大平面"></a>2.5 均匀带电无限大平面</h4><script type="math/tex; mode=display">
+E=\frac{\sigma}{2\varepsilon_0} \tag 6</script><h4 id="2-6-无限大均匀带异号电荷平板间"><a href="#2-6-无限大均匀带异号电荷平板间" class="headerlink" title="2.6 无限大均匀带异号电荷平板间"></a>2.6 无限大均匀带异号电荷平板间</h4><script type="math/tex; mode=display">
+E=\frac{\sigma}{\varepsilon_0}\tag 7</script><p>其中，$\sigma$表示每个平板的电荷面密度；     </p>
+<h4 id="2-7-电偶极子"><a href="#2-7-电偶极子" class="headerlink" title="2.7 电偶极子"></a>2.7 电偶极子</h4><p>电偶极矩：$\boldsymbol{p}=q\boldsymbol{l}$<br>中垂线上一点$P$场强：</p>
+<script type="math/tex; mode=display">
+E = -\frac{\boldsymbol{p}}{4\pi\varepsilon_0y^3}   (y\gg l)\tag 8</script><p>共线上一点$P$场强：   </p>
+<script type="math/tex; mode=display">
+E=\frac{2\boldsymbol{p}}{4\pi\varepsilon_0x^3}(x\gg l)\tag 9</script><p>其中$\boldsymbol{l}$方向由负电荷指向正电荷；     </p>
+<h4 id="2-8-力偶矩"><a href="#2-8-力偶矩" class="headerlink" title="2.8 力偶矩"></a>2.8 力偶矩</h4><p>电偶极子在匀强电场中得力偶矩：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{F}_+=q\boldsymbol{E},\boldsymbol{F}_-=-q\boldsymbol{E}\\
+M = F_+\cdot\frac{1}{2}lsin\theta+F_-\cdot\frac{1}{2}lsin\theta=qlEsin\theta\\
+\Rightarrow\boldsymbol{M}=q\boldsymbol{l}\times\boldsymbol{E}=\boldsymbol{p}\times\boldsymbol{E}\tag{10}</script><p>注：电偶极子在电场的作用下总要使 $\boldsymbol{p}$ 转向 $\boldsymbol{E}$ 的方向；    </p>
+<h3 id="第三讲-电通量-高斯定理"><a href="#第三讲-电通量-高斯定理" class="headerlink" title="第三讲 电通量 高斯定理"></a>第三讲 电通量 高斯定理</h3><h4 id="3-1-电通量"><a href="#3-1-电通量" class="headerlink" title="3.1 电通量"></a>3.1 电通量</h4><script type="math/tex; mode=display">
+\Phi_e=\oint_S\boldsymbol{E}\cdot d\boldsymbol{S}\tag{11}</script><h4 id="3-2-高斯定理"><a href="#3-2-高斯定理" class="headerlink" title="3.2 高斯定理"></a>3.2 高斯定理</h4><p>选定高斯面后，电通量：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\oint_S\boldsymbol{E}\cdot d\boldsymbol{S}=\frac{1}{\varepsilon_0}\sum_{(内)}q_i\tag{12}</script><h4 id="3-3-轴对称性电场"><a href="#3-3-轴对称性电场" class="headerlink" title="3.3 轴对称性电场"></a>3.3 轴对称性电场</h4><p>无限长均匀带电直线外一点$P$场强：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\boldsymbol{E}\oint_侧d\boldsymbol{S}=2\pi rEl=\frac{1}{\varepsilon_0}\lambda l\\
+\Rightarrow E = \frac{\lambda}{2\pi\varepsilon_0r}\tag{13}</script><p>其中，$r$表示$P$距离导线垂直距离；    </p>
+<h4 id="3-4-球面对称性电场"><a href="#3-4-球面对称性电场" class="headerlink" title="3.4 球面对称性电场"></a>3.4 球面对称性电场</h4><p>均匀带电球面电场分布：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\boldsymbol{E}\oint_S\boldsymbol{S}=E\cdot 4\pi r^2=\sum_{(内)}q_i=q\\
+\Rightarrow E=\left\{\begin{array}{lcc} \frac{1}{4\pi \varepsilon_0}\frac{q}{r^2}\boldsymbol{r}^0&(r>R) \\ 0&(r<R)\tag{14}\end{array}\right.</script><h4 id="3-5-无限大均匀带电平面"><a href="#3-5-无限大均匀带电平面" class="headerlink" title="3.5 无限大均匀带电平面"></a>3.5 无限大均匀带电平面</h4><p>选定圆柱面作为高斯面：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\oint_{左端面}\boldsymbol{E}\cdot d\boldsymbol{S}+\oint_{右端面}\boldsymbol{E}\cdot d\boldsymbol{S}=2ES=\frac{1}{\varepsilon_0}\sigma S\\
+\Rightarrow E=\frac{\sigma}{2\varepsilon_0}\tag{15}</script><h4 id="3-6-均匀带电圆盘"><a href="#3-6-均匀带电圆盘" class="headerlink" title="3.6 均匀带电圆盘"></a>3.6 均匀带电圆盘</h4><script type="math/tex; mode=display">
+E = \frac{\sigma}{2\varepsilon_0}(1-\frac{x}{\sqrt{R^2+x^2}})\tag{16}</script><h4 id="3-7-均匀带电球体"><a href="#3-7-均匀带电球体" class="headerlink" title="3.7 均匀带电球体"></a>3.7 均匀带电球体</h4><script type="math/tex; mode=display">
+\boldsymbol{E}=\left\{\begin{array}{c}\frac{Q}{4\pi\varepsilon_0r^2}\boldsymbol{r_0}&(r>R)\\\frac{\rho}{3\varepsilon_0}\boldsymbol{r} & (r<R)\end{array}\right.</script><h3 id="第四讲-静电场的环路定理-电势能"><a href="#第四讲-静电场的环路定理-电势能" class="headerlink" title="第四讲 静电场的环路定理 电势能"></a>第四讲 静电场的环路定理 电势能</h3><h4 id="4-1-电场强度环流"><a href="#4-1-电场强度环流" class="headerlink" title="4.1 电场强度环流"></a>4.1 电场强度环流</h4><script type="math/tex; mode=display">
+\oint\boldsymbol{E}\cdot d\boldsymbol{l}=0\tag{17}</script><p>环路定理表明静电场是无旋有源场；     </p>
+<h4 id="4-2-电势能"><a href="#4-2-电势能" class="headerlink" title="4.2 电势能"></a>4.2 电势能</h4><p>选定电势能零参考点，则点$A$处的电势能：</p>
+<script type="math/tex; mode=display">
+w_a=A_{a'0'}=\int_a^{'0'}q_0\boldsymbol{E}\cdot d\boldsymbol{l}\tag{18}</script><p>注：电势能是标量，相对于电势能零参考点有负值；           </p>
+<h3 id="第五讲-电势-电势差"><a href="#第五讲-电势-电势差" class="headerlink" title="第五讲 电势 电势差"></a>第五讲 电势 电势差</h3><h4 id="5-1-电势与电势差"><a href="#5-1-电势与电势差" class="headerlink" title="5.1 电势与电势差"></a>5.1 电势与电势差</h4><p>$A$点电势：</p>
+<script type="math/tex; mode=display">
+u_a=\frac{W_a}{q_0}=\int_a^{'0'}\boldsymbol{E}\cdot d\boldsymbol{l}\tag{19}</script><p>注：电势为标量；     </p>
+<script type="math/tex; mode=display">
+U_{ab}=u_a-u_b=\int_a^b\boldsymbol{E}\cdot d\boldsymbol{l}\tag{20}</script><p>电荷$q$$a\rightarrow b$时，静电力做功：</p>
+<script type="math/tex; mode=display">
+A_{ab}=q(u_a-u_b)\tag{21}</script><h4 id="5-2-电偶极子电势能"><a href="#5-2-电偶极子电势能" class="headerlink" title="5.2 电偶极子电势能"></a>5.2 电偶极子电势能</h4><p>在电场 $\boldsymbol{E}$ 中：</p>
+<script type="math/tex; mode=display">
+W=-\boldsymbol{p}\cdot\boldsymbol{E}\tag{22}</script><p>当$\boldsymbol{E}$为非均匀电场时，上式应改为积分形式；     </p>
+<h4 id="5-3-电势叠加原理"><a href="#5-3-电势叠加原理" class="headerlink" title="5.3 电势叠加原理"></a>5.3 电势叠加原理</h4><p>对于点电荷选取无穷远处作为零电势点：</p>
+<script type="math/tex; mode=display">
+u_a=\int_a^{\infty}\boldsymbol{E}\cdot d\boldsymbol{l}=\frac{1}{4\pi\varepsilon_0}\frac{q}{r}\\
+W_a = \frac{1}{4\pi\varepsilon_0}\frac{q^2}{r}\tag{23}</script><p>叠加原理——标量叠加         </p>
+<script type="math/tex; mode=display">
+u_a=\sum u_i\\
+\Rightarrow u_a=\int_Q\frac{1}{4\pi\varepsilon_0}\frac{dq}{r}(积分形式)\tag{24}</script><h4 id="5-4-电荷分布求电势"><a href="#5-4-电荷分布求电势" class="headerlink" title="5.4 电荷分布求电势"></a>5.4 电荷分布求电势</h4><p>积分形式：</p>
+<script type="math/tex; mode=display">
+u_a=\int_Q\frac{1}{4\pi\varepsilon_0}\frac{dq}{r}\tag{25}</script><p>电偶极子外任一点$C$的电势：</p>
+<script type="math/tex; mode=display">
+U_C = \frac{1}{4\pi\varepsilon_0}\frac{q}{r_+}-\frac{1}{4\pi\varepsilon_0}\frac{q}{r_-}=\frac{q}{4\pi\varepsilon_0}\frac{r_--r_+}{r_-r_+}\\
+r\gg l\Rightarrow r_+r_-\approx r^2,r_--r_+\approx lcos\theta\\
+\Rightarrow u_C = \frac{1}{4\pi\varepsilon_0}\frac{\boldsymbol{p}\cdot\boldsymbol{r}}{r^3}\tag{26}</script><h4 id="5-5-电场强度求电势"><a href="#5-5-电场强度求电势" class="headerlink" title="5.5 电场强度求电势"></a>5.5 电场强度求电势</h4><p>场强与电势关系：</p>
+<script type="math/tex; mode=display">
+u_a=\int_a^{\infty}\boldsymbol{E}\cdot d\boldsymbol{l}\tag{27}</script><p>带电体电荷分布具有对称性时，利用高斯定理求出场强分布进而求电势；<br><strong>【无限长均匀带电圆柱面】</strong><br>由高斯定理求得电场分布：</p>
+<script type="math/tex; mode=display">
+E = \left\{ \begin{array}{c}0 & r<R \\ \frac{\lambda}{2\pi\varepsilon_0r} & r>R\end{array}\right.\tag{28}</script><p>_一般而言，当电荷分布延伸到无穷远时，是不能选取无穷远处为电势零参考点的；_     </p>
+<script type="math/tex; mode=display">
+u_P=\int_P^{P_0}\boldsymbol{E}\cdot d\boldsymbol{l}=\int_P^{P'}\boldsymbol{E}\cdot d\boldsymbol{l}+\int_{P'}^{P_0}\boldsymbol{E}\cdot d\boldsymbol{l}\\
+=0+\int_r^{r_0}\frac{\lambda}{2\pi\varepsilon_0r}dr\\
+=-\frac{\lambda}{2\pi\varepsilon_0}\ln r+\frac{\lambda}{2\pi\varepsilon_0}\ln r_0\\
+=-\frac{\lambda}{2\pi\varepsilon_0}\ln r+C(r>R)\tag{29}</script><script type="math/tex; mode=display">
+u_P=\int_P^{P_0}\boldsymbol{E}\cdot d\boldsymbol{l}=\int_r^R\boldsymbol{E}\cdot d\boldsymbol{l}+\int_R^{r_0}\boldsymbol{E}\cdot d\boldsymbol{l}\\
+=0+\int_R^{r_0}\frac{\lambda}{2\pi\varepsilon_0r}dr\\
+=-\frac{\lambda}{2\pi\varepsilon_0}\ln R + C(r<R)\tag{30}</script><p>其中，$C=\frac{\lambda}{2\pi\varepsilon_0}\ln r_0$     </p>
+<h4 id="5-6-均匀带电球面电势"><a href="#5-6-均匀带电球面电势" class="headerlink" title="5.6 均匀带电球面电势"></a>5.6 均匀带电球面电势</h4><script type="math/tex; mode=display">
+V(r) = \left\{ \begin{array}{c}\frac{1}{4\pi\varepsilon_0} \frac{q}{R} & (r \le R)\\\frac{1}{4\pi\varepsilon_0}\frac{q}{r}&(r>R)\end{array}\right.\tag{31}</script><h4 id="5-7-均匀带电球体电势"><a href="#5-7-均匀带电球体电势" class="headerlink" title="5.7 均匀带电球体电势"></a>5.7 均匀带电球体电势</h4><p>球内距离球心$r$处一点$P$电势：</p>
+<script type="math/tex; mode=display">
+u = u_1+u_2=\frac{1}{4\pi\varepsilon_0}\frac{Q}{R^3}r^2+\int_r^R\frac{1}{4\pi\varepsilon_0}\frac{dq_2}{r'}\\
+=\frac{1}{4\pi\varepsilon_0}\frac{Q}{R^3}r^2+\int_r^R\frac{3Qr'}{4\pi\varepsilon_0R^3}dr'\\
+=\frac{Q(3R^2-r^2)}{8\pi\varepsilon_0R^3}(r<R)\tag{32}</script><p>球外距离球心$r$处一点$P$电势：</p>
+<script type="math/tex; mode=display">
+u = \frac{Q}{4\pi\varepsilon_0r}(r\ge R)\tag{33}</script><p>注：在$P$点的电场强度犹如电荷集中在球心处的点电荷在$P$点产生的电场强度一样，故电势同理；       </p>
+<h3 id="第六讲-电势与场强微分关系"><a href="#第六讲-电势与场强微分关系" class="headerlink" title="第六讲 电势与场强微分关系"></a>第六讲 电势与场强微分关系</h3><script type="math/tex; mode=display">
+E = -\frac{du}{dn}\\
+E_l=-\frac{du}{dl}\\
+\boldsymbol{E}=-(\frac{\partial u}{\partial x}\boldsymbol{i}+\frac{\partial u}{\partial y}\boldsymbol{j}+\frac{\partial u}{\partial z}\boldsymbol{k})\\
+u(x,y,z)\Rightarrow E(x,y,z)\tag{34}</script><h3 id="第七讲-静电场中的导体-电容"><a href="#第七讲-静电场中的导体-电容" class="headerlink" title="第七讲 静电场中的导体 电容"></a>第七讲 静电场中的导体 电容</h3><h4 id="7-1-静电平衡导体表面"><a href="#7-1-静电平衡导体表面" class="headerlink" title="7.1 静电平衡导体表面"></a>7.1 静电平衡导体表面</h4><p>电场强度：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}=\frac{\sigma}{\varepsilon_0}\boldsymbol{n}\tag{35}</script><p>区别于无限大带电平面产生的电场(缺少静电平衡的条件)：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}=\frac{\sigma}{2\varepsilon_0}\boldsymbol{n}\tag{36}</script><h4 id="7-2-孤立导体电容"><a href="#7-2-孤立导体电容" class="headerlink" title="7.2 孤立导体电容"></a>7.2 孤立导体电容</h4><script type="math/tex; mode=display">
+C = \frac{q}{u}\tag{37}</script><h4 id="7-3-平行板电容器电容"><a href="#7-3-平行板电容器电容" class="headerlink" title="7.3 平行板电容器电容"></a>7.3 平行板电容器电容</h4><script type="math/tex; mode=display">
+C = \frac{q}{u_1-u_2}\\
+=\frac{q}{Ed}=\frac{q}{\frac{\sigma}{\varepsilon_0}d}\\
+=\frac{q}{\frac{qd}{\varepsilon_0S}}=\frac{\varepsilon_0S}{d}\tag{38}</script><h4 id="7-4-球形电容器电容"><a href="#7-4-球形电容器电容" class="headerlink" title="7.4 球形电容器电容"></a>7.4 球形电容器电容</h4><p>两球面间电场强度：</p>
+<script type="math/tex; mode=display">
+E=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\tag{39}</script><script type="math/tex; mode=display">
+u_1-u_2=\int_{R_1}^{R_2}\boldsymbol{E}\cdot d\boldsymbol{l} = \int_{R_1}^{R_2}\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}dr\\
+=\frac{q}{4\pi\varepsilon_0}\frac{R_2-R_1}{R_1R_2}\\
+\Rightarrow C = \frac{q}{u_1-u_2}=\frac{4\pi\varepsilon_0R_1R_2}{R_2-R_1}\tag{40}</script><h4 id="7-5-电容器串并联"><a href="#7-5-电容器串并联" class="headerlink" title="7.5 电容器串并联"></a>7.5 电容器串并联</h4><script type="math/tex; mode=display">
+\frac{1}{C}=\frac{1}{C_1}+\frac{1}{C_2}+\cdot\cdot\cdot+\frac{1}{C_n}(串联)\\
+C = C_1+C_2+\cdot\cdot\cdot+C_n(并联)\tag{41}</script><h3 id="第八讲-静电能"><a href="#第八讲-静电能" class="headerlink" title="第八讲 静电能"></a>第八讲 静电能</h3><h4 id="8-1-静电能公式推导"><a href="#8-1-静电能公式推导" class="headerlink" title="8.1 静电能公式推导"></a>8.1 静电能公式推导</h4><script type="math/tex; mode=display">
+U(t) = \frac{q(t)}{C}\\dA = U(t)dq = \frac{q(t)}{C}dq\\
+A = \int dA = \int_0^Q\frac{q(t)}{C}dq=\frac{Q^2}{2C}\\
+Q=CU\Rightarrow A = \frac{1}{2}CU^2=\frac{1}{2}QU\\
+\Rightarrow W=A=\frac{Q^2}{2C}=\frac{1}{2}CU^2=\frac{1}{2}QU\tag{42}</script><h4 id="8-2-电场能量密度推导"><a href="#8-2-电场能量密度推导" class="headerlink" title="8.2 电场能量密度推导"></a>8.2 电场能量密度推导</h4><script type="math/tex; mode=display">
+U=Ed, C = \frac{\varepsilon_0S}{d}\\
+\Rightarrow W = \frac{1}{2}\varepsilon_0E^2Sd = \frac{1}{2}\varepsilon_0E^2V\\
+\Rightarrow \omega = \frac{W}{V}=\frac{1}{2}\varepsilon_0E^2\tag{43}</script><h3 id="第九讲-经典习题"><a href="#第九讲-经典习题" class="headerlink" title="第九讲 经典习题"></a>第九讲 经典习题</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201717537.png#pic_left =360x360" alt=""><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201715267.png#pic_center =360x360" alt=""></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://Markstiff.github.io">MarkStiff</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://markstiff.github.io/2022/10/20/%E5%A4%A7%E7%89%A9%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/">https://markstiff.github.io/2022/10/20/%E5%A4%A7%E7%89%A9%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://Markstiff.github.io" target="_blank">MarkStiff Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%A7%E7%89%A9/">大物</a></div><div class="post_share"><div class="social-share" data-image="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162140024.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/10/16/Latex%E7%AF%87%E7%AB%A0%E7%BB%93%E6%9E%84/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162140024.jpg" onerror="onerror=null;src='/img/Cover/cover3.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Latex篇章结构</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">MarkStiff</div><div class="author-info__description">博客学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">20</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Markstiff"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Markstiff" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_63554791?type=blog" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:LZH1314521ligao@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://w.4rxb.com/s/yq3hxp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://u.wechat.com/MGbsMU60BAqVaV4ImuEj7yM" target="_blank" title="Wechat"><i class="fab fa-wechat"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">第一讲 库仑定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%EF%BC%88%E7%9C%9F%E7%A9%BA%E9%9D%99%E6%AD%A2%E7%82%B9%E7%94%B5%E8%8D%B7%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">库仑定理——（真空静止点电荷）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6-E"><span class="toc-number">2.</span> <span class="toc-text">第二讲 电场强度$E$</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 电场强度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%BB%86%E5%9C%86%E7%8E%AF"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 均匀带电细圆环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%9C%89%E9%99%90%E9%95%BF%E7%9B%B4%E7%BA%BF%E6%AE%B5"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 有限长直线段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E6%97%A0%E9%99%90%E9%95%BF%E7%9B%B4%E7%BA%BF"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 均匀带电无限长直线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E6%97%A0%E9%99%90%E5%A4%A7%E5%B9%B3%E9%9D%A2"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 均匀带电无限大平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E6%97%A0%E9%99%90%E5%A4%A7%E5%9D%87%E5%8C%80%E5%B8%A6%E5%BC%82%E5%8F%B7%E7%94%B5%E8%8D%B7%E5%B9%B3%E6%9D%BF%E9%97%B4"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 无限大均匀带异号电荷平板间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-%E7%94%B5%E5%81%B6%E6%9E%81%E5%AD%90"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 电偶极子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8-%E5%8A%9B%E5%81%B6%E7%9F%A9"><span class="toc-number">2.8.</span> <span class="toc-text">2.8 力偶矩</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E7%94%B5%E9%80%9A%E9%87%8F-%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">第三讲 电通量 高斯定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%94%B5%E9%80%9A%E9%87%8F"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 电通量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 高斯定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E8%BD%B4%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%94%B5%E5%9C%BA"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 轴对称性电场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E7%90%83%E9%9D%A2%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%94%B5%E5%9C%BA"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 球面对称性电场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E6%97%A0%E9%99%90%E5%A4%A7%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E5%B9%B3%E9%9D%A2"><span class="toc-number">3.5.</span> <span class="toc-text">3.5 无限大均匀带电平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E5%9C%86%E7%9B%98"><span class="toc-number">3.6.</span> <span class="toc-text">3.6 均匀带电圆盘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%90%83%E4%BD%93"><span class="toc-number">3.7.</span> <span class="toc-text">3.7 均匀带电球体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E8%AE%B2-%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E7%8E%AF%E8%B7%AF%E5%AE%9A%E7%90%86-%E7%94%B5%E5%8A%BF%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">第四讲 静电场的环路定理 电势能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E7%8E%AF%E6%B5%81"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 电场强度环流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E7%94%B5%E5%8A%BF%E8%83%BD"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 电势能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E7%94%B5%E5%8A%BF-%E7%94%B5%E5%8A%BF%E5%B7%AE"><span class="toc-number">5.</span> <span class="toc-text">第五讲 电势 电势差</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%94%B5%E5%8A%BF%E4%B8%8E%E7%94%B5%E5%8A%BF%E5%B7%AE"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 电势与电势差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%94%B5%E5%81%B6%E6%9E%81%E5%AD%90%E7%94%B5%E5%8A%BF%E8%83%BD"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 电偶极子电势能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E7%94%B5%E5%8A%BF%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 电势叠加原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E7%94%B5%E8%8D%B7%E5%88%86%E5%B8%83%E6%B1%82%E7%94%B5%E5%8A%BF"><span class="toc-number">5.4.</span> <span class="toc-text">5.4 电荷分布求电势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E6%B1%82%E7%94%B5%E5%8A%BF"><span class="toc-number">5.5.</span> <span class="toc-text">5.5 电场强度求电势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%90%83%E9%9D%A2%E7%94%B5%E5%8A%BF"><span class="toc-number">5.6.</span> <span class="toc-text">5.6 均匀带电球面电势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%90%83%E4%BD%93%E7%94%B5%E5%8A%BF"><span class="toc-number">5.7.</span> <span class="toc-text">5.7 均匀带电球体电势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E8%AE%B2-%E7%94%B5%E5%8A%BF%E4%B8%8E%E5%9C%BA%E5%BC%BA%E5%BE%AE%E5%88%86%E5%85%B3%E7%B3%BB"><span class="toc-number">6.</span> <span class="toc-text">第六讲 电势与场强微分关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E8%AE%B2-%E9%9D%99%E7%94%B5%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%AF%BC%E4%BD%93-%E7%94%B5%E5%AE%B9"><span class="toc-number">7.</span> <span class="toc-text">第七讲 静电场中的导体 电容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E9%9D%99%E7%94%B5%E5%B9%B3%E8%A1%A1%E5%AF%BC%E4%BD%93%E8%A1%A8%E9%9D%A2"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 静电平衡导体表面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E5%AD%A4%E7%AB%8B%E5%AF%BC%E4%BD%93%E7%94%B5%E5%AE%B9"><span class="toc-number">7.2.</span> <span class="toc-text">7.2 孤立导体电容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-%E5%B9%B3%E8%A1%8C%E6%9D%BF%E7%94%B5%E5%AE%B9%E5%99%A8%E7%94%B5%E5%AE%B9"><span class="toc-number">7.3.</span> <span class="toc-text">7.3 平行板电容器电容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-%E7%90%83%E5%BD%A2%E7%94%B5%E5%AE%B9%E5%99%A8%E7%94%B5%E5%AE%B9"><span class="toc-number">7.4.</span> <span class="toc-text">7.4 球形电容器电容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5-%E7%94%B5%E5%AE%B9%E5%99%A8%E4%B8%B2%E5%B9%B6%E8%81%94"><span class="toc-number">7.5.</span> <span class="toc-text">7.5 电容器串并联</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E8%AE%B2-%E9%9D%99%E7%94%B5%E8%83%BD"><span class="toc-number">8.</span> <span class="toc-text">第八讲 静电能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E9%9D%99%E7%94%B5%E8%83%BD%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 静电能公式推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E6%8E%A8%E5%AF%BC"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 电场能量密度推导</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E8%AE%B2-%E7%BB%8F%E5%85%B8%E4%B9%A0%E9%A2%98"><span class="toc-number">9.</span> <span class="toc-text">第九讲 经典习题</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/20/%E5%A4%A7%E7%89%A9%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/" title="大物期中总结"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162140024.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="大物期中总结"/></a><div class="content"><a class="title" href="/2022/10/20/%E5%A4%A7%E7%89%A9%E6%9C%9F%E4%B8%AD%E6%80%BB%E7%BB%93/" title="大物期中总结">大物期中总结</a><time datetime="2022-10-20T09:35:42.000Z" title="发表于 2022-10-20 17:35:42">2022-10-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/16/Latex%E7%AF%87%E7%AB%A0%E7%BB%93%E6%9E%84/" title="Latex篇章结构"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162140024.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="Latex篇章结构"/></a><div class="content"><a class="title" href="/2022/10/16/Latex%E7%AF%87%E7%AB%A0%E7%BB%93%E6%9E%84/" title="Latex篇章结构">Latex篇章结构</a><time datetime="2022-10-16T13:38:45.000Z" title="发表于 2022-10-16 21:38:45">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/16/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86/" title="微分中值定理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210161918841.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="微分中值定理"/></a><div class="content"><a class="title" href="/2022/10/16/%E5%BE%AE%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86/" title="微分中值定理">微分中值定理</a><time datetime="2022-10-16T10:00:01.000Z" title="发表于 2022-10-16 18:00:01">2022-10-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/14/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" title="导数与微分"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151921394.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="导数与微分"/></a><div class="content"><a class="title" href="/2022/10/14/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/" title="导数与微分">导数与微分</a><time datetime="2022-10-14T15:06:31.000Z" title="发表于 2022-10-14 23:06:31">2022-10-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/13/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/" title="链表与邻接表"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151938646.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="链表与邻接表"/></a><div class="content"><a class="title" href="/2022/10/13/%E9%93%BE%E8%A1%A8%E4%B8%8E%E9%82%BB%E6%8E%A5%E8%A1%A8/" title="链表与邻接表">链表与邻接表</a><time datetime="2022-10-13T13:47:59.000Z" title="发表于 2022-10-13 21:47:59">2022-10-13</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162140024.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By MarkStiff</div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '3eddec41858f5ec8a7e9',
+      clientSecret: 'cfd771df5cd8b3a7e998ff9b69d15502a0ec8a65',
+      repo: 'BlogComments',
+      owner: 'Markstiff',
+      admin: ['Markstiff'],
+      id: 'f6d49fe88e219cc4ccf65291ae6eb2c0',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'rshSqywYSx56DC2hT3PKs5cj-MdYXbMMI',
+      appKey: 'irF3i0ouYHvblnb7XTWFSPjZ',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const findTrueUrl = (array) => {
+    Promise.all(array.map(item =>
+      fetch(item.url).then(resp => resp.json()).then(data => {
+        const urlArray = data.body.match(/(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ig)
+        if (data.user.login === 'utterances-bot') {
+          return urlArray.pop()
+        } else {
+          return urlArray.shift()
+        }
+      })
+    )).then(res => {
+        array = array.map((i,index)=> {
+          return {
+            ...i,
+            url: res[index]
+          }
+        })
+
+        saveToLocal.set('github-newest-comments', JSON.stringify(array), 10/(60*24))
+        generateHtml(array)
+    });
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/Markstiff/BlogComments/issues/comments?sort=updated&direction=desc&per_page=6&page=1',{
+      "headers": {
+        Accept: 'application/vnd.github.v3.html+json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body_html),
+            'nick': item.user.login,
+            'url': item.issue_url,
+            'date': item.updated_at,
+            'githubUrl': item.html_url
+          }
+        })
+        findTrueUrl(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script async data-pjax src="/js/sky.js"></script><script async src="//at.alicdn.com/t/c/font_3684051_28nbn04epdxh.js"></script><script src="/js/weather.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="true" async="async"></script><script src="//code.tidio.co/vl1yxastlgguno3otzd1qotwmyowaunr.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
