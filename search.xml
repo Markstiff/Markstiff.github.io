@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++ Programming</title>
-    <url>/2022/05/16/C++%20Programming/</url>
-    <content><![CDATA[<h2 id="BFS算法"><a href="#BFS算法" class="headerlink" title="BFS算法"></a>BFS算法</h2><p>1、可以考虑压缩状态空间，用bool数组进行存储时将其转换为bool8个位，用一个整数存储即可<br>2、A*算法    </p>
-<pre><code>Astr 、估价函数    
-BFS 层次分析，状态压缩，进行整理总结能够简化运算  
-DFS 不能进行状态压缩   
-数据结构（增删改查）——树（决策树、搜索树）    
-数据结构都是描述数据的关联性的，    
-</code></pre><h2 id="二叉树存储："><a href="#二叉树存储：" class="headerlink" title="二叉树存储："></a>二叉树存储：</h2><p>1、数组：关系用位置存储，存储结点<br>2、链表存储：类似双向链表，<code>Lchild data Rchild</code><br>3、三叉链表存储：作用是双向搜索<br>  先序遍历，循环递推结构<br><strong>程序设计：</strong><br>1、不确定行为<code>bug：</code>未初始化值、数组越界、带符号整数溢出<br>2、命名空间：   </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">Namespace fluke<br>&#123;<br>		<span class="hljs-type">const</span> <span class="hljs-type">int</span> m = <span class="hljs-number">999999</span>;<br>		<span class="hljs-function">poly <span class="hljs-title">poly_mul</span><span class="hljs-params">(poly a,poly b)</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>3、竞赛头文件：<code>#include&lt;bits/stdc++.h&gt;</code><br>4、寻找指定数据所在范围   </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a[] = &#123; <span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span> &#125;;<br>	<span class="hljs-built_in">sort</span>(a, a + <span class="hljs-number">6</span>);<br>	<span class="hljs-type">int</span> l = <span class="hljs-built_in">lower_bound</span>(a, a + <span class="hljs-number">6</span>, <span class="hljs-number">4</span>) - a;<br>	<span class="hljs-type">int</span> r = <span class="hljs-built_in">upper_bound</span>(a, a + <span class="hljs-number">6</span>, <span class="hljs-number">4</span>) - a;<br>	cout &lt;&lt; l &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; r &lt;&lt; endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>5、二分查找函数   </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">recursive</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;  arg)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span> (arg == final_state)<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">114</span>;<br>	vector&lt;<span class="hljs-type">int</span>&gt; new_state1 = <span class="hljs-built_in">get</span>(arg);<br>	vector&lt;<span class="hljs-type">int</span>&gt; new_state2 = <span class="hljs-built_in">get</span>(arg);<br>	<span class="hljs-keyword">return</span> <span class="hljs-built_in">recuresive</span>(new_state1) + <span class="hljs-built_in">recuresive</span>(new_state2) + <span class="hljs-number">514</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>6、重载运算符：<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">Struct vec<br>&#123;<br>		<span class="hljs-type">int</span> x, y;<br>		<span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">len</span><span class="hljs-params">()</span> </span>&#123;…&#125;<br>		<span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; &#123;<span class="hljs-type">const</span> vec &amp;rhs&#125; <span class="hljs-type">const</span><br>		&#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>() &lt;= rhs.<span class="hljs-built_in">len</span>();<br>		&#125;<br>		<span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-keyword">operator</span> *(<span class="hljs-type">const</span> vec &amp;rhs)  <span class="hljs-type">const</span><br>		&#123;<br>					<span class="hljs-keyword">return</span> <span class="hljs-number">111</span> * x * rhs.x + <span class="hljs-number">111</span> * y * rhs.y;<br>			&#125;<br>		<span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-keyword">operator</span> ^(<span class="hljs-type">const</span> vec &amp;rhs) <span class="hljs-type">const</span><br>		&#123;<br>					<span class="hljs-keyword">return</span> <span class="hljs-number">111</span> * x * rhs.y - <span class="hljs-number">111</span> * y * rhs.x;<br>		&#125;<br>&#125;;<br></code></pre></td></tr></table></figure></p>
-<p>7、<code>std::set</code>数据结构(基于有序的数据结构具体是二叉搜索树）<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>		set&lt;<span class="hljs-type">int</span>&gt; s = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>&#125;;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a: s)                        #简便写法类似python中的可迭代对象<br>			cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure><br><code>multiset</code>数据结构和<code>set</code>类似，只不过允许数据重复，插入时即是有序的<br>8、映射数据结构<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">map&lt;string, <span class="hljs-type">int</span>&gt; mp = &#123;<br>		&#123;<span class="hljs-string">&quot;Monday&quot;</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-string">&quot;Tuesday&quot;</span>,<span class="hljs-number">2</span>&#125;,&#123;<span class="hljs-string">&quot;Wenesday&quot;</span>,<span class="hljs-number">3</span>&#125;<br>	&#125;;<br>	cout &lt;&lt; mp[<span class="hljs-string">&quot;Tuesday&quot;</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	cout &lt;&lt; mp.<span class="hljs-built_in">lower_bound</span>(<span class="hljs-string">&quot;Tue&quot;</span>)-&gt;first &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>	cout &lt;&lt; mp.<span class="hljs-built_in">upper_bound</span>(<span class="hljs-string">&quot;Tue&quot;</span>)-&gt;second &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>&gt;&gt;<span class="hljs-number">2</span><br>&gt;&gt;Tuesday<br>&gt;&gt;<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><br>9、加快输入输出流的速度：<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>用来加快cin、cout的速率<br></code></pre></td></tr></table></figure><br>10、<code>cout &lt;&lt; x+y &lt;&lt; &#39;\n&#39; &lt;&lt; flush;</code>强行刷新缓冲区，使数据立即输出<br>11、移位运算<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">a &lt;&lt;= <span class="hljs-number">10</span>  <span class="hljs-comment">//a * 1024;</span><br>a &lt;&lt;= k   <span class="hljs-comment">//a * 2^k;</span><br>b &gt;&gt;= k   <span class="hljs-comment">//a / 2^k;</span><br>a |= (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">10</span>);  <span class="hljs-comment">//将a的二进制第十一位换成1，进行调节</span><br>a &amp; <span class="hljs-number">1</span> <span class="hljs-comment">// a % 2</span><br></code></pre></td></tr></table></figure></p>
-<p>​    </p>
-]]></content>
-  </entry>
-  <entry>
     <title>Latex基本操作</title>
     <url>/2022/10/04/Latex%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h3 id="Latex学习一————基本结构"><a href="#Latex学习一————基本结构" class="headerlink" title="Latex学习一————基本结构"></a>Latex学习一————基本结构</h3><h4 id="1-1-主体结构"><a href="#1-1-主体结构" class="headerlink" title="1.1 主体结构"></a>1.1 主体结构</h4><p>源程序分为导言区和正文区，其中导言区设置文章的一些性质或自定义命令，选定文档类命令为<code>\documentclass&#123;article&#125;</code>，设置文章属性可以加入命令<code>\title&#123;&#125;</code>,<code>\auther&#123;&#125;</code>,<code>\date&#123;&#125;</code><br>正文区又称文稿区，设置文档环境命令<code>\begin&#123;document&#125;</code>,<code>\end&#123;document&#125;</code>,一篇文档有且只能设置一个文档环境。       </p>
@@ -76,6 +56,44 @@ DFS 不能进行状态压缩
       </tags>
   </entry>
   <entry>
+    <title>C++ Programming</title>
+    <url>/2022/05/16/C++%20Programming/</url>
+    <content><![CDATA[<h2 id="BFS算法"><a href="#BFS算法" class="headerlink" title="BFS算法"></a>BFS算法</h2><p>1、可以考虑压缩状态空间，用bool数组进行存储时将其转换为bool8个位，用一个整数存储即可<br>2、A*算法    </p>
+<pre><code>Astr 、估价函数    
+BFS 层次分析，状态压缩，进行整理总结能够简化运算  
+DFS 不能进行状态压缩   
+数据结构（增删改查）——树（决策树、搜索树）    
+数据结构都是描述数据的关联性的，    
+</code></pre><h2 id="二叉树存储："><a href="#二叉树存储：" class="headerlink" title="二叉树存储："></a>二叉树存储：</h2><p>1、数组：关系用位置存储，存储结点<br>2、链表存储：类似双向链表，<code>Lchild data Rchild</code><br>3、三叉链表存储：作用是双向搜索<br>  先序遍历，循环递推结构<br><strong>程序设计：</strong><br>1、不确定行为<code>bug：</code>未初始化值、数组越界、带符号整数溢出<br>2、命名空间：   </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">Namespace fluke<br>&#123;<br>		<span class="hljs-type">const</span> <span class="hljs-type">int</span> m = <span class="hljs-number">999999</span>;<br>		<span class="hljs-function">poly <span class="hljs-title">poly_mul</span><span class="hljs-params">(poly a,poly b)</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>3、竞赛头文件：<code>#include&lt;bits/stdc++.h&gt;</code><br>4、寻找指定数据所在范围   </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> a[] = &#123; <span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span> &#125;;<br>	<span class="hljs-built_in">sort</span>(a, a + <span class="hljs-number">6</span>);<br>	<span class="hljs-type">int</span> l = <span class="hljs-built_in">lower_bound</span>(a, a + <span class="hljs-number">6</span>, <span class="hljs-number">4</span>) - a;<br>	<span class="hljs-type">int</span> r = <span class="hljs-built_in">upper_bound</span>(a, a + <span class="hljs-number">6</span>, <span class="hljs-number">4</span>) - a;<br>	cout &lt;&lt; l &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; r &lt;&lt; endl;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>5、二分查找函数   </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">recursive</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;  arg)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span> (arg == final_state)<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">114</span>;<br>	vector&lt;<span class="hljs-type">int</span>&gt; new_state1 = <span class="hljs-built_in">get</span>(arg);<br>	vector&lt;<span class="hljs-type">int</span>&gt; new_state2 = <span class="hljs-built_in">get</span>(arg);<br>	<span class="hljs-keyword">return</span> <span class="hljs-built_in">recuresive</span>(new_state1) + <span class="hljs-built_in">recuresive</span>(new_state2) + <span class="hljs-number">514</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>6、重载运算符：<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">Struct vec<br>&#123;<br>		<span class="hljs-type">int</span> x, y;<br>		<span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">len</span><span class="hljs-params">()</span> </span>&#123;…&#125;<br>		<span class="hljs-type">bool</span> <span class="hljs-keyword">operator</span> &lt; &#123;<span class="hljs-type">const</span> vec &amp;rhs&#125; <span class="hljs-type">const</span><br>		&#123;<br>				<span class="hljs-keyword">return</span> <span class="hljs-built_in">len</span>() &lt;= rhs.<span class="hljs-built_in">len</span>();<br>		&#125;<br>		<span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-keyword">operator</span> *(<span class="hljs-type">const</span> vec &amp;rhs)  <span class="hljs-type">const</span><br>		&#123;<br>					<span class="hljs-keyword">return</span> <span class="hljs-number">111</span> * x * rhs.x + <span class="hljs-number">111</span> * y * rhs.y;<br>			&#125;<br>		<span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-keyword">operator</span> ^(<span class="hljs-type">const</span> vec &amp;rhs) <span class="hljs-type">const</span><br>		&#123;<br>					<span class="hljs-keyword">return</span> <span class="hljs-number">111</span> * x * rhs.y - <span class="hljs-number">111</span> * y * rhs.x;<br>		&#125;<br>&#125;;<br></code></pre></td></tr></table></figure></p>
+<p>7、<code>std::set</code>数据结构(基于有序的数据结构具体是二叉搜索树）<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>		set&lt;<span class="hljs-type">int</span>&gt; s = &#123;<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>&#125;;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> a: s)                        #简便写法类似python中的可迭代对象<br>			cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure><br><code>multiset</code>数据结构和<code>set</code>类似，只不过允许数据重复，插入时即是有序的<br>8、映射数据结构<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">map&lt;string, <span class="hljs-type">int</span>&gt; mp = &#123;<br>		&#123;<span class="hljs-string">&quot;Monday&quot;</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-string">&quot;Tuesday&quot;</span>,<span class="hljs-number">2</span>&#125;,&#123;<span class="hljs-string">&quot;Wenesday&quot;</span>,<span class="hljs-number">3</span>&#125;<br>	&#125;;<br>	cout &lt;&lt; mp[<span class="hljs-string">&quot;Tuesday&quot;</span>] &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>	cout &lt;&lt; mp.<span class="hljs-built_in">lower_bound</span>(<span class="hljs-string">&quot;Tue&quot;</span>)-&gt;first &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>	cout &lt;&lt; mp.<span class="hljs-built_in">upper_bound</span>(<span class="hljs-string">&quot;Tue&quot;</span>)-&gt;second &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;<br>&gt;&gt;<span class="hljs-number">2</span><br>&gt;&gt;Tuesday<br>&gt;&gt;<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><br>9、加快输入输出流的速度：<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>用来加快cin、cout的速率<br></code></pre></td></tr></table></figure><br>10、<code>cout &lt;&lt; x+y &lt;&lt; &#39;\n&#39; &lt;&lt; flush;</code>强行刷新缓冲区，使数据立即输出<br>11、移位运算<br><figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++">a &lt;&lt;= <span class="hljs-number">10</span>  <span class="hljs-comment">//a * 1024;</span><br>a &lt;&lt;= k   <span class="hljs-comment">//a * 2^k;</span><br>b &gt;&gt;= k   <span class="hljs-comment">//a / 2^k;</span><br>a |= (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">10</span>);  <span class="hljs-comment">//将a的二进制第十一位换成1，进行调节</span><br>a &amp; <span class="hljs-number">1</span> <span class="hljs-comment">// a % 2</span><br></code></pre></td></tr></table></figure></p>
+<p>​    </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Latex篇章结构</title>
+    <url>/2022/10/16/Latex%E7%AF%87%E7%AB%A0%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h3 id="一、构建小节"><a href="#一、构建小节" class="headerlink" title="一、构建小节"></a>一、构建小节</h3><ul>
+<li>小节<code>\section&#123;&#125;</code></li>
+<li>子小节<code>\subsection&#123;&#125;</code></li>
+<li>子子小节<code>\subsubsection&#123;&#125;</code></li>
+<li>生成目录<code>\tableofcontents</code></li>
+<li>换行<code>\\</code>或者<code>\par</code>:产生新的段落<br>具体效果如下图：<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162213125.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162214021.png" alt=""><h3 id="二、章节大纲"><a href="#二、章节大纲" class="headerlink" title="二、章节大纲"></a>二、章节大纲</h3>命令<code>\chapter&#123;&#125;</code><br>在使用之前需要更换文本类型，设置<code>\documentclass&#123;ctexbook&#125;</code><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162238918.png" alt=""></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Latex学习</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Latex组织文本</title>
     <url>/2022/10/07/Latex%E5%AD%A6%E4%B9%A0%E2%80%94%E7%BB%84%E7%BB%87%E6%96%87%E6%9C%AC/</url>
     <content><![CDATA[<h3 id="一、标点符号"><a href="#一、标点符号" class="headerlink" title="一、标点符号"></a>一、标点符号</h3><h4 id="1-1-引号"><a href="#1-1-引号" class="headerlink" title="1.1 引号"></a>1.1 引号</h4><p><code>Latex</code>使用<code>‘’</code>来表示引号，如果遇到连续使用单引号和双引号的情形，则需要使用<code>\,</code>命令隔开，会产生很小的间距</p>
@@ -96,24 +114,6 @@ DFS 不能进行状态压缩
 <h4 id="2-3-字体系列命令"><a href="#2-3-字体系列命令" class="headerlink" title="2.3 字体系列命令"></a>2.3 字体系列命令</h4><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">带参数命令<br>	<span class="hljs-keyword">\textmd</span>&#123;Medium series&#125; <span class="hljs-comment">% 中等字体，正文默认使用此系列</span><br>	<span class="hljs-keyword">\textbf</span>&#123;Bold extended series&#125; <span class="hljs-comment">% 加宽加粗</span><br>	<br>声明命令<br>	&#123;<span class="hljs-keyword">\mdseries</span> Medium series&#125; 	<br>	&#123;<span class="hljs-keyword">\bfseries</span> Bold extended series&#125;<br></code></pre></td></tr></table></figure>
 <h4 id="2-4-字体坐标"><a href="#2-4-字体坐标" class="headerlink" title="2.4 字体坐标"></a>2.4 字体坐标</h4><p>经上文介绍了字体的三个特征，综合起来构成了确定一种字体的三维坐标：族、形状、系列，不同组合会产生不同的字体效果。<br>具体组合效果图:<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210071702667.png" alt=""><br><strong>_恢复普通字体_</strong><br>在复杂的字体环境中，恢复普通字体就显得十分重要了。<br><code>\textnormal&#123;文字&#125; % 带参数命令</code><br><code>&#123;\normalfont 文字&#125; % 声明命令</code><br><strong>_斜体校正_</strong><br>在使用斜体声明<code>\itshape、\slshape</code>时，最后一个倾斜的字体会超过右边界，使得间距过近；<br>而用带参数命令<code>\textit、\textsl</code>时，可以自动修正这个距离，也可以手工使用<code>\/</code>命令进行校正。<br><strong>_禁止校正_</strong><br>有时对于倾斜校正是不必要的，则应关闭带参数倾斜命令的自动校正功能:<br><code>\textit&#123;M\nocorr&#125;M</code> 通过添加命令<code>\nocorr</code>命令来关闭自动校正    </p>
 <h4 id="2-5-中文字体族"><a href="#2-5-中文字体族" class="headerlink" title="2.5 中文字体族"></a>2.5 中文字体族</h4><p>对于中文字体，一般只使用不同的字体族进行区分，选择中文字体族使用<code>\CJKfamily</code>命令<br>在<code>ctex</code>宏包及文档下有一些预定义，默认情况下配置了四种字体族：<br><figure class="highlight latex"><table><tr><td class="code"><pre><code class="hljs Latex">&#123;<span class="hljs-keyword">\heiti</span> 这是黑体&#125;<br>&#123;<span class="hljs-keyword">\songti</span> 这是宋体&#125;<br>&#123;<span class="hljs-keyword">\kaishu</span> 这是楷书&#125;<br>&#123;<span class="hljs-keyword">\fangsong</span> 这是仿宋&#125;<br></code></pre></td></tr></table></figure><br><strong>_组合字体_</strong><br><code>ctex</code>宏包及文档类也定义了一些组合字体，可以让中文也具备使用粗体和意大利体功能，并且重定义<code>\rmfamily</code>使它同时对中文起作用<br>默认的中文字体是<code>rm</code>，正常字体是宋体，粗体是黑体，意大利体是楷体 </p>
-]]></content>
-      <categories>
-        <category>Latex学习</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Latex篇章结构</title>
-    <url>/2022/10/16/Latex%E7%AF%87%E7%AB%A0%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<h3 id="一、构建小节"><a href="#一、构建小节" class="headerlink" title="一、构建小节"></a>一、构建小节</h3><ul>
-<li>小节<code>\section&#123;&#125;</code></li>
-<li>子小节<code>\subsection&#123;&#125;</code></li>
-<li>子子小节<code>\subsubsection&#123;&#125;</code></li>
-<li>生成目录<code>\tableofcontents</code></li>
-<li>换行<code>\\</code>或者<code>\par</code>:产生新的段落<br>具体效果如下图：<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162213125.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162214021.png" alt=""><h3 id="二、章节大纲"><a href="#二、章节大纲" class="headerlink" title="二、章节大纲"></a>二、章节大纲</h3>命令<code>\chapter&#123;&#125;</code><br>在使用之前需要更换文本类型，设置<code>\documentclass&#123;ctexbook&#125;</code><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210162238918.png" alt=""></li>
-</ul>
 ]]></content>
       <categories>
         <category>Latex学习</category>
@@ -150,19 +150,6 @@ DFS 不能进行状态压缩
       </tags>
   </entry>
   <entry>
-    <title>不等式</title>
-    <url>/2022/10/20/%E4%B8%8D%E7%AD%89%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="第六讲、不等式"><a href="#第六讲、不等式" class="headerlink" title="第六讲、不等式"></a>第六讲、不等式</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201907542.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201908392.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201908435.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201909712.png" alt=""></p>
-<h3 id="六、典型例题"><a href="#六、典型例题" class="headerlink" title="六、典型例题"></a>六、典型例题</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数学竞赛</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树</title>
     <url>/2022/10/13/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<h3 id="二叉树（Binary-Tree-三种遍历算法"><a href="#二叉树（Binary-Tree-三种遍历算法" class="headerlink" title="二叉树（Binary Tree)三种遍历算法"></a>二叉树（Binary Tree)三种遍历算法</h3><p>基于链表结构实现的二叉树又称二叉链表，本文主要介绍二叉树的存储以及先序遍历、中序遍历和后序遍历三种遍历方式的递归和非递归算法：    </p>
@@ -178,6 +165,19 @@ DFS 不能进行状态压缩
       <tags>
         <tag>数据结构</tag>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>不等式</title>
+    <url>/2022/10/20/%E4%B8%8D%E7%AD%89%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="第六讲、不等式"><a href="#第六讲、不等式" class="headerlink" title="第六讲、不等式"></a>第六讲、不等式</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201907542.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201908392.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201908435.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210201909712.png" alt=""></p>
+<h3 id="六、典型例题"><a href="#六、典型例题" class="headerlink" title="六、典型例题"></a>六、典型例题</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">pass</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数学竞赛</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
       </tags>
   </entry>
   <entry>
@@ -201,110 +201,6 @@ DFS 不能进行状态压缩
       <tags>
         <tag>数据结构</tag>
         <tag>稀疏矩阵</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown学习</title>
-    <url>/2022/02/12/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="一、基本操作语法"><a href="#一、基本操作语法" class="headerlink" title="一、基本操作语法"></a>一、基本操作语法</h2><h3 id="1-1-基本格式"><a href="#1-1-基本格式" class="headerlink" title="1.1 基本格式"></a>1.1 基本格式</h3><p><1> 设置标题前后均留有空格</p>
-<p><2> 加粗:</p>
-<p><strong>加粗示例1（较推荐）</strong></p>
-<p><strong>加粗示例2</strong></p>
-<p><3> 斜体：</p>
-<p><em>斜体示例1(较推荐）</em></p>
-<p>_斜体示例2_</p>
-<h3 id="1-2-段落和换行"><a href="#1-2-段落和换行" class="headerlink" title="1.2 段落和换行"></a>1.2 段落和换行</h3><h4 id="没有空行示例"><a href="#没有空行示例" class="headerlink" title="没有空行示例"></a>没有空行示例</h4><p>第一行<br>第二行</p>
-<h4 id="有空行示例"><a href="#有空行示例" class="headerlink" title="有空行示例"></a>有空行示例</h4><p>第一行</p>
-<p>第二行</p>
-<h4 id="段内换行"><a href="#段内换行" class="headerlink" title="段内换行"></a>段内换行</h4><p>第一行，如果在段内换行需要在结尾插入两个及以上的空格<br>第二行</p>
-<h3 id="1-3-有序列表"><a href="#1-3-有序列表" class="headerlink" title="1.3 有序列表"></a>1.3 有序列表</h3><h4 id="有序列表示例"><a href="#有序列表示例" class="headerlink" title="有序列表示例"></a>有序列表示例</h4><p>(数字序号+英文句号+空格+列表内容)  </p>
-<ol>
-<li>我有一个梦想  </li>
-<li>我有两个梦想  </li>
-<li>我有三个梦想  </li>
-</ol>
-<h3 id="1-4-无序列表"><a href="#1-4-无序列表" class="headerlink" title="1.4 无序列表"></a>1.4 无序列表</h3><h4 id="无序列表示例"><a href="#无序列表示例" class="headerlink" title="无序列表示例"></a>无序列表示例</h4><p>(*/+/- + 空格 + 列表内容)</p>
-<h5 id="使用星号"><a href="#使用星号" class="headerlink" title="使用星号"></a>使用星号</h5><ul>
-<li>我有一个梦想</li>
-<li>我有两个梦想</li>
-<li>我有三个梦想<br>（其他标记效果相同）  </li>
-</ul>
-<h3 id="1-5-嵌套列表"><a href="#1-5-嵌套列表" class="headerlink" title="1.5 嵌套列表"></a>1.5 嵌套列表</h3><h4 id="语法示例"><a href="#语法示例" class="headerlink" title="语法示例"></a>语法示例</h4><p>在第一层列表上，每一层多一个TAB键    </p>
-<ul>
-<li>我有一个梦想<ul>
-<li>你有一个梦想<ul>
-<li>她有一个梦想<ul>
-<li>他有一个梦想<br>(有序列表类似可以互相嵌套）    </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>_(建议使用-标记无序列表避免与粗体和斜体混淆)_</strong>  </p>
-<h3 id="1-6-分割线"><a href="#1-6-分割线" class="headerlink" title="1.6 分割线"></a>1.6 分割线</h3><h4 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h4><p>分割线由3个及以上的<em>/-/_来标记，对应效果不同。<br><em>*分割线示例</em></em>  </p>
-<ul>
-<li>星号</li>
-</ul>
-<hr>
-<hr>
-<hr>
-<ul>
-<li>减号</li>
-</ul>
-<hr>
-<h2 id=""><a href="#" class="headerlink" title="- - -"></a>- - -</h2><ul>
-<li>下画线  </li>
-</ul>
-<hr>
-<hr>
-<hr>
-<h2 id="二、图片文件操作"><a href="#二、图片文件操作" class="headerlink" title="二、图片文件操作"></a>二、图片文件操作</h2><h3 id="2-1-插入图片"><a href="#2-1-插入图片" class="headerlink" title="2.1 插入图片"></a>2.1 插入图片</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><ul>
-<li><p>本地图片<br>（支持相对路径和绝对路径）<br><img src="D:/VisualStudioIDE/background/1.png" alt="本地图片">  </p>
-</li>
-<li><p>网络图片<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fd5f14e00482699c1c3b3509142b16f88126deff7.jpg&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1666447219&amp;t=b8c922e69db81319d3dc686fb66a0e53" alt="网络图片"> </p>
-</li>
-</ul>
-<h3 id="2-2-链接"><a href="#2-2-链接" class="headerlink" title="2.2 链接"></a>2.2 链接</h3><h4 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h4><h5 id="文字链接"><a href="#文字链接" class="headerlink" title="文字链接"></a>文字链接</h5><p><strong><a href="链接地址">链接文字</a></strong><br>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a>   </p>
-<h5 id="引用链接"><a href="#引用链接" class="headerlink" title="引用链接"></a>引用链接</h5><p>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a>  </p>
-<p>语法说明如下：</p>
-<ul>
-<li>链接标记可以有字母、数字、空格和标点符号；</li>
-<li>链接标记不区分大小写；</li>
-<li>定义的链接内容可以放在当前文件的任意位置，建议放在页尾；</li>
-<li>当链接地址为网络地址时要以http/https开头，否则会被识别为本地地址。  <h4 id="网址链接"><a href="#网址链接" class="headerlink" title="网址链接"></a>网址链接</h4>在Markdown中，将网络地址或邮箱地址使用＜＞包裹起来会被自动转换为超链接。<br><strong>邮箱链接示例</strong><br>获取更多信息，请访问MarkStiff的邮箱<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x4c;&#90;&#x48;&#49;&#x33;&#x31;&#52;&#x35;&#x32;&#49;&#x6c;&#x69;&#x67;&#x61;&#111;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#x6f;&#x6d;">&#x4c;&#90;&#x48;&#49;&#x33;&#x31;&#52;&#x35;&#x32;&#49;&#x6c;&#x69;&#x67;&#x61;&#111;&#64;&#x31;&#x36;&#51;&#x2e;&#x63;&#x6f;&#x6d;</a>   <h4 id="链接标题"><a href="#链接标题" class="headerlink" title="链接标题"></a>链接标题</h4>如果想了解关于Markdown的更多信息，请查看<a href="基本操作学习.md">Markdown指南</a>   </li>
-</ul>
-<h3 id="2-3-行内代码与代码块"><a href="#2-3-行内代码与代码块" class="headerlink" title="2.3 行内代码与代码块"></a>2.3 行内代码与代码块</h3><h4 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h4><p><strong>语法格式<code>Insert_Codes</code></strong>  </p>
-<ul>
-<li>使用<code>mkdir 文件夹</code>命令创建文件夹  </li>
-</ul>
-<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p><strong>语法格式：Tab键或4个空格开头</strong> //注意代码块需要隔行</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//创建链表</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>&#123;<br>    <span class="hljs-type">int</span> data;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>* next;<br>&#125;node;  <br></code></pre></td></tr></table></figure>
-<h3 id="2-4-引用"><a href="#2-4-引用" class="headerlink" title="2.4 引用"></a>2.4 引用</h3><p><strong>语法格式：&gt; + 引用内容</strong><br>语法说明如下：</p>
-<ol>
-<li>多行引用也可以在每一行的开头都插入＞；</li>
-<li>在引用中可以嵌套引用；</li>
-<li>在引用中可以使用其他的Markdown语法；</li>
-<li>段落与换行的格式在引用中也是适用的。  </li>
-</ol>
-<h4 id="单行引用"><a href="#单行引用" class="headerlink" title="单行引用"></a>单行引用</h4><blockquote>
-<p>基于改进的自约束差分进化算法的多目标优化模型  </p>
-<h4 id="多行引用"><a href="#多行引用" class="headerlink" title="多行引用"></a>多行引用</h4><p>引用MarkStiff的博客文章<a href="https://www.cnblogs.com/MarkStiff/p/16716797.html">MarkStiff</a><br>算法介绍</p>
-<h4 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h4><p>多目标优化模型</p>
-<blockquote>
-<p>差分进化算法</p>
-<blockquote>
-<p>改进的自约束处理  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h3 id="2-5-转义"><a href="#2-5-转义" class="headerlink" title="2.5 转义"></a>2.5 转义</h3><p><strong>介绍</strong><br>当我们想在Markdown文件中插入一些标记符号，但又不想让这些符号被渲染时，可以使用 <code>\</code> 进行转义<br><strong>语法格式：\特殊字符</strong>  </p>
-<pre><code>`// 常见转义字符`
-</code></pre><p>\   反斜线<br>`   反引号<br>*   星号<br>_   底线<br>\{}  花括号<br>[]  方括号<br>()  括弧<br>#   井字号<br>+   加号<br>-   减号<br>.   英文句点<br>!   惊叹号  </p>
-]]></content>
-      <tags>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -545,6 +441,110 @@ K = \frac{1}{nq}(霍尔系数)\tag{23}</script><p>式中，$d$ 和 $l$ 分别表
       </tags>
   </entry>
   <entry>
+    <title>Markdown学习</title>
+    <url>/2022/02/12/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="一、基本操作语法"><a href="#一、基本操作语法" class="headerlink" title="一、基本操作语法"></a>一、基本操作语法</h2><h3 id="1-1-基本格式"><a href="#1-1-基本格式" class="headerlink" title="1.1 基本格式"></a>1.1 基本格式</h3><p><1> 设置标题前后均留有空格</p>
+<p><2> 加粗:</p>
+<p><strong>加粗示例1（较推荐）</strong></p>
+<p><strong>加粗示例2</strong></p>
+<p><3> 斜体：</p>
+<p><em>斜体示例1(较推荐）</em></p>
+<p>_斜体示例2_</p>
+<h3 id="1-2-段落和换行"><a href="#1-2-段落和换行" class="headerlink" title="1.2 段落和换行"></a>1.2 段落和换行</h3><h4 id="没有空行示例"><a href="#没有空行示例" class="headerlink" title="没有空行示例"></a>没有空行示例</h4><p>第一行<br>第二行</p>
+<h4 id="有空行示例"><a href="#有空行示例" class="headerlink" title="有空行示例"></a>有空行示例</h4><p>第一行</p>
+<p>第二行</p>
+<h4 id="段内换行"><a href="#段内换行" class="headerlink" title="段内换行"></a>段内换行</h4><p>第一行，如果在段内换行需要在结尾插入两个及以上的空格<br>第二行</p>
+<h3 id="1-3-有序列表"><a href="#1-3-有序列表" class="headerlink" title="1.3 有序列表"></a>1.3 有序列表</h3><h4 id="有序列表示例"><a href="#有序列表示例" class="headerlink" title="有序列表示例"></a>有序列表示例</h4><p>(数字序号+英文句号+空格+列表内容)  </p>
+<ol>
+<li>我有一个梦想  </li>
+<li>我有两个梦想  </li>
+<li>我有三个梦想  </li>
+</ol>
+<h3 id="1-4-无序列表"><a href="#1-4-无序列表" class="headerlink" title="1.4 无序列表"></a>1.4 无序列表</h3><h4 id="无序列表示例"><a href="#无序列表示例" class="headerlink" title="无序列表示例"></a>无序列表示例</h4><p>(*/+/- + 空格 + 列表内容)</p>
+<h5 id="使用星号"><a href="#使用星号" class="headerlink" title="使用星号"></a>使用星号</h5><ul>
+<li>我有一个梦想</li>
+<li>我有两个梦想</li>
+<li>我有三个梦想<br>（其他标记效果相同）  </li>
+</ul>
+<h3 id="1-5-嵌套列表"><a href="#1-5-嵌套列表" class="headerlink" title="1.5 嵌套列表"></a>1.5 嵌套列表</h3><h4 id="语法示例"><a href="#语法示例" class="headerlink" title="语法示例"></a>语法示例</h4><p>在第一层列表上，每一层多一个TAB键    </p>
+<ul>
+<li>我有一个梦想<ul>
+<li>你有一个梦想<ul>
+<li>她有一个梦想<ul>
+<li>他有一个梦想<br>(有序列表类似可以互相嵌套）    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>_(建议使用-标记无序列表避免与粗体和斜体混淆)_</strong>  </p>
+<h3 id="1-6-分割线"><a href="#1-6-分割线" class="headerlink" title="1.6 分割线"></a>1.6 分割线</h3><h4 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h4><p>分割线由3个及以上的<em>/-/_来标记，对应效果不同。<br><em>*分割线示例</em></em>  </p>
+<ul>
+<li>星号</li>
+</ul>
+<hr>
+<hr>
+<hr>
+<ul>
+<li>减号</li>
+</ul>
+<hr>
+<h2 id=""><a href="#" class="headerlink" title="- - -"></a>- - -</h2><ul>
+<li>下画线  </li>
+</ul>
+<hr>
+<hr>
+<hr>
+<h2 id="二、图片文件操作"><a href="#二、图片文件操作" class="headerlink" title="二、图片文件操作"></a>二、图片文件操作</h2><h3 id="2-1-插入图片"><a href="#2-1-插入图片" class="headerlink" title="2.1 插入图片"></a>2.1 插入图片</h3><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><ul>
+<li><p>本地图片<br>（支持相对路径和绝对路径）<br><img src="D:/VisualStudioIDE/background/1.png" alt="本地图片">  </p>
+</li>
+<li><p>网络图片<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fd5f14e00482699c1c3b3509142b16f88126deff7.jpg&amp;refer=http%3A%2F%2Fi0.hdslb.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1666447219&amp;t=b8c922e69db81319d3dc686fb66a0e53" alt="网络图片"> </p>
+</li>
+</ul>
+<h3 id="2-2-链接"><a href="#2-2-链接" class="headerlink" title="2.2 链接"></a>2.2 链接</h3><h4 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h4><h5 id="文字链接"><a href="#文字链接" class="headerlink" title="文字链接"></a>文字链接</h5><p><strong><a href="链接地址">链接文字</a></strong><br>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a>   </p>
+<h5 id="引用链接"><a href="#引用链接" class="headerlink" title="引用链接"></a>引用链接</h5><p>经常使用的网站<a href="http://www.google.com/">Google</a>、<a href="http://github.com/">Github</a>  </p>
+<p>语法说明如下：</p>
+<ul>
+<li>链接标记可以有字母、数字、空格和标点符号；</li>
+<li>链接标记不区分大小写；</li>
+<li>定义的链接内容可以放在当前文件的任意位置，建议放在页尾；</li>
+<li>当链接地址为网络地址时要以http/https开头，否则会被识别为本地地址。  <h4 id="网址链接"><a href="#网址链接" class="headerlink" title="网址链接"></a>网址链接</h4>在Markdown中，将网络地址或邮箱地址使用＜＞包裹起来会被自动转换为超链接。<br><strong>邮箱链接示例</strong><br>获取更多信息，请访问MarkStiff的邮箱<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x4c;&#90;&#72;&#x31;&#51;&#x31;&#52;&#53;&#x32;&#49;&#x6c;&#x69;&#x67;&#x61;&#x6f;&#64;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#109;">&#x4c;&#90;&#72;&#x31;&#51;&#x31;&#52;&#53;&#x32;&#49;&#x6c;&#x69;&#x67;&#x61;&#x6f;&#64;&#x31;&#54;&#51;&#x2e;&#x63;&#x6f;&#109;</a>   <h4 id="链接标题"><a href="#链接标题" class="headerlink" title="链接标题"></a>链接标题</h4>如果想了解关于Markdown的更多信息，请查看<a href="基本操作学习.md">Markdown指南</a>   </li>
+</ul>
+<h3 id="2-3-行内代码与代码块"><a href="#2-3-行内代码与代码块" class="headerlink" title="2.3 行内代码与代码块"></a>2.3 行内代码与代码块</h3><h4 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h4><p><strong>语法格式<code>Insert_Codes</code></strong>  </p>
+<ul>
+<li>使用<code>mkdir 文件夹</code>命令创建文件夹  </li>
+</ul>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p><strong>语法格式：Tab键或4个空格开头</strong> //注意代码块需要隔行</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><code class="hljs C++"><span class="hljs-comment">//创建链表</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>&#123;<br>    <span class="hljs-type">int</span> data;<br>    <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Node</span>* next;<br>&#125;node;  <br></code></pre></td></tr></table></figure>
+<h3 id="2-4-引用"><a href="#2-4-引用" class="headerlink" title="2.4 引用"></a>2.4 引用</h3><p><strong>语法格式：&gt; + 引用内容</strong><br>语法说明如下：</p>
+<ol>
+<li>多行引用也可以在每一行的开头都插入＞；</li>
+<li>在引用中可以嵌套引用；</li>
+<li>在引用中可以使用其他的Markdown语法；</li>
+<li>段落与换行的格式在引用中也是适用的。  </li>
+</ol>
+<h4 id="单行引用"><a href="#单行引用" class="headerlink" title="单行引用"></a>单行引用</h4><blockquote>
+<p>基于改进的自约束差分进化算法的多目标优化模型  </p>
+<h4 id="多行引用"><a href="#多行引用" class="headerlink" title="多行引用"></a>多行引用</h4><p>引用MarkStiff的博客文章<a href="https://www.cnblogs.com/MarkStiff/p/16716797.html">MarkStiff</a><br>算法介绍</p>
+<h4 id="嵌套引用"><a href="#嵌套引用" class="headerlink" title="嵌套引用"></a>嵌套引用</h4><p>多目标优化模型</p>
+<blockquote>
+<p>差分进化算法</p>
+<blockquote>
+<p>改进的自约束处理  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="2-5-转义"><a href="#2-5-转义" class="headerlink" title="2.5 转义"></a>2.5 转义</h3><p><strong>介绍</strong><br>当我们想在Markdown文件中插入一些标记符号，但又不想让这些符号被渲染时，可以使用 <code>\</code> 进行转义<br><strong>语法格式：\特殊字符</strong>  </p>
+<pre><code>`// 常见转义字符`
+</code></pre><p>\   反斜线<br>`   反引号<br>*   星号<br>_   底线<br>\{}  花括号<br>[]  方括号<br>()  括弧<br>#   井字号<br>+   加号<br>-   减号<br>.   英文句点<br>!   惊叹号  </p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>导数的综合应用</title>
     <url>/2022/10/20/%E5%AF%BC%E6%95%B0%E7%9A%84%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h2 id="第七讲、导数的综合应用"><a href="#第七讲、导数的综合应用" class="headerlink" title="第七讲、导数的综合应用"></a>第七讲、导数的综合应用</h2><h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210231137608.png" alt=""><br>注解：式中</p>
@@ -552,29 +552,6 @@ K = \frac{1}{nq}(霍尔系数)\tag{23}</script><p>式中，$d$ 和 $l$ 分别表
 \frac{\partial(F,G)}{\partial(y,z)}=\left|\begin{array}{c}F_y & F_z\\G_y & G_z \end{array}\right|</script><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210231146576.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210231151279.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210231426722.png" alt=""></p>
 <h3 id="七、典型例题"><a href="#七、典型例题" class="headerlink" title="七、典型例题"></a>七、典型例题</h3><h4 id="7-1-方程实根的讨论"><a href="#7-1-方程实根的讨论" class="headerlink" title="7.1 方程实根的讨论"></a>7.1 方程实根的讨论</h4><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210231444545.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210231445906.png" alt=""></p>
 <h4 id="7-2-导数几何应用"><a href="#7-2-导数几何应用" class="headerlink" title="7.2 导数几何应用"></a>7.2 导数几何应用</h4>]]></content>
-      <categories>
-        <category>数学竞赛</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>导数与微分</title>
-    <url>/2022/10/14/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/</url>
-    <content><![CDATA[<h2 id="第四讲、导数与微分"><a href="#第四讲、导数与微分" class="headerlink" title="第四讲、导数与微分"></a>第四讲、导数与微分</h2><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150947774.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150948701.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150949084.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150950494.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150954031.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150957582.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151001182.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151005971.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151006420.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151009629.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151017716.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151018484.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151024755.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151025747.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151026169.png" alt=""></p>
-<h3 id="隐函数存在定理"><a href="#隐函数存在定理" class="headerlink" title="隐函数存在定理"></a>隐函数存在定理</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151417363.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151417271.png" alt=""></p>
-<h2 id="四、典型例题"><a href="#四、典型例题" class="headerlink" title="四、典型例题"></a>四、典型例题</h2><h3 id="4-1-由方程组求导数"><a href="#4-1-由方程组求导数" class="headerlink" title="4.1 由方程组求导数"></a>4.1 由方程组求导数</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151435749.png" alt=""></p>
-<h3 id="4-2-等价展开式处理"><a href="#4-2-等价展开式处理" class="headerlink" title="4.2 等价展开式处理"></a>4.2 等价展开式处理</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151436893.png" alt=""></p>
-<h3 id="4-3-Taylor-公式求导数"><a href="#4-3-Taylor-公式求导数" class="headerlink" title="4.3 $Taylor$公式求导数"></a>4.3 $Taylor$公式求导数</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151444390.png" alt=""></p>
-<h3 id="4-4-Leibniz-公式运用"><a href="#4-4-Leibniz-公式运用" class="headerlink" title="4.4 $Leibniz$公式运用"></a>4.4 $Leibniz$公式运用</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151508577.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151509345.png" alt=""></p>
-<h4 id="4-4-1-求高阶导数"><a href="#4-4-1-求高阶导数" class="headerlink" title="4.4.1 求高阶导数"></a>4.4.1 求高阶导数</h4><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151514227.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151514273.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151515512.png" alt=""></p>
-<h4 id="4-4-2-综合运用"><a href="#4-4-2-综合运用" class="headerlink" title="4.4.2 综合运用"></a>4.4.2 综合运用</h4><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151519871.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151523339.png" alt=""></p>
-<h3 id="4-5-单侧倒数与可导性"><a href="#4-5-单侧倒数与可导性" class="headerlink" title="4.5 单侧倒数与可导性"></a>4.5 单侧倒数与可导性</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151528587.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151614398.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151614240.png" alt=""></p>
-<h3 id="4-6-多元函数连续性与可导性"><a href="#4-6-多元函数连续性与可导性" class="headerlink" title="4.6 多元函数连续性与可导性"></a>4.6 多元函数连续性与可导性</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152011769.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152011451.png" alt=""></p>
-<h3 id="4-7-偏导数与全微分"><a href="#4-7-偏导数与全微分" class="headerlink" title="4.7 偏导数与全微分"></a>4.7 偏导数与全微分</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152036350.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152040725.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152040468.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152045549.png" alt=""><br>注解：当函数$u=f(x,y,z)$对$\theta$偏导数等于零时，则说明函数与该变量无关（或不含有或为常量）；<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152050892.png" alt=""><br>注解：信息挖掘，$F(rcos\theta,rsin\theta)=h(r)$，根据$h(r)$不含有$theta$可得对$\theta$偏导数等于零，于是$F$对于$\theta$偏导数也等于零；        </p>
-<h3 id="4-8-方向导数与梯度"><a href="#4-8-方向导数与梯度" class="headerlink" title="4.8 方向导数与梯度"></a>4.8 方向导数与梯度</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152100015.png" alt=""><br>注解：注意坐标转换；<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152103825.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152103222.png" alt=""></p>
-]]></content>
       <categories>
         <category>数学竞赛</category>
       </categories>
@@ -602,6 +579,29 @@ K = \frac{1}{nq}(霍尔系数)\tag{23}</script><p>式中，$d$ 和 $l$ 分别表
 <h4 id="5-5-利用中值定理证明函数性质"><a href="#5-5-利用中值定理证明函数性质" class="headerlink" title="5.5 利用中值定理证明函数性质"></a>5.5 利用中值定理证明函数性质</h4><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210182104382.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210182104890.png" alt=""><br>注解：此道题目对$f(x+\theta h)$的二阶导函数再次泰勒展开，以及在区$h-&gt; 0$特别好；    </p>
 <p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210182111905.png" alt=""><br>注解：在处理$g^`(x)=0$时，设定$g(x)$极限为$L$或无穷大；之后假设证明：求极限问题；<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210182147647.png" alt=""><br>注解：带绝对值类的题目，对不等式而言尽可能放缩，注意其中二阶导数放缩不大于函数值与一阶导数值之和；    </p>
 <p><strong>【拓展】</strong><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210182151889.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210182151370.png" alt=""><br>注解：怎样求$f(x)$的导数，以及注意$f(0)$的导数需单独求解，另外对原函数等价于导数的积分处理进一步放缩特别好；</p>
+]]></content>
+      <categories>
+        <category>数学竞赛</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>导数与微分</title>
+    <url>/2022/10/14/%E6%95%B0%E5%AD%A6%E7%AB%9E%E8%B5%9B/</url>
+    <content><![CDATA[<h2 id="第四讲、导数与微分"><a href="#第四讲、导数与微分" class="headerlink" title="第四讲、导数与微分"></a>第四讲、导数与微分</h2><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150947774.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150948701.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150949084.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150950494.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150954031.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210150957582.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151001182.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151005971.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151006420.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151009629.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151017716.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151018484.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151024755.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151025747.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151026169.png" alt=""></p>
+<h3 id="隐函数存在定理"><a href="#隐函数存在定理" class="headerlink" title="隐函数存在定理"></a>隐函数存在定理</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151417363.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151417271.png" alt=""></p>
+<h2 id="四、典型例题"><a href="#四、典型例题" class="headerlink" title="四、典型例题"></a>四、典型例题</h2><h3 id="4-1-由方程组求导数"><a href="#4-1-由方程组求导数" class="headerlink" title="4.1 由方程组求导数"></a>4.1 由方程组求导数</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151435749.png" alt=""></p>
+<h3 id="4-2-等价展开式处理"><a href="#4-2-等价展开式处理" class="headerlink" title="4.2 等价展开式处理"></a>4.2 等价展开式处理</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151436893.png" alt=""></p>
+<h3 id="4-3-Taylor-公式求导数"><a href="#4-3-Taylor-公式求导数" class="headerlink" title="4.3 $Taylor$公式求导数"></a>4.3 $Taylor$公式求导数</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151444390.png" alt=""></p>
+<h3 id="4-4-Leibniz-公式运用"><a href="#4-4-Leibniz-公式运用" class="headerlink" title="4.4 $Leibniz$公式运用"></a>4.4 $Leibniz$公式运用</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151508577.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151509345.png" alt=""></p>
+<h4 id="4-4-1-求高阶导数"><a href="#4-4-1-求高阶导数" class="headerlink" title="4.4.1 求高阶导数"></a>4.4.1 求高阶导数</h4><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151514227.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151514273.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151515512.png" alt=""></p>
+<h4 id="4-4-2-综合运用"><a href="#4-4-2-综合运用" class="headerlink" title="4.4.2 综合运用"></a>4.4.2 综合运用</h4><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151519871.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151523339.png" alt=""></p>
+<h3 id="4-5-单侧倒数与可导性"><a href="#4-5-单侧倒数与可导性" class="headerlink" title="4.5 单侧倒数与可导性"></a>4.5 单侧倒数与可导性</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151528587.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151614398.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210151614240.png" alt=""></p>
+<h3 id="4-6-多元函数连续性与可导性"><a href="#4-6-多元函数连续性与可导性" class="headerlink" title="4.6 多元函数连续性与可导性"></a>4.6 多元函数连续性与可导性</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152011769.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152011451.png" alt=""></p>
+<h3 id="4-7-偏导数与全微分"><a href="#4-7-偏导数与全微分" class="headerlink" title="4.7 偏导数与全微分"></a>4.7 偏导数与全微分</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152036350.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152040725.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152040468.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152045549.png" alt=""><br>注解：当函数$u=f(x,y,z)$对$\theta$偏导数等于零时，则说明函数与该变量无关（或不含有或为常量）；<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152050892.png" alt=""><br>注解：信息挖掘，$F(rcos\theta,rsin\theta)=h(r)$，根据$h(r)$不含有$theta$可得对$\theta$偏导数等于零，于是$F$对于$\theta$偏导数也等于零；        </p>
+<h3 id="4-8-方向导数与梯度"><a href="#4-8-方向导数与梯度" class="headerlink" title="4.8 方向导数与梯度"></a>4.8 方向导数与梯度</h3><p><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152100015.png" alt=""><br>注解：注意坐标转换；<br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152103825.png" alt=""><br><img src="http://cdn.jsdelivr.net/gh/Markstiff/BlogImage/img/202210152103222.png" alt=""></p>
 ]]></content>
       <categories>
         <category>数学竞赛</category>
