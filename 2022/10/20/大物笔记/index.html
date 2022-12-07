@@ -1,0 +1,1086 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>大学物理笔记 | MarkStiff Blog</title><meta name="keywords" content="大物"><meta name="author" content="MarkStiff"><meta name="copyright" content="MarkStiff"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="第一章 静电场 第一讲 库仑定律库仑定理——（真空静止点电荷） F &amp;#x3D; \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}\boldsymbol{r}^0\tag 1其中真空介电常数 $\varepsilon_0 \approx 8.85\times10^{-"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://github.com/Markstiff/2022/10/20/%E5%A4%A7%E7%89%A9%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: MarkStiff","link":"链接: ","source":"来源: MarkStiff Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '大学物理笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-07 11:03:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><script src="https://cyan-blog.oss-cn-shenzhen.aliyuncs.com/cdn/js/three.min.js"></script><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300&display=swap" rel="stylesheet"><script data-pjax src="https://cyan-blog.oss-cn-shenzhen.aliyuncs.com/cdn/js/echarts.min.js"></script><link rel="stylesheet" href="/css/cat.css"><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw cyan-shouji"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/echarts/"><i class="fa-fw cyan-hezhao"></i><span> 博客统计</span></a></li></ul></div></div></div></div><div class="canvas-container" id="canvas"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img/202210231934790.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MarkStiff Blog</a></span><div id="weather"><div id="tp-weather-widget"></div></div><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw cyan-shouji"></i><span> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/echarts/"><i class="fa-fw cyan-hezhao"></i><span> 博客统计</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">大学物理笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-20T09:35:42.000Z" title="发表于 2022-10-20 17:35:42">2022-10-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-07T03:03:35.984Z" title="更新于 2022-12-07 11:03:35">2022-12-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/">大学物理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">856</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="大学物理笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2022/10/20/%E5%A4%A7%E7%89%A9%E7%AC%94%E8%AE%B0/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第一章-静电场"><a href="#第一章-静电场" class="headerlink" title="第一章 静电场"></a>第一章 静电场</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021157027.png" style="zoom:200%;" /></p>
+<h3 id="第一讲-库仑定律"><a href="#第一讲-库仑定律" class="headerlink" title="第一讲 库仑定律"></a>第一讲 库仑定律</h3><h4 id="库仑定理——（真空静止点电荷）"><a href="#库仑定理——（真空静止点电荷）" class="headerlink" title="库仑定理——（真空静止点电荷）"></a>库仑定理——（真空静止点电荷）</h4><script type="math/tex; mode=display">
+F = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2}\boldsymbol{r}^0\tag 1</script><p>其中真空介电常数 $\varepsilon_0 \approx 8.85\times10^{-12}  C^2N^{-1}m^{-2}$，令 $k=\frac{1}{4\pi\varepsilon_0}$ 则 $k\approx 9\times 10^9Nm^2/C^2$，矢量 $\boldsymbol{r}^0$ 由施力电荷指向受力电荷</p>
+<h3 id="第二讲-电场强度-E"><a href="#第二讲-电场强度-E" class="headerlink" title="第二讲 电场强度$E$"></a>第二讲 电场强度$E$</h3><h4 id="2-1-电场强度"><a href="#2-1-电场强度" class="headerlink" title="2.1 电场强度"></a>2.1 电场强度</h4><script type="math/tex; mode=display">
+E = \frac{F}{q_0}=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\boldsymbol{r}^0\tag 2</script><h4 id="2-2-均匀带电细圆环"><a href="#2-2-均匀带电细圆环" class="headerlink" title="2.2 均匀带电细圆环"></a>2.2 均匀带电细圆环</h4><p>圆环轴线上一点$P$的电场强度：</p>
+<script type="math/tex; mode=display">
+E = \frac{1}{4\pi\varepsilon_0}\frac{qx}{(R^2+x^2)^\frac{3}{2}}\tag 3</script><p>其中，$x$表示$P$点到圆环中心$O$的距离，$R$表示圆环半径，$q$表示圆环带电量；    </p>
+<h4 id="2-3-有限长直线段"><a href="#2-3-有限长直线段" class="headerlink" title="2.3 有限长直线段"></a>2.3 有限长直线段</h4><p>直线外一点$P$电场强度：</p>
+<script type="math/tex; mode=display">
+E_x=\frac{\lambda}{4\pi\varepsilon_0 a}(cos\theta_1-cos\theta_2)\\
+E_y=\frac{\lambda}{4\pi\varepsilon_0 a}(sin\theta_2-sin\theta_1)\tag 4</script><p>注：在建立坐标系的情况下，上式均带有方向，其中沿 $y$ 轴正向：$\theta_1\rightarrow \theta_2$，$\theta$ 为与 $y$ 轴正向夹角；<br>其中，$a$表示$P$点到直线的垂直距离；    </p>
+<h4 id="2-4-均匀带电无限长直线"><a href="#2-4-均匀带电无限长直线" class="headerlink" title="2.4 均匀带电无限长直线"></a>2.4 均匀带电无限长直线</h4><p>由 $2.4$ 推得：令$\theta_1=0,\theta_2=\pi$     </p>
+<script type="math/tex; mode=display">
+E_x = \frac{\lambda}{2\pi\varepsilon_0 a}, E_y = 0\tag 5</script><h4 id="2-5-均匀带电无限大平面"><a href="#2-5-均匀带电无限大平面" class="headerlink" title="2.5 均匀带电无限大平面"></a>2.5 均匀带电无限大平面</h4><script type="math/tex; mode=display">
+E=\frac{\sigma}{2\varepsilon_0} \tag 6</script><h4 id="2-6-无限大均匀带异号电荷平板间"><a href="#2-6-无限大均匀带异号电荷平板间" class="headerlink" title="2.6 无限大均匀带异号电荷平板间"></a>2.6 无限大均匀带异号电荷平板间</h4><script type="math/tex; mode=display">
+E=\frac{\sigma}{\varepsilon_0}\tag 7</script><p>其中，$\sigma$表示每个平板的电荷面密度；     </p>
+<h4 id="2-7-电偶极子"><a href="#2-7-电偶极子" class="headerlink" title="2.7 电偶极子"></a>2.7 电偶极子</h4><p>电偶极矩：$\boldsymbol{p}=q\boldsymbol{l}$<br>中垂线上一点$P$场强：</p>
+<script type="math/tex; mode=display">
+E = -\frac{\boldsymbol{p}}{4\pi\varepsilon_0y^3}   (y\gg l)\tag 8</script><p>共线上一点$P$场强：   </p>
+<script type="math/tex; mode=display">
+E=\frac{2\boldsymbol{p}}{4\pi\varepsilon_0x^3}(x\gg l)\tag 9</script><p>其中$\boldsymbol{l}$方向由负电荷指向正电荷；     </p>
+<h4 id="2-8-力偶矩"><a href="#2-8-力偶矩" class="headerlink" title="2.8 力偶矩"></a>2.8 力偶矩</h4><p>电偶极子在匀强电场中得力偶矩：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{F}_+=q\boldsymbol{E},\boldsymbol{F}_-=-q\boldsymbol{E}\\
+M = F_+\cdot\frac{1}{2}lsin\theta+F_-\cdot\frac{1}{2}lsin\theta=qlEsin\theta\\
+\Rightarrow\boldsymbol{M}=q\boldsymbol{l}\times\boldsymbol{E}=\boldsymbol{p}\times\boldsymbol{E}\tag{10}</script><p>注：电偶极子在电场的作用下总要使 $\boldsymbol{p}$ 转向 $\boldsymbol{E}$ 的方向；    </p>
+<h3 id="第三讲-电通量-bigstar-高斯定理"><a href="#第三讲-电通量-bigstar-高斯定理" class="headerlink" title="第三讲 电通量 $\bigstar$高斯定理"></a>第三讲 电通量 $\bigstar$高斯定理</h3><h4 id="3-1-电通量"><a href="#3-1-电通量" class="headerlink" title="3.1 电通量"></a>3.1 电通量</h4><script type="math/tex; mode=display">
+\Phi_e=\oint_S\boldsymbol{E}\cdot d\boldsymbol{S}\tag{11}</script><h4 id="3-2-高斯定理"><a href="#3-2-高斯定理" class="headerlink" title="3.2 高斯定理"></a>3.2 高斯定理</h4><p>选定高斯面后，电通量：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\oint_S\boldsymbol{E}\cdot d\boldsymbol{S}=\frac{1}{\varepsilon_0}\sum_{(内)}q_i\tag{12}</script><h4 id="3-3-轴对称性电场"><a href="#3-3-轴对称性电场" class="headerlink" title="3.3 轴对称性电场"></a>3.3 轴对称性电场</h4><p>无限长均匀带电直线外一点$P$场强：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\boldsymbol{E}\oint_侧d\boldsymbol{S}=2\pi rEl=\frac{1}{\varepsilon_0}\lambda l\\
+\Rightarrow E = \frac{\lambda}{2\pi\varepsilon_0r}\tag{13}</script><p>其中，$r$表示$P$距离导线垂直距离；    </p>
+<h4 id="3-4-球面对称性电场"><a href="#3-4-球面对称性电场" class="headerlink" title="3.4 球面对称性电场"></a>3.4 球面对称性电场</h4><p>均匀带电球面电场分布：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\boldsymbol{E}\oint_S\boldsymbol{S}=E\cdot 4\pi r^2=\sum_{(内)}q_i=q\\
+\Rightarrow E=\left\{\begin{array}{lcc} \frac{1}{4\pi \varepsilon_0}\frac{q}{r^2}\boldsymbol{r}^0&(r>R) \\ 0&(r<R)\tag{14}\end{array}\right.</script><h4 id="3-5-无限大均匀带电平面"><a href="#3-5-无限大均匀带电平面" class="headerlink" title="3.5 无限大均匀带电平面"></a>3.5 无限大均匀带电平面</h4><p>选定圆柱面作为高斯面：</p>
+<script type="math/tex; mode=display">
+\Phi_e=\oint_{左端面}\boldsymbol{E}\cdot d\boldsymbol{S}+\oint_{右端面}\boldsymbol{E}\cdot d\boldsymbol{S}=2ES=\frac{1}{\varepsilon_0}\sigma S\\
+\Rightarrow E=\frac{\sigma}{2\varepsilon_0}\tag{15}</script><h4 id="3-6-均匀带电圆盘"><a href="#3-6-均匀带电圆盘" class="headerlink" title="3.6 均匀带电圆盘"></a>3.6 均匀带电圆盘</h4><script type="math/tex; mode=display">
+E = \frac{\sigma}{2\varepsilon_0}(1-\frac{x}{\sqrt{R^2+x^2}})\tag{16}</script><h4 id="3-7-均匀带电球体"><a href="#3-7-均匀带电球体" class="headerlink" title="3.7 均匀带电球体"></a>3.7 均匀带电球体</h4><script type="math/tex; mode=display">
+\boldsymbol{E}=\left\{\begin{array}{c}\frac{Q}{4\pi\varepsilon_0r^2}\boldsymbol{r_0}&(r>R)\\\frac{\rho}{3\varepsilon_0}\boldsymbol{r} & (r<R)\end{array}\right.</script><h3 id="第四讲-静电场的环路定理-电势能"><a href="#第四讲-静电场的环路定理-电势能" class="headerlink" title="第四讲 静电场的环路定理 电势能"></a>第四讲 静电场的环路定理 电势能</h3><h4 id="4-1-电场强度环流"><a href="#4-1-电场强度环流" class="headerlink" title="4.1 电场强度环流"></a>4.1 电场强度环流</h4><script type="math/tex; mode=display">
+\oint\boldsymbol{E}\cdot d\boldsymbol{l}=0\tag{17}</script><p>环路定理表明静电场是无旋有源场；     </p>
+<h4 id="4-2-电势能"><a href="#4-2-电势能" class="headerlink" title="4.2 电势能"></a>4.2 电势能</h4><p>选定电势能零参考点，则点$A$处的电势能：</p>
+<script type="math/tex; mode=display">
+w_a=A_{a'0'}=\int_a^{'0'}q_0\boldsymbol{E}\cdot d\boldsymbol{l}\tag{18}</script><p>注：电势能是标量，相对于电势能零参考点有负值；           </p>
+<h3 id="第五讲-电势-电势差"><a href="#第五讲-电势-电势差" class="headerlink" title="第五讲 电势 电势差"></a>第五讲 电势 电势差</h3><h4 id="5-1-电势与电势差"><a href="#5-1-电势与电势差" class="headerlink" title="5.1 电势与电势差"></a>5.1 电势与电势差</h4><p>$A$点电势：</p>
+<script type="math/tex; mode=display">
+u_a=\frac{W_a}{q_0}=\int_a^{'0'}\boldsymbol{E}\cdot d\boldsymbol{l}\tag{19}</script><p>注：电势为标量；     </p>
+<script type="math/tex; mode=display">
+U_{ab}=u_a-u_b=\int_a^b\boldsymbol{E}\cdot d\boldsymbol{l}\tag{20}</script><p>电荷$q$$a\rightarrow b$时，静电力做功：</p>
+<script type="math/tex; mode=display">
+A_{ab}=q(u_a-u_b)\tag{21}</script><h4 id="5-2-电偶极子电势能"><a href="#5-2-电偶极子电势能" class="headerlink" title="5.2 电偶极子电势能"></a>5.2 电偶极子电势能</h4><p>在电场 $\boldsymbol{E}$ 中：</p>
+<script type="math/tex; mode=display">
+W=-\boldsymbol{p}\cdot\boldsymbol{E}\tag{22}</script><p>当$\boldsymbol{E}$为非均匀电场时，上式应改为积分形式；<br>在电场中做功：</p>
+<script type="math/tex; mode=display">
+W_{\theta_1\theta_2}=\left\{\begin{array}{ll}-\boldsymbol{p}\cdot\boldsymbol{E}(\theta_1)-(-\boldsymbol{p}\cdot\boldsymbol{E}(\theta_2))\\
+\int_{\theta_1}^{\theta_2}-\boldsymbol{p}\times\boldsymbol{E}d\theta\end{array}\right.</script><h4 id="5-3-电势叠加原理"><a href="#5-3-电势叠加原理" class="headerlink" title="5.3 电势叠加原理"></a>5.3 电势叠加原理</h4><p>对于点电荷选取无穷远处作为零电势点：</p>
+<script type="math/tex; mode=display">
+u_a=\int_a^{\infty}\boldsymbol{E}\cdot d\boldsymbol{l}=\frac{1}{4\pi\varepsilon_0}\frac{q}{r}\\
+W_a = \frac{1}{4\pi\varepsilon_0}\frac{q^2}{r}\tag{23}</script><p>叠加原理——标量叠加         </p>
+<script type="math/tex; mode=display">
+u_a=\sum u_i\\
+\Rightarrow u_a=\int_Q\frac{1}{4\pi\varepsilon_0}\frac{dq}{r}(积分形式)\tag{24}</script><h4 id="5-4-电荷分布求电势"><a href="#5-4-电荷分布求电势" class="headerlink" title="5.4 电荷分布求电势"></a>5.4 电荷分布求电势</h4><p>积分形式：</p>
+<script type="math/tex; mode=display">
+u_a=\int_Q\frac{1}{4\pi\varepsilon_0}\frac{dq}{r}\tag{25}</script><p>电偶极子外任一点$C$的电势：</p>
+<script type="math/tex; mode=display">
+U_C = \frac{1}{4\pi\varepsilon_0}\frac{q}{r_+}-\frac{1}{4\pi\varepsilon_0}\frac{q}{r_-}=\frac{q}{4\pi\varepsilon_0}\frac{r_--r_+}{r_-r_+}\\
+r\gg l\Rightarrow r_+r_-\approx r^2,r_--r_+\approx lcos\theta\\
+\Rightarrow u_C = \frac{1}{4\pi\varepsilon_0}\frac{\boldsymbol{p}\cdot\boldsymbol{r}}{r^3}\tag{26}</script><h4 id="5-5-电场强度求电势"><a href="#5-5-电场强度求电势" class="headerlink" title="5.5 电场强度求电势"></a>5.5 电场强度求电势</h4><p>场强与电势关系：</p>
+<script type="math/tex; mode=display">
+u_a=\int_a^{\infty}\boldsymbol{E}\cdot d\boldsymbol{l}\tag{27}</script><p>带电体电荷分布具有对称性时，利用高斯定理求出场强分布进而求电势；<br><strong>【无限长均匀带电圆柱面】</strong><br>由高斯定理求得电场分布：</p>
+<script type="math/tex; mode=display">
+E = \left\{ \begin{array}{c}0 & r<R \\ \frac{\lambda}{2\pi\varepsilon_0r} & r>R\end{array}\right.\tag{28}</script><p>_一般而言，当电荷分布延伸到无穷远时，是不能选取无穷远处为电势零参考点的；_     </p>
+<script type="math/tex; mode=display">
+u_P=\int_P^{P_0}\boldsymbol{E}\cdot d\boldsymbol{l}=\int_P^{P'}\boldsymbol{E}\cdot d\boldsymbol{l}+\int_{P'}^{P_0}\boldsymbol{E}\cdot d\boldsymbol{l}\\
+=0+\int_r^{r_0}\frac{\lambda}{2\pi\varepsilon_0r}dr\\
+=-\frac{\lambda}{2\pi\varepsilon_0}\ln r+\frac{\lambda}{2\pi\varepsilon_0}\ln r_0\\
+=-\frac{\lambda}{2\pi\varepsilon_0}\ln r+C(r>R)\tag{29}</script><script type="math/tex; mode=display">
+u_P=\int_P^{P_0}\boldsymbol{E}\cdot d\boldsymbol{l}=\int_r^R\boldsymbol{E}\cdot d\boldsymbol{l}+\int_R^{r_0}\boldsymbol{E}\cdot d\boldsymbol{l}\\
+=0+\int_R^{r_0}\frac{\lambda}{2\pi\varepsilon_0r}dr\\
+=-\frac{\lambda}{2\pi\varepsilon_0}\ln R + C(r<R)\tag{30}</script><p>其中，$C=\frac{\lambda}{2\pi\varepsilon_0}\ln r_0$     </p>
+<h4 id="5-6-均匀带电球面电势"><a href="#5-6-均匀带电球面电势" class="headerlink" title="5.6 均匀带电球面电势"></a>5.6 均匀带电球面电势</h4><script type="math/tex; mode=display">
+V(r) = \left\{ \begin{array}{c}\frac{1}{4\pi\varepsilon_0} \frac{q}{R} & (r \le R)\\\frac{1}{4\pi\varepsilon_0}\frac{q}{r}&(r>R)\end{array}\right.\tag{31}</script><h4 id="5-7-均匀带电球体电势"><a href="#5-7-均匀带电球体电势" class="headerlink" title="5.7 均匀带电球体电势"></a>5.7 均匀带电球体电势</h4><p>球内距离球心$r$处一点$P$电势：</p>
+<script type="math/tex; mode=display">
+u = u_1+u_2=\frac{1}{4\pi\varepsilon_0}\frac{Q}{R^3}r^2+\int_r^R\frac{1}{4\pi\varepsilon_0}\frac{dq_2}{r'}\\
+=\frac{1}{4\pi\varepsilon_0}\frac{Q}{R^3}r^2+\int_r^R\frac{3Qr'}{4\pi\varepsilon_0R^3}dr'\\
+=\frac{Q(3R^2-r^2)}{8\pi\varepsilon_0R^3}(r<R)\tag{32}</script><p>球外距离球心$r$处一点$P$电势：</p>
+<script type="math/tex; mode=display">
+u = \frac{Q}{4\pi\varepsilon_0r}(r\ge R)\tag{33}</script><p>注：在$P$点的电场强度犹如电荷集中在球心处的点电荷在$P$点产生的电场强度一样，故电势同理；       </p>
+<h3 id="第六讲-电势与场强微分关系"><a href="#第六讲-电势与场强微分关系" class="headerlink" title="第六讲 电势与场强微分关系"></a>第六讲 电势与场强微分关系</h3><script type="math/tex; mode=display">
+E = -\frac{du}{dn}\\
+E_l=-\frac{du}{dl}\\
+\boldsymbol{E}=-(\frac{\partial u}{\partial x}\boldsymbol{i}+\frac{\partial u}{\partial y}\boldsymbol{j}+\frac{\partial u}{\partial z}\boldsymbol{k})\\
+u(x,y,z)\Rightarrow E(x,y,z)\tag{34}</script><h3 id="第七讲-静电场中的导体-电容"><a href="#第七讲-静电场中的导体-电容" class="headerlink" title="第七讲 静电场中的导体 电容"></a>第七讲 静电场中的导体 电容</h3><h4 id="7-1-静电平衡导体表面"><a href="#7-1-静电平衡导体表面" class="headerlink" title="7.1 静电平衡导体表面"></a>7.1 静电平衡导体表面</h4><p>电场强度：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}=\frac{\sigma}{\varepsilon_0}\boldsymbol{n}\tag{35}</script><p>区别于无限大带电平面产生的电场(缺少静电平衡的条件)：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}=\frac{\sigma}{2\varepsilon_0}\boldsymbol{n}\tag{36}</script><h4 id="7-2-孤立导体电容"><a href="#7-2-孤立导体电容" class="headerlink" title="7.2 孤立导体电容"></a>7.2 孤立导体电容</h4><script type="math/tex; mode=display">
+C = \frac{q}{u}\tag{37}</script><h4 id="7-3-平行板电容器电容"><a href="#7-3-平行板电容器电容" class="headerlink" title="7.3 平行板电容器电容"></a>7.3 平行板电容器电容</h4><script type="math/tex; mode=display">
+C = \frac{q}{u_1-u_2}\\
+=\frac{q}{Ed}=\frac{q}{\frac{\sigma}{\varepsilon_0}d}\\
+=\frac{q}{\frac{qd}{\varepsilon_0S}}=\frac{\varepsilon_0S}{d}\tag{38}</script><h4 id="7-4-球形电容器电容"><a href="#7-4-球形电容器电容" class="headerlink" title="7.4 球形电容器电容"></a>7.4 球形电容器电容</h4><p>两球面间电场强度：</p>
+<script type="math/tex; mode=display">
+E=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\tag{39}</script><script type="math/tex; mode=display">
+u_1-u_2=\int_{R_1}^{R_2}\boldsymbol{E}\cdot d\boldsymbol{l} = \int_{R_1}^{R_2}\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}dr\\
+=\frac{q}{4\pi\varepsilon_0}\frac{R_2-R_1}{R_1R_2}\\
+\Rightarrow C = \frac{q}{u_1-u_2}=\frac{4\pi\varepsilon_0R_1R_2}{R_2-R_1}\tag{40}</script><h4 id="7-5-电容器串并联"><a href="#7-5-电容器串并联" class="headerlink" title="7.5 电容器串并联"></a>7.5 电容器串并联</h4><script type="math/tex; mode=display">
+\frac{1}{C}=\frac{1}{C_1}+\frac{1}{C_2}+\cdot\cdot\cdot+\frac{1}{C_n}(串联)\\
+C = C_1+C_2+\cdot\cdot\cdot+C_n(并联)\tag{41}</script><h3 id="第八讲-静电能"><a href="#第八讲-静电能" class="headerlink" title="第八讲 静电能"></a>第八讲 静电能</h3><h4 id="8-1-静电能公式推导"><a href="#8-1-静电能公式推导" class="headerlink" title="8.1 静电能公式推导"></a>8.1 静电能公式推导</h4><script type="math/tex; mode=display">
+U(t) = \frac{q(t)}{C}\\dA = U(t)dq = \frac{q(t)}{C}dq\\
+A = \int dA = \int_0^Q\frac{q(t)}{C}dq=\frac{Q^2}{2C}\\
+Q=CU\Rightarrow A = \frac{1}{2}CU^2=\frac{1}{2}QU\\
+\Rightarrow W=A=\frac{Q^2}{2C}=\frac{1}{2}CU^2=\frac{1}{2}QU\tag{42}</script><h4 id="8-2-电场能量密度推导"><a href="#8-2-电场能量密度推导" class="headerlink" title="8.2 电场能量密度推导"></a>8.2 电场能量密度推导</h4><script type="math/tex; mode=display">
+U=Ed, C = \frac{\varepsilon_0S}{d}\\
+\Rightarrow W = \frac{1}{2}\varepsilon_0E^2Sd = \frac{1}{2}\varepsilon_0E^2V\\
+\Rightarrow \omega = \frac{W}{V}=\frac{1}{2}\varepsilon_0E^2\tag{43}</script><h3 id="第九讲-电介质的极化-束缚电荷"><a href="#第九讲-电介质的极化-束缚电荷" class="headerlink" title="第九讲 电介质的极化 束缚电荷"></a>第九讲 电介质的极化 束缚电荷</h3><h4 id="9-1-电介质"><a href="#9-1-电介质" class="headerlink" title="9.1 电介质"></a>9.1 电介质</h4><script type="math/tex; mode=display">
+C = \varepsilon_r C_0\tag{44}</script><p>其中，$\varepsilon_r$ 称为介质的相对介电常数（相对电容率），$C_0$ 表示真空中对应的电容；因此，除真空中 $\varepsilon_r=1$ 外，其余 $\varepsilon_r&gt;1$；    </p>
+<h4 id="9-2-介质极化"><a href="#9-2-介质极化" class="headerlink" title="9.2 介质极化"></a>9.2 介质极化</h4><script type="math/tex; mode=display">
+\left\{\begin{array}{c}有极分子\Rightarrow 取向极化\\
+无极分子\Rightarrow 位移极化\end{array}\right.</script><h3 id="第十讲-电介质内的电场强度"><a href="#第十讲-电介质内的电场强度" class="headerlink" title="第十讲 电介质内的电场强度"></a>第十讲 电介质内的电场强度</h3><p>根据电介质极化原理推导：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E} = \boldsymbol{E}_0+\boldsymbol{E}'\\
+E_0=\frac{\sigma_0}{\varepsilon_0},E'=\frac{\sigma'}{\varepsilon_0}\\
+\Rightarrow E = \frac{\sigma_0}{\varepsilon_0}-\frac{\sigma'}{\varepsilon_0}\\E = \frac{E_0}{\varepsilon_r}\\
+\Rightarrow \sigma'=(1-\frac{1}{\varepsilon_r})\sigma_0\tag{45}</script><h3 id="第十一讲-bigstar-电介质中的高斯定理"><a href="#第十一讲-bigstar-电介质中的高斯定理" class="headerlink" title="第十一讲 $\bigstar$电介质中的高斯定理"></a>第十一讲 $\bigstar$电介质中的高斯定理</h3><h4 id="11-1-电位移矢量"><a href="#11-1-电位移矢量" class="headerlink" title="11.1 电位移矢量"></a>11.1 电位移矢量</h4><p>推导：</p>
+<script type="math/tex; mode=display">
+\iint_S\boldsymbol{E}\cdot d\boldsymbol{S}=\frac{1}{\varepsilon_0}(\sigma_0-\sigma')S\\
+式(45)\Rightarrow \frac{1}{\varepsilon_0}(\sigma_0-\sigma')=\frac{\sigma_0}{\varepsilon_0\varepsilon_r}\\
+\Rightarrow \iint_S\varepsilon_0\varepsilon_r\boldsymbol{E}\cdot d\boldsymbol{S}=\varepsilon_0S=q_0\\
+令\boldsymbol{D} = \varepsilon\boldsymbol{E} = \varepsilon_0\varepsilon_r\boldsymbol{E}\\
+\Rightarrow \iint_S\boldsymbol{D}\cdot d\boldsymbol{S} = q_0\tag{46}</script><p>其中，$D$ 称为电位移矢量或电通密度，$\varepsilon = \varepsilon_0\varepsilon_r$ 称为电介质的介电常数；    </p>
+<h4 id="11-2-电介质中的能量密度"><a href="#11-2-电介质中的能量密度" class="headerlink" title="11.2 电介质中的能量密度"></a>11.2 电介质中的能量密度</h4><script type="math/tex; mode=display">
+\omega = \frac{1}{2}\boldsymbol{D}\cdot\boldsymbol{E}\\
+\varepsilon_r = 1\Rightarrow \omega = \frac{1}{2}\varepsilon_0E^2(真空中)\tag{47}</script><h3 id="第十二讲-经典习题"><a href="#第十二讲-经典习题" class="headerlink" title="第十二讲 经典习题"></a>第十二讲 经典习题</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/21/x6HOKS.md.png" alt="x6HOKS.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/21/x6HxEj.md.png" alt="x6HxEj.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcDqsK.md.png" alt="xcDqsK.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcDLqO.md.png" alt="xcDLqO.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcrX60.md.png" alt="xcrX60.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcs8jP.md.png" alt="xcs8jP.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcyRqf.md.png" alt="xcyRqf.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcyhdS.md.png" alt="xcyhdS.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcy4Ig.md.png" alt="xcy4Ig.md.png"><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcyTRs.png" alt="xcyTRs.png" style="zoom:141.3%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xcybMq.png" alt="xcybMq.png" style="zoom:143%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051126108.png" style="zoom:88.1%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051127368.png" style="zoom:87.3%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051135357.png" style="zoom:45.8%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051135852.png" style="zoom:46.39%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051156275.png" style="zoom:53.55%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051157253.png" style="zoom:49.2%;" /></p>
+<h2 id="第二章-恒定电流的磁场"><a href="#第二章-恒定电流的磁场" class="headerlink" title="第二章 恒定电流的磁场"></a>第二章 恒定电流的磁场</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021159616.png" alt="xc6lOP.md.jpg" style="zoom:200%;" /></p>
+<h3 id="第一讲-磁感应强度-B"><a href="#第一讲-磁感应强度-B" class="headerlink" title="第一讲 磁感应强度$B$"></a>第一讲 磁感应强度$B$</h3><p>电流元$Idl$所受磁场力：</p>
+<script type="math/tex; mode=display">
+d\boldsymbol{F} = Id\boldsymbol{l}\times\boldsymbol{B}\tag{1}</script><h3 id="第二讲-毕奥-萨伐尔定律"><a href="#第二讲-毕奥-萨伐尔定律" class="headerlink" title="第二讲 毕奥-萨伐尔定律"></a>第二讲 毕奥-萨伐尔定律</h3><h4 id="2-1-电流元的磁场"><a href="#2-1-电流元的磁场" class="headerlink" title="2.1 电流元的磁场"></a>2.1 电流元的磁场</h4><script type="math/tex; mode=display">
+d\boldsymbol{B} = \frac{\mu_0}{4\pi}\frac{Id\boldsymbol{l}\times\boldsymbol{r}^0}{r^2}\tag{2}</script><p>其中，$\mu_0=4\pi\times10^{-7}N/A^2$称为真空磁导率，$\boldsymbol{r}_0$表示到$P$点的单位矢量，$r$表示到$P$点的距离；     </p>
+<h4 id="2-2-运动电荷的磁场"><a href="#2-2-运动电荷的磁场" class="headerlink" title="2.2 运动电荷的磁场"></a>2.2 运动电荷的磁场</h4><script type="math/tex; mode=display">
+\boldsymbol{B} = \frac{d\boldsymbol{B}}{dN}=\frac{\mu_0}{4\pi}\frac{q\boldsymbol{v}\times\boldsymbol{r}^0}{r^2}\tag{3}</script><h4 id="2-3-载流直导线的磁场"><a href="#2-3-载流直导线的磁场" class="headerlink" title="2.3 载流直导线的磁场"></a>2.3 载流直导线的磁场</h4><script type="math/tex; mode=display">
+dB = \frac{\mu_0}{4\pi}\frac{Idlsin\theta}{r^2}\\
+\Rightarrow B = \frac{\mu_0I}{4\pi r}\int_{\theta_1}^{\theta_2}sin\theta d\theta=\frac{\mu_0I}{4\pi r}(cos\theta_1-cos\theta_2)\\
+\theta_1\approx 0,\theta_2\approx\pi\Rightarrow B = \frac{\mu_0I}{2\pi r}\tag{4}</script><p>式中，$r$表示到载流导线的距离；    </p>
+<h4 id="2-4-载流圆环的磁场"><a href="#2-4-载流圆环的磁场" class="headerlink" title="2.4 载流圆环的磁场"></a>2.4 载流圆环的磁场</h4><script type="math/tex; mode=display">
+B = \int dB_x = \int dBcos\theta = \frac{\mu_0}{4\pi}\int \frac{Idl}{r^2}cos\theta\\
+cos\theta = \frac{R}{r}=\frac{R}{(R^2+x^2)^{1/2}}\\
+\Rightarrow B = \frac{\mu_0IR^2}{2(R^2+x^2)^{3/2}}\tag{5}</script><p>【$N$匝线圈】</p>
+<script type="math/tex; mode=display">
+B = \frac{\mu_0IR^2N}{2(R^2+x^2)^{3/2}}\tag{6}</script><p>【圆弧磁场】</p>
+<script type="math/tex; mode=display">
+式(5) x = 0\Rightarrow B = \frac{\mu_0I}{2R}(圆心处)\\
+\Rightarrow B =  \frac{\mu_0I}{2R}\cdot\frac{\varphi}{2\pi}=\frac{\mu_0I\varphi}{4\pi R}\tag{7}</script><h4 id="2-5-载流线圈的磁矩"><a href="#2-5-载流线圈的磁矩" class="headerlink" title="2.5 载流线圈的磁矩"></a>2.5 载流线圈的磁矩</h4><script type="math/tex; mode=display">
+式(5)令x\gg R,(x^2+R^2)\approx x^2\\
+\Rightarrow B\approx \frac{\mu_0IR^2}{2x^3} = \frac{\mu_0I\pi R^2}{2\pi x^3}=\frac{\mu_0 IS}{2\pi x^3}\\
+\Rightarrow 定义:\ \ \ \ \boldsymbol{p}_m = IS\boldsymbol{n}\\
+\boldsymbol{B} = \frac{\mu_0}{2\pi}\frac{\boldsymbol{p}_m}{x^3}\tag{8}</script><p>其中，$\boldsymbol{n}$表示线圈平面正法线方向上的单位矢量；<br>圆心处的磁感应强度：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{B} = \frac{\mu_0}{2\pi}\frac{\boldsymbol{p}_m}{R^3}\tag{9}</script><h4 id="2-6-无限大均匀载流平面"><a href="#2-6-无限大均匀载流平面" class="headerlink" title="2.6 无限大均匀载流平面"></a>2.6 无限大均匀载流平面</h4><script type="math/tex; mode=display">
+dB = \frac{\mu_0\alpha dx}{2\pi\sqrt{r^2+x^2}}\\
+由对称性：B_x = \int dB_x, \ \ \ B_y = \int dB_y = 0\\
+B = B_x = \int \frac{r}{\sqrt{r^2+x^2}}\cdot \frac{\mu_0 \alpha dx}{2\pi\sqrt{r^2+x^2}} =\int \frac{\mu_0 \alpha r dx}{2\pi (r^2+x^2)}\\
+=\frac{\mu_0 \alpha r}{2\pi}\int_{-\infty}^{+\infty}\frac{1}{r^2+x^2}dx=\frac{\mu_0 \alpha}{2}\\
+故\ \ \ B = \frac{1}{2}\mu_0\alpha\tag{10}</script><p>式中，$r$ 表示$P$点距到无限大载流平面的距离，$\alpha$ 表示流过单位长度的电流；    </p>
+<h4 id="2-7-均匀密绕直螺线管"><a href="#2-7-均匀密绕直螺线管" class="headerlink" title="2.7 均匀密绕直螺线管"></a>2.7 均匀密绕直螺线管</h4><script type="math/tex; mode=display">
+dB = \frac{\mu_0R^2dI'}{2(R^2+l^2)^{3/2}} = \frac{\mu_0R^2Indl}{2(R^2+l^2)^{3/2}}\\
+l = Rcot\beta\ ,\ \ \ dl = -Rcsc^2\beta d\beta\ , \ \ \ \R^2+l^2 = R^2csc^2\beta\\
+\Rightarrow dB= -\frac{\mu_0}{2}nIsin\beta d\beta\\
+\Rightarrow B =\int_{\beta_1}^{\beta_2}-\frac{\mu_0}{2}nIsin\beta d\beta = \frac{\mu_0nI}{2}(cos\beta_2-cos\beta_1)\tag{11}</script><p>【无限长】</p>
+<script type="math/tex; mode=display">
+L\gg R,\ \ \beta_1\rightarrow\pi, \ \ \beta_2\rightarrow 0 \Rightarrow B = \mu_0nI\tag{12}</script><p>【半无限长】<br>端点处：</p>
+<script type="math/tex; mode=display">
+\beta_1 = \frac{\pi}{2}, \ \ \beta_2\rightarrow 0\ , 或 \ \ \beta_1\rightarrow \pi, \ \ \beta_2=\frac{\pi}{2}\Rightarrow B = \frac{\mu_0nI}{2}\tag{13}</script><p>式中，$n$表示单位长度上的线圈匝数；      </p>
+<h3 id="第三讲-磁通量-磁场的高斯定理"><a href="#第三讲-磁通量-磁场的高斯定理" class="headerlink" title="第三讲 磁通量 磁场的高斯定理"></a>第三讲 磁通量 磁场的高斯定理</h3><h4 id="3-1-磁通量"><a href="#3-1-磁通量" class="headerlink" title="3.1 磁通量"></a>3.1 磁通量</h4><script type="math/tex; mode=display">
+\Phi_m = \int_S \boldsymbol{B}\cdot d\boldsymbol{S}\tag{14}</script><h4 id="3-2-高斯定理-1"><a href="#3-2-高斯定理-1" class="headerlink" title="3.2 高斯定理"></a>3.2 高斯定理</h4><script type="math/tex; mode=display">
+\oint_S \boldsymbol{B}\cdot d\boldsymbol{S}=0\tag{15}</script><h3 id="第四讲-bigstar-安培环路定理"><a href="#第四讲-bigstar-安培环路定理" class="headerlink" title="第四讲 $\bigstar$安培环路定理"></a>第四讲 $\bigstar$安培环路定理</h3><script type="math/tex; mode=display">
+\oint_L\boldsymbol{B}\cdot d\boldsymbol{l}=\mu_0\sum_{(内)}I_i\tag{16}</script><p>式中，$I_i$ 的正（负）取决于电流方向与闭合路径 $L$ 绕行方向满足（不满足）右螺旋法则；$B$ 表示闭合路径 $L$ 内外所有电流产生的总磁感应强度；<br>【无限大载流平面】<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/10/22/xchO56.md.png" alt="xchO56.md.png"></p>
+<script type="math/tex; mode=display">
+\oint_L\boldsymbol{B}\cdot d\boldsymbol{l} = \int_{PQ}\boldsymbol{B}\cdot d\boldsymbol{l}+\int_{QR}\boldsymbol{B}\cdot d\boldsymbol{l}+\int_{RS}\boldsymbol{B}\cdot d\boldsymbol{l}+\int_{SP}\boldsymbol{B}\cdot d\boldsymbol{l}\\
+=Bx+0+Bx+0 = 2Bx = \mu_0 \alpha x\\
+\Rightarrow B = \frac{1}{2}\mu_0\alpha\tag{17}</script><h3 id="第五讲-磁场对电流作用"><a href="#第五讲-磁场对电流作用" class="headerlink" title="第五讲 磁场对电流作用"></a>第五讲 磁场对电流作用</h3><h4 id="5-1-载流导线"><a href="#5-1-载流导线" class="headerlink" title="5.1 载流导线"></a>5.1 载流导线</h4><p>所受安培力：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{F} = \int_LId\boldsymbol{l}\times\boldsymbol{B}\tag{18}</script><h4 id="5-2-载流线圈"><a href="#5-2-载流线圈" class="headerlink" title="5.2 载流线圈"></a>5.2 载流线圈</h4><p>所受磁力矩：</p>
+<script type="math/tex; mode=display">
+M = F_{ab}l_1sin\varphi=BIl_1l_2sin\varphi=BISsin\varphi\\
+\boldsymbol{p}_m = IS\boldsymbol{n}\\
+\Rightarrow \boldsymbol{M}=\boldsymbol{p}_m\times\boldsymbol{B}\tag{19}</script><p>式中，$\boldsymbol{n}$ 的方向按电流方向用右螺旋法则确定；     </p>
+<h4 id="5-3-磁力的功"><a href="#5-3-磁力的功" class="headerlink" title="5.3 磁力的功"></a>5.3 磁力的功</h4><script type="math/tex; mode=display">
+A = F\overline{aa'} = BIl\overline{aa'}=BI\vartriangle S = I\vartriangle\Phi\\
+\Rightarrow A = \int_{\Phi_1}^{\Phi_2}Id\Phi = I(\Phi_2-\Phi_1)=I\vartriangle\Phi\tag{20}</script><h4 id="5-4-磁偶极子势能"><a href="#5-4-磁偶极子势能" class="headerlink" title="5.4 磁偶极子势能"></a>5.4 磁偶极子势能</h4><p>载流线圈相当于磁偶极子，因此载流线圈同理；     </p>
+<script type="math/tex; mode=display">
+\varphi = \frac{\pi}{2}时,\  \ \ W = 0(零势能点)\\
+W = -A = -\int_\varphi^{\pi/2}Md\varphi = -p_mB\int_\varphi^{\pi/2}sin\varphi d\varphi = -p_mBcos\varphi\\
+\Rightarrow W = -\boldsymbol{p}_m\cdot \boldsymbol{B}\tag{21}</script><h3 id="第六讲-带电粒子在电场和磁场中的运动"><a href="#第六讲-带电粒子在电场和磁场中的运动" class="headerlink" title="第六讲 带电粒子在电场和磁场中的运动"></a>第六讲 带电粒子在电场和磁场中的运动</h3><h4 id="6-1-洛伦兹力"><a href="#6-1-洛伦兹力" class="headerlink" title="6.1 洛伦兹力"></a>6.1 洛伦兹力</h4><script type="math/tex; mode=display">
+\boldsymbol{F} = q\boldsymbol{v}\times\boldsymbol{B}\tag{22}</script><p>式中，$q$ 包含电荷正负特性符号；</p>
+<h4 id="6-2-霍尔效应"><a href="#6-2-霍尔效应" class="headerlink" title="6.2 霍尔效应"></a>6.2 霍尔效应</h4><script type="math/tex; mode=display">
+q\overline{v}B=qE\Rightarrow E = \overline{v}B\\
+U = El = vBl\\
+I = nqS\overline{v}\\
+\Rightarrow U = \frac{IB}{nqd} = K\frac{IB}{d}\\
+K = \frac{1}{nq}(霍尔系数)\tag{23}</script><p>式中，$d$ 和 $l$ 分别表示沿电流方向上导体截面的宽度和高度；$n$ 表示单位体积的载流子数；<br>【载流子种类】</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{c}p\ (positive)\ \ \ 型半导体\Rightarrow 空穴\Rightarrow 空穴导电\\n\ (negative)\ 型半导体\Rightarrow 电子\Rightarrow 电子导电\\
+金属导体(大多数)\Rightarrow电子\Rightarrow电子导电\end{array}\right.</script><h3 id="第七讲-磁介质"><a href="#第七讲-磁介质" class="headerlink" title="第七讲 磁介质"></a>第七讲 磁介质</h3><h4 id="7-1-相对磁导率"><a href="#7-1-相对磁导率" class="headerlink" title="7.1 相对磁导率"></a>7.1 相对磁导率</h4><script type="math/tex; mode=display">
+\mu_r = \frac{B}{B_0}\tag{24}</script><p>式中，$B_0$ 表示真空磁感应强度，$\mu_r$ 表示磁介质的相对磁导率，$B$ 表示磁介质的磁感应强度；     </p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{c}\mu_r > 1\Rightarrow 顺磁质\ (弱/非磁性物质)\\ \mu_r<1\Rightarrow 抗磁质\ (弱/非磁性物质)
+\\\mu_r\gg 1 \Rightarrow 铁磁质\ (强磁性物质)\end{array}\right.</script><h4 id="7-2-bigstar-磁介质的安培环路定理"><a href="#7-2-bigstar-磁介质的安培环路定理" class="headerlink" title="7.2 $\bigstar$ 磁介质的安培环路定理"></a>7.2 $\bigstar$ 磁介质的安培环路定理</h4><script type="math/tex; mode=display">
+\oint_L\boldsymbol{B}\cdot d\boldsymbol{l} = \mu_0\mu_r\sum_{(内)}I\\
+令\mu = \mu_0\mu_r\Rightarrow \oint_L \frac{\boldsymbol{B}}{\mu}\cdot d\boldsymbol{l}=\sum_{(内)}I\\
+令\boldsymbol{H} = \frac{\boldsymbol{B}}{\mu}
+\Rightarrow\oint_L\boldsymbol{H}\cdot d\boldsymbol{l}=\sum_{(内)}I\tag{25}</script><p>式中，$\mu$ 表示磁介质的磁导率，$\boldsymbol{H}$ 表示磁场强度，对有介质存在的环路定理的处理可以参考电位移矢量 $\boldsymbol{D}$；     </p>
+<h3 id="第八讲-经典习题"><a href="#第八讲-经典习题" class="headerlink" title="第八讲 经典习题"></a>第八讲 经典习题</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211031442409.png" alt=""><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211031443235.png" style="zoom:101.5%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211031455520.png" style="zoom:90.1%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211031657183.png" style="zoom:90.1%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211031658555.png" style="zoom:90.1%;" /></p>
+<h2 id="第三章-电磁感应与电磁场"><a href="#第三章-电磁感应与电磁场" class="headerlink" title="第三章 电磁感应与电磁场"></a>第三章 电磁感应与电磁场</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021159420.jpg" alt="xcHROS.md.jpg" style="zoom:200%;" /></p>
+<h3 id="第一讲-电磁感应的基本规律"><a href="#第一讲-电磁感应的基本规律" class="headerlink" title="第一讲 电磁感应的基本规律"></a>第一讲 电磁感应的基本规律</h3><h4 id="1-1-电动势"><a href="#1-1-电动势" class="headerlink" title="1.1 电动势"></a>1.1 电动势</h4><p>闭合回路上：</p>
+<script type="math/tex; mode=display">
+\xi = \oint\boldsymbol{E}_k\cdot d\boldsymbol{l}\tag{1}</script><p>对于一段电路$ab$：</p>
+<script type="math/tex; mode=display">
+\xi = \int_a^b\boldsymbol{E}_k\cdot d\boldsymbol{l}\tag{2}</script><p>其中，$\boldsymbol{E}_k$表示非静电性电场强度；    </p>
+<h4 id="1-2-法拉第电磁感应定律"><a href="#1-2-法拉第电磁感应定律" class="headerlink" title="1.2 法拉第电磁感应定律"></a>1.2 法拉第电磁感应定律</h4><script type="math/tex; mode=display">
+\xi_i=-\frac{d\Phi}{dt}\tag{3}</script><p>由楞次定律确定方向$\Rightarrow$方向相反；    </p>
+<h4 id="1-3-多匝串联线圈"><a href="#1-3-多匝串联线圈" class="headerlink" title="1.3 多匝串联线圈"></a>1.3 多匝串联线圈</h4><script type="math/tex; mode=display">
+\xi_i=-\frac{d}{dt}(\sum_{k=1}^N\Phi_k)=-\frac{d\Psi}{dt}\tag{4}</script><script type="math/tex; mode=display">
+\xi_i=-\frac{d\Psi}{dt}=-N\frac{d\Phi}{dt}(\Phi_i=\Phi_j, 1 \leq i,j \leq N)\tag{5}</script><p>其中，$\Psi=\sum_{k=1}^N\Phi_k$表示穿过各线圈的总磁通量，称为磁通链数；</p>
+<h4 id="1-4-长直螺线管"><a href="#1-4-长直螺线管" class="headerlink" title="1.4 长直螺线管"></a>1.4 长直螺线管</h4><p>在长直螺线管外套一 $N$ 匝，总内阻为 $R$ 的圆线圈，$S$ 表示螺线管截面积：</p>
+<script type="math/tex; mode=display">
+B=\mu_0nI\Rightarrow \Phi = \boldsymbol{B}\cdot\boldsymbol{S}=\mu_0nIS\\
+当通电电流均匀变化时，螺线管内的感应电动势\\
+\xi_i=-\frac{d\Psi}{dt}=-N\frac{d\Phi}{dt}=-\mu_0nNS\frac{dI}{dt}\\</script><p>【螺线管内磁感应强度】</p>
+<script type="math/tex; mode=display">
+感应电流\ I_i=\frac{\xi_i}{R}=-\frac{N}{R}\frac{d\Phi}{dt}\\
+\Delta_{q_i}=\int_{t_1}^{t_2}I_idt=-\frac{N}{R}\int_{\Phi_1}^{\Phi_2}d\Phi=-\frac{N}{R}(\Phi_2-\Phi_1)\\
+\Longrightarrow \Phi_1-\Phi_2=\frac{\Delta_{q_i}R}{N}\\
+当 \Phi_1=0\vert_{t=t_1},\Phi_2=BS\vert_{t=t_2\rightarrow+\infty} 时，\Rightarrow B=\frac{\Delta_{q_i}R}{NS}</script><h3 id="第二讲-动生电动势-感生电动势"><a href="#第二讲-动生电动势-感生电动势" class="headerlink" title="第二讲 动生电动势 感生电动势"></a>第二讲 动生电动势 感生电动势</h3><h4 id="2-1-动生电动势"><a href="#2-1-动生电动势" class="headerlink" title="2.1 动生电动势"></a>2.1 动生电动势</h4><p>导体棒 $ab$ 产生的动生电动势：</p>
+<script type="math/tex; mode=display">
+\xi_i=\int_a^b\boldsymbol{E}_k\cdot d\boldsymbol{l}=\int_a^b(\boldsymbol{v}\times\boldsymbol{B})\cdot d\boldsymbol{l}\tag{6}</script><p>闭合回路产生的动生电动势：</p>
+<script type="math/tex; mode=display">
+\xi_i=\oint_Ld\xi_i=\oint_L(\boldsymbol{v}\times\boldsymbol{B})\cdot d\boldsymbol{l}\tag{7}</script><p>动生电动势方向由 $\boldsymbol{v}\times\boldsymbol{B}\cdot d\boldsymbol{l}$ 判定：</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{ccc}\xi_i>0\Rightarrow u_a<u_b\\
+\xi_i<0\Rightarrow u_a>u_b\end{array}\right.\tag{8}</script><p>注：积分路径：$a\rightarrow b$，在电源内部非静电性电场强度从负极指向正极， $\boldsymbol{E}_k$ 与积分方向一致时积分值为正，否则为负；</p>
+<h4 id="2-2-感生电动势"><a href="#2-2-感生电动势" class="headerlink" title="2.2 感生电动势"></a>2.2 感生电动势</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$感生电场假说 \Rightarrow有旋电场$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>【回路固定不动】</p>
+<script type="math/tex; mode=display">
+\xi_i=\oint_L\boldsymbol{E}_V\cdot d\boldsymbol{l}=-\iint_S\frac{\partial \boldsymbol{B}}{\partial t}\cdot d\boldsymbol{S}\tag{9}</script><p>感生电动势方向由楞次定律判定；有旋电场度 $E_V$ 的方向判定：闭合回路由右螺旋法则指向磁场方向选定回路绕行正方向，由式 $(9)$ 代入符号计算，$E_V$ 正负与回路绕行方向保持一致；<br>当 $E_V$ 相等，磁场均匀变化时，</p>
+<script type="math/tex; mode=display">
+\xi_i=E_V\oint_Ldl=-\frac{\partial{B}}{\partial{t}}\iint_SdS=-\frac{\partial{B}}{\partial{t}}S\tag{10}\\
+\Longrightarrow\ 计算某一闭合回路上的有旋电场强度(\ S\ 表示磁场面积)</script><h3 id="第三讲-自感与互感"><a href="#第三讲-自感与互感" class="headerlink" title="第三讲 自感与互感"></a>第三讲 自感与互感</h3><h4 id="3-1-自感电动势"><a href="#3-1-自感电动势" class="headerlink" title="3.1 自感电动势"></a>3.1 自感电动势</h4><script type="math/tex; mode=display">
+\Psi=LI\Rightarrow \xi_L=-\frac{d\Psi}{dt}=-L\frac{dI}{dt}\ \ (L为常量)\tag{11}</script><p>式中 $L$ 表示自感系数，与 $I$ 无关(存在铁磁质时与 $I$ 有关)，仅有回路的匝数、几何形状、大小以及周围介质磁导率决定；</p>
+<h4 id="3-2-长直螺线管自感系数"><a href="#3-2-长直螺线管自感系数" class="headerlink" title="3.2 长直螺线管自感系数"></a>3.2 长直螺线管自感系数</h4><p>【空心自感线圈】</p>
+<script type="math/tex; mode=display">
+B = \mu_0nI=\mu_0\frac{N}{l}I\Rightarrow \Psi=NBS=\mu_0\frac{N^2}{l}\pi R^2I\\
+\Longrightarrow L=\frac{\Psi}{I}=\frac{\mu_0N^2\pi R^2}{l}=\mu_0n^2V\ (V=\pi R^2l)\tag{12}</script><h4 id="3-3-传输线的分布电感"><a href="#3-3-传输线的分布电感" class="headerlink" title="3.3 传输线的分布电感"></a>3.3 传输线的分布电感</h4><p>两长直平行导线电流 $I$，半径 $r_0$，轴线间距 $d$，且 $r_0\leq d$；</p>
+<script type="math/tex; mode=display">
+导线微元:d\Phi_1=BdS=\frac{\mu_0I}{2\pi r}ldr\\
+\Rightarrow \Phi_1=\int_{r_0}^{d-r_0}\frac{\mu_0Il}{2\pi}\frac{dr}{r}=\frac{\mu_0Il}{2\pi}\ln(\frac{d-r_0}{r_0})\\
+\left\{\begin{array}{c}\Phi=\Phi_1+\Phi_2=2\Phi_1\ \ (电流反向)\\\Phi=\Phi_1+\Phi_2=0\ \ \ \ \ \ \ (电流同向)\end{array}\right.\\
+L=\frac{\Phi}{I}=\frac{\mu_0}{\pi}l\ln(\frac{d-r_0}{r_0})\approx \frac{\mu_0}{\pi}l\ln\frac{d}{r_0}\ \ (电流反向)\tag{13}</script><h3 id="3-4-互感电动势"><a href="#3-4-互感电动势" class="headerlink" title="3.4 互感电动势"></a>3.4 互感电动势</h3><script type="math/tex; mode=display">
+\left\{\begin{array}{c}\Psi_{21}=M_{21}I_1\ \ (回路1对回路2)\\\Psi_{12}=M_{12}I_2\ \ (回路2对回路1)\\M_{21}=M_{12}=M\end{array}\right.\\\Longrightarrow \xi_M=-M\frac{dI}{dt}\tag{14}</script><p>式中 $M_{21}$ 表示回路 $1$ 对回路 $2$ 的互感系数，$M_{12}$ 表示回路 $2$ 对回路 $1$ 的互感系数；$M$ 表示两个回路间的互感系数，与 $I$ 无关(存在铁磁质时与 $I$ 有关)，由回路的匝数、几何形状、尺寸、周围介质磁导率以及回路的相对位置决定；<br>|$M_{12}=M_{21}=M\Rightarrow 转换研究对象简化计算互感系数\Rightarrow 互感电动势$|<br>|:——:|</p>
+<h3 id="第四讲-磁能"><a href="#第四讲-磁能" class="headerlink" title="第四讲 磁能"></a>第四讲 磁能</h3><h4 id="4-1-自感磁能"><a href="#4-1-自感磁能" class="headerlink" title="4.1 自感磁能"></a>4.1 自感磁能</h4><script type="math/tex; mode=display">
+\left\{\begin{array}{c}dA=-\xi_Lidt\\\xi_L=-L\frac{di}{dt}\end{array}\right.\Rightarrow dA=Lidi\\
+\Longrightarrow A=\int_0^ILidi=\frac{1}{2}LI^2\tag{15}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$即     W_m=\frac{1}{2}LI^2        (自感磁能)   $</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>式中，$L$ 表示线圈自感，$I$ 表示线圈所通电流；</p>
+<h4 id="4-2-长直螺线管磁能"><a href="#4-2-长直螺线管磁能" class="headerlink" title="4.2 长直螺线管磁能"></a>4.2 长直螺线管磁能</h4><script type="math/tex; mode=display">
+由式(12)\Rightarrow L=\mu n^2V\Rightarrow W_m=\frac{1}{2}LI^2=\frac{1}{2}\mu n^2I^2V\\
+B=\mu nI\Longrightarrow H=\frac{B}{\mu}=nI\tag{16}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$W_m=\frac{1}{2}BHV$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$磁能密度       \omega_m=\frac{W_m}{V}=\frac{1}{2}BH$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="4-3-有限体积内的磁能"><a href="#4-3-有限体积内的磁能" class="headerlink" title="4.3 有限体积内的磁能"></a>4.3 有限体积内的磁能</h4><script type="math/tex; mode=display">
+W_m=\int_VdW_m=\frac{1}{2}\int_VBHdV\tag{17}</script><h3 id="第五讲-麦克斯韦电磁场理论"><a href="#第五讲-麦克斯韦电磁场理论" class="headerlink" title="第五讲 麦克斯韦电磁场理论"></a>第五讲 麦克斯韦电磁场理论</h3><h4 id="5-1-位移电流"><a href="#5-1-位移电流" class="headerlink" title="5.1 位移电流"></a>5.1 位移电流</h4><script type="math/tex; mode=display">
+\left\{\begin{array}{c}传导电流\Leftarrow 电荷定向移动形成的电流\\位移电流\Leftarrow 电位移通量的变化率(变化的电场)\end{array}\right.\\
+\Phi_D=DS=\varepsilon ES=\varepsilon\cdot\frac{\sigma}{\varepsilon}S=\sigma S\\
+\Longrightarrow \frac{d\Phi}{dt}=\frac{d}{dt}(\sigma S)=\frac{dq}{dt}=I\ (传导电流)\tag{18}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$\Longrightarrow I_D = \frac{d\Phi_D}{dt}=\frac{dD}{dt}S=\varepsilon\frac{dE}{dt}S (位移电流)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\Longrightarrow 全电流 = I+I_D$</td>
+</tr>
+<tr>
+<td style="text-align:center">非恒定电路中传导电流不连续但全电流保持连续</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="5-2-全电流安培环路定理"><a href="#5-2-全电流安培环路定理" class="headerlink" title="5.2 全电流安培环路定理"></a>5.2 全电流安培环路定理</h4><script type="math/tex; mode=display">
+\oint_L\boldsymbol{H}\cdot d\boldsymbol{l}=I+I_D\tag{19}</script><h4 id="5-3-麦克斯韦方程组"><a href="#5-3-麦克斯韦方程组" class="headerlink" title="5.3 麦克斯韦方程组"></a>5.3 麦克斯韦方程组</h4><script type="math/tex; mode=display">
+电场\boldsymbol{E}、\boldsymbol{D}=\left\{\begin{array}{c}自由电荷产生的静电场\boldsymbol{E_1}、\boldsymbol{D_1}\\
+变化磁场产生的有旋电场\boldsymbol{E_2}、\boldsymbol{D_2}\end{array}\right.\Rightarrow \left\{\begin{array}{c}\boldsymbol{E}=\boldsymbol{E_1}+\boldsymbol{E_2}\\
+\boldsymbol{D}=\boldsymbol{D_1}+\boldsymbol{D_2}\end{array}\right.\\
+磁场\boldsymbol{B}、\boldsymbol{H}=\left\{\begin{array}{c}传导电流产生的磁场\boldsymbol{B_1}、\boldsymbol{H_1}\\
+位移电流产生的磁场\boldsymbol{B_2}、\boldsymbol{H_2}\end{array}\right.\Rightarrow \left\{\begin{array}{c}\boldsymbol{B}=\boldsymbol{B_1}+\boldsymbol{B_2}\\
+\boldsymbol{H}=\boldsymbol{H_1}+\boldsymbol{H_2}\end{array}\right.\tag{20}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">电场的高斯定理</th>
+<th style="text-align:center">$\oint_S\boldsymbol{D}\cdot d\boldsymbol{S}=\sum_iq_i$</th>
+<th style="text-align:center">电场是有源场</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">法拉第电磁感应定律</td>
+<td style="text-align:center">$\oint_L\boldsymbol{E}\cdot d\boldsymbol{l}=-\iint_S\frac{\partial{\boldsymbol{B}}}{\partial{t}}\cdot d\boldsymbol{S}$</td>
+<td style="text-align:center">静电场是保守(无旋、有势)场</td>
+</tr>
+<tr>
+<td style="text-align:center">磁场的高斯定理</td>
+<td style="text-align:center">$\oint_S\boldsymbol{B}\cdot d\boldsymbol{S}=0$</td>
+<td style="text-align:center">磁场是无源场</td>
+</tr>
+<tr>
+<td style="text-align:center">全电流安培环路定理</td>
+<td style="text-align:center">$\oint_L\boldsymbol{H}\cdot d\boldsymbol{l}=\sum(I_D+I)$</td>
+<td style="text-align:center">磁场是有旋(非保守)场</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="第六讲-经典习题"><a href="#第六讲-经典习题" class="headerlink" title="第六讲 经典习题"></a>第六讲 经典习题</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051212846.png" style="zoom:85.1%;" /><br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211051213867.png" alt=""></p>
+<h2 id="第四章-狭义相对论力学基础"><a href="#第四章-狭义相对论力学基础" class="headerlink" title="第四章 狭义相对论力学基础"></a>第四章 狭义相对论力学基础</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021156442.png" alt=""></p>
+<h3 id="第一讲-力学相对性原理"><a href="#第一讲-力学相对性原理" class="headerlink" title="第一讲 力学相对性原理"></a>第一讲 力学相对性原理</h3><h4 id="1-1-经典力学相对性原理"><a href="#1-1-经典力学相对性原理" class="headerlink" title="1.1 经典力学相对性原理"></a>1.1 经典力学相对性原理</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">力学相对性原理</th>
+<th style="text-align:center">$\left\{\begin{array}{c}对于描述力学现象的规律而言，所有惯性系都是等价的\\力学规律的数学表达式应具有伽利略坐标变换的不变性(协变性)\end{array}\right.$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="1-2-伽利略坐标变化式"><a href="#1-2-伽利略坐标变化式" class="headerlink" title="1.2 伽利略坐标变化式"></a>1.2 伽利略坐标变化式</h4><script type="math/tex; mode=display">
+\left\{\begin{array}{c}\lambda_{PS'}+\lambda_{S'S}=\lambda_{PS}\Longrightarrow \lambda' = \lambda-\mu t\ \ (\lambda=x,y,z,\boldsymbol{v},\boldsymbol{a},\mu=u)\\t'=t\end{array}\right.\tag{1}</script><h3 id="第二讲-狭义相对论基本假设"><a href="#第二讲-狭义相对论基本假设" class="headerlink" title="第二讲 狭义相对论基本假设"></a>第二讲 狭义相对论基本假设</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">狭义相对论的相对性原理</th>
+<th style="text-align:center">$\left\{\begin{array}{c}在所有惯性系中，一切物理学定理都相同，即具有相同的数学表达式\\对于描述一切物理现象的规律而言，所有惯性系都是等价的\end{array}\right.$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">光速不变原理</td>
+<td style="text-align:center">$在所有惯性系中，真空中光沿各个方向传播的速率都等于同一个恒量 c，与光源和观察者的运动状态无关$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="第三讲-狭义相对论的时空观"><a href="#第三讲-狭义相对论的时空观" class="headerlink" title="第三讲 狭义相对论的时空观"></a>第三讲 狭义相对论的时空观</h3><h4 id="3-1-同时性的相对性"><a href="#3-1-同时性的相对性" class="headerlink" title="3.1 同时性的相对性"></a>3.1 同时性的相对性</h4><script type="math/tex; mode=display">
+\left\{\begin{array}{c}异地发生的两个同时事件，同时性具有相对性(对任意参考系)\\
+同地发生的两个同时事件，同时性具有绝对性(对任意参考系)\end{array}\right.</script><h4 id="3-2-时间延缓"><a href="#3-2-时间延缓" class="headerlink" title="3.2 时间延缓"></a>3.2 时间延缓</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时间间隔具有相对性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="math/tex; mode=display">
+\tau=\frac{\tau_0}{\sqrt{1-(\frac{u}{c})^2}}=\gamma\tau_0\tag{2}</script><p>式中，$\gamma = \frac{1}{\sqrt{1-(\frac{u}{c})^2}}$，$\tau_0$ 表示同地不同时的两事件的时间间隔称为原时，且在不同参考系中测得的时间间隔以原时最短；</p>
+<h4 id="3-3-长度收缩"><a href="#3-3-长度收缩" class="headerlink" title="3.3 长度收缩"></a>3.3 长度收缩</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">长度测量具有相对性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script type="math/tex; mode=display">
+L'=L\sqrt{1-(\frac{u}{c})^2}\tag{3}</script><p>式中，$L$ 表示观测者静止时测得的长度(原长)，$L’$ 表示在沿尺长度方向运动速度为 $u$ 时测得的长度，且在不同参考系中测得的长度以原长最长；</p>
+<h3 id="第四讲-洛伦兹变换"><a href="#第四讲-洛伦兹变换" class="headerlink" title="第四讲 洛伦兹变换"></a>第四讲 洛伦兹变换</h3><h4 id="4-1-时空坐标变换"><a href="#4-1-时空坐标变换" class="headerlink" title="4.1 时空坐标变换"></a>4.1 时空坐标变换</h4><script type="math/tex; mode=display">
+P在S中的时空坐标(x,y,z,t),在S'中的时空坐标(x',y',z',t')\\
+S系中测得S'中坐标x''= x'\sqrt{1-(\frac{u}{c})^2}\ \ \ (长度收缩)\\
+\Longrightarrow 在S系中P坐标 x = ut + x''=ut+x'\sqrt{1-(\frac{u}{c})^2}\\
+S'系中测得S中坐标x_1= x\sqrt{1-(\frac{u}{c})^2}\ \ \ (长度收缩)\\
+\Longrightarrow 在S'系中P坐标 x' = x_1 -ut' = x\sqrt{1-(\frac{u}{c})^2} - ut'\\
+\Longrightarrow x' = \frac{x-ut}{\sqrt{1-(\frac{u}{c})^2}},t' = \frac{t-\frac{u}{c^2}x}{\sqrt{1-(\frac{u}{c})^2}}\tag{4}</script><p>式中，$u$ 表示 $S’$ 相对于 $S$ 的速度(相对速度)，$x’$ 表示待求坐标系中参量；<br>推导时间变换式</p>
+<script type="math/tex; mode=display">
+由x' = \frac{x-ut}{\sqrt{1-(\frac{u}{c})^2}}及逆变换x = \frac{x'+ut'}{\sqrt{1-(\frac{u}{c})^2}}联立消去x'解t'</script><h4 id="4-2-时空间隔变换"><a href="#4-2-时空间隔变换" class="headerlink" title="4.2 时空间隔变换"></a>4.2 时空间隔变换</h4><script type="math/tex; mode=display">
+P_1,P_2在S中的时空坐标(x_1,y_1,z_1,t_1),(x_2,y_2,z_2,t_2),在S'中的时空坐标(x_1',y_1',z_1',t_1'),(x_2',y_2',z_2',t_2')\\
+由S\rightarrow S'\\
+\Delta t'=\frac{\Delta t-\frac{u}{c^2}\Delta x}{\sqrt{1-\beta^2}},\Delta x'=\frac{\Delta x-u\Delta t}{\sqrt{1-\beta^2}}\ (\beta = \frac{u}{c})\\
+由S'\rightarrow S\\
+\Delta t=\frac{\Delta t'+\frac{u}{c^2}\Delta x'}{\sqrt{1-\beta^2}},\Delta x=\frac{\Delta x'+u\Delta t'}{\sqrt{1-\beta^2}}\ (\beta = \frac{u}{c})\tag{5}</script><p>式中，$u$ 关联于坐标轴选取的正方向，一般选定 $S$ 系运动方向为坐标轴正方向；</p>
+<h4 id="4-3-爱因斯坦速度相加定律"><a href="#4-3-爱因斯坦速度相加定律" class="headerlink" title="4.3 爱因斯坦速度相加定律"></a>4.3 爱因斯坦速度相加定律</h4><script type="math/tex; mode=display">
+由式(4)求微分\Rightarrow\left\{\begin{array}{c}dx'=\frac{(v_x-u)}{\sqrt{1-\beta^2}}dt\\dy'= dy\\dz'= dz\\dt' = \frac{(1-\frac{u}{c^2}v_x)}{\sqrt{1-\beta^2}}dt\end{array}\right.\\
+\Rightarrow v_x'=\frac{dx'}{dt'}=\frac{v_x-u}{1-\frac{u}{c^2}v_x}\\
+\Rightarrow v_y'=\frac{dy'}{dt'}=\frac{v_y\sqrt{1-\beta^2}}{1-\frac{u}{c^2}v_x}\\
+\Rightarrow v_z'=\frac{dz'}{dt'}=\frac{v_z\sqrt{1-\beta^2}}{1-\frac{u}{c^2}v_x}\tag{6}</script><h3 id="第五讲-狭义相对论质点动力学"><a href="#第五讲-狭义相对论质点动力学" class="headerlink" title="第五讲 狭义相对论质点动力学"></a>第五讲 狭义相对论质点动力学</h3><h4 id="5-1-相对论动量和质量"><a href="#5-1-相对论动量和质量" class="headerlink" title="5.1 相对论动量和质量"></a>5.1 相对论动量和质量</h4><script type="math/tex; mode=display">
+m(v) = \frac{m_0}{\sqrt{1-(\frac{u}{c})^2}}\ (质速关系式)\\
+\Longrightarrow \boldsymbol{p}=m\boldsymbol{v}=\frac{m_0}{\sqrt{1-(\frac{u}{c})^2}}\boldsymbol{v}\\
+\Longrightarrow \boldsymbol{F}=\frac{d\boldsymbol{p}}{dt}=\frac{d}{dt}(\frac{m_0}{\sqrt{1-(\frac{u}{c})^2}}\boldsymbol{v})\tag{7}</script><p>式中，$m_0$ 表示物体静止质量；</p>
+<h4 id="5-2-相对论动能"><a href="#5-2-相对论动能" class="headerlink" title="5.2 相对论动能"></a>5.2 相对论动能</h4><script type="math/tex; mode=display">
+E_k = \int \boldsymbol{F}\cdot d\boldsymbol{r}=\int \frac{d(m\boldsymbol{v})}{dt}\cdot d\boldsymbol{r}=\int d(m\boldsymbol{v})\cdot \frac{d\boldsymbol{r}}{dt}=\int d(m\boldsymbol{v})\cdot\boldsymbol{v}\\
+m\propto\boldsymbol{v}\Longrightarrow d(m\boldsymbol{v})\cdot\boldsymbol{v}=(\boldsymbol{v}dm+md\boldsymbol{v})\cdot \boldsymbol{v}=v^2dm+mvdv\\
+式(7)\Rightarrow m^2v^2=m^2c^2-m_0^2c^2\Rightarrow v^2dm+mvdv=c^2dm\\
+E_k=\int_{m_0}^mc^2dm=mc^2-m_0c^2\tag{8}</script><h4 id="5-3-质能方程"><a href="#5-3-质能方程" class="headerlink" title="5.3 质能方程"></a>5.3 质能方程</h4><script type="math/tex; mode=display">
+\left\{\begin{array}{c}E=mc^2\ \ (运动能量)\\
+E_0=m_0c^2\ \ (静止能量)\end{array}\right.\tag{9}</script><h4 id="5-4-光子质量"><a href="#5-4-光子质量" class="headerlink" title="5.4 光子质量"></a>5.4 光子质量</h4><script type="math/tex; mode=display">
+光子能量 E= h\nu\ \ (爱因斯坦光子假说)\\
+\Longrightarrow m_\varphi=\frac{E}{c^2}=\frac{h\nu}{c^2}=\frac{h}{c\lambda}\tag{10}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">光子、中微子在真空中速率为 $c$，不可能静止因此静止能量等于零</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="5-5-相对论能量与动量关系"><a href="#5-5-相对论能量与动量关系" class="headerlink" title="5.5 相对论能量与动量关系"></a>5.5 相对论能量与动量关系</h4><script type="math/tex; mode=display">
+式(7)\Rightarrow m^2(1-\frac{v^2}{c^2})=m_0^2\\
+\Longrightarrow m^2c^4=m^2v^2c^2+m_0^2c^4\\
+p=mv\Rightarrow E^2=p^2c^2+E_0^2\\
+光子\ \ m_0=0\Rightarrow E_0=0\Rightarrow E^2=p^2c^2\\
+\Longrightarrow p=\frac{h\nu}{c}=\frac{h}{\lambda}\tag{11}</script><h2 id="第五章-量子物理基础"><a href="#第五章-量子物理基础" class="headerlink" title="第五章 量子物理基础"></a>第五章 量子物理基础</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021216245.jpg" style="zoom:190%;" /></p>
+<h3 id="第一讲-普朗克量子假设"><a href="#第一讲-普朗克量子假设" class="headerlink" title="第一讲 普朗克量子假设"></a>第一讲 普朗克量子假设</h3><h4 id="1-1-基本概念"><a href="#1-1-基本概念" class="headerlink" title="1.1 基本概念"></a>1.1 基本概念</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">热辐射</th>
+<th style="text-align:center">物体由其温度所决定的电磁辐射(温度越高，单位时间内辐射的能量越高)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">平衡热辐射</td>
+<td style="text-align:center">当辐射和吸收达到平衡时，物体的温度不再发生变化而处于热平衡状态时的热辐射</td>
+</tr>
+<tr>
+<td style="text-align:center">单色辐射出射度(单色辐出度)</td>
+<td style="text-align:center">物体单位表面积在单位时间内发射的，波长在 $\lambda\rightarrow\lambda+d\lambda$ 范围内的辐射能 $dM_\lambda$与波长间隔 $d\lambda$ 的比值</td>
+</tr>
+<tr>
+<td style="text-align:center">绝对黑体(黑体)</td>
+<td style="text-align:center">能够全部吸收各种波长的辐射能而不发生发射和透射的物体</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="1-2-单色辐出度"><a href="#1-2-单色辐出度" class="headerlink" title="1.2 单色辐出度"></a>1.2 单色辐出度</h4><script type="math/tex; mode=display">
+M_\lambda(T)=\frac{dM_\lambda}{d\lambda}\tag{1}</script><p>【单色辐出度图】<br>|温度越高|单色辐出度越大，峰值波长越短|<br>|:——-:|:——-:|</p>
+<h4 id="1-3-普朗克量子假设"><a href="#1-3-普朗克量子假设" class="headerlink" title="1.3 普朗克量子假设"></a>1.3 普朗克量子假设</h4><script type="math/tex; mode=display">
+\varepsilon=nh\nu\tag{2}</script><p>式中，$\varepsilon$ 表示腔壁中带电谐振子离散变化的能量，振子的频率为 $\nu$，$n$ 表示量子数，$h\nu$ 表示能量子——谐振子能量的最小单位(不是物质而是能量单位)；</p>
+<h3 id="第二讲-爱因斯坦光子理论"><a href="#第二讲-爱因斯坦光子理论" class="headerlink" title="第二讲 爱因斯坦光子理论"></a>第二讲 爱因斯坦光子理论</h3><h4 id="2-1-光电效应"><a href="#2-1-光电效应" class="headerlink" title="2.1 光电效应"></a>2.1 光电效应</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">金属及其化合物在光的照射下发射电子的现象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>【光电效应伏安特性曲线】<br>|照射光光强越大，饱和光电流越大|<br>|:——:|<br>|光电子最大初动能与照射光强度无关，而与频率成线性关系|</p>
+<h4 id="2-2-光电效应方程"><a href="#2-2-光电效应方程" class="headerlink" title="2.2 光电效应方程"></a>2.2 光电效应方程</h4><script type="math/tex; mode=display">
+\frac{1}{2}mv_m^2=eU_a\ (遏止电压)\\
+h\nu = A + \frac{1}{2}mv_m^2\ \ (光电效应方程)\\
+\nu_0=\frac{A}{h}\ (截止频率)\\
+\Longrightarrow U_a = \frac{h}{e}\nu-\frac{A}{e}\tag{3}</script><h3 id="第三讲-康普顿效应及光子理论解释"><a href="#第三讲-康普顿效应及光子理论解释" class="headerlink" title="第三讲 康普顿效应及光子理论解释"></a>第三讲 康普顿效应及光子理论解释</h3><h4 id="3-1-康普顿效应"><a href="#3-1-康普顿效应" class="headerlink" title="3.1 康普顿效应"></a>3.1 康普顿效应</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">单色 $X$ 射线被物质散射时，散射光两种波长中有一种波长比入射线长的散射现象</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="3-2-光子理论解释"><a href="#3-2-光子理论解释" class="headerlink" title="3.2 光子理论解释"></a>3.2 光子理论解释</h4><p>【微观机制】——等价于微观粒子的弹性碰撞</p>
+<script type="math/tex; mode=display">
+入射光子频率\nu_0,散射角为\theta的光子频率为\nu,电子沿着与入射线成\varphi角的方向运动,静质量m_0,动质量m\\
+动量守恒定律\ \ \ \ \left\{\begin{array}{c}\frac{h\nu_0}{c}=\frac{h\nu}{c}\cos\theta+mv\cos\varphi\\
+\frac{h\nu}{c}\sin\theta=mv\sin\varphi\end{array}\right.\\
+\Longrightarrow m^2v^2c^2=h^2(\nu_0^2-\nu^2-2\nu_0\nu\cos\theta)\tag{4}</script><script type="math/tex; mode=display">
+能量守恒定律\ \ \ \ \ \ \ \ \ \ \ hv_0+m_0c^2=hv+mc^2\tag{5}\\
+\left\{\begin{array}{c}式(5)平方-式(4)\\m^2(1-\frac{v^2}{c^2})=m_0^2\end{array}\right.\Longrightarrow m_0c^2(\nu_0-\nu)=h\nu_0\nu(1-\cos\theta)</script><script type="math/tex; mode=display">
+\Longrightarrow \Delta\lambda = \lambda - \lambda_0=\frac{c}{\nu}-\frac{c}{\nu_0}=\frac{h}{m_0c}(1-\cos\theta)>0\\
+=\frac{2h}{m_0c}\sin^2\frac{\theta}{2}=2\lambda_C\sin^2\frac{\theta}{2}\tag{6}</script><p>式中，$\lambda_C=\frac{h}{m_0c}$ 称为电子的康普顿波长；</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://github.com/Markstiff">MarkStiff</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://github.com/Markstiff/2022/10/20/%E5%A4%A7%E7%89%A9%E7%AC%94%E8%AE%B0/">https://github.com/Markstiff/2022/10/20/%E5%A4%A7%E7%89%A9%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/Markstiff" target="_blank">MarkStiff Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%A7%E7%89%A9/">大物</a></div><div class="post_share"><div class="social-share" data-image="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img/202210231934790.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/20/%E4%B8%8D%E7%AD%89%E5%BC%8F/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img/202210232004059.jpg" onerror="onerror=null;src='/img/Cover/cover3.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">不等式</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/16/Latex%E7%AF%87%E7%AB%A0%E7%BB%93%E6%9E%84/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img/202210162140024.jpg" onerror="onerror=null;src='/img/Cover/cover3.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Latex篇章结构</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">MarkStiff</div><div class="author-info__description">博客学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" href="https://github.com/Markstiff"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Markstiff" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/weixin_63554791?type=blog" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="mailto:LZH1314521ligao@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://w.4rxb.com/s/yq3hxp" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://u.wechat.com/MGbsMU60BAqVaV4ImuEj7yM" target="_blank" title="Wechat"><i class="fab fa-wechat"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%9D%99%E7%94%B5%E5%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">第一章 静电场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E5%BA%93%E4%BB%91%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.1.</span> <span class="toc-text">第一讲 库仑定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%93%E4%BB%91%E5%AE%9A%E7%90%86%E2%80%94%E2%80%94%EF%BC%88%E7%9C%9F%E7%A9%BA%E9%9D%99%E6%AD%A2%E7%82%B9%E7%94%B5%E8%8D%B7%EF%BC%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">库仑定理——（真空静止点电荷）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6-E"><span class="toc-number">1.2.</span> <span class="toc-text">第二讲 电场强度$E$</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 电场强度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%BB%86%E5%9C%86%E7%8E%AF"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 均匀带电细圆环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%9C%89%E9%99%90%E9%95%BF%E7%9B%B4%E7%BA%BF%E6%AE%B5"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 有限长直线段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E6%97%A0%E9%99%90%E9%95%BF%E7%9B%B4%E7%BA%BF"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.4 均匀带电无限长直线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E6%97%A0%E9%99%90%E5%A4%A7%E5%B9%B3%E9%9D%A2"><span class="toc-number">1.2.5.</span> <span class="toc-text">2.5 均匀带电无限大平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E6%97%A0%E9%99%90%E5%A4%A7%E5%9D%87%E5%8C%80%E5%B8%A6%E5%BC%82%E5%8F%B7%E7%94%B5%E8%8D%B7%E5%B9%B3%E6%9D%BF%E9%97%B4"><span class="toc-number">1.2.6.</span> <span class="toc-text">2.6 无限大均匀带异号电荷平板间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-%E7%94%B5%E5%81%B6%E6%9E%81%E5%AD%90"><span class="toc-number">1.2.7.</span> <span class="toc-text">2.7 电偶极子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-8-%E5%8A%9B%E5%81%B6%E7%9F%A9"><span class="toc-number">1.2.8.</span> <span class="toc-text">2.8 力偶矩</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E7%94%B5%E9%80%9A%E9%87%8F-bigstar-%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">第三讲 电通量 $\bigstar$高斯定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%94%B5%E9%80%9A%E9%87%8F"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1 电通量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 高斯定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E8%BD%B4%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%94%B5%E5%9C%BA"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.3 轴对称性电场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E7%90%83%E9%9D%A2%E5%AF%B9%E7%A7%B0%E6%80%A7%E7%94%B5%E5%9C%BA"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.4 球面对称性电场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E6%97%A0%E9%99%90%E5%A4%A7%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E5%B9%B3%E9%9D%A2"><span class="toc-number">1.3.5.</span> <span class="toc-text">3.5 无限大均匀带电平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E5%9C%86%E7%9B%98"><span class="toc-number">1.3.6.</span> <span class="toc-text">3.6 均匀带电圆盘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%90%83%E4%BD%93"><span class="toc-number">1.3.7.</span> <span class="toc-text">3.7 均匀带电球体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E8%AE%B2-%E9%9D%99%E7%94%B5%E5%9C%BA%E7%9A%84%E7%8E%AF%E8%B7%AF%E5%AE%9A%E7%90%86-%E7%94%B5%E5%8A%BF%E8%83%BD"><span class="toc-number">1.4.</span> <span class="toc-text">第四讲 静电场的环路定理 电势能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E7%8E%AF%E6%B5%81"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 电场强度环流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E7%94%B5%E5%8A%BF%E8%83%BD"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 电势能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E7%94%B5%E5%8A%BF-%E7%94%B5%E5%8A%BF%E5%B7%AE"><span class="toc-number">1.5.</span> <span class="toc-text">第五讲 电势 电势差</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%94%B5%E5%8A%BF%E4%B8%8E%E7%94%B5%E5%8A%BF%E5%B7%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 电势与电势差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%94%B5%E5%81%B6%E6%9E%81%E5%AD%90%E7%94%B5%E5%8A%BF%E8%83%BD"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 电偶极子电势能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E7%94%B5%E5%8A%BF%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 电势叠加原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E7%94%B5%E8%8D%B7%E5%88%86%E5%B8%83%E6%B1%82%E7%94%B5%E5%8A%BF"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4 电荷分布求电势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E6%B1%82%E7%94%B5%E5%8A%BF"><span class="toc-number">1.5.5.</span> <span class="toc-text">5.5 电场强度求电势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%90%83%E9%9D%A2%E7%94%B5%E5%8A%BF"><span class="toc-number">1.5.6.</span> <span class="toc-text">5.6 均匀带电球面电势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-7-%E5%9D%87%E5%8C%80%E5%B8%A6%E7%94%B5%E7%90%83%E4%BD%93%E7%94%B5%E5%8A%BF"><span class="toc-number">1.5.7.</span> <span class="toc-text">5.7 均匀带电球体电势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E8%AE%B2-%E7%94%B5%E5%8A%BF%E4%B8%8E%E5%9C%BA%E5%BC%BA%E5%BE%AE%E5%88%86%E5%85%B3%E7%B3%BB"><span class="toc-number">1.6.</span> <span class="toc-text">第六讲 电势与场强微分关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E8%AE%B2-%E9%9D%99%E7%94%B5%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%AF%BC%E4%BD%93-%E7%94%B5%E5%AE%B9"><span class="toc-number">1.7.</span> <span class="toc-text">第七讲 静电场中的导体 电容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E9%9D%99%E7%94%B5%E5%B9%B3%E8%A1%A1%E5%AF%BC%E4%BD%93%E8%A1%A8%E9%9D%A2"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1 静电平衡导体表面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E5%AD%A4%E7%AB%8B%E5%AF%BC%E4%BD%93%E7%94%B5%E5%AE%B9"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2 孤立导体电容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-%E5%B9%B3%E8%A1%8C%E6%9D%BF%E7%94%B5%E5%AE%B9%E5%99%A8%E7%94%B5%E5%AE%B9"><span class="toc-number">1.7.3.</span> <span class="toc-text">7.3 平行板电容器电容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-%E7%90%83%E5%BD%A2%E7%94%B5%E5%AE%B9%E5%99%A8%E7%94%B5%E5%AE%B9"><span class="toc-number">1.7.4.</span> <span class="toc-text">7.4 球形电容器电容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5-%E7%94%B5%E5%AE%B9%E5%99%A8%E4%B8%B2%E5%B9%B6%E8%81%94"><span class="toc-number">1.7.5.</span> <span class="toc-text">7.5 电容器串并联</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E8%AE%B2-%E9%9D%99%E7%94%B5%E8%83%BD"><span class="toc-number">1.8.</span> <span class="toc-text">第八讲 静电能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E9%9D%99%E7%94%B5%E8%83%BD%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1 静电能公式推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2 电场能量密度推导</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E8%AE%B2-%E7%94%B5%E4%BB%8B%E8%B4%A8%E7%9A%84%E6%9E%81%E5%8C%96-%E6%9D%9F%E7%BC%9A%E7%94%B5%E8%8D%B7"><span class="toc-number">1.9.</span> <span class="toc-text">第九讲 电介质的极化 束缚电荷</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E7%94%B5%E4%BB%8B%E8%B4%A8"><span class="toc-number">1.9.1.</span> <span class="toc-text">9.1 电介质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E4%BB%8B%E8%B4%A8%E6%9E%81%E5%8C%96"><span class="toc-number">1.9.2.</span> <span class="toc-text">9.2 介质极化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E8%AE%B2-%E7%94%B5%E4%BB%8B%E8%B4%A8%E5%86%85%E7%9A%84%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6"><span class="toc-number">1.10.</span> <span class="toc-text">第十讲 电介质内的电场强度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AE%B2-bigstar-%E7%94%B5%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">1.11.</span> <span class="toc-text">第十一讲 $\bigstar$电介质中的高斯定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-%E7%94%B5%E4%BD%8D%E7%A7%BB%E7%9F%A2%E9%87%8F"><span class="toc-number">1.11.1.</span> <span class="toc-text">11.1 电位移矢量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-%E7%94%B5%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-number">1.11.2.</span> <span class="toc-text">11.2 电介质中的能量密度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AE%B2-%E7%BB%8F%E5%85%B8%E4%B9%A0%E9%A2%98"><span class="toc-number">1.12.</span> <span class="toc-text">第十二讲 经典习题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%81%92%E5%AE%9A%E7%94%B5%E6%B5%81%E7%9A%84%E7%A3%81%E5%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">第二章 恒定电流的磁场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E7%A3%81%E6%84%9F%E5%BA%94%E5%BC%BA%E5%BA%A6-B"><span class="toc-number">2.1.</span> <span class="toc-text">第一讲 磁感应强度$B$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E6%AF%95%E5%A5%A5-%E8%90%A8%E4%BC%90%E5%B0%94%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">第二讲 毕奥-萨伐尔定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%94%B5%E6%B5%81%E5%85%83%E7%9A%84%E7%A3%81%E5%9C%BA"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 电流元的磁场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E8%BF%90%E5%8A%A8%E7%94%B5%E8%8D%B7%E7%9A%84%E7%A3%81%E5%9C%BA"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 运动电荷的磁场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BD%BD%E6%B5%81%E7%9B%B4%E5%AF%BC%E7%BA%BF%E7%9A%84%E7%A3%81%E5%9C%BA"><span class="toc-number">2.2.3.</span> <span class="toc-text">2.3 载流直导线的磁场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E8%BD%BD%E6%B5%81%E5%9C%86%E7%8E%AF%E7%9A%84%E7%A3%81%E5%9C%BA"><span class="toc-number">2.2.4.</span> <span class="toc-text">2.4 载流圆环的磁场</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E8%BD%BD%E6%B5%81%E7%BA%BF%E5%9C%88%E7%9A%84%E7%A3%81%E7%9F%A9"><span class="toc-number">2.2.5.</span> <span class="toc-text">2.5 载流线圈的磁矩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E6%97%A0%E9%99%90%E5%A4%A7%E5%9D%87%E5%8C%80%E8%BD%BD%E6%B5%81%E5%B9%B3%E9%9D%A2"><span class="toc-number">2.2.6.</span> <span class="toc-text">2.6 无限大均匀载流平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-7-%E5%9D%87%E5%8C%80%E5%AF%86%E7%BB%95%E7%9B%B4%E8%9E%BA%E7%BA%BF%E7%AE%A1"><span class="toc-number">2.2.7.</span> <span class="toc-text">2.7 均匀密绕直螺线管</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E7%A3%81%E9%80%9A%E9%87%8F-%E7%A3%81%E5%9C%BA%E7%9A%84%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86"><span class="toc-number">2.3.</span> <span class="toc-text">第三讲 磁通量 磁场的高斯定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%A3%81%E9%80%9A%E9%87%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 磁通量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E9%AB%98%E6%96%AF%E5%AE%9A%E7%90%86-1"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 高斯定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E8%AE%B2-bigstar-%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E7%90%86"><span class="toc-number">2.4.</span> <span class="toc-text">第四讲 $\bigstar$安培环路定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E7%A3%81%E5%9C%BA%E5%AF%B9%E7%94%B5%E6%B5%81%E4%BD%9C%E7%94%A8"><span class="toc-number">2.5.</span> <span class="toc-text">第五讲 磁场对电流作用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E8%BD%BD%E6%B5%81%E5%AF%BC%E7%BA%BF"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 载流导线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E8%BD%BD%E6%B5%81%E7%BA%BF%E5%9C%88"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 载流线圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E7%A3%81%E5%8A%9B%E7%9A%84%E5%8A%9F"><span class="toc-number">2.5.3.</span> <span class="toc-text">5.3 磁力的功</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E7%A3%81%E5%81%B6%E6%9E%81%E5%AD%90%E5%8A%BF%E8%83%BD"><span class="toc-number">2.5.4.</span> <span class="toc-text">5.4 磁偶极子势能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E8%AE%B2-%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E5%9C%A8%E7%94%B5%E5%9C%BA%E5%92%8C%E7%A3%81%E5%9C%BA%E4%B8%AD%E7%9A%84%E8%BF%90%E5%8A%A8"><span class="toc-number">2.6.</span> <span class="toc-text">第六讲 带电粒子在电场和磁场中的运动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8A%9B"><span class="toc-number">2.6.1.</span> <span class="toc-text">6.1 洛伦兹力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E9%9C%8D%E5%B0%94%E6%95%88%E5%BA%94"><span class="toc-number">2.6.2.</span> <span class="toc-text">6.2 霍尔效应</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E8%AE%B2-%E7%A3%81%E4%BB%8B%E8%B4%A8"><span class="toc-number">2.7.</span> <span class="toc-text">第七讲 磁介质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E7%9B%B8%E5%AF%B9%E7%A3%81%E5%AF%BC%E7%8E%87"><span class="toc-number">2.7.1.</span> <span class="toc-text">7.1 相对磁导率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-bigstar-%E7%A3%81%E4%BB%8B%E8%B4%A8%E7%9A%84%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E7%90%86"><span class="toc-number">2.7.2.</span> <span class="toc-text">7.2 $\bigstar$ 磁介质的安培环路定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E8%AE%B2-%E7%BB%8F%E5%85%B8%E4%B9%A0%E9%A2%98"><span class="toc-number">2.8.</span> <span class="toc-text">第八讲 经典习题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94%E4%B8%8E%E7%94%B5%E7%A3%81%E5%9C%BA"><span class="toc-number">3.</span> <span class="toc-text">第三章 电磁感应与电磁场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="toc-number">3.1.</span> <span class="toc-text">第一讲 电磁感应的基本规律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.1 电动势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%B3%95%E6%8B%89%E7%AC%AC%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94%E5%AE%9A%E5%BE%8B"><span class="toc-number">3.1.2.</span> <span class="toc-text">1.2 法拉第电磁感应定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E5%A4%9A%E5%8C%9D%E4%B8%B2%E8%81%94%E7%BA%BF%E5%9C%88"><span class="toc-number">3.1.3.</span> <span class="toc-text">1.3 多匝串联线圈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E9%95%BF%E7%9B%B4%E8%9E%BA%E7%BA%BF%E7%AE%A1"><span class="toc-number">3.1.4.</span> <span class="toc-text">1.4 长直螺线管</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E5%8A%A8%E7%94%9F%E7%94%B5%E5%8A%A8%E5%8A%BF-%E6%84%9F%E7%94%9F%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-number">3.2.</span> <span class="toc-text">第二讲 动生电动势 感生电动势</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%8A%A8%E7%94%9F%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.1 动生电动势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E6%84%9F%E7%94%9F%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2 感生电动势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E8%87%AA%E6%84%9F%E4%B8%8E%E4%BA%92%E6%84%9F"><span class="toc-number">3.3.</span> <span class="toc-text">第三讲 自感与互感</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E8%87%AA%E6%84%9F%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.1 自感电动势</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E9%95%BF%E7%9B%B4%E8%9E%BA%E7%BA%BF%E7%AE%A1%E8%87%AA%E6%84%9F%E7%B3%BB%E6%95%B0"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.2 长直螺线管自感系数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%9A%84%E5%88%86%E5%B8%83%E7%94%B5%E6%84%9F"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3 传输线的分布电感</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E4%BA%92%E6%84%9F%E7%94%B5%E5%8A%A8%E5%8A%BF"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 互感电动势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E8%AE%B2-%E7%A3%81%E8%83%BD"><span class="toc-number">3.5.</span> <span class="toc-text">第四讲 磁能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%87%AA%E6%84%9F%E7%A3%81%E8%83%BD"><span class="toc-number">3.5.1.</span> <span class="toc-text">4.1 自感磁能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E9%95%BF%E7%9B%B4%E8%9E%BA%E7%BA%BF%E7%AE%A1%E7%A3%81%E8%83%BD"><span class="toc-number">3.5.2.</span> <span class="toc-text">4.2 长直螺线管磁能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%9C%89%E9%99%90%E4%BD%93%E7%A7%AF%E5%86%85%E7%9A%84%E7%A3%81%E8%83%BD"><span class="toc-number">3.5.3.</span> <span class="toc-text">4.3 有限体积内的磁能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E7%94%B5%E7%A3%81%E5%9C%BA%E7%90%86%E8%AE%BA"><span class="toc-number">3.6.</span> <span class="toc-text">第五讲 麦克斯韦电磁场理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E4%BD%8D%E7%A7%BB%E7%94%B5%E6%B5%81"><span class="toc-number">3.6.1.</span> <span class="toc-text">5.1 位移电流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E5%85%A8%E7%94%B5%E6%B5%81%E5%AE%89%E5%9F%B9%E7%8E%AF%E8%B7%AF%E5%AE%9A%E7%90%86"><span class="toc-number">3.6.2.</span> <span class="toc-text">5.2 全电流安培环路定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E6%96%B9%E7%A8%8B%E7%BB%84"><span class="toc-number">3.6.3.</span> <span class="toc-text">5.3 麦克斯韦方程组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E8%AE%B2-%E7%BB%8F%E5%85%B8%E4%B9%A0%E9%A2%98"><span class="toc-number">3.7.</span> <span class="toc-text">第六讲 经典习题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%8A%9B%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">4.</span> <span class="toc-text">第四章 狭义相对论力学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E5%8A%9B%E5%AD%A6%E7%9B%B8%E5%AF%B9%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.</span> <span class="toc-text">第一讲 力学相对性原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6%E7%9B%B8%E5%AF%B9%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.1 经典力学相对性原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E4%BC%BD%E5%88%A9%E7%95%A5%E5%9D%90%E6%A0%87%E5%8F%98%E5%8C%96%E5%BC%8F"><span class="toc-number">4.1.2.</span> <span class="toc-text">1.2 伽利略坐标变化式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE"><span class="toc-number">4.2.</span> <span class="toc-text">第二讲 狭义相对论基本假设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E7%9A%84%E6%97%B6%E7%A9%BA%E8%A7%82"><span class="toc-number">4.3.</span> <span class="toc-text">第三讲 狭义相对论的时空观</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%90%8C%E6%97%B6%E6%80%A7%E7%9A%84%E7%9B%B8%E5%AF%B9%E6%80%A7"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.1 同时性的相对性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%97%B6%E9%97%B4%E5%BB%B6%E7%BC%93"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.2 时间延缓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E9%95%BF%E5%BA%A6%E6%94%B6%E7%BC%A9"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3 长度收缩</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E8%AE%B2-%E6%B4%9B%E4%BC%A6%E5%85%B9%E5%8F%98%E6%8D%A2"><span class="toc-number">4.4.</span> <span class="toc-text">第四讲 洛伦兹变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E6%97%B6%E7%A9%BA%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-number">4.4.1.</span> <span class="toc-text">4.1 时空坐标变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%97%B6%E7%A9%BA%E9%97%B4%E9%9A%94%E5%8F%98%E6%8D%A2"><span class="toc-number">4.4.2.</span> <span class="toc-text">4.2 时空间隔变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E9%80%9F%E5%BA%A6%E7%9B%B8%E5%8A%A0%E5%AE%9A%E5%BE%8B"><span class="toc-number">4.4.3.</span> <span class="toc-text">4.3 爱因斯坦速度相加定律</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E7%8B%AD%E4%B9%89%E7%9B%B8%E5%AF%B9%E8%AE%BA%E8%B4%A8%E7%82%B9%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-number">4.5.</span> <span class="toc-text">第五讲 狭义相对论质点动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%8A%A8%E9%87%8F%E5%92%8C%E8%B4%A8%E9%87%8F"><span class="toc-number">4.5.1.</span> <span class="toc-text">5.1 相对论动量和质量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%9B%B8%E5%AF%B9%E8%AE%BA%E5%8A%A8%E8%83%BD"><span class="toc-number">4.5.2.</span> <span class="toc-text">5.2 相对论动能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E8%B4%A8%E8%83%BD%E6%96%B9%E7%A8%8B"><span class="toc-number">4.5.3.</span> <span class="toc-text">5.3 质能方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E5%85%89%E5%AD%90%E8%B4%A8%E9%87%8F"><span class="toc-number">4.5.4.</span> <span class="toc-text">5.4 光子质量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-%E7%9B%B8%E5%AF%B9%E8%AE%BA%E8%83%BD%E9%87%8F%E4%B8%8E%E5%8A%A8%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-number">4.5.5.</span> <span class="toc-text">5.5 相对论能量与动量关系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%87%8F%E5%AD%90%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80"><span class="toc-number">5.</span> <span class="toc-text">第五章 量子物理基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%AE%B2-%E6%99%AE%E6%9C%97%E5%85%8B%E9%87%8F%E5%AD%90%E5%81%87%E8%AE%BE"><span class="toc-number">5.1.</span> <span class="toc-text">第一讲 普朗克量子假设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.1.</span> <span class="toc-text">1.1 基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E5%8D%95%E8%89%B2%E8%BE%90%E5%87%BA%E5%BA%A6"><span class="toc-number">5.1.2.</span> <span class="toc-text">1.2 单色辐出度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E6%99%AE%E6%9C%97%E5%85%8B%E9%87%8F%E5%AD%90%E5%81%87%E8%AE%BE"><span class="toc-number">5.1.3.</span> <span class="toc-text">1.3 普朗克量子假设</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E5%85%89%E5%AD%90%E7%90%86%E8%AE%BA"><span class="toc-number">5.2.</span> <span class="toc-text">第二讲 爱因斯坦光子理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E5%85%89%E7%94%B5%E6%95%88%E5%BA%94"><span class="toc-number">5.2.1.</span> <span class="toc-text">2.1 光电效应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%85%89%E7%94%B5%E6%95%88%E5%BA%94%E6%96%B9%E7%A8%8B"><span class="toc-number">5.2.2.</span> <span class="toc-text">2.2 光电效应方程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E5%BA%B7%E6%99%AE%E9%A1%BF%E6%95%88%E5%BA%94%E5%8F%8A%E5%85%89%E5%AD%90%E7%90%86%E8%AE%BA%E8%A7%A3%E9%87%8A"><span class="toc-number">5.3.</span> <span class="toc-text">第三讲 康普顿效应及光子理论解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%BA%B7%E6%99%AE%E9%A1%BF%E6%95%88%E5%BA%94"><span class="toc-number">5.3.1.</span> <span class="toc-text">3.1 康普顿效应</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%85%89%E5%AD%90%E7%90%86%E8%AE%BA%E8%A7%A3%E9%87%8A"><span class="toc-number">5.3.2.</span> <span class="toc-text">3.2 光子理论解释</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/04/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95/" title="最短路算法"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202212071108653.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="最短路算法"/></a><div class="content"><a class="title" href="/2022/11/04/%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95/" title="最短路算法">最短路算法</a><time datetime="2022-11-04T11:11:39.000Z" title="发表于 2022-11-04 19:11:39">2022-11-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" title="拓扑排序"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202211022218884.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="拓扑排序"/></a><div class="content"><a class="title" href="/2022/11/02/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" title="拓扑排序">拓扑排序</a><time datetime="2022-11-02T14:07:43.000Z" title="发表于 2022-11-02 22:07:43">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/31/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="常微分方程"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021156442.png" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="常微分方程"/></a><div class="content"><a class="title" href="/2022/10/31/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" title="常微分方程">常微分方程</a><time datetime="2022-10-31T06:45:01.000Z" title="发表于 2022-10-31 14:45:01">2022-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/30/%E7%94%9F%E6%88%90%E6%A3%AE%E6%9E%97/" title="非连通图生成森林"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture202211021206478.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="非连通图生成森林"/></a><div class="content"><a class="title" href="/2022/10/30/%E7%94%9F%E6%88%90%E6%A3%AE%E6%9E%97/" title="非连通图生成森林">非连通图生成森林</a><time datetime="2022-10-30T10:21:37.000Z" title="发表于 2022-10-30 18:21:37">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/28/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E8%A1%A8%E7%A4%BA/" title="图的存储结构"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img/202210091114551.jpg" onerror="this.onerror=null;this.src='/img/Cover/cover3.jpg'" alt="图的存储结构"/></a><div class="content"><a class="title" href="/2022/10/28/%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E8%A1%A8%E7%A4%BA/" title="图的存储结构">图的存储结构</a><time datetime="2022-10-28T04:15:35.000Z" title="发表于 2022-10-28 12:15:35">2022-10-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img/202210231934790.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2022 By MarkStiff</div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '3eddec41858f5ec8a7e9',
+      clientSecret: 'cfd771df5cd8b3a7e998ff9b69d15502a0ec8a65',
+      repo: 'BlogComments',
+      owner: 'Markstiff',
+      admin: ['Markstiff'],
+      id: '83df217e1e78976e2ffa3a7db34337f1',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'rshSqywYSx56DC2hT3PKs5cj-MdYXbMMI',
+      appKey: 'irF3i0ouYHvblnb7XTWFSPjZ',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const findTrueUrl = (array) => {
+    Promise.all(array.map(item =>
+      fetch(item.url).then(resp => resp.json()).then(data => {
+        const urlArray = data.body.match(/(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?/ig)
+        if (data.user.login === 'utterances-bot') {
+          return urlArray.pop()
+        } else {
+          return urlArray.shift()
+        }
+      })
+    )).then(res => {
+        array = array.map((i,index)=> {
+          return {
+            ...i,
+            url: res[index]
+          }
+        })
+
+        saveToLocal.set('github-newest-comments', JSON.stringify(array), 10/(60*24))
+        generateHtml(array)
+    });
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/Markstiff/BlogComments/issues/comments?sort=updated&direction=desc&per_page=6&page=1',{
+      "headers": {
+        Accept: 'application/vnd.github.v3.html+json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body_html),
+            'nick': item.user.login,
+            'url': item.issue_url,
+            'date': item.updated_at,
+            'githubUrl': item.html_url
+          }
+        })
+        findTrueUrl(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'data-lazy-src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><div class="aplayer no-destroy" data-id="5183531430" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><script async data-pjax src="/js/sky.js"></script><script async src="//at.alicdn.com/t/c/font_3684051_28nbn04epdxh.js"></script><script src="/js/weather.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script data-pjax defer src="https://npm.elemecdn.com/tzy-blog/lib/js/theme/chocolate.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="true" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="true" async="async"></script><script src="//code.tidio.co/vl1yxastlgguno3otzd1qotwmyowaunr.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202212071115765.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/Latex学习/&quot;);" href="javascript:void(0);">Latex学习</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">Latex学习</span></li><li class="categoryBar-list-item" style="background:url(https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202212071111668.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数学竞赛/&quot;);" href="javascript:void(0);">数学竞赛</a><span class="categoryBar-list-count">6</span><span class="categoryBar-list-descr">大学物理</span></li><li class="categoryBar-list-item" style="background:url(https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202212071112830.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/数据结构与算法/&quot;);" href="javascript:void(0);">数据结构与算法</a><span class="categoryBar-list-count">13</span><span class="categoryBar-list-descr">数学竞赛</span></li><li class="categoryBar-list-item" style="background:url(https://ms-blogimage.oss-cn-chengdu.aliyuncs.com/picture/img202212071112492.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/大学物理/&quot;);" href="javascript:void(0);">大学物理</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">数据结构与算法</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '03723cb696a746c6a0f823637ad060f0';
+  var gaud_map_key = 'f5c5ffef3f73f0ea06d435162bc5ce84';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '108,33.5';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>

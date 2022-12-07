@@ -136,7 +136,7 @@ if (document.body.clientWidth > 992) {
             fontFamily:'楷体', //对话框字体
             fontSize:'14px', //对话框字体的大小
             color:'#1e90ff', //对话框字体颜色
-            scroWidth:'8px', //绳子的宽度
+            scroWidth:'7px', //绳子的宽度
             z_index:100, //不用解释了吧
             during:1200, //从顶部到底部滑动的时长
         });
