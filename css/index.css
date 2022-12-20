@@ -1512,7 +1512,7 @@ a:hover {
 #site-name,
 #aside-content .author-info__name,
 #aside-content .author-info__description {
-  font-family: IBM Plex Mono Italic,'Hiragino Sans GB';
+  font-family: IBM Plex Mono Italic;
 }
 .is-center {
   text-align: center;
